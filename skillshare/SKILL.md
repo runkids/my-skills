@@ -1,247 +1,116 @@
 ---
 name: skillshare
-description: Manage and sync skills across AI CLI tools. Use when asked to "sync my skills", "pull skills", "show skillshare status", "list my skills", "install a skill", "create a new skill", "backup skills", or manage skill targets.
-argument-hint: [command] [target] [--dry-run]
+version: 0.5.0
+description: Manages and syncs skills across AI CLI tools (Claude, Cursor, Codex) from a single source of truth. Use when asked to "sync my skills", "pull skills", "show skillshare status", "list my skills", "install a skill", or manage skill targets.
+argument-hint: "[command] [target] [--dry-run]"
 ---
 
 # Skillshare CLI
 
-Manage and sync skills across multiple AI CLI tools from a single source of truth.
+Syncs skills across multiple AI CLI tools from a single source of truth.
 
-## When to Use This Skill
+## Quick Start
 
-Activate when the user:
-- Asks to sync, pull, or manage skills across CLI tools
-- Wants to see skillshare status or differences
-- Needs to install, uninstall, or list skills
-- Asks about backup, restore, or target management
-- Creates a new skill and wants to distribute it
-- Mentions "skillshare" directly
-
-**Natural language triggers:**
-- "sync my skills to all tools"
-- "pull my new skill from Claude"
-- "what skills do I have?"
-- "show skillshare status"
-- "add cursor as a target"
-- "backup my skills"
-- "install that skill from GitHub"
-
-## How It Works
-
-1. **Check current state** with `skillshare status`
-2. **Preview changes** with `--dry-run` before any destructive operation
-3. **Execute the command** if user approves or didn't request preview
-4. **Report results** with relevant output
+```bash
+skillshare status              # See current state (always run first)
+skillshare sync                # Push skills to all targets
+skillshare sync --dry-run      # Preview changes before sync
+skillshare pull claude         # Bring new skills from target to source
+skillshare list                # Show installed skills
+```
 
 ## AI Behavior Guide
 
-Map user intents to command sequences:
-
-| User Says | Commands to Run |
-|-----------|-----------------|
+| User Intent | Commands |
+|-------------|----------|
 | "sync my skills" | `skillshare sync` |
-| "sync but show me first" | `skillshare sync --dry-run`, then `skillshare sync` if approved |
-| "pull from Claude and sync" | `skillshare pull claude` then `skillshare sync` |
-| "pull all and sync everywhere" | `skillshare pull --all` then `skillshare sync` |
-| "pull from remote/other machine" | `skillshare pull --remote` (git pull + sync) |
-| "push to remote/backup" | `skillshare push` (git commit + push) |
-| "sync across machines" | `skillshare push` on machine A, `skillshare pull --remote` on B |
-| "show status" / "what's the state" | `skillshare status` |
-| "show differences" | `skillshare diff` |
-| "what skills do I have" | `skillshare list` (or `skillshare list --verbose`) |
-| "install X skill" | `skillshare install <source>` then `skillshare sync` |
-| "remove/uninstall X skill" | `skillshare uninstall <name>` then `skillshare sync` |
+| "sync but show me first" | `skillshare sync --dry-run` → `skillshare sync` |
+| "pull from Claude" | `skillshare pull claude` → `skillshare sync` |
+| "pull all" | `skillshare pull --all` → `skillshare sync` |
+| "pull from remote" | `skillshare pull --remote` |
+| "push to remote" | `skillshare push` |
+| "show status" | `skillshare status` |
+| "what skills do I have" | `skillshare list` |
+| "install X skill" | `skillshare install <source>` → `skillshare sync` |
+| "remove X skill" | `skillshare uninstall <name>` → `skillshare sync` |
 | "add cursor as target" | `skillshare target add cursor ~/.cursor/skills` |
-| "remove target X" | `skillshare target remove <name>` |
-| "backup my skills" | `skillshare backup` |
-| "restore from backup" | `skillshare restore <target>` |
 | "something's broken" | `skillshare doctor` |
-| "create a new skill" | Guide user to create in source: `~/.config/skillshare/skills/` |
+| "initialize skillshare" | See [Init Workflow](#init-workflow) |
 
-## Quick Reference
+## Init Workflow
 
-| Priority | Command | Use Case |
-|----------|---------|----------|
-| 1 | `status` | First command - see current state |
-| 2 | `sync` | Push skills to all targets |
-| 3 | `sync --dry-run` | Preview sync changes |
-| 4 | `pull <target>` | Bring target's new skills to source |
-| 5 | `pull --all` | Pull from all targets |
-| 6 | `diff` | See what differs between source and targets |
-| 7 | `list` | Show installed skills |
-| 8 | `install <source>` | Add skill from path or git repo |
-| 9 | `uninstall <name>` | Remove a skill |
-| 10 | `doctor` | Diagnose configuration issues |
+**CRITICAL:** AI cannot respond to CLI prompts. Use flags for non-interactive mode.
 
-## Commands Reference
+### Init Checklist
 
-### Status & Inspection
+Copy and track when initializing:
+- [ ] Ask: "Do you have existing skills to copy?" → `--copy-from <name>` or `--no-copy`
+- [ ] Ask: "Which CLI tools to sync?" → `--targets <list>`, `--all-targets`, or `--no-targets`
+- [ ] Ask: "Initialize git?" → `--git` or `--no-git`
+- [ ] Run: `skillshare init [flags]`
+- [ ] Verify: `skillshare status`
+
+### Quick Defaults
+
+If user just says "initialize skillshare":
+```bash
+skillshare init --no-copy --all-targets --git
+```
+
+### Examples
 
 ```bash
-skillshare status              # Source, targets, sync state
-skillshare diff                # All targets
-skillshare diff claude         # Specific target
-skillshare list                # List skills
-skillshare list --verbose      # With source and install info
+skillshare init --copy-from claude --targets "claude,cursor" --git
+skillshare init --no-copy --all-targets --git     # Fresh start
+skillshare init --no-copy --no-targets --no-git   # Minimal
 ```
 
-**Expected output (status):**
-```
-Source: ~/.config/skillshare/skills (4 skills)
-Targets:
-  claude   ✓ synced   ~/.claude/skills
-  codex    ✓ synced   ~/.codex/skills
-  cursor   ⚠ 1 diff   ~/.cursor/skills
-```
+## Core Commands
 
-### Sync & Pull
+| Command | Use Case |
+|---------|----------|
+| `status` | First command - see current state |
+| `sync` | Push skills to all targets |
+| `pull <target>` | Bring target's skills to source |
+| `diff` | See differences between source and targets |
+| `list` | Show installed skills |
+| `install <source>` | Add skill from path or git repo |
+| `doctor` | Diagnose issues |
 
-```bash
-skillshare sync                # Sync to all targets
-skillshare sync --dry-run      # Preview only
+## Symlink Safety
 
-skillshare pull claude         # Pull from specific target
-skillshare pull --all          # Pull from all targets
-skillshare pull --remote       # Pull from git remote + sync all
-```
+**CRITICAL:** In `merge` mode, editing a skill in ANY target edits the source.
 
-### Push (Cross-Machine Sync)
-
-```bash
-skillshare push                # Git add, commit, push
-skillshare push -m "message"   # Custom commit message
-skillshare push --dry-run      # Preview only
-```
-
-**Local workflow:**
-1. Create skill in any target (e.g., `~/.claude/skills/my-skill/`)
-2. `skillshare pull claude` - bring to source
-3. `skillshare sync` - distribute to all targets
-
-**Cross-machine workflow:**
-1. Machine A: `skillshare push` - commit and push to remote
-2. Machine B: `skillshare pull --remote` - pull from remote + sync to all targets
-
-### Install & Uninstall
-
-```bash
-# Install from various sources
-skillshare install github.com/user/repo              # Discovery mode
-skillshare install github.com/user/repo/path/skill   # Direct path
-skillshare install ~/Downloads/my-skill              # Local path
-skillshare install <source> --name custom-name       # Custom name
-skillshare install <source> --force                  # Overwrite existing
-skillshare install <source> --update                 # Update git-based skill
-
-# Uninstall
-skillshare uninstall my-skill                        # With confirmation
-skillshare uninstall my-skill --force                # Skip confirmation
-```
-
-After install/uninstall, run `skillshare sync` to update targets.
-
-### Target Management
-
-```bash
-skillshare target list                        # List all targets
-skillshare target claude                      # Show target info
-skillshare target add myapp ~/.myapp/skills   # Add custom target
-skillshare target remove myapp                # Remove target
-skillshare target claude --mode merge         # Change sync mode
-skillshare target claude --mode symlink       # Change to symlink mode
-```
-
-**Sync modes:**
-- `merge`: Individual skill symlinks, local skills preserved (recommended)
-- `symlink`: Entire directory symlinked, all targets identical
-
-### Backup & Restore
-
-```bash
-skillshare backup                         # Backup all targets
-skillshare backup claude                  # Backup specific target
-skillshare backup --list                  # List available backups
-skillshare backup --cleanup               # Remove old backups
-
-skillshare restore claude                 # Restore from latest
-skillshare restore claude --from 2026-01-14_21-22-18  # Specific backup
-```
-
-Backups location: `~/.config/skillshare/backups/<timestamp>/`
-
-### Diagnostics
-
-```bash
-skillshare doctor                         # Check configuration health
-skillshare init --dry-run                 # Preview what init would do
-```
-
-## Common Issues & Solutions
-
-| Problem | Diagnosis | Solution |
-|---------|-----------|----------|
-| "config not found" | Config missing | Run `skillshare init` |
-| Target shows differences | Files out of sync | Run `skillshare sync` |
-| Lost source files | Deleted via symlink | `cd ~/.config/skillshare/skills && git checkout -- <skill>/` |
-| Target has local skills | Need to preserve | Ensure `merge` mode, then `skillshare pull` before sync |
-| Skill not appearing | Not synced yet | Run `skillshare sync` after install |
-| Can't find installed skills | Wrong directory | Check `skillshare status` for source path |
-
-**Recovery workflow:**
-```bash
-skillshare doctor          # Diagnose issues
-skillshare backup          # Create safety backup
-skillshare sync --dry-run  # Preview fix
-skillshare sync            # Apply fix
-```
-
-## Tips for AI
-
-### Symlink Behavior
-- In `merge` mode: editing a skill in ANY target edits the source (changes are immediate)
-- In `symlink` mode: entire target directory is a symlink to source
 - **NEVER** use `rm -rf` on symlinked skills - this deletes the source
+- Use `skillshare target remove <name>` to safely unlink targets
+- Use `skillshare uninstall <name>` to safely remove skills
 
-### When to Use --dry-run
-- Before `sync` if user is cautious or first-time
-- Before `pull --all` to see what will be imported
-- Before `install` from unknown sources
-- Before `restore` to preview what will change
-- Before `target remove` to understand impact
+## Cross-Machine Workflow
 
-### Git Workflow Recommendations
-After any skill changes, remind user:
 ```bash
-skillshare push                    # Simple: commit and push in one command
-skillshare push -m "Add new skill" # With custom message
+# Machine A: push changes
+skillshare push -m "Add new skill"
+
+# Machine B: pull and sync
+skillshare pull --remote
 ```
 
-Or manually:
+## Zero-Install Runner
+
+If skillshare is not installed, run directly via curl:
+
 ```bash
-cd ~/.config/skillshare/skills
-git add . && git commit -m "Add/update skills" && git push
+curl -fsSL https://raw.githubusercontent.com/runkids/skillshare/main/skills/skillshare/scripts/run.sh | sh -s -- status
 ```
 
-### Creating New Skills
-Guide users to create skills in source directory:
-- Path: `~/.config/skillshare/skills/<skill-name>/SKILL.md`
-- Must have frontmatter with `name` and `description`
-- After creation: `skillshare sync` to distribute
+See [scripts/run.sh](scripts/run.sh) for the full runner script.
 
-### Safe Target Removal
-To unlink a target without losing source:
-```bash
-skillshare target remove <name>      # Safe: only removes link
-# NOT: rm -rf ~/.target/skills       # Dangerous: may delete source
-```
+## References
 
-## File Locations
-
-| Item | Path |
-|------|------|
-| Source directory | Defined in config (default: `~/.config/skillshare/skills/`) |
-| Config file | `~/.config/skillshare/config.yaml` |
-| Backups | `~/.config/skillshare/backups/` |
-
-Run `skillshare status` to see actual paths.
+- [status.md](references/status.md) - status, diff, list, doctor
+- [sync.md](references/sync.md) - sync, pull, push
+- [install.md](references/install.md) - install, uninstall
+- [targets.md](references/targets.md) - target management
+- [backup.md](references/backup.md) - backup, restore
+- [init.md](references/init.md) - init flags reference
+- [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) - Common issues and recovery
