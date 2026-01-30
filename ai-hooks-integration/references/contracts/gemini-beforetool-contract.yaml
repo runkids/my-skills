@@ -1,0 +1,23 @@
+name: gemini-beforetool
+description: BeforeTool hook validates/blocks tool execution
+input:
+  hook_name: string  # "BeforeTool"
+  tool_name: string  # e.g., "run_shell_command", "write_file"
+  tool_input: object  # Tool-specific arguments
+  session_id: string
+output:
+  decision: enum[allow, deny]
+  reason: string  # Required when denying
+  systemMessage: string  # Optional context for model
+exit_codes:
+  0: Success (preferred for all logic including deny)
+  2: System block (critical abort)
+  other: Warning (non-fatal, continues with original)
+env_vars:
+  GEMINI_PROJECT_DIR: Project root absolute path
+  GEMINI_SESSION_ID: Current session ID
+  GEMINI_CWD: Current working directory
+notes:
+  - stdout must be valid JSON only
+  - Use stderr for debug output
+  - matcher field uses regex for tool events

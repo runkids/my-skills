@@ -15,6 +15,10 @@ Targets:
   claude   ✓ synced   ~/.claude/skills
   codex    ✓ synced   ~/.codex/skills
   cursor   ⚠ 1 diff   ~/.cursor/skills
+
+Version:
+  ✓ CLI: 0.6.4
+  ✓ Skill: 0.6.4 (up to date)
 ```
 
 ## diff
@@ -42,3 +46,17 @@ Checks configuration health and diagnoses issues.
 ```bash
 skillshare doctor
 ```
+
+## upgrade
+
+Upgrades CLI binary and/or built-in skillshare skill.
+
+```bash
+skillshare upgrade              # Both CLI + skill
+skillshare upgrade --cli        # CLI only
+skillshare upgrade --skill      # Skill only
+skillshare upgrade --force      # Skip confirmation
+skillshare upgrade --dry-run    # Preview
+```
+
+After upgrading skill: `skillshare sync`

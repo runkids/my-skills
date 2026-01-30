@@ -1,116 +1,108 @@
 ---
 name: skillshare
-version: 0.5.0
-description: Manages and syncs skills across AI CLI tools (Claude, Cursor, Codex) from a single source of truth. Use when asked to "sync my skills", "pull skills", "show skillshare status", "list my skills", "install a skill", or manage skill targets.
+version: 0.6.4
+description: Syncs skills across AI CLI tools from a single source of truth. Use when asked to "sync skills", "pull skills", "show status", "list skills", "install skill", "initialize skillshare", or manage skill targets.
 argument-hint: "[command] [target] [--dry-run]"
 ---
 
 # Skillshare CLI
 
-Syncs skills across multiple AI CLI tools from a single source of truth.
-
-## Quick Start
-
-```bash
-skillshare status              # See current state (always run first)
-skillshare sync                # Push skills to all targets
-skillshare sync --dry-run      # Preview changes before sync
-skillshare pull claude         # Bring new skills from target to source
-skillshare list                # Show installed skills
+```
+Source: ~/.config/skillshare/skills  ← Edit here (single source of truth)
+         ↓ sync
+Targets: ~/.claude/skills, ~/.cursor/skills, ...  ← Symlinked from source
 ```
 
-## AI Behavior Guide
-
-| User Intent | Commands |
-|-------------|----------|
-| "sync my skills" | `skillshare sync` |
-| "sync but show me first" | `skillshare sync --dry-run` → `skillshare sync` |
-| "pull from Claude" | `skillshare pull claude` → `skillshare sync` |
-| "pull all" | `skillshare pull --all` → `skillshare sync` |
-| "pull from remote" | `skillshare pull --remote` |
-| "push to remote" | `skillshare push` |
-| "show status" | `skillshare status` |
-| "what skills do I have" | `skillshare list` |
-| "install X skill" | `skillshare install <source>` → `skillshare sync` |
-| "remove X skill" | `skillshare uninstall <name>` → `skillshare sync` |
-| "add cursor as target" | `skillshare target add cursor ~/.cursor/skills` |
-| "something's broken" | `skillshare doctor` |
-| "initialize skillshare" | See [Init Workflow](#init-workflow) |
-
-## Init Workflow
-
-**CRITICAL:** AI cannot respond to CLI prompts. Use flags for non-interactive mode.
-
-### Init Checklist
-
-Copy and track when initializing:
-- [ ] Ask: "Do you have existing skills to copy?" → `--copy-from <name>` or `--no-copy`
-- [ ] Ask: "Which CLI tools to sync?" → `--targets <list>`, `--all-targets`, or `--no-targets`
-- [ ] Ask: "Initialize git?" → `--git` or `--no-git`
-- [ ] Run: `skillshare init [flags]`
-- [ ] Verify: `skillshare status`
-
-### Quick Defaults
-
-If user just says "initialize skillshare":
-```bash
-skillshare init --no-copy --all-targets --git
-```
-
-### Examples
+## Quick Reference
 
 ```bash
-skillshare init --copy-from claude --targets "claude,cursor" --git
-skillshare init --no-copy --all-targets --git     # Fresh start
-skillshare init --no-copy --no-targets --no-git   # Minimal
+skillshare status              # Always run first
+skillshare sync                # Push to all targets
+skillshare sync --dry-run      # Preview changes
+skillshare pull claude         # Import from target → source
+skillshare list                # Show skills and tracked repos
 ```
 
-## Core Commands
+## Command Patterns
 
-| Command | Use Case |
-|---------|----------|
-| `status` | First command - see current state |
-| `sync` | Push skills to all targets |
-| `pull <target>` | Bring target's skills to source |
-| `diff` | See differences between source and targets |
-| `list` | Show installed skills |
-| `install <source>` | Add skill from path or git repo |
-| `doctor` | Diagnose issues |
+| Intent | Command |
+|--------|---------|
+| Sync skills | `skillshare sync` |
+| Preview first | `skillshare sync --dry-run` then `sync` |
+| Create new skill | `skillshare new <name>` then `sync` |
+| Pull from target | `skillshare pull <name>` then `sync` |
+| Install skill | `skillshare install <source>` then `sync` |
+| Install from repo (browse) | `skillshare install owner/repo` (discovery mode) |
+| Install team repo | `skillshare install <git-url> --track` then `sync` |
+| Update skill/repo | `skillshare update <name>` then `sync` |
+| Update all | `skillshare update --all` then `sync` |
+| Remove skill | `skillshare uninstall <name>` then `sync` |
+| List skills | `skillshare list` or `list --verbose` |
+| Cross-machine push | `skillshare push -m "message"` |
+| Cross-machine pull | `skillshare pull --remote` |
+| Backup/restore | `skillshare backup --list`, `restore <target>` |
+| Add custom target | `skillshare target add <name> <path>` |
+| Change sync mode | `skillshare target <name> --mode merge\|symlink` |
+| Upgrade CLI/skill | `skillshare upgrade` |
+| Diagnose issues | `skillshare doctor` |
 
-## Symlink Safety
+## Init (Non-Interactive)
 
-**CRITICAL:** In `merge` mode, editing a skill in ANY target edits the source.
+**CRITICAL:** Use flags — AI cannot respond to CLI prompts.
 
-- **NEVER** use `rm -rf` on symlinked skills - this deletes the source
-- Use `skillshare target remove <name>` to safely unlink targets
-- Use `skillshare uninstall <name>` to safely remove skills
+**Source path:** Always use default `~/.config/skillshare/skills`. Only use `--source` if user explicitly requests a different location.
 
-## Cross-Machine Workflow
+**Step 1:** Check existing skills
+```bash
+ls ~/.claude/skills ~/.cursor/skills 2>/dev/null | head -10
+```
+
+**Step 2:** Run init based on findings
+
+| Found | Command |
+|-------|---------|
+| Skills in one target | `skillshare init --copy-from <name> --all-targets --git` |
+| Skills in multiple | Ask user which to import |
+| No existing skills | `skillshare init --no-copy --all-targets --git` |
+
+**Step 3:** `skillshare status`
+
+**Adding new agents later (AI must use --select):**
+```bash
+skillshare init --discover --select "windsurf,kilocode"   # Non-interactive (AI use this)
+# skillshare init --discover                              # Interactive only (NOT for AI)
+```
+
+See [init.md](references/init.md) for all flags.
+
+## Team Edition
 
 ```bash
-# Machine A: push changes
-skillshare push -m "Add new skill"
-
-# Machine B: pull and sync
-skillshare pull --remote
+skillshare install github.com/team/skills --track   # Install as tracked repo
+skillshare update _team-skills                       # Update later
 ```
 
-## Zero-Install Runner
+Tracked repos: `_` prefix, nested paths use `__` (e.g., `_team__frontend__ui`).
 
-If skillshare is not installed, run directly via curl:
+**Naming convention:** Use `{team}:{name}` in SKILL.md to avoid collisions.
+
+## Safety
+
+- **NEVER** `rm -rf` on symlinked skills — deletes source
+- Use `skillshare uninstall <name>` to safely remove
+
+## Zero-Install
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/runkids/skillshare/main/skills/skillshare/scripts/run.sh | sh -s -- status
 ```
 
-See [scripts/run.sh](scripts/run.sh) for the full runner script.
-
 ## References
 
-- [status.md](references/status.md) - status, diff, list, doctor
-- [sync.md](references/sync.md) - sync, pull, push
-- [install.md](references/install.md) - install, uninstall
-- [targets.md](references/targets.md) - target management
-- [backup.md](references/backup.md) - backup, restore
-- [init.md](references/init.md) - init flags reference
-- [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) - Common issues and recovery
+- [init.md](references/init.md) - Init flags
+- [sync.md](references/sync.md) - Sync, pull, push
+- [install.md](references/install.md) - Install, update, uninstall
+- [status.md](references/status.md) - Status, diff, list, doctor
+- [targets.md](references/targets.md) - Target management
+- [backup.md](references/backup.md) - Backup, restore
+- [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) - Recovery

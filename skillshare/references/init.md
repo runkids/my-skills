@@ -2,6 +2,13 @@
 
 Initializes skillshare configuration.
 
+## Key Concept
+
+**Source is always `~/.config/skillshare/skills`** — never a CLI directory like `.claude/skills`.
+
+- `--copy-from claude` = import skills FROM claude INTO source
+- `--copy-from` does NOT change where source is located
+
 ## Copy Source Flags (mutually exclusive)
 
 | Flag | Description |
@@ -24,13 +31,22 @@ Initializes skillshare configuration.
 | `--git` | Initialize git in source (recommended) |
 | `--no-git` | Skip git initialization |
 
+## Discover Flags (for adding new agents to existing config)
+
+| Flag | Description |
+|------|-------------|
+| `--discover` | Detect and add new agents to existing config (interactive) |
+| `--select <list>` | Comma-separated agents to add (non-interactive, requires `--discover`) |
+
 ## Other Flags
 
 | Flag | Description |
 |------|-------------|
-| `--source <path>` | Custom source directory |
+| `--source <path>` | Custom source directory (**only if user explicitly requests**) |
 | `--remote <url>` | Set git remote (implies `--git`) |
 | `--dry-run` | Preview without making changes |
+
+**AI Note:** Never use `--source` unless the user explicitly asks to change the source location.
 
 ## Examples
 
@@ -46,4 +62,10 @@ skillshare init --no-copy --no-targets --no-git
 
 # Custom source with remote
 skillshare init --source ~/my-skills --remote git@github.com:user/skills.git
+
+# Add new agents to existing config (non-interactive)
+skillshare init --discover --select "windsurf,kilocode"
+
+# Add new agents (interactive)
+skillshare init --discover
 ```
