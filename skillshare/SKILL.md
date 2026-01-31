@@ -1,7 +1,7 @@
 ---
 name: skillshare
-version: 0.6.4
-description: Syncs skills across AI CLI tools from a single source of truth. Use when asked to "sync skills", "pull skills", "show status", "list skills", "install skill", "initialize skillshare", or manage skill targets.
+version: 0.8.0
+description: Syncs skills across AI CLI tools from a single source of truth. Use when asked to "sync skills", "collect skills", "pull from remote", "show status", "list skills", "install skill", "initialize skillshare", or manage skill targets.
 argument-hint: "[command] [target] [--dry-run]"
 ---
 
@@ -19,7 +19,7 @@ Targets: ~/.claude/skills, ~/.cursor/skills, ...  ← Symlinked from source
 skillshare status              # Always run first
 skillshare sync                # Push to all targets
 skillshare sync --dry-run      # Preview changes
-skillshare pull claude         # Import from target → source
+skillshare collect claude      # Import from target → source
 skillshare list                # Show skills and tracked repos
 ```
 
@@ -30,7 +30,7 @@ skillshare list                # Show skills and tracked repos
 | Sync skills | `skillshare sync` |
 | Preview first | `skillshare sync --dry-run` then `sync` |
 | Create new skill | `skillshare new <name>` then `sync` |
-| Pull from target | `skillshare pull <name>` then `sync` |
+| Collect from target | `skillshare collect <name>` then `sync` |
 | Install skill | `skillshare install <source>` then `sync` |
 | Install from repo (browse) | `skillshare install owner/repo` (discovery mode) |
 | Install team repo | `skillshare install <git-url> --track` then `sync` |
@@ -39,7 +39,7 @@ skillshare list                # Show skills and tracked repos
 | Remove skill | `skillshare uninstall <name>` then `sync` |
 | List skills | `skillshare list` or `list --verbose` |
 | Cross-machine push | `skillshare push -m "message"` |
-| Cross-machine pull | `skillshare pull --remote` |
+| Cross-machine pull | `skillshare pull` |
 | Backup/restore | `skillshare backup --list`, `restore <target>` |
 | Add custom target | `skillshare target add <name> <path>` |
 | Change sync mode | `skillshare target <name> --mode merge\|symlink` |

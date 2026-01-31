@@ -9,7 +9,7 @@ Common issues, solutions, and tips for AI assistants.
 | "config not found" | Config missing | Run `skillshare init` |
 | Target shows differences | Files out of sync | Run `skillshare sync` |
 | Lost source files | Deleted via symlink | `cd ~/.config/skillshare/skills && git checkout -- <skill>/` |
-| Target has local skills | Need to preserve | Ensure `merge` mode, then `skillshare pull` before sync |
+| Target has local skills | Need to preserve | Ensure `merge` mode, then `skillshare collect` before sync |
 | Skill not appearing | Not synced yet | Run `skillshare sync` after install |
 | Can't find installed skills | Wrong directory | Check `skillshare status` for source path |
 | "permission denied" | Symlink issues | Check file ownership and permissions |
@@ -67,7 +67,7 @@ Always use `--dry-run` in these situations:
 
 - User is cautious or new to skillshare
 - Before `sync` on first use
-- Before `pull --all` to see what will be imported
+- Before `collect --all` to see what will be imported
 - Before `install` from unknown sources
 - Before `restore` to preview what will change
 - Before `target remove` to understand impact

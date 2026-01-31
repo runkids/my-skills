@@ -1,4 +1,11 @@
-# Sync, Pull & Push Commands
+# Sync, Collect, Pull & Push Commands
+
+## Command Overview
+
+| 操作類型 | 命令 | 方向 |
+|----------|------|------|
+| **本地同步** | `sync` / `collect` | Source ↔ Targets |
+| **遠端同步** | `push` / `pull` | Source ↔ Git Remote |
 
 ## sync
 
@@ -9,14 +16,23 @@ skillshare sync                # Execute sync
 skillshare sync --dry-run      # Preview only
 ```
 
-## pull
+## collect
 
 Brings skills from target(s) to source.
 
 ```bash
-skillshare pull claude         # Pull from specific target
-skillshare pull --all          # Pull from all targets
-skillshare pull --remote       # Pull from git remote + sync all
+skillshare collect claude      # Collect from specific target
+skillshare collect --all       # Collect from all targets
+skillshare collect --dry-run   # Preview only
+```
+
+## pull
+
+Pulls from git remote and syncs to all targets.
+
+```bash
+skillshare pull                # Pull from git remote + sync all
+skillshare pull --dry-run      # Preview only
 ```
 
 ## push
@@ -33,9 +49,9 @@ skillshare push --dry-run      # Preview only
 
 **Local workflow:**
 1. Create skill in any target (e.g., `~/.claude/skills/my-skill/`)
-2. `skillshare pull claude` - bring to source
+2. `skillshare collect claude` - bring to source
 3. `skillshare sync` - distribute to all targets
 
 **Cross-machine workflow:**
 1. Machine A: `skillshare push` - commit and push to remote
-2. Machine B: `skillshare pull --remote` - pull from remote + sync
+2. Machine B: `skillshare pull` - pull from remote + sync
