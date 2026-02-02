@@ -1,57 +1,49 @@
 # Sync, Collect, Pull & Push Commands
 
-## Command Overview
-
-| 操作類型 | 命令 | 方向 |
-|----------|------|------|
-| **本地同步** | `sync` / `collect` | Source ↔ Targets |
-| **遠端同步** | `push` / `pull` | Source ↔ Git Remote |
+| Type | Command | Direction |
+|------|---------|-----------|
+| **Local** | `sync` / `collect` | Source ↔ Targets |
+| **Remote** | `push` / `pull` | Source ↔ Git Remote |
 
 ## sync
 
-Pushes skills from source to all targets.
-
 ```bash
-skillshare sync                # Execute sync
-skillshare sync --dry-run      # Preview only
+skillshare sync                # Execute
+skillshare sync --dry-run      # Preview
+skillshare sync --force        # Override conflicts
 ```
 
 ## collect
 
-Brings skills from target(s) to source.
+Import skills from target(s) to source.
 
 ```bash
-skillshare collect claude      # Collect from specific target
-skillshare collect --all       # Collect from all targets
-skillshare collect --dry-run   # Preview only
+skillshare collect claude      # From specific target
+skillshare collect --all       # From all targets
+skillshare collect --dry-run   # Preview
 ```
 
 ## pull
 
-Pulls from git remote and syncs to all targets.
+Git pull + sync to all targets.
 
 ```bash
-skillshare pull                # Pull from git remote + sync all
-skillshare pull --dry-run      # Preview only
+skillshare pull                # Pull + sync
+skillshare pull --dry-run      # Preview
 ```
 
 ## push
 
-Commits and pushes source to git remote.
+Git commit + push source.
 
 ```bash
-skillshare push                # Default commit message
-skillshare push -m "message"   # Custom commit message
-skillshare push --dry-run      # Preview only
+skillshare push                # Default message
+skillshare push -m "message"   # Custom message
+skillshare push --dry-run      # Preview
 ```
 
 ## Workflows
 
-**Local workflow:**
-1. Create skill in any target (e.g., `~/.claude/skills/my-skill/`)
-2. `skillshare collect claude` - bring to source
-3. `skillshare sync` - distribute to all targets
+**Local:** Edit anywhere → `collect` → `sync`
 
-**Cross-machine workflow:**
-1. Machine A: `skillshare push` - commit and push to remote
-2. Machine B: `skillshare pull` - pull from remote + sync
+**Cross-machine:** Machine A: `push` → Machine B: `pull`

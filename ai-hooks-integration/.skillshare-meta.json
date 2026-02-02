@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/runkids/ai-hooks-integration/tree/main/skills/ai-hooks-integration",
+  "type": "github-subdir",
+  "installed_at": "2026-02-02T09:56:42.427036+08:00",
+  "repo_url": "https://github.com/runkids/ai-hooks-integration.git",
+  "subdir": "skills/ai-hooks-integration",
+  "version": "2ede1b6"
+}

@@ -1,0 +1,33 @@
+name: gemini-session
+description: SessionStart/SessionEnd hooks for session lifecycle
+events:
+  SessionStart:
+    triggers: [startup, resume, clear]
+    influence: Inject context
+    input:
+      hook_name: string  # "SessionStart"
+      session_id: string
+      trigger: string  # "startup" | "resume" | "clear"
+    output:
+      systemMessage: string  # Context injected at session start
+    use_cases:
+      - Initialize resources
+      - Load project context (git, env)
+      - Set up logging
+  SessionEnd:
+    triggers: [exit, clear]
+    influence: Advisory (no blocking)
+    input:
+      hook_name: string  # "SessionEnd"
+      session_id: string
+      trigger: string  # "exit" | "clear"
+    output:
+      systemMessage: string  # Optional
+    use_cases:
+      - Cleanup resources
+      - Save state
+      - Final logging
+notes:
+  - SessionStart ideal for injecting project context
+  - SessionEnd cannot block termination
+  - stdout must be valid JSON only

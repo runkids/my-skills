@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cursor CLI hooks",
+  "type": "object",
+  "properties": {
+    "version": {"type": "integer"},
+    "hooks": {
+      "type": "object",
+      "properties": {
+        "beforeShellExecution": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "command": {"type": "string"}
+            },
+            "required": ["command"]
+          }
+        }
+      }
+    }
+  }
+}

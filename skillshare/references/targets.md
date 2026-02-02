@@ -1,33 +1,22 @@
 # Target Management
 
-## target
-
-Manages sync targets.
-
 ```bash
-skillshare target list                        # List all targets
-skillshare target claude                      # Show target info
-skillshare target add myapp ~/.myapp/skills   # Add custom target
-skillshare target remove myapp                # Remove target
+skillshare target list                        # List targets
+skillshare target claude                      # Show info
+skillshare target add myapp ~/.myapp/skills   # Add custom
+skillshare target remove myapp                # Safe unlink
 ```
 
 ## Sync Modes
 
 ```bash
-skillshare target claude --mode merge         # Individual skill symlinks (default)
-skillshare target claude --mode symlink       # Entire directory symlinked
+skillshare target claude --mode merge         # Per-skill symlinks (default)
+skillshare target claude --mode symlink       # Entire dir symlinked
 ```
 
-**Mode comparison:**
+| Mode | Local Skills | Behavior |
+|------|--------------|----------|
+| `merge` | Preserved | Individual symlinks |
+| `symlink` | Not possible | Single symlink |
 
-| Mode | Behavior | Local Skills |
-|------|----------|--------------|
-| `merge` | Creates individual symlinks for each skill | Preserved |
-| `symlink` | Entire target directory is a symlink | Not possible |
-
-## Safe Target Removal
-
-```bash
-skillshare target remove <name>     # Safe: only removes link
-# NOT: rm -rf ~/.target/skills      # Dangerous: may delete source
-```
+**Always use** `target remove` — never `rm -rf` on symlinked targets.

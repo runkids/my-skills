@@ -1,71 +1,35 @@
 # Init Command
 
-Initializes skillshare configuration.
+**Source:** Always `~/.config/skillshare/skills` (use `--source` only if user explicitly requests).
 
-## Key Concept
+## Flags
 
-**Source is always `~/.config/skillshare/skills`** — never a CLI directory like `.claude/skills`.
+**Copy (mutually exclusive):**
+- `--copy-from <name|path>` — Import from target/path
+- `--no-copy` — Empty source
 
-- `--copy-from claude` = import skills FROM claude INTO source
-- `--copy-from` does NOT change where source is located
+**Targets (mutually exclusive):**
+- `--targets "claude,cursor"` — Specific list
+- `--all-targets` — All detected
+- `--no-targets` — Skip
 
-## Copy Source Flags (mutually exclusive)
+**Git (mutually exclusive):**
+- `--git` — Init git (recommended)
+- `--no-git` — Skip
 
-| Flag | Description |
-|------|-------------|
-| `--copy-from <name\|path>` | Copy skills from target name or directory path |
-| `--no-copy` | Start with empty source |
+**Discover (add new agents):**
+- `--discover --select "windsurf,kilocode"` — Non-interactive (AI use this)
+- `--discover` — Interactive only (NOT for AI)
 
-## Target Flags (mutually exclusive)
-
-| Flag | Description |
-|------|-------------|
-| `--targets <list>` | Comma-separated targets: `"claude,cursor,codex"` |
-| `--all-targets` | Add all detected CLI targets |
-| `--no-targets` | Skip target setup |
-
-## Git Flags (mutually exclusive)
-
-| Flag | Description |
-|------|-------------|
-| `--git` | Initialize git in source (recommended) |
-| `--no-git` | Skip git initialization |
-
-## Discover Flags (for adding new agents to existing config)
-
-| Flag | Description |
-|------|-------------|
-| `--discover` | Detect and add new agents to existing config (interactive) |
-| `--select <list>` | Comma-separated agents to add (non-interactive, requires `--discover`) |
-
-## Other Flags
-
-| Flag | Description |
-|------|-------------|
-| `--source <path>` | Custom source directory (**only if user explicitly requests**) |
-| `--remote <url>` | Set git remote (implies `--git`) |
-| `--dry-run` | Preview without making changes |
-
-**AI Note:** Never use `--source` unless the user explicitly asks to change the source location.
+**Other:**
+- `--source <path>` — Custom source (**only if user requests**)
+- `--remote <url>` — Set git remote
+- `--dry-run` — Preview
 
 ## Examples
 
 ```bash
-# Fresh start with all targets and git
-skillshare init --no-copy --all-targets --git
-
-# Copy from Claude, specific targets
-skillshare init --copy-from claude --targets "claude,cursor" --git
-
-# Minimal setup
-skillshare init --no-copy --no-targets --no-git
-
-# Custom source with remote
-skillshare init --source ~/my-skills --remote git@github.com:user/skills.git
-
-# Add new agents to existing config (non-interactive)
-skillshare init --discover --select "windsurf,kilocode"
-
-# Add new agents (interactive)
-skillshare init --discover
+skillshare init --no-copy --all-targets --git           # Fresh start
+skillshare init --copy-from claude --all-targets --git  # Import from Claude
+skillshare init --discover --select "windsurf"          # Add new agents
 ```

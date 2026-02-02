@@ -8,19 +8,6 @@ Shows source location, targets, and sync state.
 skillshare status
 ```
 
-**Expected output:**
-```
-Source: ~/.config/skillshare/skills (4 skills)
-Targets:
-  claude   ✓ synced   ~/.claude/skills
-  codex    ✓ synced   ~/.codex/skills
-  cursor   ⚠ 1 diff   ~/.cursor/skills
-
-Version:
-  ✓ CLI: 0.6.4
-  ✓ Skill: 0.6.4 (up to date)
-```
-
 ## diff
 
 Shows differences between source and targets.
@@ -38,6 +25,19 @@ Lists installed skills.
 skillshare list                # Basic list
 skillshare list --verbose      # With source and install info
 ```
+
+## search
+
+Search GitHub for skills (repos with SKILL.md).
+
+```bash
+skillshare search <query>           # Interactive (select to install)
+skillshare search <query> --list    # List only, no install prompt
+skillshare search <query> --json    # JSON output for scripting
+skillshare search <query> -n 10     # Limit results (default: 20, max: 100)
+```
+
+**Requires GitHub auth** (gh CLI or `GITHUB_TOKEN` env var).
 
 ## doctor
 
