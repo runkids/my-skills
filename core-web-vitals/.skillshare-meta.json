@@ -1,7 +1,7 @@
 {
   "source": "github.com/addyosmani/web-quality-skills/skills/core-web-vitals",
   "type": "github-subdir",
-  "installed_at": "2026-02-11T04:05:39.388489+08:00",
+  "installed_at": "2026-02-11T04:07:06.2924+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/core-web-vitals",
   "version": "6a231a7"
