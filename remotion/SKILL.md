@@ -13,6 +13,14 @@ Use this skills whenever you are dealing with Remotion code to obtain the domain
 
 When dealing with captions or subtitles, load the [./rules/subtitles.md](./rules/subtitles.md) file for more information.
 
+## Using FFmpeg
+
+For some video operations, such as trimming videos or detecting silence, FFmpeg should be used. Load the [./rules/ffmpeg.md](./rules/ffmpeg.md) file for more information.
+
+## Audio visualization
+
+When needing to visualize audio (spectrum bars, waveforms, bass-reactive effects), load the [./rules/audio-visualization.md](./rules/audio-visualization.md) file for more information.
+
 ## How to use
 
 Read individual rule files for detailed explanations and code examples:
@@ -23,7 +31,7 @@ Read individual rule files for detailed explanations and code examples:
 - [rules/audio.md](rules/audio.md) - Using audio and sound in Remotion - importing, trimming, volume, speed, pitch
 - [rules/calculate-metadata.md](rules/calculate-metadata.md) - Dynamically set composition duration, dimensions, and props
 - [rules/can-decode.md](rules/can-decode.md) - Check if a video can be decoded by the browser using Mediabunny
-- [rules/charts.md](rules/charts.md) - Chart and data visualization patterns for Remotion
+- [rules/charts.md](rules/charts.md) - Chart and data visualization patterns for Remotion (bar, pie, line, stock charts)
 - [rules/compositions.md](rules/compositions.md) - Defining compositions, stills, folders, default props and dynamic metadata
 - [rules/extract-frames.md](rules/extract-frames.md) - Extract frames from videos at specific timestamps using Mediabunny
 - [rules/fonts.md](rules/fonts.md) - Loading Google Fonts and local fonts in Remotion

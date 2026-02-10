@@ -1,8 +1,8 @@
 {
   "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-router-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-02T09:56:57.773937+08:00",
+  "installed_at": "2026-02-11T04:05:51.113325+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-router-best-practices",
-  "version": "de5bc11"
+  "version": "f3dd1bf"
 }
