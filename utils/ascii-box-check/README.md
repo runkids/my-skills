@@ -4,6 +4,8 @@ Verify and fix ASCII box-drawing diagram alignment in markdown files.
 
 ## Install
 
+### Option 1: skillshare
+
 Install with [skillshare](https://github.com/runkids/skillshare) to sync this skill across all your AI CLI tools:
 
 ```bash
@@ -11,11 +13,17 @@ Install with [skillshare](https://github.com/runkids/skillshare) to sync this sk
 curl -fsSL https://raw.githubusercontent.com/runkids/skillshare/main/skills/skillshare/scripts/run.sh | sh -s -- init
 
 # Install this skill
-skillshare install runkids/skillshare -s ascii-box-check
+skillshare install runkids/my-skills -s ascii-box-check
 skillshare sync
 ```
 
-This makes the skill available in Claude Code, Cursor, Windsurf, and [44+ other AI CLIs](https://skillshare.runkids.cc/docs/targets/supported-targets) simultaneously.
+### Option 2: Skills CLI
+
+Install with [Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add runkids/my-skills -s ascii-box-check
+```
 
 ## Problem
 
