@@ -1,8 +1,8 @@
 {
   "source": "github.com/remotion-dev/skills/skills/remotion",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:43.97914+08:00",
+  "installed_at": "2026-02-20T14:32:40.961781+08:00",
   "repo_url": "https://github.com/remotion-dev/skills.git",
   "subdir": "skills/remotion",
-  "version": "f59d94b"
+  "version": "8969e87"
 }

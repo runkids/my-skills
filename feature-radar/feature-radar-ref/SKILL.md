@@ -19,7 +19,14 @@ Record external observations into `.feature-radar/references/`.
 
 ## Prerequisites
 
-Read `.feature-radar/base.md` for project context and existing references. If it doesn't exist, run the `feature-radar` skill first to bootstrap.
+<HARD-GATE>
+Before starting, verify and complete ALL:
+
+1. `.feature-radar/` directory exists — if not, tell user to run `feature-radar` skill first and STOP
+2. Read `.feature-radar/base.md`
+3. From base.md, identify: **Project Language**, **Key Feature Areas**, **Inspiration Sources**
+4. Use this context in ALL subsequent decisions
+</HARD-GATE>
 
 ## Workflow
 
@@ -33,10 +40,14 @@ Read `.feature-radar/base.md` for project context and existing references. If it
 3. **Classify** — determine the right file:
    - Existing reference file → append a new entry
    - New topic → create `.feature-radar/references/{topic}.md`
-4. **Assess impact** — does this observation imply:
-   - A new opportunity or feature idea? → mention it, suggest creating `opportunities/{nn}-{slug}.md`
-   - A way to enhance existing features? → suggest updating relevant opportunity or `base.md`
-   - An ecosystem trend? → suggest updating `specs/ecosystem-trends.md`
+4. **Assess impact**:
+
+<HARD-GATE>
+Before writing to references/, assess impact by answering ALL of these:
+- New opportunity or feature idea? → state yes/no, suggest file if yes
+- Way to enhance existing features? → state yes/no, suggest update if yes
+- Ecosystem trend? → state yes/no, suggest specs/ecosystem-trends.md update if yes
+</HARD-GATE>
 5. **Update base.md** — increment the references count in Tracking Summary
 
 ## File Format
@@ -70,3 +81,11 @@ Name by the subject being tracked, not the event:
 - Be objective. Record what happened, then assess implications separately.
 - If the observation reveals an unmet need or innovation opportunity, proactively suggest creating an opportunity.
 - Look for creative inspiration, not just feature gaps — how others solve problems can spark new ideas.
+
+## Example Output
+
+```
+→ Appended to references/cli-ux-patterns.md
+→ Suggested: new opportunity "interactive config wizard"
+→ Updated base.md: references 3 → 3 (appended, not new file)
+```

@@ -20,7 +20,14 @@ Discover new feature opportunities and add them to `.feature-radar/opportunities
 
 ## Prerequisites
 
-Read `.feature-radar/base.md` for project context, inspiration sources, and existing opportunities. If it doesn't exist, run the `feature-radar` skill first to bootstrap.
+<HARD-GATE>
+Before starting, verify and complete ALL:
+
+1. `.feature-radar/` directory exists — if not, tell user to run `feature-radar` skill first and STOP
+2. Read `.feature-radar/base.md`
+3. From base.md, identify: **Project Language**, **Key Feature Areas**, **Inspiration Sources**
+4. Use this context in ALL subsequent decisions
+</HARD-GATE>
 
 ## Workflow
 
@@ -38,7 +45,16 @@ Read `.feature-radar/base.md` for project context, inspiration sources, and exis
    - Technical breakthroughs that unlock new possibilities
    - Patterns emerging across multiple tools
 3. **Deduplicate** — check against existing `opportunities/` and `archive/` files
-4. **Evaluate each candidate**:
+4. **Cross-reference codebase** — for each candidate, search the project to check:
+   - Already partially implemented? → mark as "Partially Done"
+   - Does existing architecture support this? → note in "Design Notes"
+   - Related TODOs or FIXMEs in the code? → cite them
+5. **Evaluate each candidate**:
+
+<HARD-GATE>
+Before creating any opportunity file, evaluate the candidate against ALL 6 criteria.
+Each criterion must be explicitly addressed — do not skip any.
+</HARD-GATE>
 
 | Criterion | Question |
 |-----------|----------|
@@ -49,28 +65,12 @@ Read `.feature-radar/base.md` for project context, inspiration sources, and exis
 | **Architectural fit** | Does it align with our core philosophy? |
 | **Ecosystem timing** | Is the ecosystem ready? |
 
-5. **Create opportunity files** — for each viable candidate, write `.feature-radar/opportunities/{nn}-{slug}.md`
-6. **Update base.md** — increment opportunities count, update Value & Innovation Landscape if needed
+6. **Create opportunity files** — for each viable candidate, write `.feature-radar/opportunities/{nn}-{slug}.md`
+7. **Update base.md** — increment opportunities count, update Value & Innovation Landscape if needed
 
 ## Opportunity File Format
 
-```markdown
-# {N}. {Feature Name}
-
-**Status**: Open | Partially Done | Low Priority
-**Impact**: High | Medium | Low
-**Effort**: Low | Medium | High
-**Ref**: {source URLs — issues, PRs, discussions}
-
-## Description
-{What the feature does and why it matters}
-
-## Design Notes
-{Technical approach, open questions, dependencies}
-
-## Our Position
-{Honest assessment: do we actually want this? Does it fit our architecture?}
-```
+Use the format defined in `.feature-radar/base.md` → Classification Rules → `opportunities/`.
 
 ## Guidelines
 
@@ -80,3 +80,11 @@ Read `.feature-radar/base.md` for project context, inspiration sources, and exis
 - Write an honest "Our Position" — it's OK to say "we don't want this" or "not yet."
 - Number sequentially from the highest existing number in `opportunities/` and `archive/`.
 - If scanning reveals problems others have that we've already solved, add to `references/` instead.
+
+## Example Output
+
+```
+→ Created opportunities/07-streaming-output.md (Impact: High, Effort: Medium)
+→ Skipped: "hook system" already exists as opportunities/03-hook-system.md
+→ Updated base.md: opportunities 6 → 7
+```

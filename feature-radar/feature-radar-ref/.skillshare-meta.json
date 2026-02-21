@@ -1,8 +1,8 @@
 {
   "source": "github.com/runkids/feature-radar/skills/feature-radar-ref",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:44:19.522603+08:00",
+  "installed_at": "2026-02-20T14:32:30.50959+08:00",
   "repo_url": "https://github.com/runkids/feature-radar.git",
   "subdir": "skills/feature-radar-ref",
-  "version": "4e5d8bf"
+  "version": "b5ea1f9"
 }

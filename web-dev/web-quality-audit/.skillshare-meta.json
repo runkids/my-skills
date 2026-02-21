@@ -1,7 +1,7 @@
 {
   "source": "github.com/addyosmani/web-quality-skills/skills/web-quality-audit",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:54.494894+08:00",
+  "installed_at": "2026-02-20T14:32:49.549559+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/web-quality-audit",
   "version": "6a231a7"

@@ -30,12 +30,17 @@ If `.feature-radar/` does not exist at the project root, create it:
 └── references/
 ```
 
-Then generate `base.md` by analyzing the project:
+Then generate `base.md` by completing the following:
 
-1. Detect project type (read `go.mod`, `package.json`, `Cargo.toml`, `pyproject.toml`)
-2. Scan codebase structure — identify key directories, entry points, feature areas
-3. Identify inspiration sources — related projects, communities, upstream projects (from README, docs, issues)
-4. Write `base.md` using the template below, filling in project-specific context
+<HARD-GATE>
+Complete ALL steps before presenting base.md to the user:
+
+1. **Detect stack** — read `go.mod`, `package.json`, `Cargo.toml`, `pyproject.toml`
+2. **Map structure** — list top-level directories, identify: entry points, core logic, tests, docs
+3. **Extract features** — scan exports, commands, API routes, or public functions to build Feature Inventory
+4. **Find inspiration sources** — read README, CONTRIBUTING, docs/ for related projects and communities
+5. **Verify with user** — present the generated base.md and ask: "Does this accurately describe your project?"
+</HARD-GATE>
 
 ### base.md Template
 
@@ -168,7 +173,16 @@ On subsequent runs, read existing `base.md` — do not overwrite.
 
 ## Workflow
 
-Execute phases in order. Skip phases that don't apply.
+Execute phases in order.
+
+<HARD-GATE>
+Phase execution rules:
+- **Phase 1-3**: ALWAYS execute. These are mandatory.
+- **Phase 4** (Gap Analysis): Skip ONLY if no documentation directory exists in the project.
+- **Phase 5-6** (Evaluate & Propose): Skip ONLY if no open opportunities exist in `.feature-radar/opportunities/`.
+
+For each phase completed, state what was produced before moving to the next phase.
+</HARD-GATE>
 
 ### Phase 1: Scan & Classify
 
