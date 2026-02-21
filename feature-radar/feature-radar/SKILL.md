@@ -30,12 +30,35 @@ If `.feature-radar/` does not exist at the project root, create it:
 └── references/
 ```
 
-Then generate `base.md` by analyzing the project:
+Then generate `base.md` by completing the following:
 
-1. Detect project type (read `go.mod`, `package.json`, `Cargo.toml`, `pyproject.toml`)
-2. Scan codebase structure — identify key directories, entry points, feature areas
-3. Identify inspiration sources — related projects, communities, upstream projects (from README, docs, issues)
-4. Write `base.md` using the template below, filling in project-specific context
+<HARD-GATE>
+Complete ALL steps before presenting base.md to the user:
+
+1. **Detect stack** — read `go.mod`, `package.json`, `Cargo.toml`, `pyproject.toml`. Follow imports to understand the dependency graph. Don't just read the config — understand the architecture.
+2. **Map structure** — list top-level directories. For each, read at least one file to understand its purpose. Identify: entry points, core logic, tests, docs, configuration.
+3. **Extract features** — scan exports, commands, API routes, or public functions. Read the implementations, not just the names. Understand what each feature actually does.
+4. **Find inspiration sources** — read README, CONTRIBUTING, docs/ for related projects and communities
+5. **Verify with user** — present the generated base.md and ask: "Does this accurately describe your project?"
+</HARD-GATE>
+
+After presenting base.md, support iterative refinement:
+
+"I've generated `base.md`. Please review it. You can:
+1. **Approve as-is** — say 'looks good'
+2. **Annotate the file** — add `> NOTE: your correction here` anywhere, then say 'address my notes'
+3. **Give verbal feedback** — tell me what to change"
+
+<HARD-GATE>
+When the user says "address my notes":
+1. Read the file and find ALL lines starting with `> NOTE:`
+2. Address each note — modify the surrounding content accordingly
+3. Remove the `> NOTE:` lines after addressing them
+4. Present a summary of changes made
+5. Ask again: "All notes addressed. Anything else to adjust?"
+
+Do NOT proceed to the Workflow until the user approves base.md.
+</HARD-GATE>
 
 ### base.md Template
 
@@ -166,9 +189,30 @@ After creating the directory, ask the user:
 
 On subsequent runs, read existing `base.md` — do not overwrite.
 
+## Behavioral Directives
+
+<HARD-GATE>
+Follow ALL directives throughout this skill's execution:
+
+1. **Read deeply, not superficially** — When reading files, understand the intricacies: relationships between files, naming conventions, architectural patterns. Do NOT skim. If a file references another, follow the reference.
+2. **Artifacts over conversation** — Write findings to files, not just chat messages. Every substantive output must persist in `.feature-radar/`.
+3. **Do not stop mid-flow** — Complete ALL workflow steps before stopping. If a step yields no results, state "No findings" and continue to the next step.
+4. **State what you produced** — After each step, explicitly state: what file was created/updated, what changed, and what's next.
+5. **Do not skip phases** — Phase 1-3 are mandatory. For Phase 4-6, state the skip condition check result before deciding to skip.
+</HARD-GATE>
+
 ## Workflow
 
-Execute phases in order. Skip phases that don't apply.
+Execute phases in order.
+
+<HARD-GATE>
+Phase execution rules:
+- **Phase 1-3**: ALWAYS execute. These are mandatory.
+- **Phase 4** (Gap Analysis): Skip ONLY if no documentation directory exists in the project.
+- **Phase 5-6** (Evaluate & Propose): Skip ONLY if no open opportunities exist in `.feature-radar/opportunities/`.
+
+For each phase completed, state what was produced before moving to the next phase.
+</HARD-GATE>
 
 ### Phase 1: Scan & Classify
 
@@ -179,6 +223,8 @@ Execute phases in order. Skip phases that don't apply.
    - **Open / Partially Done** → opportunity
    - **Cross-cutting pattern** → specs
    - **External observation** → references
+
+**Checkpoint**: State classification results — how many archived, how many open, how many specs, how many references. Ask: "Phase 1 complete: {summary}. Continue to Phase 2?"
 
 ### Phase 2: Archive Completed Features
 
@@ -197,6 +243,8 @@ For each archive candidate:
 1. Create `opportunities/{nn}-{slug}.md`
 2. Assess **Impact** and **Effort** realistically
 3. Write an honest "Our Position" — do we actually want this?
+
+**Checkpoint**: List all opportunity files created with Impact/Effort ratings. Ask: "Phase 3 complete: {n} opportunities organized. Continue to Phase 4?"
 
 ### Phase 4: Gap Analysis
 
@@ -222,6 +270,8 @@ Rank into tiers:
 - **Monitor**: Low demand or premature
 - **Skip**: Conflicts with philosophy or negligible value
 
+**Checkpoint**: Present the tier ranking table. Ask: "Phase 5 complete: ranking above. Continue to Phase 6 (Propose)?"
+
 ### Phase 6: Propose & Decide
 
 1. Present **top 1-3 "Build next" features** with:
@@ -229,6 +279,23 @@ Rank into tiers:
    - Estimated effort (days, not hours)
    - Key decisions to make
 2. Ask: **"Should we enter plan mode for [feature]?"**
+
+## Completion Summary
+
+When all phases are done, present:
+
+```
+── Feature Radar: Complete ──
+
+Files created:  + {path} (new)
+Files updated:  ~ {path} (what changed)
+Files removed:  - {path} (why)
+Counts: archive {n}, opportunities {n}, specs {n}, references {n}
+Top recommendation: {feature name} — {one-line pitch}
+Next suggested action: {recommendation}
+```
+
+Do not end with "this should work" or "try this". End with the summary above.
 
 ## Guardrails
 

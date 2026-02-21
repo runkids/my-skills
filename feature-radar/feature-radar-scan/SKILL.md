@@ -1,5 +1,5 @@
 ---
-name: feature-radar:scan
+name: feature-radar-scan
 description: |
   Discover new feature opportunities from multiple sources — creative brainstorming,
   user feedback, ecosystem evolution, technical possibilities, and cross-project research —
@@ -18,9 +18,35 @@ description: |
 
 Discover new feature opportunities and add them to `.feature-radar/opportunities/`.
 
-## Prerequisites
+## Deep Read
 
-Read `.feature-radar/base.md` for project context, inspiration sources, and existing opportunities. If it doesn't exist, run the `feature-radar` skill first to bootstrap.
+<HARD-GATE>
+Before ANY action, complete ALL steps — do NOT skip or rush:
+
+1. `.feature-radar/` directory exists — if not, tell user to run `feature-radar` skill first and STOP
+2. **Read base.md thoroughly** — understand Project Context, Feature Inventory, Classification Rules, and current Tracking Summary counts
+3. **Scan existing files** — list what's already in archive/, opportunities/, specs/, references/. Read file names and headers to understand current state
+4. **Identify context** — extract and state:
+   - Project Language & Architecture
+   - Key Feature Areas (from Feature Inventory)
+   - Inspiration Sources
+   - Current counts: {archive: n, opportunities: n, specs: n, references: n}
+5. **State your understanding** — in 2-3 sentences, describe what the project does, what's already tracked, and what gaps you see
+
+Proceed to workflow ONLY after completing all 5 steps.
+</HARD-GATE>
+
+## Behavioral Directives
+
+<HARD-GATE>
+Follow ALL directives throughout this skill's execution:
+
+1. **Read deeply, not superficially** — When reading files, understand the intricacies: relationships between files, naming conventions, architectural patterns. Do NOT skim. If a file references another, follow the reference.
+2. **Artifacts over conversation** — Write findings to files, not just chat messages. Every substantive output must persist in `.feature-radar/`.
+3. **Do not stop mid-flow** — Complete ALL workflow steps before stopping. If a step yields no results, state "No findings" and continue to the next step.
+4. **State what you produced** — After each step, explicitly state: what file was created/updated, what changed, and what's next.
+5. **Filter aggressively** — Do NOT create opportunity files for weak signals. If you can't cite concrete demand evidence, skip it.
+</HARD-GATE>
 
 ## Workflow
 
@@ -38,7 +64,16 @@ Read `.feature-radar/base.md` for project context, inspiration sources, and exis
    - Technical breakthroughs that unlock new possibilities
    - Patterns emerging across multiple tools
 3. **Deduplicate** — check against existing `opportunities/` and `archive/` files
-4. **Evaluate each candidate**:
+4. **Cross-reference codebase** — for each candidate, search the project to check:
+   - Already partially implemented? → mark as "Partially Done"
+   - Does existing architecture support this? → note in "Design Notes"
+   - Related TODOs or FIXMEs in the code? → cite them
+5. **Evaluate each candidate**:
+
+<HARD-GATE>
+Before creating any opportunity file, evaluate the candidate against ALL 6 criteria.
+Each criterion must be explicitly addressed — do not skip any.
+</HARD-GATE>
 
 | Criterion | Question |
 |-----------|----------|
@@ -49,28 +84,34 @@ Read `.feature-radar/base.md` for project context, inspiration sources, and exis
 | **Architectural fit** | Does it align with our core philosophy? |
 | **Ecosystem timing** | Is the ecosystem ready? |
 
-5. **Create opportunity files** — for each viable candidate, write `.feature-radar/opportunities/{nn}-{slug}.md`
-6. **Update base.md** — increment opportunities count, update Value & Innovation Landscape if needed
+6. **Create opportunity files** — for each viable candidate, write `.feature-radar/opportunities/{nn}-{slug}.md`
+7. **Checkpoint — Review & Annotate**
+
+After writing the opportunity file(s), tell the user:
+
+"I've written the following files: {list paths}. Please review them. You can:
+1. **Approve as-is** — say 'looks good' or 'continue'
+2. **Annotate the file** — add `> NOTE: your correction here` anywhere in the file, then say 'address my notes'
+3. **Give verbal feedback** — tell me what to change
+
+I will not proceed until you confirm."
+
+<HARD-GATE>
+When the user says "address my notes":
+1. Read the file and find ALL lines starting with `> NOTE:`
+2. Address each note — modify the surrounding content accordingly
+3. Remove the `> NOTE:` lines after addressing them
+4. Present a summary of changes made
+5. Ask again: "All notes addressed. Anything else to adjust?"
+
+Do NOT proceed to the next step until the user approves.
+</HARD-GATE>
+
+8. **Update base.md** — increment opportunities count, update Value & Innovation Landscape if needed
 
 ## Opportunity File Format
 
-```markdown
-# {N}. {Feature Name}
-
-**Status**: Open | Partially Done | Low Priority
-**Impact**: High | Medium | Low
-**Effort**: Low | Medium | High
-**Ref**: {source URLs — issues, PRs, discussions}
-
-## Description
-{What the feature does and why it matters}
-
-## Design Notes
-{Technical approach, open questions, dependencies}
-
-## Our Position
-{Honest assessment: do we actually want this? Does it fit our architecture?}
-```
+Use the format defined in `.feature-radar/base.md` → Classification Rules → `opportunities/`.
 
 ## Guidelines
 
@@ -80,3 +121,26 @@ Read `.feature-radar/base.md` for project context, inspiration sources, and exis
 - Write an honest "Our Position" — it's OK to say "we don't want this" or "not yet."
 - Number sequentially from the highest existing number in `opportunities/` and `archive/`.
 - If scanning reveals problems others have that we've already solved, add to `references/` instead.
+
+## Example Output
+
+```
+→ Created opportunities/07-streaming-output.md (Impact: High, Effort: Medium)
+→ Skipped: "hook system" already exists as opportunities/03-hook-system.md
+→ Updated base.md: opportunities 6 → 7
+```
+
+## Completion Summary
+
+When all steps are done, present:
+
+```
+── Feature Radar: Scan Complete ──
+
+Files created:  + {path} (new)
+Files updated:  ~ {path} (what changed)
+Counts: archive {n}, opportunities {n}, specs {n}, references {n}
+Next suggested action: {recommendation}
+```
+
+Do not end with "this should work" or "try this". End with the summary above.

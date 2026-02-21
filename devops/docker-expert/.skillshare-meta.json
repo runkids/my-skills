@@ -1,8 +1,11 @@
 {
   "source": "github.com/davila7/claude-code-templates/cli-tool/components/skills/development/docker-expert",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:28.918588+08:00",
+  "installed_at": "2026-02-24T02:21:07.173302+08:00",
   "repo_url": "https://github.com/davila7/claude-code-templates.git",
   "subdir": "cli-tool/components/skills/development/docker-expert",
-  "version": "84485b3"
+  "version": "f52a0b9",
+  "file_hashes": {
+    "SKILL.md": "sha256:e33b08feeaa8e110c08dddd030970547356514d42aa484e52f51e2fd2d4f451b"
+  }
 }

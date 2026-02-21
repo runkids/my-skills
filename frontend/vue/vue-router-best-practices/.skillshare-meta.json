@@ -1,8 +1,19 @@
 {
   "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-router-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:42.839023+08:00",
+  "installed_at": "2026-02-24T02:21:19.840402+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-router-best-practices",
-  "version": "f3dd1bf"
+  "version": "f3dd1bf",
+  "file_hashes": {
+    "SKILL.md": "sha256:33889faf631e80bf112a096dfe3e76029447f05f99d6d5c0aea2daddff186d7c",
+    "reference/router-beforeenter-no-param-trigger.md": "sha256:8cf2bd4e3f40cf24b14962ea0b33b31d736d56db891aafdd721e4ca68d82c6ad",
+    "reference/router-beforerouteenter-no-this.md": "sha256:c525231bb699cacb2764e804312df2c601ba9f23d7b81936bbaf418b015d1ced",
+    "reference/router-guard-async-await-pattern.md": "sha256:97521c582a7495e5540c93975737562c41d0eb3aa99c2fb3a6acaa2411ecd69e",
+    "reference/router-navigation-guard-infinite-loop.md": "sha256:38749bac69bc717cb99539f61fa4994c9294acbb795b5b93c80e1775b0c5b2cf",
+    "reference/router-navigation-guard-next-deprecated.md": "sha256:81dee3b480c31f72456fc4a81a67a717c1f96b798fcafb938ac18b92bb7bf8c0",
+    "reference/router-param-change-no-lifecycle.md": "sha256:8813b065391b5467e878935d196eb014d5dd27ee599a128b5194a0dc0da1b557",
+    "reference/router-simple-routing-cleanup.md": "sha256:3ff3b3d102f0312fe53da77d3c54c0a1e938e511ec2588bcc53bc02f35b99374",
+    "reference/router-use-vue-router-for-production.md": "sha256:4212de1b50d1f53d5f831ca6945d53994e8e2cfbfb11b0a0c232bc53c032c8a1"
+  }
 }

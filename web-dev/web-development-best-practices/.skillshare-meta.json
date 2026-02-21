@@ -1,8 +1,11 @@
 {
   "source": "github.com/addyosmani/web-quality-skills/skills/best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:53.510299+08:00",
+  "installed_at": "2026-02-24T02:21:29.758376+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/best-practices",
-  "version": "6a231a7"
+  "version": "6a231a7",
+  "file_hashes": {
+    "SKILL.md": "sha256:f32182e2cd742818f6b3b86f40be319eeae9cb10e392e3e4a8e8f586bad4eccf"
+  }
 }

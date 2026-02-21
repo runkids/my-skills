@@ -1,0 +1,11 @@
+{
+  "source": "github.com/millionco/react-doctor/skills/react-doctor",
+  "type": "github-subdir",
+  "installed_at": "2026-02-24T02:21:14.185952+08:00",
+  "repo_url": "https://github.com/millionco/react-doctor.git",
+  "subdir": "skills/react-doctor",
+  "version": "97b21f1",
+  "file_hashes": {
+    "SKILL.md": "sha256:31122cb810ac47fbb65632c7c055fd5a08f3bd397869910ff23f440ed106ac84"
+  }
+}

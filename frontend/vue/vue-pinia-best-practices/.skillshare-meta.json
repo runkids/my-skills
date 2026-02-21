@@ -1,8 +1,17 @@
 {
   "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-pinia-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:41.584197+08:00",
+  "installed_at": "2026-02-24T02:21:18.763996+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-pinia-best-practices",
-  "version": "f3dd1bf"
+  "version": "f3dd1bf",
+  "file_hashes": {
+    "SKILL.md": "sha256:70c5fae1e97d1df1d7a1207ad1df606d0c7375855f0c1cb0c9c94351931ab862",
+    "reference/pinia-no-active-pinia-error.md": "sha256:fa4d1c2f6d76301532f93607be12ebbb8bee0617df28048897a0024f1045aeaf",
+    "reference/pinia-setup-store-return-all-state.md": "sha256:95d5864bc01a56a40a12017dad428ea57f23b882e0a02d628643edffb8647424",
+    "reference/pinia-store-destructuring-breaks-reactivity.md": "sha256:7f00a924204a3648e2654379b4c7d71259bb0ec3dc5f68f3a11034b6f56e08cf",
+    "reference/state-url-for-ephemeral-filters.md": "sha256:577f7b629c84b82775de6b3dd7b114fac419f91b648e86c0c6b2966d1ad74ffd",
+    "reference/state-use-pinia-for-large-apps.md": "sha256:6fe95588bbc4d9eb3051e6d8898cfbf3d074c34aae20aadeea08f73e8bfccefd",
+    "reference/store-method-binding-parentheses.md": "sha256:5275681aaa16ed6fb506a3899c72c545c26f1873296878324d5317573215f3a0"
+  }
 }

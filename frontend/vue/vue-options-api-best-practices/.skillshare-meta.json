@@ -1,8 +1,21 @@
 {
   "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-options-api-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-18T19:43:40.374139+08:00",
+  "installed_at": "2026-02-24T02:21:17.691418+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-options-api-best-practices",
-  "version": "f3dd1bf"
+  "version": "f3dd1bf",
+  "file_hashes": {
+    "SKILL.md": "sha256:fd0a8c9e698a5d0413290f5c8e934f8ddd8c3db68ea5c2bd352a749b85744ea8",
+    "reference/no-arrow-functions-in-lifecycle-hooks.md": "sha256:09976ddecb206b254e3df0e605bd8e0fe2b5d097a326ec7093546cb8ed3320e7",
+    "reference/no-arrow-functions-in-methods.md": "sha256:6e47800df48a714983d5c9456e409d0985b2e1ad41e6b93043bcbe24d06ad2ed",
+    "reference/stateful-methods-lifecycle.md": "sha256:ce572e7e1f206d76065f5df5a9ff361239bc758e644474f7da026ac945e010ad",
+    "reference/ts-options-api-arrow-functions-validators.md": "sha256:0c5a6525ccf71c9fa709b2039534d9c204c2bfa9e5a8d50be161db295340edfd",
+    "reference/ts-options-api-computed-return-types.md": "sha256:1f7069179859fc7dbb881fa88539c2259ed408eb8d88024ad710cc2d3742b271",
+    "reference/ts-options-api-proptype-complex-types.md": "sha256:3c6b97836b0b0525e1be0467086b6c82759ff1eb349342f4ef07bdd98c786489",
+    "reference/ts-options-api-provide-inject-limitations.md": "sha256:fbca83e55f8444212a48d63ba73f7b017f507a1e281c0f9ac1d68a9ab152e7e4",
+    "reference/ts-options-api-type-event-handlers.md": "sha256:7f0ee1f5c093c09ca743323e9a4999fc89b0c23c364d6143aa508a36862ef358",
+    "reference/ts-options-api-use-definecomponent.md": "sha256:7430211d979c775b3b4578438447a1d4c4b02c3ec925908041ae4f808eb7d788",
+    "reference/ts-strict-mode-options-api.md": "sha256:ce786575eeb5b4a9db2b3d9890dd9691a6a09316797f4010a728d140d528464b"
+  }
 }
