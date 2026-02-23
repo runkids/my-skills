@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/zarazhangrui/frontend-slides",
+  "type": "github",
+  "installed_at": "2026-02-25T03:27:36.152946+08:00",
+  "repo_url": "https://github.com/zarazhangrui/frontend-slides.git",
+  "version": "89a909b",
+  "file_hashes": {
+    "LICENSE": "sha256:62928eb197fe4662d1efc3af0735b3ba5df3c0308badd9a2baf2b619009f5366",
+    "README.md": "sha256:40a2945d6ed3b90f0ea0ef68db9e7f6b63a23688dc2fc5a5d1fc56ef91130693",
+    "SKILL.md": "sha256:e7a8227a0ef235e9168d5677760fb54f9291699346b3ae163e78dd5c25482c33",
+    "STYLE_PRESETS.md": "sha256:a8bfe8ff2c0ee9c716e245e0ffd156979a032203f1548e3d45eb86db4c3f0c3e"
+  }
+}
