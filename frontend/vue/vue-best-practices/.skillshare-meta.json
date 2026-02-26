@@ -1,10 +1,11 @@
 {
-  "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-best-practices",
+  "source": "https://github.com/vuejs-ai/skills.git/skills/vue-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:15.391754+08:00",
+  "installed_at": "2026-02-27T00:47:48.406821+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-best-practices",
   "version": "f3dd1bf",
+  "tree_hash": "86b8f7ca082668082f9251782859b316a1c046de",
   "file_hashes": {
     "SKILL.md": "sha256:05b373713e6bbd216fb3ee9709289b68bcdeb9eac8ffea477e35bdbd8e0f9acd",
     "references/animation-class-based-technique.md": "sha256:d37e4ae4f124454fc5dfa54d23816edb16d337228641a77ec04c8ee9fe5a32fe",

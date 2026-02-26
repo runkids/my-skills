@@ -1,10 +1,11 @@
 {
-  "source": "github.com/anthropics/skills/skills/web-artifacts-builder",
+  "source": "https://github.com/anthropics/skills.git/skills/web-artifacts-builder",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:27.25216+08:00",
+  "installed_at": "2026-02-27T00:47:52.539351+08:00",
   "repo_url": "https://github.com/anthropics/skills.git",
   "subdir": "skills/web-artifacts-builder",
-  "version": "1ed29a0",
+  "version": "3d59511",
+  "tree_hash": "9ecbeae7c17caa478c5b753ba1bd258688075b5f",
   "file_hashes": {
     "LICENSE.txt": "sha256:58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
     "SKILL.md": "sha256:81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",

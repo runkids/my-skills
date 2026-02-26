@@ -1,10 +1,11 @@
 {
-  "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-pinia-best-practices",
+  "source": "https://github.com/vuejs-ai/skills.git/skills/vue-pinia-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:18.763996+08:00",
+  "installed_at": "2026-02-27T00:47:48.337741+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-pinia-best-practices",
   "version": "f3dd1bf",
+  "tree_hash": "4c331972ffdfb75666dc449fb3a4c18c37d53693",
   "file_hashes": {
     "SKILL.md": "sha256:70c5fae1e97d1df1d7a1207ad1df606d0c7375855f0c1cb0c9c94351931ab862",
     "reference/pinia-no-active-pinia-error.md": "sha256:fa4d1c2f6d76301532f93607be12ebbb8bee0617df28048897a0024f1045aeaf",

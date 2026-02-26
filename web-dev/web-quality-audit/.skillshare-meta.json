@@ -1,10 +1,11 @@
 {
-  "source": "github.com/addyosmani/web-quality-skills/skills/web-quality-audit",
+  "source": "https://github.com/addyosmani/web-quality-skills.git/skills/web-quality-audit",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:30.735797+08:00",
+  "installed_at": "2026-02-27T00:47:50.716788+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/web-quality-audit",
   "version": "6a231a7",
+  "tree_hash": "6a9eb661cd83a05c16e5ef41bbc4e23d4b0692f3",
   "file_hashes": {
     "SKILL.md": "sha256:aaada64b636b867d737dfd488fd947a7ca5c280983caf3b96b8915e08ad7ef01",
     "scripts/analyze.sh": "sha256:5c500ceda2848f2e328ca54a2a5a2338e955176089a4f945e917d8473a4b4253"

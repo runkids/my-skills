@@ -1,10 +1,11 @@
 {
-  "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-debug-guides",
+  "source": "https://github.com/vuejs-ai/skills.git/skills/vue-debug-guides",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:16.662452+08:00",
+  "installed_at": "2026-02-27T00:47:48.292475+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-debug-guides",
   "version": "f3dd1bf",
+  "tree_hash": "63f4b12e3086b2ad3a100cb3dd6c27ea32424ac6",
   "file_hashes": {
     "SKILL.md": "sha256:c39cee74b0b6a4a8f7e50447ae9fd7494c80e86f50dc75753620e2ebeae22c3f",
     "reference/animation-key-for-rerender.md": "sha256:e24e3186c65b61def435e2403b69ebeed475313b5cb3a4883a66c15f3269054c",

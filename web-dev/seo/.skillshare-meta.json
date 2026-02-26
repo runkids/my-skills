@@ -1,10 +1,11 @@
 {
-  "source": "github.com/addyosmani/web-quality-skills/skills/seo",
+  "source": "https://github.com/addyosmani/web-quality-skills.git/skills/seo",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:26.090475+08:00",
+  "installed_at": "2026-02-27T00:47:50.698195+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/seo",
   "version": "6a231a7",
+  "tree_hash": "4e2636fafef2fbd4ffa6eb8474ad0f0b5f3ff4ac",
   "file_hashes": {
     "SKILL.md": "sha256:f3e546112a3168515486c533d13156a1d4dcd9402f3d116730cef573a20e2804"
   }

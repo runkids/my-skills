@@ -1,18 +1,19 @@
 {
-  "source": "github.com/remotion-dev/skills/skills/remotion",
+  "source": "https://github.com/remotion-dev/skills.git/skills/remotion",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:20.798555+08:00",
+  "installed_at": "2026-02-27T00:47:49.702437+08:00",
   "repo_url": "https://github.com/remotion-dev/skills.git",
   "subdir": "skills/remotion",
-  "version": "e9d8ecd",
+  "version": "937ffb3",
+  "tree_hash": "666980630dc910c6b623f3bab13280af47d6995e",
   "file_hashes": {
-    "SKILL.md": "sha256:af627225edda7420907d4f66bc07d9a111ee5e276bd3e45705bf118fb8e7cdbb",
+    "SKILL.md": "sha256:2f9be561c1c3659aea1b4c777a9b57733dcd466b6e85231316d2841d947584bf",
     "rules/3d.md": "sha256:42cef6d68fb4a266ab495d35df0c60e03672b0d85c043f9b567f6aa7ff00dd0d",
     "rules/animations.md": "sha256:4fbc3c908fa27725534a8bfeaf26c58a58750790bc0e98dc8745e27734a9abb2",
     "rules/assets.md": "sha256:68b70928aaea682165f33dc8e98278d9dca8512b50e44abc2c884ee5f3ac78de",
-    "rules/assets/charts-bar-chart.tsx": "sha256:b1adc9628ca8f820910bce699942c0dce77c26edb5295bf19d9b7c356531c548",
-    "rules/assets/text-animations-typewriter.tsx": "sha256:224d64579436d7fa8ef2b586a541583b165e9f9b152f553219000d994cc9c504",
-    "rules/assets/text-animations-word-highlight.tsx": "sha256:c60ba4561f0c1376f08aed0b6e204f0db4485950d09c081ea0aac13191127023",
+    "rules/assets/charts-bar-chart.tsx": "sha256:6e5e219c596c8515336570a5bc89c233e32e695d5816dec88eb929e798eeea61",
+    "rules/assets/text-animations-typewriter.tsx": "sha256:92b5f47d6d18387a0aa008ce9dceefd30f673ae5879e16892bd4b4ea97f5dddb",
+    "rules/assets/text-animations-word-highlight.tsx": "sha256:30e707bbc90e3734fcdb0f9e869bdb9fbbaf8ded1d923951d616f5ba402ce03d",
     "rules/audio-visualization.md": "sha256:0f4043de86639b6390e5ab888eaa66a24a10a8bd540f1443327cb88107eae1e9",
     "rules/audio.md": "sha256:e931664ac23bc4acfa137d8b415702bb4860b4fbabd6caed0042c0902d3bec90",
     "rules/calculate-metadata.md": "sha256:fc7c3f411a38020686e1295078fdf0ac9e1b889296192b5c7d4a4871edb2b662",
@@ -36,6 +37,7 @@
     "rules/measuring-text.md": "sha256:5cab1807b9ae9f5be3fc0e1cb0e0513a69451e31e32657d6a665573331db6807",
     "rules/parameters.md": "sha256:9de38837a07dc406052dfbb759c58ca5298ca331d86d9aa0f4e177b339e288b5",
     "rules/sequencing.md": "sha256:7c18f2ac36974fd7b85c01efa1135ea06a14e8492dd9fe82ced3bec0b4bb605d",
+    "rules/sfx.md": "sha256:43d8dc8ca9c98328ca300f95c3ec7d50e504873ee78f6198b7439a2e7d1a6893",
     "rules/subtitles.md": "sha256:9f18ec4a9c88adf35d51b44aaf344442443fd687a4dc948366ebb683fc3ecd30",
     "rules/tailwind.md": "sha256:6212ce72abe5eaee0eb41822b2cdf944b77ad9b082426909beb2da07151e1788",
     "rules/text-animations.md": "sha256:40ac6b1bccf1c57d9edd46c74e847ec6e86fe775d3ef4fd14e1338f4a2606171",
@@ -45,6 +47,6 @@
     "rules/transparent-videos.md": "sha256:394ccda476e084522d544471fee92d7c65672e2cbaf2201a785c3dd5c74f31a4",
     "rules/trimming.md": "sha256:ae00948f6a903e384c7c312896adba9b50ed592f24a5a090699b7345849b36b9",
     "rules/videos.md": "sha256:d9d3032a57f92c759daf0bd60b3282f6810ecc9958e9093a6b828de623b05328",
-    "rules/voiceover.md": "sha256:e28f52155b4c97c346de1fc5c6582256271accf139b19ff0652a1cf22414d6f4"
+    "rules/voiceover.md": "sha256:8dcdcc46792a6a6146169688edebf95453f7ec94d118043cc2e429538732b97a"
   }
 }

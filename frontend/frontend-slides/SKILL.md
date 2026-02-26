@@ -228,12 +228,14 @@ If you find yourself with too much content:
 - Shorten text (aim for 1-2 lines per bullet)
 - Use smaller code snippets
 - Create a "continued" slide
+- **When adding images to existing slides:** Move image to new slide or reduce other content first
 
 **DON'T:**
 - Reduce font size below readable limits
 - Remove padding/spacing entirely
 - Allow any scrolling
 - Cram content to fit
+- Add images without checking if existing content already fills the viewport
 
 ### Testing Viewport Fit
 
@@ -260,6 +262,53 @@ First, determine what the user wants:
 **Mode C: Existing Presentation Enhancement**
 - User has an HTML presentation and wants to improve it
 - Read the existing file, understand the structure, then enhance
+- **CRITICAL: When modifying existing slides, ALWAYS ensure viewport fitting is maintained**
+
+### Mode C: Critical Modification Rules
+
+When enhancing existing presentations, follow these mandatory rules:
+
+**1. Before Adding Any Content:**
+- Read the current slide structure and count existing elements
+- Check against content density limits (see table above)
+- Calculate if the new content will fit within viewport constraints
+
+**2. When Adding Images (MOST COMMON ISSUE):**
+- Images must have `max-height: min(50vh, 400px)` or similar viewport constraint
+- Check if current slide already has maximum content (1 heading + 1 image)
+- If adding an image to a slide with existing content → **Split into two slides**
+- Example: If slide has heading + 4 bullets, and user wants to add an image:
+  - **DON'T:** Cram image onto same slide
+  - **DO:** Create new slide with heading + image, keep bullets on original slide
+  - **OR:** Reduce bullets to 2-3 and add image with proper constraints
+
+**3. When Adding Text Content:**
+- Max 4-6 bullet points per slide
+- Max 2 paragraphs per slide
+- If adding content exceeds limits → **Split into multiple slides or create a continuation slide**
+
+**4. Required Checks After ANY Modification:**
+```
+✅ Does the slide have `overflow: hidden` on `.slide` class?
+✅ Are all new elements using `clamp()` for font sizes?
+✅ Do new images have viewport-relative max-height?
+✅ Does total content respect density limits?
+✅ Will this fit on a 1280×720 screen? On mobile portrait?
+```
+
+**5. Proactive Reorganization (NOT Optional):**
+When you detect that modifications will cause overflow:
+- **Automatically split content across slides** — Don't wait for user to ask
+- Inform user: "I've reorganized the content across 2 slides to ensure proper viewport fitting"
+- Use "continued" pattern for split content (e.g., "Key Features" → "Key Features (Continued)")
+
+**6. Testing After Modifications:**
+Mentally verify the modified slide at these viewport sizes:
+- Desktop: 1280×720 (smallest common)
+- Tablet portrait: 768×1024
+- Mobile: 375×667
+
+**If in doubt → Split the content. Never allow scrolling within a slide.**
 
 ---
 
@@ -267,7 +316,9 @@ First, determine what the user wants:
 
 Before designing, understand the content. Ask via AskUserQuestion:
 
-### Step 1.1: Presentation Context
+### Step 1.1: Presentation Context + Images (Single Form)
+
+**IMPORTANT:** Ask ALL 4 questions in a single AskUserQuestion call so the user can fill everything out at once before submitting.
 
 **Question 1: Purpose**
 - Header: "Purpose"
@@ -294,7 +345,67 @@ Before designing, understand the content. Ask via AskUserQuestion:
   - "I have rough notes" — Need help organizing into slides
   - "I have a topic only" — Need help creating the full outline
 
+**Question 4: Images**
+- Header: "Images"
+- Question: "Do you have images to include? Select 'No images' or select Other and type/paste your image folder path."
+- Options:
+  - "No images" — Text-only presentation (use CSS-generated visuals instead)
+  - "./assets" — Use the `assets/` folder in the current project
+
+The user can select **"Other"** to type or paste any custom folder path (e.g. `~/Desktop/screenshots`). This way the image folder path is collected in the same form — no extra round-trip.
+
+**Question 5: Inline Editing**
+- Header: "Editing"
+- Question: "Do you need to edit text directly in the browser after generation?"
+- Options:
+  - "Yes (Recommended)" — Can edit text in-browser, auto-save to localStorage, export file
+  - "No" — Presentation only, keeps file smaller
+
+**Remember the user's choice — it determines whether edit-related HTML/CSS/JS is included in Phase 3.**
+
 If user has content, ask them to share it (text, bullet points, images, etc.).
+
+### Step 1.2: Image Evaluation
+
+**User-provided assets are important visual anchors** — but not every asset is necessarily usable. The first step is always to evaluate. After evaluation, the curated assets become additional context that shapes how the presentation is built. This is a **co-design process**: text content + curated visuals together inform the slide structure from the start, not a post-hoc "fit images in after the fact."
+
+**If user selected "No images"** → Skip the entire image pipeline. Proceed directly to Phase 2 (Style Discovery) and Phase 3 (Generate Presentation) using text content only. The presentation will use CSS-generated visuals (gradients, shapes, patterns, typography) for visual interest — this is the original behavior and produces fully polished results without any images.
+
+**If user provides an image folder:**
+
+1. **Scan the folder** — Use `ls` to list all image files (`.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`)
+2. **View each image** — Use the Read tool to see what each image contains (Claude is multimodal)
+3. **Evaluate each image** — For each image, assess:
+   - Filename and dimensions
+   - What it shows (screenshot, logo, chart, diagram, photo)
+   - **Usability:** Is the image clear, relevant to the presentation topic, and high enough quality? Mark as `USABLE` or `NOT USABLE` (with reason: blurry, irrelevant, broken, etc.)
+   - **Content signal:** What feature or concept does this image represent? (e.g., "chat_ui.png" → "conversational interface feature")
+   - Shape: square, landscape, portrait, circular
+   - Dominant colors (important for style compatibility later)
+4. **Present the evaluation and proposed slide outline to the user** — Show which images are usable and which are not, with reasons. Then show the proposed slide outline with image assignments.
+
+**Co-design: curated assets inform the outline**
+
+After evaluation, the **usable** images become context for planning the slide structure alongside text content. This is not "plan slides then add images" — it's designing the presentation around both text and visuals from the start:
+
+- 3 usable product screenshots → plan 3 feature slides, each anchored by one screenshot
+- 1 usable logo → title slide and/or closing slide
+- 1 usable architecture diagram → dedicated "How It Works" slide
+- 1 blurry/irrelevant image → excluded, with explanation to user
+
+This means curated images are factored in **before** style selection (Phase 2) and **before** HTML generation (Phase 3). They are co-equal context in the design process.
+
+5. **Confirm outline via AskUserQuestion** — Do NOT break the flow by asking the user to type free text. Use AskUserQuestion to confirm:
+
+**Question: Outline Confirmation**
+- Header: "Outline"
+- Question: "Does this slide outline and image selection look right?"
+- Options:
+  - "Looks good, proceed" — Move on to style selection
+  - "Adjust images" — I want to change which images go where
+  - "Adjust outline" — I want to change the slide structure
+
+This keeps the entire flow in the AskUserQuestion format without dropping to free-text chat.
 
 ---
 
@@ -421,6 +532,8 @@ Each preview file should be:
 - Animated to demonstrate motion style
 - ~50-100 lines, not a full presentation
 
+**Logo in previews (if available):** If the user provided images in Step 1.2 and a logo was identified as `USABLE`, embed it (base64) into each of the 3 style previews. This creates a "wow moment" — the user sees their own brand identity styled three different ways, making the choice feel personal rather than abstract. Apply any necessary processing (e.g., circular crop) per-style so each preview shows the logo as it would actually appear in the final presentation. If no logo was provided, generate previews without one — this is fine.
+
 Present to user:
 ```
 I've created 3 style previews for you to compare:
@@ -458,8 +571,131 @@ If "Mix elements", ask for specifics.
 ## Phase 3: Generate Presentation
 
 Now generate the full presentation based on:
-- Content from Phase 1
+- Content from Phase 1 (text only, or text + curated images)
 - Style from Phase 2
+
+If the user provided images, the slide outline already incorporates them as visual anchors from Step 1.2. If not, proceed with text-only content — CSS-generated visuals (gradients, shapes, patterns) provide visual interest.
+
+### Image Pipeline (skip if no images)
+
+If the user chose "No images" in Step 1.2, **skip this entire section** and go straight to generating HTML. The presentation will be text-only with CSS-generated visuals — this is a fully supported, first-class path.
+
+If the user provided images, execute these steps **before** generating HTML.
+
+**Key principle: Co-design, not post-hoc.** The curated images from Step 1.2 (those marked `USABLE`) are already part of the slide outline. The pipeline's job here is to process images for the chosen style and place them in the HTML.
+
+#### Step 3.1: Image Processing (Pillow)
+
+For each curated image, determine what processing it needs based on the chosen style (e.g., circular crop for logos, resize for large files) and what CSS framing will bridge any color gaps between the image and the style's palette. Then process accordingly.
+
+**Rules:**
+- **Never repeat** the same image on multiple slides (except logos which may bookend title + closing)
+- **Always add CSS framing** (border, glow, shadow) for images whose colors clash with the style's palette
+
+**Dependency:** Python `Pillow` library (the standard image processing library for Python).
+
+```bash
+# Install if not available (portable across macOS/Linux/Windows)
+pip install Pillow
+```
+
+This is analogous to how `python-pptx` is used in Phase 4 (PPT Conversion) — a standard, well-maintained Python package that any user can install.
+
+**Common processing operations:**
+
+```python
+from PIL import Image, ImageDraw
+
+# ─── Circular Crop (for logos on modern/clean styles) ───
+def crop_circle(input_path, output_path):
+    """Crop a square image to a circle with transparent background."""
+    img = Image.open(input_path).convert('RGBA')
+    w, h = img.size
+    # Make square if not already
+    size = min(w, h)
+    left = (w - size) // 2
+    top = (h - size) // 2
+    img = img.crop((left, top, left + size, top + size))
+    # Create circular mask
+    mask = Image.new('L', (size, size), 0)
+    draw = ImageDraw.Draw(mask)
+    draw.ellipse([0, 0, size, size], fill=255)
+    img.putalpha(mask)
+    img.save(output_path, 'PNG')
+
+# ─── Resize (for oversized images that inflate the HTML) ───
+def resize_max(input_path, output_path, max_dim=1200):
+    """Resize image so largest dimension <= max_dim. Preserves aspect ratio."""
+    img = Image.open(input_path)
+    img.thumbnail((max_dim, max_dim), Image.LANCZOS)
+    img.save(output_path, quality=85)
+
+# ─── Add Padding / Background (for images that need breathing room) ───
+def add_padding(input_path, output_path, padding=40, bg_color=(0, 0, 0, 0)):
+    """Add transparent padding around an image."""
+    img = Image.open(input_path).convert('RGBA')
+    w, h = img.size
+    new = Image.new('RGBA', (w + 2*padding, h + 2*padding), bg_color)
+    new.paste(img, (padding, padding), img)
+    new.save(output_path, 'PNG')
+```
+
+**When to apply each operation:**
+
+| Situation | Operation |
+|-----------|-----------|
+| Square logo on a style with rounded aesthetics | `crop_circle()` |
+| Image > 1MB (slow to load) | `resize_max(max_dim=1200)` |
+| Screenshot needs breathing room in layout | `add_padding()` |
+| Image has wrong aspect ratio for its slide slot | Manual crop with `img.crop((left, top, right, bottom))` |
+
+**Save processed images** alongside originals with a `_processed` suffix (e.g., `logo_round.png`). Never overwrite the user's original files.
+
+#### Step 3.2: Place Images
+
+**Use direct file paths** — do NOT convert images to base64 data URIs. Since presentations are viewed locally, reference images with relative paths from the HTML file:
+
+```html
+<img src="assets/logo_round.png" alt="Logo" class="slide-image logo">
+<img src="assets/screenshot.png" alt="Screenshot" class="slide-image screenshot">
+```
+
+This keeps the HTML file small and images easy to swap. Only use base64 encoding if the user explicitly requests a fully self-contained single-file presentation.
+
+**Image CSS classes (adapt border/glow colors to match the chosen style):**
+```css
+/* Base image constraint — CRITICAL for viewport fitting */
+.slide-image {
+    max-width: 100%;
+    max-height: min(50vh, 400px);
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Screenshots: add framing to bridge color gaps with the style */
+.slide-image.screenshot {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Logos: smaller, no frame */
+.slide-image.logo {
+    max-height: min(30vh, 200px);
+}
+```
+
+**IMPORTANT:** Adapt the `.screenshot` border and shadow colors to match the chosen style's accent color. For example:
+- Dark Botanical (gold accent): `border: 1px solid rgba(197, 160, 89, 0.2); box-shadow: 0 0 20px rgba(197, 160, 89, 0.08);`
+- Creative Voltage (neon yellow): `border: 2px solid rgba(212, 255, 0, 0.25); box-shadow: 0 0 20px rgba(212, 255, 0, 0.08);`
+
+**Placement patterns:**
+- **Title slide:** Logo centered above or beside the title
+- **Feature slides:** Screenshot on one side, text on the other (two-column layout)
+- **Full-bleed:** Image as slide background with text overlay (use with caution)
+- **Inline:** Image within content flow, centered, with caption below
+
+**Note:** Processed images (e.g. `logo_round.png`) are saved alongside originals in the assets folder. Reference them with relative paths in the HTML.
 
 ### File Structure
 
@@ -688,6 +924,95 @@ Every presentation should include:
    - 3D tilt on hover
    - Magnetic buttons
    - Counter animations
+   - **Inline editing** (only if user opted in during content discovery):
+     - Edit toggle button (hidden by default, revealed via hover hotzone or `E` key)
+     - Auto-save to localStorage
+     - Export/save file functionality
+     - See "Edit Button Implementation" section below for required code patterns
+
+### Edit Button Implementation (When User Opts In)
+
+**If the user chose "No" for inline editing in Phase 1, skip this entirely — do not generate any edit-related HTML, CSS, or JS.**
+
+**⚠️ Critical: Do NOT use CSS `~` sibling selector for hover-based show/hide.**
+
+The CSS-only approach (`edit-hotzone:hover ~ .edit-toggle`) fails because `pointer-events: none` on the toggle button causes the hover chain to break: user hovers hotzone → button becomes visible → mouse moves toward button → leaves hotzone → button disappears before click reaches it.
+
+**Required approach: JS-based hover with delay timeout.**
+
+HTML structure:
+```html
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="编辑模式 (E)">✏️</button>
+```
+
+CSS (visibility controlled by JS classes only):
+```css
+/* ⚠️ Do NOT use CSS ~ sibling selector for this!
+   pointer-events: none breaks the hover chain.
+   Must use JS with delay timeout. */
+.edit-hotzone {
+    position: fixed; top: 0; left: 0;
+    width: 80px; height: 80px;
+    z-index: 10000;
+    cursor: pointer;
+}
+.edit-toggle {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10001;
+}
+/* Only JS-added classes control visibility */
+.edit-toggle.show,
+.edit-toggle.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+```
+
+JS (all three interaction methods):
+```javascript
+// 1. Click handler on the toggle button
+document.getElementById('editToggle').addEventListener('click', () => {
+    editor.toggleEditMode();
+});
+
+// 2. Hotzone hover with 400ms grace period
+const hotzone = document.querySelector('.edit-hotzone');
+const editToggle = document.getElementById('editToggle');
+let hideTimeout = null;
+
+hotzone.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimeout);
+    editToggle.classList.add('show');
+});
+hotzone.addEventListener('mouseleave', () => {
+    hideTimeout = setTimeout(() => {
+        if (!editor.isActive) editToggle.classList.remove('show');
+    }, 400);
+});
+editToggle.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimeout);
+});
+editToggle.addEventListener('mouseleave', () => {
+    hideTimeout = setTimeout(() => {
+        if (!editor.isActive) editToggle.classList.remove('show');
+    }, 400);
+});
+
+// 3. Hotzone direct click
+hotzone.addEventListener('click', () => {
+    editor.toggleEditMode();
+});
+
+// 4. Keyboard shortcut (E key, skip when editing text)
+document.addEventListener('keydown', (e) => {
+    if ((e.key === 'e' || e.key === 'E') && !e.target.getAttribute('contenteditable')) {
+        editor.toggleEditMode();
+    }
+});
+```
 
 ### Code Quality Requirements
 
@@ -725,6 +1050,10 @@ class CustomCursor {
     }
 }
 ```
+
+**CSS Function Negation:**
+- Never negate CSS functions directly — `-clamp()`, `-min()`, `-max()` are silently ignored by browsers with no console error
+- Always use `calc(-1 * clamp(...))` instead. See STYLE_PRESETS.md → "CSS Gotchas" for details.
 
 **Responsive & Viewport Fitting (CRITICAL):**
 
@@ -880,6 +1209,14 @@ Your presentation is ready!
 - Animations: Modify `.reveal` class timings
 
 Would you like me to make any adjustments?
+```
+
+If the user opted in to inline editing, also include:
+```
+**Editing:**
+- Hover over top-left corner or press E to enter edit mode
+- Click any text to edit directly
+- Ctrl+S or click "Save file" to save changes
 ```
 
 ---
@@ -1073,15 +1410,22 @@ class TiltEffect {
 ## Example Session Flow
 
 1. User: "I want to create a pitch deck for my AI startup"
-2. Skill asks about purpose, length, content
-3. User shares their bullet points and key messages
-4. Skill asks about desired feeling (Impressed + Excited)
-5. Skill generates 3 style previews
-6. User picks Style B (Neon Cyber), asks for darker background
-7. Skill generates full presentation with all slides
-8. Skill opens the presentation in browser
-9. User requests tweaks to specific slides
-10. Final presentation delivered
+2. Skill asks about purpose, length, content, and images (single form)
+3. User shares bullet points, selects `./assets` folder
+4. **Evaluate:** Skill views each image (multimodal), builds slide outline with image assignments:
+   - `logo.png` → USABLE → title/closing slide
+   - `chat_ui.png` → USABLE → feature slide
+   - `dashboard.png` → USABLE → feature slide
+   - `launch_card.png` → USABLE → feature slide
+   - `blurry_team.jpg` → NOT USABLE (too low resolution)
+5. User confirms outline via AskUserQuestion
+6. Skill asks about desired feeling (Impressed + Excited)
+7. Skill generates 3 style previews
+8. User picks Style B (Neon Cyber)
+9. **Process + Generate:** Skill runs Pillow operations (circular crop, resize), generates full presentation with direct image paths
+10. Skill opens the presentation in browser
+11. User requests tweaks to specific slides
+12. Final presentation delivered
 
 ---
 

@@ -1,10 +1,11 @@
 {
-  "source": "github.com/addyosmani/web-quality-skills/skills/accessibility",
+  "source": "https://github.com/addyosmani/web-quality-skills.git/skills/accessibility",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:23.41054+08:00",
+  "installed_at": "2026-02-27T00:47:50.664364+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/accessibility",
   "version": "6a231a7",
+  "tree_hash": "8a47ac5ab4145d0eb7b261a7ecb085214cf4248a",
   "file_hashes": {
     "SKILL.md": "sha256:df14b3a23e79b4c213cf3bd0a14662fb084f226a7d5099b37582b3235c8c4b53",
     "references/WCAG.md": "sha256:ee42f07104230ee5ea185f326b01fc13f9cf05ceacf0a72beccce9c6ee7f61a7"

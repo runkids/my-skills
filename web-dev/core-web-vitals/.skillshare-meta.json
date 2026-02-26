@@ -1,10 +1,11 @@
 {
-  "source": "github.com/addyosmani/web-quality-skills/skills/core-web-vitals",
+  "source": "https://github.com/addyosmani/web-quality-skills.git/skills/core-web-vitals",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:24.330546+08:00",
+  "installed_at": "2026-02-27T00:47:50.678618+08:00",
   "repo_url": "https://github.com/addyosmani/web-quality-skills.git",
   "subdir": "skills/core-web-vitals",
   "version": "6a231a7",
+  "tree_hash": "6c8ba65254a5228e366901005befb9df7f1bbd96",
   "file_hashes": {
     "SKILL.md": "sha256:b03396c9bd7a41950bbaf5964bc8f1cf60a3c81830a6171614d6413c8bff308c",
     "references/LCP.md": "sha256:4c5043ef7e1ae4058191a51fbfe5121668bd3677842a2ef563a45a9ca6685d92"

@@ -1,10 +1,11 @@
 {
-  "source": "https://github.com/vuejs-ai/skills/tree/main/skills/vue-options-api-best-practices",
+  "source": "https://github.com/vuejs-ai/skills.git/skills/vue-options-api-best-practices",
   "type": "github-subdir",
-  "installed_at": "2026-02-24T02:21:17.691418+08:00",
+  "installed_at": "2026-02-27T00:47:48.31817+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-options-api-best-practices",
   "version": "f3dd1bf",
+  "tree_hash": "268398f0ad60f5839e0102cad86e962e4a28630c",
   "file_hashes": {
     "SKILL.md": "sha256:fd0a8c9e698a5d0413290f5c8e934f8ddd8c3db68ea5c2bd352a749b85744ea8",
     "reference/no-arrow-functions-in-lifecycle-hooks.md": "sha256:09976ddecb206b254e3df0e605bd8e0fe2b5d097a326ec7093546cb8ed3320e7",
