@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/testing-handbook-skills/skills/cargo-fuzz",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.09301+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/testing-handbook-skills/skills/cargo-fuzz",
+  "version": "c609769",
+  "tree_hash": "bc085b131b9b1b3c1d26ec3469e894eb9a6a25c2",
+  "file_hashes": {
+    "SKILL.md": "sha256:9474ddcfb3cae6aa65306fc9809523798f128dd68c5d4a327aacb82dfe385189"
+  }
+}

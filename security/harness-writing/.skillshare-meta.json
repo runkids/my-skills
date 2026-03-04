@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/testing-handbook-skills/skills/harness-writing",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.156426+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/testing-handbook-skills/skills/harness-writing",
+  "version": "c609769",
+  "tree_hash": "e87a87c43db71af7d10cddc21b8cd64da904be7d",
+  "file_hashes": {
+    "SKILL.md": "sha256:6fb9ecf9cf3d8d7ed3246c50bac72181e2e7747794a2a121ccdf47a409d9f5ec"
+  }
+}

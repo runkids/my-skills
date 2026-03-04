@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/building-secure-contracts/skills/secure-workflow-guide",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.266012+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/building-secure-contracts/skills/secure-workflow-guide",
+  "version": "c609769",
+  "tree_hash": "18e002df2f43431418fb4afc94f1448043774112",
+  "file_hashes": {
+    "SKILL.md": "sha256:d4f765622ae684b7359427524f4db5eef184678dbfc8104026d248f5f0ebebe7",
+    "resources/EXAMPLE_REPORT.md": "sha256:c55fb9e549a38c9bebc9b23f5f16fb498bd20a8f867868232623a4bd721df340",
+    "resources/WORKFLOW_STEPS.md": "sha256:8b048011407a9a123a01ba4548b62a944f8cd5f271e4e0cdfe58b09583bd9291"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/yara-authoring/skills/yara-rule-authoring",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.402516+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/yara-authoring/skills/yara-rule-authoring",
+  "version": "c609769",
+  "tree_hash": "e897051c49644ec3add14771fb1d09e7fe0d0e87",
+  "file_hashes": {
+    "SKILL.md": "sha256:9e388dcf1a84add5e27f031e98139c960d59249530c0f4f413c42b58eed7e96a",
+    "examples/MAL_Mac_ProtonRAT_Jan25.yar": "sha256:fcae97587e0ac700628dc936e908bdaa1e2d474ff9b06b4c14857f0a2d3bbbb7",
+    "examples/MAL_NPM_SupplyChain_Jan25.yar": "sha256:4e4acf43d90c1e8b69035c2a1a28392334bcaa99a035b410c8843ba714e1de73",
+    "examples/MAL_Win_Remcos_Jan25.yar": "sha256:3a649dd20d76bf77186333d13a7fcc8e44aa5f4fbf564eef7672406bfa5177cc",
+    "examples/SUSP_CRX_SuspiciousPermissions.yar": "sha256:a07e02ad6a35c1d86dd31b6938d4b25b65fc483afe7d700d6caa363fd2cb6121",
+    "examples/SUSP_JS_Obfuscation_Jan25.yar": "sha256:a6b5a2909f9e2fc60f74135634893eeaaa4aea7484958162e14448a851bfaf92",
+    "references/crx-module.md": "sha256:9f4824e4c69fef1452967c245aacec37558356aa4c030299f6faa6dce9f57231",
+    "references/dex-module.md": "sha256:1fa7fb3f3d66155fd5f07f0a8f2c4d53d67c6cbd9202ad16a15e89965c9c3568",
+    "references/performance.md": "sha256:041e3d63af538a73d59189af2eca88edba4812f93241c723266c66da005bb96b",
+    "references/strings.md": "sha256:d2d501704481123f8b4cb4e87acd24b21230049f8450c6938c857e815d1f2861",
+    "references/style-guide.md": "sha256:4141fa9a790ba03107f73554acbcead501572ecfad00f654129f09ba7e0f8e70",
+    "references/testing.md": "sha256:46c6d36f2b2626cf18e28de79569d7e7a4daf79985c0c10a6e3fed63b10eec1c",
+    "scripts/atom_analyzer.py": "sha256:6646227f2010742fc7aab3dd627f4ac9a8c4f9e2df651ec801d9a58a2499d26f",
+    "scripts/pyproject.toml": "sha256:086b6b265a2eed185c30b7e068b67b4cb1afc8f49f2d5770e21093bdb44b2245",
+    "scripts/yara_lint.py": "sha256:ba4013bd854e4fad5e7081577f30dd5b7c1392636da91ca553584db920a81408",
+    "workflows/rule-development.md": "sha256:b00e935525eea3cac5b5d347a4f397aaf45086eb93d0c556ad7c962161a33db4"
+  }
+}

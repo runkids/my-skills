@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/testing-handbook-skills/skills/aflpp",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.070482+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/testing-handbook-skills/skills/aflpp",
+  "version": "c609769",
+  "tree_hash": "4efc1c1c3b5524b5b8b5531ae6b45b58ff82e9f4",
+  "file_hashes": {
+    "SKILL.md": "sha256:23029be94e8b172f6f1995d8ad2479799f45d728ee852577824c80ca1bd4f40f"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/static-analysis/skills/semgrep",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.038754+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/static-analysis/skills/semgrep",
+  "version": "c609769",
+  "tree_hash": "7be6fe5a8a34965888680e60142b889d8b3c7050",
+  "file_hashes": {
+    "SKILL.md": "sha256:b12e2130745f7cf113dc7da6acfa269c45ed2a0605615d18c683e0084cece3b4",
+    "references/rulesets.md": "sha256:e641bf7b2f32cd81b2623759f72a560dd96f6747f1295157f2984fe8ebac3f74",
+    "references/scan-modes.md": "sha256:76c8d41c8fc2c36daa44171db345373e169da46a69387378a31ef26061102c97",
+    "references/scanner-task-prompt.md": "sha256:67ae9626627ce3ea995638b9bfe02838dde817c7d446e1a97f04db60c66dc04a",
+    "scripts/merge_sarif.py": "sha256:3a1ceeaf0ce12279e159424eaebeec8c5020f9b8031d87c0759b5d53f2ff0070",
+    "workflows/scan-workflow.md": "sha256:de63106a525417b13b180891bbf817d23e616682175767cb833ff70c81bfaa8e"
+  }
+}

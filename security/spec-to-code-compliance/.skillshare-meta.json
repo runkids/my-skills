@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/spec-to-code-compliance/skills/spec-to-code-compliance",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.930081+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/spec-to-code-compliance/skills/spec-to-code-compliance",
+  "version": "c609769",
+  "tree_hash": "7b9602424c36be855832b7e112df6afd9fc9868e",
+  "file_hashes": {
+    "SKILL.md": "sha256:d92dff470c59ed35fabe8e88bc5058d67f4ac8e7f8686b3ed384ad13b254c0cf",
+    "resources/COMPLETENESS_CHECKLIST.md": "sha256:872e6b319cc7b89ad6ed5acd2021d92eb25fa828857023ab8c5856500748f46b",
+    "resources/IR_EXAMPLES.md": "sha256:053f670171dbb59b795257bbf24865641c66af657a025dc9d79baad4fb2501ec",
+    "resources/OUTPUT_REQUIREMENTS.md": "sha256:1342fdef19e38a73495b568050203b777fbe589d62929b76a52f94cad8fa38f0"
+  }
+}

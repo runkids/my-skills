@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/testing-handbook-skills/skills/libafl",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.169734+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/testing-handbook-skills/skills/libafl",
+  "version": "c609769",
+  "tree_hash": "df5a3e5e916db281657183ff5f5d88f11fefeb6d",
+  "file_hashes": {
+    "SKILL.md": "sha256:398d1a8313b479bd3d71229ac8f5da8447613f7adc28a9d596f22559074ed08b"
+  }
+}

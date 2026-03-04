@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/skill-improver/skills/skill-improver",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.909235+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/skill-improver/skills/skill-improver",
+  "version": "c609769",
+  "tree_hash": "52b41283cde6d72ffa436900646f4abab03c740e",
+  "file_hashes": {
+    "SKILL.md": "sha256:5dea4986150c4583edcca2c61443587b9f2bfce9c374a3b62aa139ca9e921584"
+  }
+}

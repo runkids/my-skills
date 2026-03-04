@@ -45,163 +45,45 @@ Complete ALL steps before presenting base.md to the user:
 5. **Verify with user** — present the generated base.md and ask: "Does this accurately describe your project?"
 </HARD-GATE>
 
-After presenting base.md, support iterative refinement:
-
-"I've generated `base.md`. Please review it. You can:
-1. **Approve as-is** — say 'looks good'
-2. **Annotate the file** — add `> NOTE: your correction here` anywhere, then say 'address my notes'
-3. **Give verbal feedback** — tell me what to change"
+After presenting base.md, support iterative refinement per `reference/WORKFLOW-PATTERNS.md`.
 
 <HARD-GATE>
-When the user says "address my notes":
-1. Read the file and find ALL lines starting with `> NOTE:`
-2. Address each note — modify the surrounding content accordingly
-3. Remove the `> NOTE:` lines after addressing them
-4. Present a summary of changes made
-5. Ask again: "All notes addressed. Anything else to adjust?"
-
 Do NOT proceed to the Workflow until the user approves base.md.
 </HARD-GATE>
 
 ### base.md Template
 
-Generate the following, filling `{placeholders}` with project-specific analysis:
+Generate `base.md` following the structure defined in `SPEC.md` (sections 2-5).
+Read `SPEC.md` first, then fill `{placeholders}` with project-specific analysis.
 
-```markdown
-# Feature Radar — {Project Name}
-
-## Project Context
-
-- **Language**: {detected from go.mod / package.json / Cargo.toml / pyproject.toml}
-- **Architecture**: {key directories and their purpose, e.g. "cmd/ (CLI), internal/ (core logic), ui/ (frontend)"}
-- **Key Feature Areas**: {main capability domains, e.g. "install, sync, audit, search, backup"}
-- **Core Philosophy**: {what makes this project different, e.g. "local-first, cross-platform, symlink-based"}
-- **Inspiration Sources**: {related projects, communities, and ecosystems to watch — e.g. "vercel-labs/skills, npm ecosystem, AI agent tools"}
-
-## Feature Inventory
-
-### Implemented Features
-{Scan codebase and list existing features with their code locations}
-
-| Feature | Code Path | Docs Coverage |
-|---------|-----------|---------------|
-| {feature} | {path} | {✓ documented / ✗ undocumented} |
-
-### Value & Innovation Landscape
-{Compare current capabilities with industry best practices and emerging possibilities}
-
-| Capability | Current State | Best-in-Class Reference | Opportunity |
-|------------|---------------|------------------------|-------------|
-| {capability} | {✓/✗/partial} | {who does it well} | {room for improvement or innovation} |
-
-## Tracking Summary
-
-| Category | Count | Description |
-|----------|-------|-------------|
-| archive/ | {n} | Completed, covered, rejected, or deferred features |
-| opportunities/ | {n} | Open features not yet implemented |
-| specs/ | {n} | Cross-cutting patterns and architectural decisions |
-| references/ | {n} | External observations, inspiration, and ecosystem analysis |
-
-## Directory Layout
-
-.feature-radar/
-├── base.md          ← This file: project context + classification rules
-├── archive/         ← Done / Covered / Rejected / N/A features
-│   └── {nn}-{slug}.md
-├── opportunities/   ← Open features not yet implemented
-│   └── {nn}-{slug}.md
-├── specs/           ← Cross-cutting knowledge & architectural decisions
-│   └── {topic}.md
-└── references/      ← External inspiration, ecosystem observations & research
-    └── {topic}.md
-
-## Classification Rules
-
-### 1. archive/ — Terminal State
-
-Features that shipped, are covered by existing work, rejected, not applicable, or deferred.
-
-Naming: `{nn}-{slug}.md`
-
-File template:
-- **Status**: Done | Covered | Rejected | N/A | Deferred
-- **Ref**: upstream issue/PR links
-- **Implemented**: code paths / commits
-- Sections: Description, Implementation Notes
-
-### 2. opportunities/ — Open
-
-Features not yet implemented but still valuable.
-
-Naming: `{nn}-{slug}.md`
-
-File template:
-- **Status**: Open | Partially Done | Low Priority
-- **Impact**: High | Medium | Low
-- **Effort**: Low | Medium | High
-- **Ref**: upstream issue/PR links
-- Sections: Description, Design Notes, Our Position
-
-### 3. specs/ — Cross-Cutting Knowledge
-
-Patterns, architectural decisions, unique strengths — not tied to a single feature.
-
-Naming: `{topic}.md` — updated incrementally as new insights emerge.
-
-### 4. references/ — External
-
-Ecosystem observations, creative inspiration, research findings, and cross-project learnings.
-
-Naming: `{topic}.md` — cite original URLs and dates for traceability.
-
-## Maintenance Workflow
-
-New feature request       → create opportunities/{nn}-{slug}.md
-Feature completed         → move to archive/ + run extraction checklist
-New pattern discovered    → write to specs/
-External observation      → write to references/
-Periodic review           → re-evaluate Deferred items in archive/
-
-## Archive Extraction Checklist (Mandatory)
-
-Every time an opportunity moves to archive/, perform ALL checks:
-
-1. **Extract learnings** — reusable patterns, architectural decisions, pitfalls
-   → write to specs/{topic}.md (create or append)
-
-2. **Derive new opportunities** — did the implementation reveal new needs?
-   → create opportunities/{nn}-{slug}.md
-
-3. **Update references** — new external observations or ecosystem context?
-   → update references/{topic}.md
-
-4. **Update ecosystem trends** — broader industry shift?
-   → update specs/ecosystem-trends.md
-
-□ archive/{nn}-{slug}.md created with correct status
-□ Check for extractable learnings      → specs/
-□ Check for derived new opportunities  → opportunities/
-□ Check for new external references    → references/
-□ Check if ecosystem trends changed    → specs/ecosystem-trends.md
-```
+Key sections to generate:
+- **Project Context** — detected language, architecture, key feature areas, core philosophy, inspiration sources
+- **Feature Inventory** — implemented features table + value & innovation landscape table
+- **Tracking Summary** — counts per category (start at 0)
+- **Directory Layout** — tree view
+- **Classification Rules** — per SPEC.md §3.2-3.5
+- **Maintenance Workflow** — feature flow between directories
+- **Archive Extraction Checklist** — per SPEC.md §4.3
 
 After creating the directory, ask the user:
 **"Should I add `.feature-radar/` to `.gitignore`?"**
 (Recommended if the tracking data is internal and shouldn't be committed.)
 
-On subsequent runs, read existing `base.md` — do not overwrite.
+## Subsequent Runs
+
+On subsequent runs (`.feature-radar/` already exists):
+1. Read existing `base.md` — do NOT overwrite
+2. Run reconciliation per `reference/DEEP-READ.md` steps 4-6
+3. Proceed to Workflow Phase 1
 
 ## Behavioral Directives
 
 <HARD-GATE>
-Follow ALL directives throughout this skill's execution:
+Read and follow `reference/DIRECTIVES.md`.
 
-1. **Read deeply, not superficially** — When reading files, understand the intricacies: relationships between files, naming conventions, architectural patterns. Do NOT skim. If a file references another, follow the reference.
-2. **Artifacts over conversation** — Write findings to files, not just chat messages. Every substantive output must persist in `.feature-radar/`.
-3. **Do not stop mid-flow** — Complete ALL workflow steps before stopping. If a step yields no results, state "No findings" and continue to the next step.
-4. **State what you produced** — After each step, explicitly state: what file was created/updated, what changed, and what's next.
-5. **Do not skip phases** — Phase 1-3 are mandatory. For Phase 4-6, state the skip condition check result before deciding to skip.
+Additional directives for this skill:
+- **Do not skip phases** — Phase 1-3 are mandatory. For Phase 4-6, state the skip condition check result before deciding to skip.
+- **Reconcile on subsequent runs** — see "Subsequent Runs" section above.
 </HARD-GATE>
 
 ## Workflow
@@ -285,20 +167,8 @@ Rank into tiers:
 
 ## Completion Summary
 
-When all phases are done, present:
-
-```
-── Feature Radar: Complete ──
-
-Files created:  + {path} (new)
-Files updated:  ~ {path} (what changed)
-Files removed:  - {path} (why)
-Counts: archive {n}, opportunities {n}, specs {n}, references {n}
-Top recommendation: {feature name} — {one-line pitch}
-Next suggested action: {recommendation}
-```
-
-Do not end with "this should work" or "try this". End with the summary above.
+Follow the template in `reference/DIRECTIVES.md`, with skill name "Complete" and an additional line:
+`Top recommendation: {feature name} — {one-line pitch}`
 
 ## Guardrails
 

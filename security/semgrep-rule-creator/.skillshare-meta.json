@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/semgrep-rule-creator/skills/semgrep-rule-creator",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.809973+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/semgrep-rule-creator/skills/semgrep-rule-creator",
+  "version": "c609769",
+  "tree_hash": "ed25f7400c8d763eeaccef1e710b21cee4a135f4",
+  "file_hashes": {
+    "SKILL.md": "sha256:1ae1e8d030f531dac54e1a02ff886f341a3a59e77366f4c50d304581ed7358da",
+    "references/quick-reference.md": "sha256:0e7e73d1b397474a90b707894e674cc68ef115fd165dc2c0814e85a1c65be74b",
+    "references/workflow.md": "sha256:7ef7fac35d6a64e8e9939f3a6b487db73e212790f3ecb1d48033a3b9b18b6d30"
+  }
+}

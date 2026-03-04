@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/testing-handbook-skills/skills/wycheproof",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.275554+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/testing-handbook-skills/skills/wycheproof",
+  "version": "c609769",
+  "tree_hash": "aa0a1b2950c730cad0219a7361aa4a0be4af2c7a",
+  "file_hashes": {
+    "SKILL.md": "sha256:f545b71bd68a8575c750af2cbe667703e9a40ae122bf298bbbe330e17b2d1271"
+  }
+}

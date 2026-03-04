@@ -23,30 +23,13 @@ Record external observations into `.feature-radar/references/`.
 ## Deep Read
 
 <HARD-GATE>
-Before ANY action, complete ALL steps — do NOT skip or rush:
-
-1. `.feature-radar/` directory exists — if not, tell user to run `feature-radar` skill first and STOP
-2. **Read base.md thoroughly** — understand Project Context, Feature Inventory, Classification Rules, and current Tracking Summary counts
-3. **Scan existing files** — list what's already in archive/, opportunities/, specs/, references/. Read file names and headers to understand current state
-4. **Identify context** — extract and state:
-   - Project Language & Architecture
-   - Key Feature Areas (from Feature Inventory)
-   - Inspiration Sources
-   - Current counts: {archive: n, opportunities: n, specs: n, references: n}
-5. **State your understanding** — in 2-3 sentences, describe what the project does, what's already tracked, and what gaps you see
-
-Proceed to workflow ONLY after completing all 5 steps.
+Read and follow `reference/DEEP-READ.md` — complete all 6 steps before proceeding.
 </HARD-GATE>
 
 ## Behavioral Directives
 
 <HARD-GATE>
-Follow ALL directives throughout this skill's execution:
-
-1. **Read deeply, not superficially** — When reading files, understand the intricacies: relationships between files, naming conventions, architectural patterns. Do NOT skim. If a file references another, follow the reference.
-2. **Artifacts over conversation** — Write findings to files, not just chat messages. Every substantive output must persist in `.feature-radar/`.
-3. **Do not stop mid-flow** — Complete ALL workflow steps before stopping. If a step yields no results, state "No findings" and continue to the next step.
-4. **State what you produced** — After each step, explicitly state: what file was created/updated, what changed, and what's next.
+Read and follow `reference/DIRECTIVES.md`.
 </HARD-GATE>
 
 ## Workflow
@@ -74,20 +57,7 @@ Before writing to references/, assess impact by answering ALL of these:
 
 ## File Format
 
-```markdown
-# {Topic}
-
-> {One-line summary of what this reference tracks}
-
-## {Date} — {Entry Title}
-
-**Source**: {URL}
-
-{What happened and why it matters to us}
-
-**Implications**:
-- {What this means for our project}
-```
+Use the format defined in `SPEC.md` § 3.5 (`references/{topic}.md`).
 
 ## Naming Convention
 
@@ -114,15 +84,4 @@ Name by the subject being tracked, not the event:
 
 ## Completion Summary
 
-When all steps are done, present:
-
-```
-── Feature Radar: Ref Complete ──
-
-Files created:  + {path} (new)
-Files updated:  ~ {path} (what changed)
-Counts: archive {n}, opportunities {n}, specs {n}, references {n}
-Next suggested action: {recommendation}
-```
-
-Do not end with "this should work" or "try this". End with the summary above.
+Follow the template in `reference/DIRECTIVES.md`, with skill name "Ref Complete".

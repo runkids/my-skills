@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/building-secure-contracts/skills/audit-prep-assistant",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.174128+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/building-secure-contracts/skills/audit-prep-assistant",
+  "version": "c609769",
+  "tree_hash": "8a2b9e37f8f29362850d8ad4e138ff2ddc8df6b7",
+  "file_hashes": {
+    "SKILL.md": "sha256:ea7db549ff26a57ebd101140dd8ed44434d5c91f3d91efc8927541bea8dd23e8"
+  }
+}

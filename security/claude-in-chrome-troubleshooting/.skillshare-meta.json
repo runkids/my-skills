@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.372951+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting",
+  "version": "c609769",
+  "tree_hash": "b76dac95803aeffa1e24bf94fdd47cf168202499",
+  "file_hashes": {
+    "SKILL.md": "sha256:7ead464089964766aa2c9d58f4d84b63fc628f9a20f094f4d1a84134fb224985"
+  }
+}

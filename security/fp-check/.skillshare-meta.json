@@ -1,0 +1,18 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/fp-check/skills/fp-check",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.652784+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/fp-check/skills/fp-check",
+  "version": "c609769",
+  "tree_hash": "e3a3fdf0be62f69f825f6dfcc63da44daa8fbf89",
+  "file_hashes": {
+    "SKILL.md": "sha256:c7e6460b5eb9974ff774993e56715bb897b3c3cc651c4cda99283d5de23b1237",
+    "references/bug-class-verification.md": "sha256:a19160eeac2cbed81377fcc2ba43b07767c6eae5d92b666f31d49b4b7aad50c7",
+    "references/deep-verification.md": "sha256:3b54276ed4cf446f1be640853181fd8b3bf67d76ed59e56571cc18128567f632",
+    "references/evidence-templates.md": "sha256:340346b9c6b3b43aa7edc71ff09351c910bc8aefec62647d2284bdf637a59e3d",
+    "references/false-positive-patterns.md": "sha256:7a24e3c8515b11b4abc181e0496704bc44708fd00c7e367edb7da8dad54b03b8",
+    "references/gate-reviews.md": "sha256:de4fd3680496b6f622b25dd5d8459eee1fe95e2cf61aa533c5ff86c548d6acc9",
+    "references/standard-verification.md": "sha256:6a365656ffb2698caf71d9dd90509e9986113f0dc8378d20390dadba8606bba2"
+  }
+}

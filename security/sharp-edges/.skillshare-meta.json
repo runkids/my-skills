@@ -1,0 +1,28 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/sharp-edges/skills/sharp-edges",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.900377+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/sharp-edges/skills/sharp-edges",
+  "version": "c609769",
+  "tree_hash": "a9b4ec1cd78f34cc5ad04dcd055ac081c47f2d02",
+  "file_hashes": {
+    "SKILL.md": "sha256:38e1aca2a4188c3b8b3a7b452b6a83280dc06bcbb41309113be83e732ff25b22",
+    "references/auth-patterns.md": "sha256:1fbf526ca1db7204f9ebb1bf4eb3c48c544676623d23e5d28e01f6f63c355be2",
+    "references/case-studies.md": "sha256:2e81a320728b4597bf84c490176d5bf212f1e6ba6f87aafba61ad1734de35332",
+    "references/config-patterns.md": "sha256:1d99f2716f7bef18efe71015ce0c56e0f4961c042faa503d796d6d4d1626fdc6",
+    "references/crypto-apis.md": "sha256:8baddc83a1f964d6d8b15678d60a37c93029c18dc162bd7c00895e585ff1a825",
+    "references/lang-c.md": "sha256:d077d711c73749c924eae81c06018b14bbf1ec9b93d71723c472b43df5d7d5ae",
+    "references/lang-csharp.md": "sha256:8fa9e93d36c0e1397b7ca81307163370fc43cf700215b7c6d7aa1b09fdb91fb4",
+    "references/lang-go.md": "sha256:839c0e7b4e3fa2f3b37c651e926aa59d69d20bfef5e67f569eedacf11354844d",
+    "references/lang-java.md": "sha256:3b93b6049f7e0e356a1ffebc0b4642f3cef315d90be45b63e15c8c4814f9ebeb",
+    "references/lang-javascript.md": "sha256:cf72f55d31318666942a8d1d64340befc3c4e7223afc2ca196e6a776ffa4c895",
+    "references/lang-kotlin.md": "sha256:c891148c10a4941c3396416a10ac64512eb3a9e13ea5eeaec3902da4b51501dd",
+    "references/lang-php.md": "sha256:7960d9773874cf06c5b470a5ca3ab406d896e66b71e713d809bc1ecfcab63485",
+    "references/lang-python.md": "sha256:36543becc25b4e3f41eaedcab62e9b204657e6742b8ac95e405bcd040d33bf03",
+    "references/lang-ruby.md": "sha256:d9ba749caaccb8a3bb39e2199b2062c0957cf48739218ba8022d49be5cba2088",
+    "references/lang-rust.md": "sha256:3d14993ea70b2b2df3fc0f388cbd1631470895c27ccbd9d764296d1da8f5b6ee",
+    "references/lang-swift.md": "sha256:a64ab8692db0f3e43526088c63c7fdcb7354d1b24e6fe7ca759aea3260890e04",
+    "references/language-specific.md": "sha256:4522b4a37cfd7d3aa689209dfd4569f3b39074bd1f5987a36a6e819f501141b6"
+  }
+}

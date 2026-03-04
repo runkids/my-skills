@@ -1,0 +1,24 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/variant-analysis/skills/variant-analysis",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.295355+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/variant-analysis/skills/variant-analysis",
+  "version": "c609769",
+  "tree_hash": "107574a31474c3feb3d1ad211210c1062bf62169",
+  "file_hashes": {
+    "METHODOLOGY.md": "sha256:bbe15a7e6edf419f348564542fec22200b4f0ce30a0f801d620fbd2e406c14f3",
+    "SKILL.md": "sha256:b0b94dec027087b25bae609a8104b496314b34c5095f474593597bac9639e333",
+    "resources/codeql/cpp.ql": "sha256:efd574081969d2bdd19e1756302d843fdbf936968a72de62eb24d66db43efc0c",
+    "resources/codeql/go.ql": "sha256:d3fa419af29bb15bf81510c54bc1ce0cf55f5b7adbdbf79cc2c8cd922d2365fb",
+    "resources/codeql/java.ql": "sha256:ee4a92a5cbde67304d17a2c5fb739fe9acf1d39ebac9406e3d3a2c1cbbbb19c1",
+    "resources/codeql/javascript.ql": "sha256:b6ceaa3acb6ba6fa89903c14c8fd3aa7cf48316e6b2588dcacae51bb423b3526",
+    "resources/codeql/python.ql": "sha256:135ec55760e1e827065e34b002c6d954b4c4293d07233a93d7ff31d9d97528a9",
+    "resources/semgrep/cpp.yaml": "sha256:41f034c9a5967cc3b87bf5880243ed21f633017111489ee843dd5d002271b10a",
+    "resources/semgrep/go.yaml": "sha256:8a8257eb8e0a7150cb7dffa2b64813691fd560de24b0f85fa6640ec2bfc6595f",
+    "resources/semgrep/java.yaml": "sha256:5be3990b052bc9ce5e1aa203d1f3c93cb3cde7d46eba463c24c661fc6b342902",
+    "resources/semgrep/javascript.yaml": "sha256:2f97e3545fcac449820c2d058bcb9cc36822e238b6249efa3a5dcb4f5f576912",
+    "resources/semgrep/python.yaml": "sha256:c1ce15574569d45555d582707db030b226763d81b2d521d9e61d6067440948f2",
+    "resources/variant-report-template.md": "sha256:03333c762318a89dd819784a62695f7660713479a5009a15189314400836202f"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/building-secure-contracts/skills/token-integration-analyzer",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.328255+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/building-secure-contracts/skills/token-integration-analyzer",
+  "version": "c609769",
+  "tree_hash": "6363c14757eb3f3a82daaebe88586984ebe7d546",
+  "file_hashes": {
+    "SKILL.md": "sha256:f700683abe74bdd6d4107236c9a1a1ca625352412771131543b2a88af1a1ce94",
+    "resources/ASSESSMENT_CATEGORIES.md": "sha256:bf1313e59c960688cc73bda5b7a98579336a277c521b9b37937aa1cda3a122a7",
+    "resources/REPORT_TEMPLATES.md": "sha256:77dc2195901cbca8f0a04687e6ac51347520b6320cfe2ca7c39d9725ffae1177"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.8327+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator",
+  "version": "c609769",
+  "tree_hash": "9a1b7a67752a67a95c8b7f981422a2a4e98d418f",
+  "file_hashes": {
+    "SKILL.md": "sha256:66f2ad2ca1f61469ea0021f524c35d62b507341986db98fcacffdf67399795d2",
+    "references/applicability-analysis.md": "sha256:5ff56f5ff84e058a529c3c9db61ae50846386d65e34ef3dad32769edbf2975fe",
+    "references/language-syntax-guide.md": "sha256:ea5d36318718caf999e3f259878b821e2a2722d178751ac5e584a26e5a66a31d",
+    "references/workflow.md": "sha256:ac84f529f4b4aa0767dbc86a4ed3d2fb67d91b676f896f415cdc6da67eb7bf5d"
+  }
+}

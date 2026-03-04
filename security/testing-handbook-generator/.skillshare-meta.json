@@ -1,0 +1,19 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/testing-handbook-skills/skills/testing-handbook-generator",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:29.261192+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/testing-handbook-skills/skills/testing-handbook-generator",
+  "version": "c609769",
+  "tree_hash": "ad9dc69659fd4078b0a6bda9dcfc92b79961b249",
+  "file_hashes": {
+    "SKILL.md": "sha256:bb49c9516f4d714e0cc6b018ba01d9ec511a8b3ccb67ebd8a7a635a659f37911",
+    "agent-prompt.md": "sha256:7ebf52233deac2a28ec9f491072a67d012773a511fde9f389d7586ebea5641d7",
+    "discovery.md": "sha256:2bc2412af856e91ffacefb85a9f98811fe7238c99b485c03cf206969fee9dfa1",
+    "templates/domain-skill.md": "sha256:ae51130f780dfb03871ce9dece8ce201ec2cae0e739e33bcf63516429af848cd",
+    "templates/fuzzer-skill.md": "sha256:d17711c01a388b4d6911eb15b4676c17d148918441c9932ea34548c72be7a706",
+    "templates/technique-skill.md": "sha256:1009f9e03deb08318ea9ae8c67a162b544f227fd03210caa94154d21ae2eedf7",
+    "templates/tool-skill.md": "sha256:734457889cbdd937cfc2d27645dbb502916aa498e9fd41ad1eafb91d3638928c",
+    "testing.md": "sha256:0843b6ed909eca876bdab9e684d44edf6ff1272414ff3c332e1dd772c119d40b"
+  }
+}

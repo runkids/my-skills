@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/debug-buttercup/skills/debug-buttercup",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.531768+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/debug-buttercup/skills/debug-buttercup",
+  "version": "c609769",
+  "tree_hash": "fe9ca375f5e76a417cbc32777dbec8e1bf4149f3",
+  "file_hashes": {
+    "SKILL.md": "sha256:a8b043f5b6cc44657192f10fc6914a2f65402878e4a62eb7bd5e9bfe9b5e8e4f",
+    "references/failure-patterns.md": "sha256:d31f0f5b3681ae5407805840b2514a72e8f9b9c947eb35aed1384c6533284c97",
+    "scripts/diagnose.sh": "sha256:205fc017e4b1a4c0c5063e07ade018928b6b1242fb5d10dd329b920f10e17ef5"
+  }
+}

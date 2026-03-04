@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/audit-context-building/skills/audit-context-building",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.147842+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/audit-context-building/skills/audit-context-building",
+  "version": "c609769",
+  "tree_hash": "ca1a596307eccb94a6db0ed99ee7b4f63ed20f31",
+  "file_hashes": {
+    "SKILL.md": "sha256:98e8d493f75456b7c7a5b6a4ad0b383e266ca5e550d3c627f5a4357fd1bf1cd2",
+    "resources/COMPLETENESS_CHECKLIST.md": "sha256:b0acac41b4a1b77836400e66018914e939724b22d84f39bbb882b8cef9fb09f2",
+    "resources/FUNCTION_MICRO_ANALYSIS_EXAMPLE.md": "sha256:49024fff7893c383618ae71e969a6ac1b9d96f672348e1810383b04f8b265d7c",
+    "resources/OUTPUT_REQUIREMENTS.md": "sha256:ee50a4f690fc94e017260613cb6e837fc1b3399b7cb617b4ce54ef02c912ae8f"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/ask-questions-if-underspecified/skills/ask-questions-if-underspecified",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.126687+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/ask-questions-if-underspecified/skills/ask-questions-if-underspecified",
+  "version": "c609769",
+  "tree_hash": "db0be0d64598e39c0fbb121b7a7297a94f56a586",
+  "file_hashes": {
+    "SKILL.md": "sha256:fef9189249c46d08d5172f7010e0d83ae8dc104cc3d07714a909dd12f9e92e79"
+  }
+}

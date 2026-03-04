@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/trailofbits/skills/plugins/firebase-apk-scanner/skills/firebase-apk-scanner",
+  "type": "github-subdir",
+  "installed_at": "2026-03-05T02:10:28.629891+08:00",
+  "repo_url": "https://github.com/trailofbits/skills.git",
+  "subdir": "plugins/firebase-apk-scanner/skills/firebase-apk-scanner",
+  "version": "c609769",
+  "tree_hash": "9175518adb06087d32896b9d03b8928e00a07608",
+  "file_hashes": {
+    "SKILL.md": "sha256:a1bc78a5e7e7c7fc70db18dade432373b683081e43863e0db297110dd392e55b",
+    "references/vulnerabilities.md": "sha256:7ae89875a6e0f5a0dfc0da6172f1bdfe6d2719e66dcea6b94c62158d5e9ae1fa"
+  }
+}
