@@ -2,14 +2,18 @@
 name: feature-radar-learn
 description: |
   Extract reusable patterns, architectural decisions, and pitfalls from completed work
-  into the feature-radar knowledge base (.feature-radar/specs/).
+  into .feature-radar/specs/. This skill captures the "why" behind implementation choices
+  so future sessions can build on past experience. Use this whenever the user reflects on
+  what worked, what didn't, or wants to document a technical decision for posterity.
   Use when:
-  - You just shipped a feature and want to capture what you learned
-  - You discovered a reusable pattern worth documenting
-  - You made an architectural decision that future work should know about
-  - You hit a pitfall others should avoid
+  - User says "that approach worked well, let's remember it" or "we should document this decision"
+  - Just shipped a feature and want to capture lessons learned
+  - Discovered a reusable pattern or technique worth documenting
+  - Made an architectural decision that future work should know about
+  - Hit a dead end or pitfall that others should avoid
   Trigger phrases: "extract learnings", "capture what we learned", "document this pattern",
-  "save this decision", "what did we learn"
+  "save this decision", "what did we learn", "remember this approach", "lessons learned",
+  "this was a good pattern", "don't forget this"
 ---
 
 # Extract Learnings

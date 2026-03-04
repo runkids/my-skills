@@ -1,12 +1,12 @@
 {
   "source": "https://github.com/runkids/feature-radar.git/skills/feature-radar",
   "type": "github-subdir",
-  "installed_at": "2026-02-27T00:47:58.78983+08:00",
+  "installed_at": "2026-03-04T22:13:41.907676+08:00",
   "repo_url": "https://github.com/runkids/feature-radar.git",
   "subdir": "skills/feature-radar",
-  "version": "ef35c59",
-  "tree_hash": "805123c772e9391931738142848a9820378ff0df",
+  "version": "8f066df",
+  "tree_hash": "0f1b023c14374c330d40534485aeb4a0a20c62b2",
   "file_hashes": {
-    "SKILL.md": "sha256:010eca79dc6083543b56a3a855327a63d40e546072e0837c14d415109238c44c"
+    "SKILL.md": "sha256:b88ad19846448a1259100ea1861c45a45c8782a275f6ce31f885506d7f23cffb"
   }
 }

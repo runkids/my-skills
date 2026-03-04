@@ -3,15 +3,18 @@ name: feature-radar-scan
 description: |
   Discover new feature opportunities from multiple sources — creative brainstorming,
   user feedback, ecosystem evolution, technical possibilities, and cross-project research —
-  and add them to the feature-radar tracking system (.feature-radar/opportunities/).
+  and add them to .feature-radar/opportunities/. Use this when the user wants to generate
+  NEW ideas rather than evaluate existing ones. Even casual mentions like "I wonder what else
+  we could do" or "let's think about new features" should trigger this skill.
   Use when:
   - Brainstorming creative feature ideas or exploring new directions
-  - Reviewing user feedback for unmet needs and pain points
+  - User says "what else could we build?" or "give me some ideas"
+  - Reviewing user feedback, GitHub issues, or community requests for unmet needs
   - Exploring adjacent tools and ecosystems for inspiration
-  - Identifying technical breakthroughs that enable new possibilities
   - Periodic opportunity refresh to keep the backlog current
   Trigger phrases: "scan opportunities", "find new features", "brainstorm ideas",
-  "what could we build", "refresh opportunities", "scan ecosystem", "feature ideas"
+  "what could we build", "refresh opportunities", "scan ecosystem", "give me feature ideas",
+  "what are we missing", "explore new directions"
 ---
 
 # Scan Opportunities

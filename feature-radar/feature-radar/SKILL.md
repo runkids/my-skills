@@ -1,18 +1,21 @@
 ---
 name: feature-radar
 description: |
-  Discover, evaluate, and prioritize feature opportunities from any source — creative ideation,
-  user pain points, ecosystem trends, technical breakthroughs, or cross-project research.
+  Full-cycle feature discovery, evaluation, and prioritization system. Analyzes your project's
+  codebase, creates a persistent knowledge base at .feature-radar/, and runs a 6-phase workflow
+  to recommend what to build next. Use this skill whenever the user is thinking about project
+  direction, roadmap, or feature planning — even if they don't mention "feature radar" by name.
   Use when:
-  - Brainstorming new feature ideas or exploring innovation directions
-  - Reviewing feature opportunities against existing codebase to find completed or covered features
-  - Archiving resolved features with mandatory learning extraction
-  - Organizing open opportunities, cross-cutting specs, or external references
-  - Identifying documentation gaps (implemented features missing from docs/website)
-  - Evaluating feature value and prioritizing what to build next
-  - Proposing the highest-impact feature to push the project forward
-  Trigger phrases: "feature radar", "check feature status", "what should we build next",
-  "feature ideas", "feature priorities", "update opportunities", "innovation scan"
+  - User asks "what should we build next?" or "what's the most impactful thing to work on?"
+  - User wants to review and prioritize their backlog or feature ideas
+  - Starting a new project and need to set up feature tracking
+  - Periodic project review to reassess priorities and find gaps
+  - User has multiple feature ideas and needs help evaluating trade-offs
+  - User mentions roadmap planning, project direction, or strategic priorities
+  - Identifying documentation gaps (implemented features missing from docs)
+  Trigger phrases: "feature radar", "what should we build next", "check feature status",
+  "feature priorities", "project roadmap", "help me prioritize", "what's most important",
+  "review our backlog", "innovation scan", "feature ideas"
 ---
 
 # Feature Discovery & Prioritization

@@ -1,15 +1,18 @@
 ---
 name: feature-radar-archive
 description: |
-  Archive a completed, rejected, or covered feature into the feature-radar tracking system
-  (.feature-radar/archive/) with mandatory learning extraction.
+  Archive a completed, rejected, or covered feature into .feature-radar/archive/ with mandatory
+  learning extraction. This is the skill that makes knowledge compound — it doesn't just close
+  a feature, it extracts learnings, derives new opportunities, and updates references. Use this
+  whenever a feature reaches a terminal state, even if the user just casually mentions finishing something.
   Use when:
-  - A feature just shipped and needs to be recorded
-  - A feature was rejected or deemed not applicable
-  - An existing capability already covers a requested feature
+  - User says "we just shipped X" or "X is done" or "we finished the auth system"
+  - A feature was rejected, deemed not applicable, or already covered by existing work
   - A feature is explicitly deferred with rationale
+  - User wants to close out an opportunity from .feature-radar/opportunities/
   Trigger phrases: "archive feature", "mark as done", "this feature is done",
-  "close this opportunity", "feature shipped", "reject feature"
+  "close this opportunity", "feature shipped", "reject feature", "we just finished",
+  "X is complete", "defer this feature"
 ---
 
 # Archive Feature

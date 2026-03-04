@@ -6,6 +6,11 @@ A Claude Code skill for creating stunning, animation-rich HTML presentations —
 
 **Frontend Slides** helps non-designers create beautiful web presentations without knowing CSS or JavaScript. It uses a "show, don't tell" approach: instead of asking you to describe your aesthetic preferences in words, it generates visual previews and lets you pick what you like.
 
+Here is a deck about the skill, made through the skill:
+
+https://github.com/user-attachments/assets/ef57333e-f879-432a-afb9-180388982478
+
+
 ### Key Features
 
 - **Zero Dependencies** — Single HTML files with inline CSS/JS. No npm, no build tools, no frameworks.
@@ -22,20 +27,20 @@ Copy the skill files to your Claude Code skills directory:
 
 ```bash
 # Create the skill directory
-mkdir -p ~/.claude/skills/frontend-slides
+mkdir -p ~/.claude/skills/frontend-slides/scripts
 
-# Copy the files (or download from this repo)
-cp SKILL.md ~/.claude/skills/frontend-slides/
-cp STYLE_PRESETS.md ~/.claude/skills/frontend-slides/
+# Copy all files (or clone this repo directly)
+cp SKILL.md STYLE_PRESETS.md viewport-base.css html-template.md animation-patterns.md ~/.claude/skills/frontend-slides/
+cp scripts/extract-pptx.py ~/.claude/skills/frontend-slides/scripts/
+```
+
+Or clone directly:
+
+```bash
+git clone https://github.com/zarazhangrui/frontend-slides.git ~/.claude/skills/frontend-slides
 ```
 
 Then use it by typing `/frontend-slides` in Claude Code.
-
-### Manual Download
-
-1. Download `SKILL.md` and `STYLE_PRESETS.md` from this repo
-2. Place them in `~/.claude/skills/frontend-slides/`
-3. Restart Claude Code
 
 ## Usage
 
@@ -71,57 +76,37 @@ The skill will:
 ## Included Styles
 
 ### Dark Themes
-- **Neon Cyber** — Futuristic, techy, particle effects
-- **Midnight Executive** — Premium, corporate, trustworthy
-- **Deep Space** — Cinematic, inspiring, vast
-- **Terminal Green** — Developer-focused, hacker aesthetic
+- **Bold Signal** — Confident, high-impact, vibrant card on dark
+- **Electric Studio** — Clean, professional, split-panel
+- **Creative Voltage** — Energetic, retro-modern, electric blue + neon
+- **Dark Botanical** — Elegant, sophisticated, warm accents
 
 ### Light Themes
-- **Paper & Ink** — Editorial, literary, refined
-- **Swiss Modern** — Clean, Bauhaus-inspired, geometric
-- **Soft Pastel** — Friendly, playful, creative
-- **Warm Editorial** — Magazine-style, photographic
+- **Notebook Tabs** — Editorial, organized, paper with colorful tabs
+- **Pastel Geometry** — Friendly, approachable, vertical pills
+- **Split Pastel** — Playful, modern, two-color vertical split
+- **Vintage Editorial** — Witty, personality-driven, geometric shapes
 
 ### Specialty
-- **Brutalist** — Raw, bold, attention-grabbing
-- **Gradient Wave** — Modern SaaS aesthetic
+- **Neon Cyber** — Futuristic, particle backgrounds, neon glow
+- **Terminal Green** — Developer-focused, hacker aesthetic
+- **Swiss Modern** — Minimal, Bauhaus-inspired, geometric
+- **Paper & Ink** — Literary, drop caps, pull quotes
 
-## Output Example
+## Architecture
 
-Each presentation is a single, self-contained HTML file:
+This skill uses **progressive disclosure** — the main `SKILL.md` is a concise map (~180 lines), with supporting files loaded on-demand only when needed:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Fonts, CSS variables, all styles inline -->
-</head>
-<body>
-    <section class="slide title-slide">
-        <h1 class="reveal">Your Title</h1>
-    </section>
+| File | Purpose | Loaded When |
+|------|---------|-------------|
+| `SKILL.md` | Core workflow and rules | Always (skill invocation) |
+| `STYLE_PRESETS.md` | 12 curated visual presets | Phase 2 (style selection) |
+| `viewport-base.css` | Mandatory responsive CSS | Phase 3 (generation) |
+| `html-template.md` | HTML structure and JS features | Phase 3 (generation) |
+| `animation-patterns.md` | CSS/JS animation reference | Phase 3 (generation) |
+| `scripts/extract-pptx.py` | PPT content extraction | Phase 4 (conversion) |
 
-    <section class="slide">
-        <h2 class="reveal">Slide Content</h2>
-    </section>
-
-    <!-- Navigation: Arrow keys, scroll, swipe, or click dots -->
-    <script>
-        // SlidePresentation controller, animations, interactions
-    </script>
-</body>
-</html>
-```
-
-Features included:
-- Keyboard navigation (arrows, space)
-- Touch/swipe support
-- Mouse wheel scrolling
-- Progress bar
-- Navigation dots
-- Scroll-triggered animations
-- Responsive design
-- Reduced motion support
+This design follows [OpenAI's harness engineering](https://openai.com/index/harness-engineering/) principle: "give the agent a map, not a 1,000-page instruction manual."
 
 ## Philosophy
 
@@ -134,13 +119,6 @@ This skill was born from the belief that:
 3. **Generic is forgettable.** Every presentation should feel custom-crafted, not template-generated.
 
 4. **Comments are kindness.** Code should explain itself to future-you (or anyone else who opens it).
-
-## Files
-
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | Main skill instructions for Claude Code |
-| `STYLE_PRESETS.md` | Reference file with 10 curated visual styles |
 
 ## Requirements
 
