@@ -2,18 +2,18 @@
 name: feature-radar-learn
 description: |
   Extract reusable patterns, architectural decisions, and pitfalls from completed work
-  into .feature-radar/specs/. This skill captures the "why" behind implementation choices
-  so future sessions can build on past experience. Use this whenever the user reflects on
-  what worked, what didn't, or wants to document a technical decision for posterity.
-  Use when:
-  - User says "that approach worked well, let's remember it" or "we should document this decision"
-  - Just shipped a feature and want to capture lessons learned
-  - Discovered a reusable pattern or technique worth documenting
-  - Made an architectural decision that future work should know about
-  - Hit a dead end or pitfall that others should avoid
-  Trigger phrases: "extract learnings", "capture what we learned", "document this pattern",
-  "save this decision", "what did we learn", "remember this approach", "lessons learned",
-  "this was a good pattern", "don't forget this"
+  into .feature-radar/specs/. Captures the "why" behind choices so future sessions build
+  on past experience. MUST use this skill when the user reflects on what worked/didn't,
+  wants to document a decision, or mentions remembering a pattern for future use.
+  Use when the user:
+  - Says "remember this approach", "document this decision", "save this pattern"
+  - Reflects: "that worked well", "lessons learned", "what did we learn"
+  - Wants to capture: "don't forget this", "this was a good pattern"
+  - Hit a dead end: "this didn't work because...", "avoid this approach"
+  - Made a technical decision worth recording for posterity
+  - Says "extract learnings" or "capture what we learned"
+  Do NOT use for recording external observations — that's feature-radar-ref's job.
+  Do NOT use for archiving completed features — that's feature-radar-archive's job.
 ---
 
 # Extract Learnings
@@ -23,13 +23,13 @@ Capture reusable knowledge from completed work into `.feature-radar/specs/`.
 ## Deep Read
 
 <HARD-GATE>
-Read and follow `reference/DEEP-READ.md` — complete all 6 steps before proceeding.
+Read and follow `../feature-radar/references/DEEP-READ.md` — complete all 6 steps before proceeding.
 </HARD-GATE>
 
 ## Behavioral Directives
 
 <HARD-GATE>
-Read and follow `reference/DIRECTIVES.md`.
+Read and follow `../feature-radar/references/DIRECTIVES.md`.
 </HARD-GATE>
 
 ## Workflow
@@ -77,4 +77,4 @@ Use the format defined in `SPEC.md` § 3.4 (`specs/{topic}.md`).
 
 ## Completion Summary
 
-Follow the template in `reference/DIRECTIVES.md`, with skill name "Learn Complete".
+Follow the template in `../feature-radar/references/DIRECTIVES.md`, with skill name "Learn Complete".

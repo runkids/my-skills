@@ -2,17 +2,16 @@
 name: feature-radar-archive
 description: |
   Archive a completed, rejected, or covered feature into .feature-radar/archive/ with mandatory
-  learning extraction. This is the skill that makes knowledge compound — it doesn't just close
-  a feature, it extracts learnings, derives new opportunities, and updates references. Use this
-  whenever a feature reaches a terminal state, even if the user just casually mentions finishing something.
-  Use when:
-  - User says "we just shipped X" or "X is done" or "we finished the auth system"
-  - A feature was rejected, deemed not applicable, or already covered by existing work
-  - A feature is explicitly deferred with rationale
-  - User wants to close out an opportunity from .feature-radar/opportunities/
-  Trigger phrases: "archive feature", "mark as done", "this feature is done",
-  "close this opportunity", "feature shipped", "reject feature", "we just finished",
-  "X is complete", "defer this feature"
+  learning extraction. MUST use this skill whenever a feature reaches a terminal state — done,
+  rejected, covered, deferred, or N/A. Even casual mentions like "we shipped X" or "X is done"
+  should trigger this. The skill extracts learnings, derives new opportunities, and updates refs.
+  Use when the user:
+  - Says "we shipped X", "X is done", "X is complete", "we just finished X"
+  - Rejects a feature: "we decided not to build X", "reject this", "doesn't fit"
+  - Defers: "defer X", "postpone this", "revisit later", "not now"
+  - Closes an opportunity: "close this opportunity", "mark as done", "archive this"
+  - Mentions any feature reaching Done/Covered/Rejected/Deferred status
+  Do NOT use for discovering new features — that's feature-radar-scan's job.
 ---
 
 # Archive Feature
@@ -22,13 +21,13 @@ Move a feature to `.feature-radar/archive/` and run the mandatory extraction che
 ## Deep Read
 
 <HARD-GATE>
-Read and follow `reference/DEEP-READ.md` — complete all 6 steps before proceeding.
+Read and follow `../feature-radar/references/DEEP-READ.md` — complete all 6 steps before proceeding.
 </HARD-GATE>
 
 ## Behavioral Directives
 
 <HARD-GATE>
-Read and follow `reference/DIRECTIVES.md`.
+Read and follow `../feature-radar/references/DIRECTIVES.md`.
 </HARD-GATE>
 
 ## Workflow
@@ -41,7 +40,7 @@ Read and follow `reference/DIRECTIVES.md`.
    - **N/A** — not applicable to our architecture
    - **Deferred** — valuable but postponed with rationale
 3. **Create archive file** — write `.feature-radar/archive/{nn}-{slug}.md`
-4. **Checkpoint — Review & Annotate** per `reference/WORKFLOW-PATTERNS.md`
+4. **Checkpoint — Review & Annotate** per `../feature-radar/references/WORKFLOW-PATTERNS.md`
 
 5. **Run extraction checklist**:
 
@@ -66,6 +65,18 @@ Acceptable responses per check:
 6. **Remove from opportunities** — if the feature had an `opportunities/` file, delete it
 7. **Update base.md** — adjust counts in Tracking Summary
 
+**Checkpoint**: Present extraction results using this format:
+
+```
+Archive: {nn}-{slug} ({status})
+| Check | Result |
+|-------|--------|
+| Learnings | {created specs/X.md / updated specs/X.md / none} |
+| Opportunities | {created opportunities/X.md / none} |
+| References | {updated references/X.md / none} |
+| Ecosystem | {updated specs/ecosystem-trends.md / none} |
+```
+
 ## Archive File Format
 
 Use the format defined in `SPEC.md` § 3.2 (`archive/{nn}-{slug}.md`).
@@ -88,4 +99,4 @@ Use the format defined in `SPEC.md` § 3.2 (`archive/{nn}-{slug}.md`).
 
 ## Completion Summary
 
-Follow the template in `reference/DIRECTIVES.md`, with skill name "Archive Complete".
+Follow the template in `../feature-radar/references/DIRECTIVES.md`, with skill name "Archive Complete".
