@@ -1,21 +1,18 @@
 ---
 name: feature-radar
 description: |
-  Full-cycle feature discovery, evaluation, and prioritization system. Analyzes your project's
-  codebase, creates a persistent knowledge base at .feature-radar/, and runs a 6-phase workflow
-  to recommend what to build next. Use this skill whenever the user is thinking about project
-  direction, roadmap, or feature planning — even if they don't mention "feature radar" by name.
+  Full-cycle feature discovery, evaluation, and prioritization. Analyzes the codebase, builds
+  a knowledge base at .feature-radar/, and runs a 6-phase workflow to recommend what to build next.
   Use when:
-  - User asks "what should we build next?" or "what's the most impactful thing to work on?"
-  - User wants to review and prioritize their backlog or feature ideas
-  - Starting a new project and need to set up feature tracking
-  - Periodic project review to reassess priorities and find gaps
-  - User has multiple feature ideas and needs help evaluating trade-offs
-  - User mentions roadmap planning, project direction, or strategic priorities
-  - Identifying documentation gaps (implemented features missing from docs)
-  Trigger phrases: "feature radar", "what should we build next", "check feature status",
-  "feature priorities", "project roadmap", "help me prioritize", "what's most important",
-  "review our backlog", "innovation scan", "feature ideas"
+  - "what should we build next?" or "what's most impactful?"
+  - Review/prioritize backlog or feature ideas
+  - Set up feature tracking for a new project
+  - Periodic review to reassess priorities and find gaps
+  - Evaluate trade-offs between multiple feature ideas
+  - Roadmap planning, project direction, strategic priorities
+  - Identifying documentation gaps
+  Trigger phrases: "feature radar", "what should we build next", "feature priorities",
+  "project roadmap", "help me prioritize", "review our backlog", "innovation scan"
 ---
 
 # Feature Discovery & Prioritization
