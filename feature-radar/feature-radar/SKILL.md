@@ -71,17 +71,17 @@ Do NOT proceed to the Workflow until the user approves base.md.
 
 ### base.md Template
 
-Generate `base.md` following the structure defined in `SPEC.md` (sections 2-5).
-Read `SPEC.md` first, then fill `{placeholders}` with project-specific analysis.
+Generate `base.md` following the structure defined in `references/SPEC.md` (sections 2-5).
+Read `references/SPEC.md` first, then fill `{placeholders}` with project-specific analysis.
 
 Key sections to generate:
 - **Project Context** — detected language, architecture, key feature areas, core philosophy, inspiration sources
 - **Feature Inventory** — implemented features table + value & innovation landscape table
 - **Tracking Summary** — counts per category (start at 0)
 - **Directory Layout** — tree view
-- **Classification Rules** — per SPEC.md §3.2-3.5
+- **Classification Rules** — per references/SPEC.md §3.2-3.5
 - **Maintenance Workflow** — feature flow between directories
-- **Archive Extraction Checklist** — per SPEC.md §4.3
+- **Archive Extraction Checklist** — per references/SPEC.md §4.3
 
 After creating the directory, ask the user:
 **"Should I add `.feature-radar/` to `.gitignore`?"**

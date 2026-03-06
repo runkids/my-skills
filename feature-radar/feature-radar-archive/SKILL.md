@@ -79,7 +79,7 @@ Archive: {nn}-{slug} ({status})
 
 ## Archive File Format
 
-Use the format defined in `SPEC.md` § 3.2 (`archive/{nn}-{slug}.md`).
+Use the format defined in `../feature-radar/references/SPEC.md` § 3.2 (`archive/{nn}-{slug}.md`).
 
 ## Guidelines
 

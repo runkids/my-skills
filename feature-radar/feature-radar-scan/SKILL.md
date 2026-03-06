@@ -86,7 +86,7 @@ Scan complete: {n} new opportunities
 
 ## Opportunity File Format
 
-Use the format defined in `SPEC.md` § 3.3 (`opportunities/{nn}-{slug}.md`).
+Use the format defined in `../feature-radar/references/SPEC.md` § 3.3 (`opportunities/{nn}-{slug}.md`).
 
 ## Guidelines
 

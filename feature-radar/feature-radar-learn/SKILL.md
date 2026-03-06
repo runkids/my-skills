@@ -57,7 +57,7 @@ State the classification explicitly in your output.
 
 ## File Format
 
-Use the format defined in `SPEC.md` § 3.4 (`specs/{topic}.md`).
+Use the format defined in `../feature-radar/references/SPEC.md` § 3.4 (`specs/{topic}.md`).
 
 ## Guidelines
 

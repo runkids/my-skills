@@ -57,7 +57,7 @@ Before writing to references/, assess impact by answering ALL of these:
 
 ## File Format
 
-Use the format defined in `SPEC.md` § 3.5 (`references/{topic}.md`).
+Use the format defined in `../feature-radar/references/SPEC.md` § 3.5 (`references/{topic}.md`).
 
 ## Naming Convention
 
