@@ -1,6 +1,6 @@
 ---
 name: skillshare
-version: v0.16.12
+version: v0.17.5
 description: |
   Manages and syncs AI CLI skills across 50+ tools from a single source.
   Use this skill whenever the user mentions "skillshare", runs skillshare commands,
@@ -38,12 +38,26 @@ skillshare install user/repo --track             # Enable `update` later
 skillshare install user/repo -s pdf -p           # Install to project
 skillshare install                               # Reinstall all tracked remotes from config
 skillshare sync                                  # Always sync after install
-skillshare sync extras                           # Sync non-skill extras (rules, commands)
-skillshare sync --all                            # Sync skills + extras together
 ```
+### Extras (Rules, Commands, Prompts)
+```bash
+skillshare extras init rules --target ~/.claude/rules --target ~/.cursor/rules
+skillshare extras init commands --target ~/.claude/commands --mode copy
+skillshare extras init                               # Interactive TUI wizard
+skillshare extras list                               # Show status per target
+skillshare extras list --json                        # JSON output
+skillshare extras collect rules                      # Pull local files into source
+skillshare extras remove rules                       # Remove from config (source preserved)
+skillshare extras rules --mode copy                  # Change sync mode of a target
+skillshare sync extras                               # Sync all extras to targets
+skillshare sync extras --dry-run --force             # Preview / overwrite conflicts
+skillshare sync --all                                # Sync skills + extras together
+```
+See [extras.md](references/extras.md) for details.
 ### Creating & Discovering Skills
 ```bash
-skillshare new my-skill                          # Create a new skill from template
+skillshare new my-skill                          # Create with interactive pattern selection
+skillshare new my-skill -P reviewer              # Use reviewer pattern directly
 skillshare search "react testing"                # Search GitHub for skills
 skillshare collect                               # Pull target-local changes back to source
 ```
@@ -77,6 +91,10 @@ skillshare hub index --source ~/.config/skillshare/skills/ --full --audit  # Bui
 skillshare target claude --add-include "team-*"   # glob filter
 skillshare target claude --add-exclude "_legacy*"  # exclude pattern
 skillshare target codex --mode copy && skillshare sync --force  # copy mode
+# .skillignore — hide skills/dirs from discovery (gitignore syntax)
+#   Root-level: <source>/.skillignore (affects all commands)
+#   Repo-level: <source>/_repo/.skillignore (scoped to that repo)
+#   .skillignore.local — local override (not committed), negation overrides base
 ```
 See [targets.md](references/targets.md) for details.
 ### Updates & Maintenance
@@ -100,6 +118,7 @@ skillshare target list --json                  # Target list as JSON
 skillshare list --json                         # Skill list as JSON
 skillshare search react --json                 # Search results as JSON
 skillshare audit --format json                 # Audit results as JSON
+skillshare doctor --json                       # Health check as JSON (exit 1 on errors)
 ```
 ### Recovery & Troubleshooting
 ```bash
@@ -114,10 +133,11 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 ## Quick Lookup
 | Commands | Project? | `--json`? |
 |----------|:--------:|:---------:|
-| `status`, `diff`, `list`, `doctor` | ✓ (auto) | ✓ (except doctor) |
+| `status`, `diff`, `list`, `doctor` | ✓ (auto) | ✓ |
 | `sync`, `collect` | ✓ (auto) | ✓ |
 | `install`, `uninstall`, `update`, `check`, `search`, `new` | ✓ (`-p`) | ✓ (except new) |
 | `target`, `audit`, `trash`, `log`, `hub` | ✓ (`-p`) | ✓ (target list, audit, log) |
+| `extras init/list/remove/collect/mode` | ✓ (`-p`) | ✓ (list, mode) |
 | `push`, `pull`, `backup`, `restore` | ✗ | ✗ |
 | `tui`, `upgrade` | ✗ | ✗ |
 | `ui` | ✓ (`-p`) | ✗ |
@@ -127,7 +147,7 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 2. **Sync after mutations** — `install`, `uninstall`, `update`, `collect`, `target` all need `sync`.
 3. **Audit** — `install` auto-scans; CRITICAL blocks. `--force` to override, `--skip-audit` to bypass. Detects hardcoded secrets (API keys, tokens, private keys).
 4. **Uninstall safely** — moves to trash (7 days). `trash restore <name>` to undo. **NEVER** `rm -rf` symlinks.
-5. **Output** — `--json` for structured data (12 commands support it, see Quick Lookup). `--no-tui` for plain text on TUI commands (`list`, `log`, `audit`, `diff`, `trash list`, `backup list`). `tui off` disables TUI globally. `--dry-run` to preview.
+5. **Output** — `--json` for structured data (12 commands support it, see Quick Lookup). `--no-tui` for plain text on TUI commands (`list`, `log`, `audit`, `diff`, `trash list`, `backup list`, `target list`). `tui off` disables TUI globally. `--dry-run` to preview.
 
 ## References
 | Topic | File |
@@ -140,5 +160,6 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 | Trash | [trash.md](references/trash.md) |
 | Operation log | [log.md](references/log.md) |
 | Targets | [targets.md](references/targets.md) |
+| Extras (rules/commands/prompts) | [extras.md](references/extras.md) |
 | Backup/restore | [backup.md](references/backup.md) |
 | Troubleshooting | [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) |

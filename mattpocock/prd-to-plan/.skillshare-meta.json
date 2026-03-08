@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/mattpocock/skills/prd-to-plan",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:04.189935+08:00",
+  "repo_url": "https://github.com/mattpocock/skills.git",
+  "subdir": "prd-to-plan",
+  "version": "1325b14",
+  "tree_hash": "7317892c8d1978d485a166e8f7464fd4a45e9c08",
+  "file_hashes": {
+    "SKILL.md": "sha256:96fa3e558ad0b88c8776d3cee3eb50e41808273d053b5fecc3c80d4ccde9cc38"
+  }
+}

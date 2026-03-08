@@ -1,0 +1,19 @@
+{
+  "source": "https://github.com/pbakaus/impeccable.git/source/skills/frontend-design",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:37.96955+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/frontend-design",
+  "version": "d6b1a56",
+  "tree_hash": "6c06ad8a4f1f207c9ed3842cce9f58f6c23fe88f",
+  "file_hashes": {
+    "SKILL.md": "sha256:927772254aba80c426b38fd6835c487e4855b9b830214485b87e6140b0a8f462",
+    "reference/color-and-contrast.md": "sha256:be502ad08270cd60cabb6769a6e1ed517ecaeeb7d40f6e610f1802689ee78ddc",
+    "reference/interaction-design.md": "sha256:997d5e66ae54fcf8e59a0fcf0a2db49982ffe7b9b6cc091bcf64a3b3e0828ed7",
+    "reference/motion-design.md": "sha256:c35a59b5f795721c914cfccf9b470e89a5010c563cd85ab46a67031531678f3f",
+    "reference/responsive-design.md": "sha256:5add44195a42cf7fa82aecadaad79b8875446b930e06d087d73f3722533fd95a",
+    "reference/spatial-design.md": "sha256:10c743ee8245fc1be9e8af2b79dd08b0dae19fcde33d46c9730c000d7e13b7cd",
+    "reference/typography.md": "sha256:f18de3de5eea28c88af1904b913dc245a15815330b70c4e2babcee93398d855b",
+    "reference/ux-writing.md": "sha256:0cd5e958d92be6e2331cb199d6ed5d98597aa20ec4922d4c3df56e7753cfc00c"
+  }
+}

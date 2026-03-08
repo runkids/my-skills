@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/mattpocock/skills/prd-to-issues",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:04.183385+08:00",
+  "repo_url": "https://github.com/mattpocock/skills.git",
+  "subdir": "prd-to-issues",
+  "version": "1325b14",
+  "tree_hash": "16cfef941383949d7f9d2dca5b939e19e9eabf9f",
+  "file_hashes": {
+    "SKILL.md": "sha256:8d964c1c399ea58ce9c05cfb9dbfef9525d2c0b6d132caae384347a3cda33c9e"
+  }
+}

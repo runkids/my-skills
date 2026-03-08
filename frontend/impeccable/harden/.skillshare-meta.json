@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/harden",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:34.975153+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/harden",
+  "version": "d6b1a56",
+  "tree_hash": "e47bd79f6c709e4bf1a99197c6bbaf83326be9c0",
+  "file_hashes": {
+    "SKILL.md": "sha256:4756b3f0365de089e7d4dd5a67f813df32a487a5cd2cf4793a32a58a04938a7b"
+  }
+}

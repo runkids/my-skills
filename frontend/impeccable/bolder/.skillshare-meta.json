@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/pbakaus/impeccable.git/source/skills/bolder",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:37.826907+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/bolder",
+  "version": "d6b1a56",
+  "tree_hash": "6baf8fb0dcfafaec8dec228dd63ce33c3a627591",
+  "file_hashes": {
+    "SKILL.md": "sha256:425b0df9450c08713117ef27acaaa5ac40b3deaf29eb396691c36938e3c36aad"
+  }
+}

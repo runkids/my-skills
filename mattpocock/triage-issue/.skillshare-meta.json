@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/mattpocock/skills/triage-issue",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:04.227776+08:00",
+  "repo_url": "https://github.com/mattpocock/skills.git",
+  "subdir": "triage-issue",
+  "version": "1325b14",
+  "tree_hash": "0dd446c98de9b2221534895e490319c0d487a586",
+  "file_hashes": {
+    "SKILL.md": "sha256:834e528eb0d4f2cd46c7c14dc6d5c0a96e9fcd77c992257c78570d8a6b4cdaae"
+  }
+}

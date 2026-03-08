@@ -4,7 +4,7 @@
   "installed_at": "2026-02-27T00:47:57.377413+08:00",
   "repo_url": "https://github.com/davila7/claude-code-templates.git",
   "subdir": "cli-tool/components/skills/development/docker-expert",
-  "version": "2ed5d98",
+  "version": "a064058",
   "tree_hash": "45853e487ac0d45f8cded5d33ac97fa34d2f3c0a",
   "file_hashes": {
     "SKILL.md": "sha256:e33b08feeaa8e110c08dddd030970547356514d42aa484e52f51e2fd2d4f451b"

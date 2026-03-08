@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/extract",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:34.938559+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/extract",
+  "version": "d6b1a56",
+  "tree_hash": "7229fee7f986ec997f45be4bb5b4e8094cd46d61",
+  "file_hashes": {
+    "SKILL.md": "sha256:9e47fa5ef6be6960adc46fc91d80af7fc748780ac11605d625bcaf225427572b"
+  }
+}

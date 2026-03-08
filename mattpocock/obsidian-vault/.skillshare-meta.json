@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/mattpocock/skills/obsidian-vault",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:04.176836+08:00",
+  "repo_url": "https://github.com/mattpocock/skills.git",
+  "subdir": "obsidian-vault",
+  "version": "1325b14",
+  "tree_hash": "1e814d168a215762391895aee58f4de06c8e3b7f",
+  "file_hashes": {
+    "SKILL.md": "sha256:7bed1d552aa5e9345e493cd62cb13e65c5d829d153c349afdb2cb91c809fa6c4"
+  }
+}

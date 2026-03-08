@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/pbakaus/impeccable.git/source/skills/onboard",
+  "type": "github-subdir",
+  "installed_at": "2026-03-19T14:09:37.991614+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/onboard",
+  "version": "d6b1a56",
+  "tree_hash": "c5cacbd728060862ae620e569345ce79f1d5b8d3",
+  "file_hashes": {
+    "SKILL.md": "sha256:13e1e7cbb5bf500e4d4be3a84884254be0a5eddcbfb8586b71e02b2914d998f9"
+  }
+}
