@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/teach-impeccable",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:35.025726+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/teach-impeccable",
+  "version": "0df1ba5",
+  "tree_hash": "7dbf2c55800abc316c609e3d5803daae7667ca48",
+  "file_hashes": {
+    "SKILL.md": "sha256:84b8ca27d9ea3f53c146cb5d9697c8aca9b7da166e8e5b4ca87feb2423f3dd50"
+  }
+}

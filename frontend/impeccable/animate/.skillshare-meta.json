@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/animate",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:34.868002+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/animate",
+  "version": "0df1ba5",
+  "tree_hash": "fbb1510c1e32708f22c8517c6419747d140698c3",
+  "file_hashes": {
+    "SKILL.md": "sha256:c380011a9dc1fbf8db38379f18fde647a5922ebd105404fcc15e531c03dfae62"
+  }
+}

@@ -4,7 +4,7 @@
   "installed_at": "2026-02-27T00:47:52.454588+08:00",
   "repo_url": "https://github.com/anthropics/skills.git",
   "subdir": "skills/frontend-design",
-  "version": "3d59511",
+  "version": "b0cbd3d",
   "tree_hash": "928950704df8a8b885c03de5da626331e6f29cf8",
   "file_hashes": {
     "LICENSE.txt": "sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",

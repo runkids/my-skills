@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/adapt",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:34.857996+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/adapt",
+  "version": "0df1ba5",
+  "tree_hash": "78bd71154aace7448e70ff1ecb9f0881b482774b",
+  "file_hashes": {
+    "SKILL.md": "sha256:a97c49f51b0d20229369eabb5b02dbbb6fcbf4316fc659bc3f931b2d2b9accf3"
+  }
+}

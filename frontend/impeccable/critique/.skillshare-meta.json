@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/critique",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:34.911558+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/critique",
+  "version": "0df1ba5",
+  "tree_hash": "a03ec739ebfe68ab6c94899e4b44080e500a2884",
+  "file_hashes": {
+    "SKILL.md": "sha256:f615589febd39710901817be9d8673c6ed2d8a3123ebdf2e6e87785a1390b52d"
+  }
+}

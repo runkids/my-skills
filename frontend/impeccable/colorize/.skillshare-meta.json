@@ -1,0 +1,12 @@
+{
+  "source": "github.com/pbakaus/impeccable/source/skills/colorize",
+  "type": "github-subdir",
+  "installed_at": "2026-03-11T22:29:34.904109+08:00",
+  "repo_url": "https://github.com/pbakaus/impeccable.git",
+  "subdir": "source/skills/colorize",
+  "version": "0df1ba5",
+  "tree_hash": "9418e59cd922d386fe2a08f316c61b6e7dd8d631",
+  "file_hashes": {
+    "SKILL.md": "sha256:c239bcdbe70d9be673fd6347ac08db802f1e4ed1db48a33d642f6a3ae05a906e"
+  }
+}
