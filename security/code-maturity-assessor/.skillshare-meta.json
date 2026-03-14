@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/trailofbits/skills/plugins/building-secure-contracts/skills/code-maturity-assessor",
   "type": "github-subdir",
-  "installed_at": "2026-03-05T02:10:28.211859+08:00",
+  "installed_at": "2026-03-14T02:28:17.601843+08:00",
   "repo_url": "https://github.com/trailofbits/skills.git",
   "subdir": "plugins/building-secure-contracts/skills/code-maturity-assessor",
   "version": "c609769",
