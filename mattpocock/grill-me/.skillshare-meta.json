@@ -1,12 +1,12 @@
 {
-  "source": "https://github.com/mattpocock/skills/grill-me",
+  "source": "https://github.com/mattpocock/skills.git/grill-me",
   "type": "github-subdir",
-  "installed_at": "2026-03-19T14:09:04.153976+08:00",
+  "installed_at": "2026-03-25T04:46:26.027875+08:00",
   "repo_url": "https://github.com/mattpocock/skills.git",
   "subdir": "grill-me",
-  "version": "1325b14",
-  "tree_hash": "5a116da73f4e186f2ad9ce29aae23f5fdaa41017",
+  "version": "fb3629d",
+  "tree_hash": "58fccb407d628b1e89832b681410870826a947b9",
   "file_hashes": {
-    "SKILL.md": "sha256:098e9e2398b58c1e731ff6175bb6fdadcb02e5f01eeea6452265cfc67faf66a5"
+    "SKILL.md": "sha256:a9f2912c0f532176b109e9db52161304cc9d7b2624bee49c70bfa95f0afe35a6"
   }
 }

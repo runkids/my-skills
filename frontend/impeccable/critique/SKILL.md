@@ -5,7 +5,7 @@ args:
   - name: area
     description: The feature or area to critique (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 ## MANDATORY PREPARATION

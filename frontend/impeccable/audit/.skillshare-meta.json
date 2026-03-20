@@ -1,12 +1,12 @@
 {
-  "source": "github.com/pbakaus/impeccable/source/skills/audit",
+  "source": "https://github.com/pbakaus/impeccable.git/source/skills/audit",
   "type": "github-subdir",
-  "installed_at": "2026-03-11T22:29:34.877078+08:00",
+  "installed_at": "2026-03-25T04:46:18.951864+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/audit",
-  "version": "d6b1a56",
-  "tree_hash": "29776bfc7ec331a3d830f4e215976a9e65769f3d",
+  "version": "e9ab330",
+  "tree_hash": "a1ff17cc7060c26c4332d19ac5bdee66da02ee5d",
   "file_hashes": {
-    "SKILL.md": "sha256:7caba2be9e2ce1bc11fb8635406a7e67ee8a296a52ee59848e02c2ef60531a0c"
+    "SKILL.md": "sha256:7c287c2676e09b020c2bcfb415e137acc46b0a6db3fbb0e22d8220b8e12ab7c4"
   }
 }

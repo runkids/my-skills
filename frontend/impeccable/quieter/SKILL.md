@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or component to make quieter (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Reduce visual intensity in designs that are too bold, aggressive, or overstimulating, creating a more refined and approachable aesthetic without losing effectiveness.

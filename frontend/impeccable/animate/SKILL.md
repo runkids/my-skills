@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or component to animate (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Analyze a feature and strategically add animations and micro-interactions that enhance understanding, provide feedback, and create delight.

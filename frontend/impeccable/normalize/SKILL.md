@@ -5,7 +5,7 @@ args:
   - name: feature
     description: The page, route, or feature to normalize (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Analyze and redesign the feature to perfectly match our design system standards, aesthetics, and established patterns.

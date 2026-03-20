@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or component to colorize (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Strategically introduce color to designs that are too monochromatic, gray, or lacking in visual warmth and personality.

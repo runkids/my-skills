@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature, component, or area to extract from (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Identify reusable patterns, components, and design tokens, then extract and consolidate them into the design system for systematic reuse.

@@ -18,7 +18,7 @@ bunx remotion ffprobe input.mp4
 
 You have 2 options for trimming videos:
 
-1. Use the FFMpeg command line. You MUST re-encode the video to avoid frozen frames at the start of the video.
+1. Use the FFmpeg command line. You MUST re-encode the video to avoid frozen frames at the start of the video.
 
 ```bash
 # Re-encodes from the exact frame

@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or area to optimize (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Identify and fix performance issues to create faster, smoother user experiences.

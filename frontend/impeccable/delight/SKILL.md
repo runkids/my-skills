@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or area to add delight to (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Identify opportunities to add moments of joy, personality, and unexpected polish that transform functional interfaces into delightful experiences.

@@ -4,7 +4,7 @@
   "installed_at": "2026-03-19T14:09:04.210734+08:00",
   "repo_url": "https://github.com/mattpocock/skills.git",
   "subdir": "setup-pre-commit",
-  "version": "1325b14",
+  "version": "fb3629d",
   "tree_hash": "5e6e9301b4826bd820401ea4114a797adb169f47",
   "file_hashes": {
     "SKILL.md": "sha256:872f4037cb7e6e0e340d4175c086550072959925dffc87b160d1a30dc9f63bbd"

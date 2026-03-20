@@ -4,7 +4,7 @@
   "installed_at": "2026-02-27T00:47:52.539351+08:00",
   "repo_url": "https://github.com/anthropics/skills.git",
   "subdir": "skills/web-artifacts-builder",
-  "version": "b0cbd3d",
+  "version": "887114f",
   "tree_hash": "9ecbeae7c17caa478c5b753ba1bd258688075b5f",
   "file_hashes": {
     "LICENSE.txt": "sha256:58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",

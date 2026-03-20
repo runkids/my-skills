@@ -1,6 +1,6 @@
 ---
 name: skillshare
-version: v0.17.5
+version: v0.17.8
 description: |
   Manages and syncs AI CLI skills across 50+ tools from a single source.
   Use this skill whenever the user mentions "skillshare", runs skillshare commands,
@@ -43,9 +43,13 @@ skillshare sync                                  # Always sync after install
 ```bash
 skillshare extras init rules --target ~/.claude/rules --target ~/.cursor/rules
 skillshare extras init commands --target ~/.claude/commands --mode copy
-skillshare extras init                               # Interactive TUI wizard
+skillshare extras init rules --target ~/.claude/rules --source ~/shared/rules  # custom source (global only)
+skillshare extras init rules --target ~/.cursor/rules --force                  # overwrite existing
+skillshare extras init                               # Interactive TUI wizard (incl. source step)
+skillshare extras source                             # Show current extras_source
+skillshare extras source ~/shared/extras             # Set global extras_source
 skillshare extras list                               # Show status per target
-skillshare extras list --json                        # JSON output
+skillshare extras list --json                        # JSON with source_type field
 skillshare extras collect rules                      # Pull local files into source
 skillshare extras remove rules                       # Remove from config (source preserved)
 skillshare extras rules --mode copy                  # Change sync mode of a target
@@ -137,7 +141,7 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 | `sync`, `collect` | ✓ (auto) | ✓ |
 | `install`, `uninstall`, `update`, `check`, `search`, `new` | ✓ (`-p`) | ✓ (except new) |
 | `target`, `audit`, `trash`, `log`, `hub` | ✓ (`-p`) | ✓ (target list, audit, log) |
-| `extras init/list/remove/collect/mode` | ✓ (`-p`) | ✓ (list, mode) |
+| `extras init/list/remove/collect/source/mode` | ✓ (`-p`, except source) | ✓ (list, mode) |
 | `push`, `pull`, `backup`, `restore` | ✗ | ✗ |
 | `tui`, `upgrade` | ✗ | ✗ |
 | `ui` | ✓ (`-p`) | ✗ |

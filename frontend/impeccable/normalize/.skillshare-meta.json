@@ -1,12 +1,12 @@
 {
   "source": "https://github.com/pbakaus/impeccable.git/source/skills/normalize",
   "type": "github-subdir",
-  "installed_at": "2026-03-19T14:09:37.871575+08:00",
+  "installed_at": "2026-03-25T04:46:19.035018+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/normalize",
-  "version": "d6b1a56",
-  "tree_hash": "c0aff32da9c244e9fe20868b8949461191b72cfd",
+  "version": "e9ab330",
+  "tree_hash": "1cb32bbacc76b7e0b787837931666c79e6c835e2",
   "file_hashes": {
-    "SKILL.md": "sha256:07c57f52413f6c0e062aae4f474248364371b81e1cb514c74ebe6d09485d691f"
+    "SKILL.md": "sha256:e93333019ce17c7eb55632521767493c06110cf22511a9a741bc71e630f79896"
   }
 }

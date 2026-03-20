@@ -4,7 +4,7 @@
   "installed_at": "2026-03-19T14:09:04.170553+08:00",
   "repo_url": "https://github.com/mattpocock/skills.git",
   "subdir": "migrate-to-shoehorn",
-  "version": "1325b14",
+  "version": "fb3629d",
   "tree_hash": "ad722b79beb1c1fb998678d498ba11760d53714b",
   "file_hashes": {
     "SKILL.md": "sha256:de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72"

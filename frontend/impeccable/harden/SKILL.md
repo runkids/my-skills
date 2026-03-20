@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or area to harden (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 Strengthen interfaces against edge cases, errors, internationalization issues, and real-world usage scenarios that break idealized designs.

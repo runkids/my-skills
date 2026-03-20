@@ -5,7 +5,7 @@ args:
   - name: target
     description: The feature or area needing onboarding (optional)
     required: false
-user-invokable: true
+user-invocable: true
 ---
 
 ## MANDATORY PREPARATION

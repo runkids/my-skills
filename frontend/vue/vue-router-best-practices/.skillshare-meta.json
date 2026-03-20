@@ -4,7 +4,7 @@
   "installed_at": "2026-02-27T00:47:48.359217+08:00",
   "repo_url": "https://github.com/vuejs-ai/skills.git",
   "subdir": "skills/vue-router-best-practices",
-  "version": "f3dd1bf",
+  "version": "9c4dd34",
   "tree_hash": "0a68887518bd72091266aa97352e19347bf00666",
   "file_hashes": {
     "SKILL.md": "sha256:33889faf631e80bf112a096dfe3e76029447f05f99d6d5c0aea2daddff186d7c",

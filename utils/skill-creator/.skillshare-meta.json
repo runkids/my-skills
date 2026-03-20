@@ -4,7 +4,7 @@
   "installed_at": "2026-03-08T23:31:38.84901+08:00",
   "repo_url": "https://github.com/anthropics/skills.git",
   "subdir": "skills/skill-creator",
-  "version": "b0cbd3d",
+  "version": "887114f",
   "tree_hash": "98a510d1cfef9f82c3b1eec200229ca68725e613",
   "file_hashes": {
     "LICENSE.txt": "sha256:58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
