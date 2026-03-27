@@ -1,12 +1,12 @@
 {
   "source": "https://github.com/pbakaus/impeccable.git/source/skills/quieter",
   "type": "github-subdir",
-  "installed_at": "2026-03-25T04:46:19.046378+08:00",
+  "installed_at": "2026-03-28T01:53:57.857212+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/quieter",
-  "version": "e9ab330",
-  "tree_hash": "ce6cb1b95dcaf4a32e3b2b771fbcdd6653f819ba",
+  "version": "9d368b7",
+  "tree_hash": "66d3b55e92b5a12fecf1578c815c70536f77ac76",
   "file_hashes": {
-    "SKILL.md": "sha256:33d781f0fac0b21600a487bb2c432840820aacaf3d73e8e815e246db3889ce1d"
+    "SKILL.md": "sha256:362d02bd02bfd8b663ebf88f76569e9962cf8729d9b785be4406a0a78093499c"
   }
 }

@@ -1,12 +1,15 @@
 {
   "source": "https://github.com/pbakaus/impeccable.git/source/skills/critique",
   "type": "github-subdir",
-  "installed_at": "2026-03-25T04:46:19.023852+08:00",
+  "installed_at": "2026-03-28T01:53:42.018302+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/critique",
-  "version": "e9ab330",
-  "tree_hash": "bfd58159b813f22a9073cf79dc6ad1aae16f7ae4",
+  "version": "9d368b7",
+  "tree_hash": "21bd765653ab01043bf27dcc1c085b5da2ef1597",
   "file_hashes": {
-    "SKILL.md": "sha256:22cfc064796a900e20e22fa185c0b2acc5a614b012d85f6faea1baaec136f9cc"
+    "SKILL.md": "sha256:f68d9b52d9acb04ecc58f93cc0eddc83ef3ab29d4f5dc4e4cafb0195722e1c4d",
+    "reference/cognitive-load.md": "sha256:7653f0a2f60f6d0471581f4b84c24df5408e70f8e2b727a6cdf3872dcf42676f",
+    "reference/heuristics-scoring.md": "sha256:c047724521f6f73e2eecacf62e77498848370a8e4a0b32c900bd87ae9f1134ea",
+    "reference/personas.md": "sha256:637626a9077143b249224776a00ae4aae8f0e83d44711079dd28acaddb090532"
   }
 }

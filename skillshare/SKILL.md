@@ -1,10 +1,9 @@
 ---
 name: skillshare
-version: v0.17.8
 description: |
   Manages and syncs AI CLI skills across 50+ tools from a single source.
   Use this skill whenever the user mentions "skillshare", runs skillshare commands,
-  manages skills (install, update, uninstall, sync, audit, check, diff, search),
+  manages skills (install, update, uninstall, sync, audit, analyze, check, diff, search),
   or troubleshoots skill configuration (orphaned symlinks, broken targets, sync
   issues). Covers both global (~/.config/skillshare/) and project (.skillshare/)
   modes. Also use when: adding new AI tool targets (Claude, Cursor, Windsurf, etc.),
@@ -12,6 +11,8 @@ description: |
   or trash recovery, piping skillshare output to scripts (--json), setting up CI/CD
   audit pipelines, or building/sharing skill hubs (hub index, hub add).
 argument-hint: "[command] [target] [--json] [--dry-run] [-p|-g]"
+metadata:
+  version: v0.18.3
 ---
 
 # Skillshare CLI
@@ -52,7 +53,9 @@ skillshare extras list                               # Show status per target
 skillshare extras list --json                        # JSON with source_type field
 skillshare extras collect rules                      # Pull local files into source
 skillshare extras remove rules                       # Remove from config (source preserved)
+skillshare extras init agents --target ~/.claude/agents --flatten  # Flatten subdirs into root
 skillshare extras rules --mode copy                  # Change sync mode of a target
+skillshare extras agents --flatten                   # Enable flatten on existing target
 skillshare sync extras                               # Sync all extras to targets
 skillshare sync extras --dry-run --force             # Preview / overwrite conflicts
 skillshare sync --all                                # Sync skills + extras together
@@ -71,6 +74,15 @@ skillshare uninstall my-skill                    # Remove one (moves to trash)
 skillshare uninstall skill-a skill-b             # Remove multiple
 skillshare uninstall -G frontend                 # Remove entire group
 skillshare sync                                  # Always sync after uninstall
+```
+### Enable / Disable Skills
+```bash
+skillshare disable draft-*                       # Hide from sync (adds to .skillignore)
+skillshare enable draft-*                        # Restore (removes from .skillignore)
+skillshare disable my-skill -p                   # Project mode
+skillshare disable my-skill --dry-run            # Preview
+# TUI: press E in `skillshare list` to toggle
+skillshare sync                                  # Always sync after toggle
 ```
 ### Team / Organization
 ```bash
@@ -140,8 +152,9 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 | `status`, `diff`, `list`, `doctor` | ✓ (auto) | ✓ |
 | `sync`, `collect` | ✓ (auto) | ✓ |
 | `install`, `uninstall`, `update`, `check`, `search`, `new` | ✓ (`-p`) | ✓ (except new) |
-| `target`, `audit`, `trash`, `log`, `hub` | ✓ (`-p`) | ✓ (target list, audit, log) |
+| `target`, `audit`, `analyze`, `trash`, `log`, `hub` | ✓ (`-p`) | ✓ (target list, audit, analyze, log) |
 | `extras init/list/remove/collect/source/mode` | ✓ (`-p`, except source) | ✓ (list, mode) |
+| `enable`, `disable` | ✓ (auto) | ✗ |
 | `push`, `pull`, `backup`, `restore` | ✗ | ✗ |
 | `tui`, `upgrade` | ✗ | ✗ |
 | `ui` | ✓ (`-p`) | ✗ |
@@ -151,7 +164,7 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 2. **Sync after mutations** — `install`, `uninstall`, `update`, `collect`, `target` all need `sync`.
 3. **Audit** — `install` auto-scans; CRITICAL blocks. `--force` to override, `--skip-audit` to bypass. Detects hardcoded secrets (API keys, tokens, private keys).
 4. **Uninstall safely** — moves to trash (7 days). `trash restore <name>` to undo. **NEVER** `rm -rf` symlinks.
-5. **Output** — `--json` for structured data (12 commands support it, see Quick Lookup). `--no-tui` for plain text on TUI commands (`list`, `log`, `audit`, `diff`, `trash list`, `backup list`, `target list`). `tui off` disables TUI globally. `--dry-run` to preview.
+5. **Output** — `--json` for structured data (12 commands support it, see Quick Lookup). `--no-tui` for plain text on TUI commands (`list`, `log`, `audit`, `analyze`, `diff`, `trash list`, `backup list`, `target list`). `tui off` disables TUI globally. `--dry-run` to preview.
 
 ## References
 | Topic | File |

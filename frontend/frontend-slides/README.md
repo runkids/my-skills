@@ -10,7 +10,6 @@ Here is a deck about the skill, made through the skill:
 
 https://github.com/user-attachments/assets/ef57333e-f879-432a-afb9-180388982478
 
-
 ### Key Features
 
 - **Zero Dependencies** — Single HTML files with inline CSS/JS. No npm, no build tools, no frameworks.
@@ -53,6 +52,7 @@ Then use it by typing `/frontend-slides` in Claude Code.
 ```
 
 The skill will:
+
 1. Ask about your content (slides, messages, images)
 2. Ask about the feeling you want (impressed? excited? calm?)
 3. Generate 3 visual style previews for you to compare
@@ -68,6 +68,7 @@ The skill will:
 ```
 
 The skill will:
+
 1. Extract all text, images, and notes from your PPT
 2. Show you the extracted content for confirmation
 3. Let you pick a visual style
@@ -76,18 +77,21 @@ The skill will:
 ## Included Styles
 
 ### Dark Themes
+
 - **Bold Signal** — Confident, high-impact, vibrant card on dark
 - **Electric Studio** — Clean, professional, split-panel
 - **Creative Voltage** — Energetic, retro-modern, electric blue + neon
 - **Dark Botanical** — Elegant, sophisticated, warm accents
 
 ### Light Themes
+
 - **Notebook Tabs** — Editorial, organized, paper with colorful tabs
 - **Pastel Geometry** — Friendly, approachable, vertical pills
 - **Split Pastel** — Playful, modern, two-color vertical split
 - **Vintage Editorial** — Witty, personality-driven, geometric shapes
 
 ### Specialty
+
 - **Neon Cyber** — Futuristic, particle backgrounds, neon glow
 - **Terminal Green** — Developer-focused, hacker aesthetic
 - **Swiss Modern** — Minimal, Bauhaus-inspired, geometric
@@ -97,14 +101,16 @@ The skill will:
 
 This skill uses **progressive disclosure** — the main `SKILL.md` is a concise map (~180 lines), with supporting files loaded on-demand only when needed:
 
-| File | Purpose | Loaded When |
-|------|---------|-------------|
-| `SKILL.md` | Core workflow and rules | Always (skill invocation) |
-| `STYLE_PRESETS.md` | 12 curated visual presets | Phase 2 (style selection) |
-| `viewport-base.css` | Mandatory responsive CSS | Phase 3 (generation) |
-| `html-template.md` | HTML structure and JS features | Phase 3 (generation) |
-| `animation-patterns.md` | CSS/JS animation reference | Phase 3 (generation) |
-| `scripts/extract-pptx.py` | PPT content extraction | Phase 4 (conversion) |
+| File                      | Purpose                        | Loaded When               |
+| ------------------------- | ------------------------------ | ------------------------- |
+| `SKILL.md`                | Core workflow and rules        | Always (skill invocation) |
+| `STYLE_PRESETS.md`        | 12 curated visual presets      | Phase 2 (style selection) |
+| `viewport-base.css`       | Mandatory responsive CSS       | Phase 3 (generation)      |
+| `html-template.md`        | HTML structure and JS features | Phase 3 (generation)      |
+| `animation-patterns.md`   | CSS/JS animation reference     | Phase 3 (generation)      |
+| `scripts/extract-pptx.py` | PPT content extraction         | Phase 4 (conversion)      |
+| `scripts/deploy.sh`       | Deploy to Vercel               | Phase 6 (sharing)         |
+| `scripts/export-pdf.sh`   | Export slides to PDF           | Phase 6 (sharing)         |
 
 This design follows [OpenAI's harness engineering](https://openai.com/index/harness-engineering/) principle: "give the agent a map, not a 1,000-page instruction manual."
 
@@ -120,10 +126,39 @@ This skill was born from the belief that:
 
 4. **Comments are kindness.** Code should explain itself to future-you (or anyone else who opens it).
 
+## Sharing Your Presentations
+
+After creating a presentation, the skill offers two ways to share it:
+
+### Deploy to a Live URL
+
+One command deploys your slides to a permanent, shareable URL that works on any device — phones, tablets, laptops:
+
+```bash
+bash scripts/deploy.sh ./my-deck/
+# or
+bash scripts/deploy.sh ./presentation.html
+```
+
+Uses [Vercel](https://vercel.com) (free tier). The skill walks you through signup and login if it's your first time.
+
+### Export to PDF
+
+Convert your slides to a PDF for email, Slack, Notion, or printing:
+
+```bash
+bash scripts/export-pdf.sh ./my-deck/index.html
+bash scripts/export-pdf.sh ./presentation.html ./output.pdf
+```
+
+Uses [Playwright](https://playwright.dev) to screenshot each slide at 1920×1080 and combine into a PDF. Installs automatically if needed. Animations are not preserved (it's a static snapshot).
+
 ## Requirements
 
 - [Claude Code](https://claude.ai/claude-code) CLI
 - For PPT conversion: Python with `python-pptx` library
+- For URL deployment: Node.js + Vercel account (free)
+- For PDF export: Node.js (Playwright installs automatically)
 
 ## Credits
 

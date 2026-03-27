@@ -1,12 +1,12 @@
 {
   "source": "https://github.com/pbakaus/impeccable.git/source/skills/delight",
   "type": "github-subdir",
-  "installed_at": "2026-03-25T04:46:18.87249+08:00",
+  "installed_at": "2026-03-28T01:53:43.705158+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/delight",
-  "version": "e9ab330",
-  "tree_hash": "2e57b5cfeb46955761097070622b132027512885",
+  "version": "9d368b7",
+  "tree_hash": "a5426be12631aa6c08d4a8470c2aaf8c7e1c34ca",
   "file_hashes": {
-    "SKILL.md": "sha256:2010a2d35ae02b76c3ad05db20803a0c5b15b6a8a534054541ee1be696fd2279"
+    "SKILL.md": "sha256:ee630ec75f14dfa71bfe70f3b9c77903ad470e3076a919e2ea71cf86875c72fd"
   }
 }

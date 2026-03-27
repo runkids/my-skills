@@ -1,12 +1,12 @@
 {
   "source": "https://github.com/pbakaus/impeccable.git/source/skills/optimize",
   "type": "github-subdir",
-  "installed_at": "2026-03-25T04:46:18.927796+08:00",
+  "installed_at": "2026-03-28T01:53:54.692996+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/optimize",
-  "version": "e9ab330",
-  "tree_hash": "1b8562ecfce83e6aaa0f53dfb9439f2b6c05a9b4",
+  "version": "9d368b7",
+  "tree_hash": "5b068f9db16e713c639ff44cc23e5ac1b034cf84",
   "file_hashes": {
-    "SKILL.md": "sha256:55b73a153dad1dd8a4946fc116a9d938b9270fb6224880c9828682540cb929c5"
+    "SKILL.md": "sha256:c6dd784b70bda4364b454fcd02e5268f9abc06f4f7857532329568b7b575543e"
   }
 }

@@ -1,12 +1,12 @@
 {
   "source": "https://github.com/pbakaus/impeccable.git/source/skills/polish",
   "type": "github-subdir",
-  "installed_at": "2026-03-25T04:46:18.98846+08:00",
+  "installed_at": "2026-03-28T01:53:56.30848+08:00",
   "repo_url": "https://github.com/pbakaus/impeccable.git",
   "subdir": "source/skills/polish",
-  "version": "e9ab330",
-  "tree_hash": "646f5a641a3e012e6120c5362b4dadbf81ee3bb6",
+  "version": "9d368b7",
+  "tree_hash": "c132037fe7c47be043d6491c830d63b6c9aa4e3e",
   "file_hashes": {
-    "SKILL.md": "sha256:b2a458921a707792c1a39ed95ce6a38034e14a92049119c3f12ce6dc0b3b3537"
+    "SKILL.md": "sha256:dfa8c64281f8dfc56dd9c7bcb800c94f6f4130674cc9cbc6ebdaf3cd35567c6e"
   }
 }
