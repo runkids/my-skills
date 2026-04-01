@@ -1,178 +1,41 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/runkids/skillshare/main/schemas/registry.schema.json
 skills:
-    - name: docker-expert
-      source: https://github.com/davila7/claude-code-templates.git/cli-tool/components/skills/development/docker-expert
-      group: devops
-    - name: feature-radar
-      source: https://github.com/runkids/feature-radar.git/skills/feature-radar
-      group: feature-radar
-    - name: feature-radar-archive
-      source: https://github.com/runkids/feature-radar.git/skills/feature-radar-archive
-      group: feature-radar
-    - name: feature-radar-learn
-      source: https://github.com/runkids/feature-radar.git/skills/feature-radar-learn
-      group: feature-radar
-    - name: feature-radar-ref
-      source: https://github.com/runkids/feature-radar.git/skills/feature-radar-ref
-      group: feature-radar
-    - name: feature-radar-scan
-      source: https://github.com/runkids/feature-radar.git/skills/feature-radar-scan
-      group: feature-radar
-    - name: frontend-design
-      source: https://github.com/anthropics/skills.git/skills/frontend-design
-      group: frontend
-    - name: frontend-slides
-      source: https://github.com/zarazhangrui/frontend-slides.git
-      group: frontend
-    - name: adapt
-      source: github.com/pbakaus/impeccable/source/skills/adapt
-      group: frontend/impeccable
-    - name: animate
-      source: github.com/pbakaus/impeccable/source/skills/animate
-      group: frontend/impeccable
-    - name: audit
-      source: github.com/pbakaus/impeccable/source/skills/audit
-      group: frontend/impeccable
-    - name: bolder
-      source: github.com/pbakaus/impeccable/source/skills/bolder
-      group: frontend/impeccable
-    - name: clarify
-      source: github.com/pbakaus/impeccable/source/skills/clarify
-      group: frontend/impeccable
-    - name: colorize
-      source: github.com/pbakaus/impeccable/source/skills/colorize
-      group: frontend/impeccable
-    - name: critique
-      source: github.com/pbakaus/impeccable/source/skills/critique
-      group: frontend/impeccable
-    - name: delight
-      source: github.com/pbakaus/impeccable/source/skills/delight
-      group: frontend/impeccable
-    - name: distill
-      source: github.com/pbakaus/impeccable/source/skills/distill
-      group: frontend/impeccable
-    - name: extract
-      source: github.com/pbakaus/impeccable/source/skills/extract
-      group: frontend/impeccable
-    - name: frontend-design
-      source: github.com/pbakaus/impeccable/source/skills/frontend-design
-      group: frontend/impeccable
-    - name: harden
-      source: github.com/pbakaus/impeccable/source/skills/harden
-      group: frontend/impeccable
-    - name: normalize
-      source: github.com/pbakaus/impeccable/source/skills/normalize
-      group: frontend/impeccable
-    - name: onboard
-      source: github.com/pbakaus/impeccable/source/skills/onboard
-      group: frontend/impeccable
-    - name: optimize
-      source: github.com/pbakaus/impeccable/source/skills/optimize
-      group: frontend/impeccable
-    - name: polish
-      source: github.com/pbakaus/impeccable/source/skills/polish
-      group: frontend/impeccable
-    - name: quieter
-      source: github.com/pbakaus/impeccable/source/skills/quieter
-      group: frontend/impeccable
-    - name: teach-impeccable
-      source: github.com/pbakaus/impeccable/source/skills/teach-impeccable
-      group: frontend/impeccable
-    - name: react-doctor
-      source: https://github.com/millionco/react-doctor.git/skills/react-doctor
-      group: frontend/react
-    - name: vue-best-practices
-      source: https://github.com/vuejs-ai/skills.git/skills/vue-best-practices
-      group: frontend/vue
-    - name: vue-options-api-best-practices
-      source: https://github.com/vuejs-ai/skills.git/skills/vue-options-api-best-practices
-      group: frontend/vue
-    - name: vue-pinia-best-practices
-      source: https://github.com/vuejs-ai/skills.git/skills/vue-pinia-best-practices
-      group: frontend/vue
-    - name: vue-router-best-practices
-      source: https://github.com/vuejs-ai/skills.git/skills/vue-router-best-practices
-      group: frontend/vue
-    - name: skillshare
-      source: github.com/runkids/skillshare/skills/skillshare
-    - name: remotion
-      source: https://github.com/remotion-dev/skills.git/skills/remotion
-      group: utils
-    - name: skill-creator
-      source: https://github.com/anthropics/skills.git/skills/skill-creator
-      group: utils
-    - name: accessibility
-      source: https://github.com/addyosmani/web-quality-skills.git/skills/accessibility
-      group: web-dev
-    - name: core-web-vitals
-      source: https://github.com/addyosmani/web-quality-skills.git/skills/core-web-vitals
-      group: web-dev
-    - name: performance
-      source: https://github.com/addyosmani/web-quality-skills.git/skills/performance
-      group: web-dev
-    - name: seo
-      source: https://github.com/addyosmani/web-quality-skills.git/skills/seo
-      group: web-dev
-    - name: web-artifacts-builder
-      source: https://github.com/anthropics/skills.git/skills/web-artifacts-builder
-      group: web-dev
-    - name: web-development-best-practices
-      source: https://github.com/addyosmani/web-quality-skills.git/skills/best-practices
-      group: web-dev
-    - name: web-quality-audit
-      source: https://github.com/addyosmani/web-quality-skills.git/skills/web-quality-audit
-      group: web-dev
-    - name: _runkids-mdproof
-      source: https://github.com/runkids/mdproof.git
-      tracked: true
-    - name: design-an-interface
-      source: https://github.com/mattpocock/skills/design-an-interface
-      group: mattpocock
-    - name: edit-article
-      source: https://github.com/mattpocock/skills/edit-article
-      group: mattpocock
-    - name: git-guardrails-claude-code
-      source: https://github.com/mattpocock/skills/git-guardrails-claude-code
-      group: mattpocock
-    - name: grill-me
-      source: https://github.com/mattpocock/skills/grill-me
-      group: mattpocock
-    - name: improve-codebase-architecture
-      source: https://github.com/mattpocock/skills/improve-codebase-architecture
-      group: mattpocock
-    - name: migrate-to-shoehorn
-      source: https://github.com/mattpocock/skills/migrate-to-shoehorn
-      group: mattpocock
-    - name: obsidian-vault
-      source: https://github.com/mattpocock/skills/obsidian-vault
-      group: mattpocock
-    - name: prd-to-issues
-      source: https://github.com/mattpocock/skills/prd-to-issues
-      group: mattpocock
-    - name: prd-to-plan
-      source: https://github.com/mattpocock/skills/prd-to-plan
-      group: mattpocock
-    - name: request-refactor-plan
-      source: https://github.com/mattpocock/skills/request-refactor-plan
-      group: mattpocock
-    - name: scaffold-exercises
-      source: https://github.com/mattpocock/skills/scaffold-exercises
-      group: mattpocock
-    - name: setup-pre-commit
-      source: https://github.com/mattpocock/skills/setup-pre-commit
-      group: mattpocock
-    - name: tdd
-      source: https://github.com/mattpocock/skills/tdd
-      group: mattpocock
-    - name: triage-issue
-      source: https://github.com/mattpocock/skills/triage-issue
-      group: mattpocock
-    - name: ubiquitous-language
-      source: https://github.com/mattpocock/skills/ubiquitous-language
-      group: mattpocock
-    - name: write-a-prd
-      source: https://github.com/mattpocock/skills/write-a-prd
-      group: mattpocock
-    - name: write-a-skill
-      source: https://github.com/mattpocock/skills/write-a-skill
-      group: mattpocock
+  - name: docker-expert
+    source: https://github.com/davila7/claude-code-templates.git/cli-tool/components/skills/development/docker-expert
+    group: devops
+  - name: feature-radar
+    source: https://github.com/runkids/feature-radar.git/skills/feature-radar
+    group: feature-radar
+  - name: feature-radar-archive
+    source: https://github.com/runkids/feature-radar.git/skills/feature-radar-archive
+    group: feature-radar
+  - name: feature-radar-learn
+    source: https://github.com/runkids/feature-radar.git/skills/feature-radar-learn
+    group: feature-radar
+  - name: feature-radar-ref
+    source: https://github.com/runkids/feature-radar.git/skills/feature-radar-ref
+    group: feature-radar
+  - name: feature-radar-scan
+    source: https://github.com/runkids/feature-radar.git/skills/feature-radar-scan
+    group: feature-radar
+  - name: frontend-slides
+    source: https://github.com/zarazhangrui/frontend-slides.git
+    tracked: true
+    group: frontend
+  - name: skillshare
+    source: github.com/runkids/skillshare/skills/skillshare
+  - name: agent-browser
+    source: github.com/vercel-labs/agent-browser/skills/agent-browser
+    group: agent-browser
+  - name: dogfood
+    source: github.com/vercel-labs/agent-browser/skills/dogfood
+    group: agent-browser
+  - name: electron
+    source: github.com/vercel-labs/agent-browser/skills/electron
+    group: agent-browser
+  - name: slack
+    source: github.com/vercel-labs/agent-browser/skills/slack
+    group: agent-browser
+  - name: vercel-sandbox
+    source: github.com/vercel-labs/agent-browser/skills/vercel-sandbox
+    group: agent-browser

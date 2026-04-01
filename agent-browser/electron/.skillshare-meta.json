@@ -1,0 +1,12 @@
+{
+  "source": "github.com/vercel-labs/agent-browser/skills/electron",
+  "type": "github-subdir",
+  "installed_at": "2026-04-01T21:03:41.673622+08:00",
+  "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+  "subdir": "skills/electron",
+  "version": "8959583",
+  "tree_hash": "79bf2fb6edfcf688931e6f1a444da144b835ccbd",
+  "file_hashes": {
+    "SKILL.md": "sha256:d97a2bc221b5044184ad0af51376b07bcb94f259622f2af254fb3701e6f01861"
+  }
+}
