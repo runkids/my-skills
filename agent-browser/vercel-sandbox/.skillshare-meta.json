@@ -1,0 +1,12 @@
+{
+  "source": "github.com/vercel-labs/agent-browser/skills/vercel-sandbox",
+  "type": "github-subdir",
+  "installed_at": "2026-04-01T21:03:41.699159+08:00",
+  "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+  "subdir": "skills/vercel-sandbox",
+  "version": "8959583",
+  "tree_hash": "914c0dbdcc5f7408a840b29125625b11e6459390",
+  "file_hashes": {
+    "SKILL.md": "sha256:15da32dca80c4c84e061f6c567dbfbde1c582c373445554a2d4662f4df8a6fe3"
+  }
+}

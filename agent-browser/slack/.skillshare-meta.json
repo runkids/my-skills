@@ -1,0 +1,14 @@
+{
+  "source": "github.com/vercel-labs/agent-browser/skills/slack",
+  "type": "github-subdir",
+  "installed_at": "2026-04-01T21:03:41.688757+08:00",
+  "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+  "subdir": "skills/slack",
+  "version": "8959583",
+  "tree_hash": "b61acf1a637c9cd5ebfc2ec90b8be68ae6fa0e7e",
+  "file_hashes": {
+    "SKILL.md": "sha256:16817a09c54f503c1d47b326706bdd228b80bf395b297c882c68df7eb4b21fa9",
+    "references/slack-tasks.md": "sha256:abbfd140ab77bcba467c4492fdbf05e83154bc9054ed4081503086dc80c3a378",
+    "templates/slack-report-template.md": "sha256:9304f1570566e9650b3da3d4a68ee81eaa0eac6df0a4acf7ba99dc48884b7ac2"
+  }
+}
