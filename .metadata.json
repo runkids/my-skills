@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "entries": {
+    "agent-browser/agent-browser": {
+      "source": "https://github.com/vercel-labs/agent-browser/skills/agent-browser",
+      "type": "github-subdir",
+      "group": "agent-browser",
+      "installed_at": "2026-04-15T23:26:15.743765+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skills/agent-browser",
+      "version": "db29d5f",
+      "tree_hash": "67d654a553c1bd21b4cff0d9d61d75cd9a67e635",
+      "file_hashes": {
+        "SKILL.md": "sha256:eb4d564a7cd9f299acb0d59007ab94d121b559e143e8723203900c54654b1afe",
+        "references/authentication.md": "sha256:8ccc30f2613523630cf3771a07d71339676d93c63623631a4206521c6d78d2e5",
+        "references/commands.md": "sha256:b2b65677a3b318d5124f2e44243ffe2bca44c4e71f0b923f164a6cdb2fe4591d",
+        "references/profiling.md": "sha256:15f1e6c7994d7471a274dc1476992d0ec178acd91f8b626e0d6f24a4dbef738f",
+        "references/proxy-support.md": "sha256:4c44ba60d9397523109fdbdf1d972739691856c5bf6bf1587fc58793c71b4671",
+        "references/session-management.md": "sha256:2ce531bf105aaf827a907a4e255e00321eef5994ca0e21e41c28489c0a8efebb",
+        "references/snapshot-refs.md": "sha256:c2aa75f5a3c1b34a72d53c06b68cc97d8a3c295134257d48f315cdff1c06455d",
+        "references/video-recording.md": "sha256:c2c12bd8c44e5d36fbb94cfc376180d47507d3c26a7ee8876b892fc700dcf332",
+        "templates/authenticated-session.sh": "sha256:1fa9926c36dbe71191120ce067e5e3babe732cd1cc605020f3bd04dc430aa58c",
+        "templates/capture-workflow.sh": "sha256:bf3f3a2f8413773891d9fa400d2a2fddf6d73ffc7a9b2fa00f797f944171c3d5",
+        "templates/form-automation.sh": "sha256:b86836986d339f736b15ca78cf3d566e845a6293ae25a5b00aa520b837572650"
+      }
+    },
+    "agent-browser/agentcore": {
+      "source": "https://github.com/vercel-labs/agent-browser/skill-data/agentcore",
+      "type": "github-subdir",
+      "group": "agent-browser",
+      "installed_at": "2026-04-15T23:26:15.621626+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skill-data/agentcore",
+      "version": "db29d5f",
+      "tree_hash": "03f6441b390f62136c02bc0aa2970a88b4f44088",
+      "file_hashes": {
+        "SKILL.md": "sha256:f616b6dbce7cce388eb62701f254d87a78a3650a9c365db653fee1da3d7388a0"
+      }
+    },
+    "agent-browser/dogfood": {
+      "source": "https://github.com/vercel-labs/agent-browser/skill-data/dogfood",
+      "type": "github-subdir",
+      "group": "agent-browser",
+      "installed_at": "2026-04-15T23:26:15.642834+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skill-data/dogfood",
+      "version": "db29d5f",
+      "tree_hash": "c818a5daf6e6ef6ec6375705df201499de4e6437",
+      "file_hashes": {
+        "SKILL.md": "sha256:c86db6b33c8f92e2a074d7f5b7eb9629e333d0fb287eca4421782266b1e76257",
+        "references/issue-taxonomy.md": "sha256:dee7e925f7fe001903de6cc14f9656bcda90d069bbf65a2273f22202efebba09",
+        "templates/dogfood-report-template.md": "sha256:55eef9286e32e595dcfca30db76352e9f1d149a78b60b54644eb701072364f35"
+      }
+    },
+    "agent-browser/electron": {
+      "source": "https://github.com/vercel-labs/agent-browser/skill-data/electron",
+      "type": "github-subdir",
+      "group": "agent-browser",
+      "installed_at": "2026-04-15T23:26:15.660156+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skill-data/electron",
+      "version": "db29d5f",
+      "tree_hash": "79bf2fb6edfcf688931e6f1a444da144b835ccbd",
+      "file_hashes": {
+        "SKILL.md": "sha256:d97a2bc221b5044184ad0af51376b07bcb94f259622f2af254fb3701e6f01861"
+      }
+    },
+    "agent-browser/slack": {
+      "source": "https://github.com/vercel-labs/agent-browser/skill-data/slack",
+      "type": "github-subdir",
+      "group": "agent-browser",
+      "installed_at": "2026-04-15T23:26:15.68308+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skill-data/slack",
+      "version": "db29d5f",
+      "tree_hash": "b61acf1a637c9cd5ebfc2ec90b8be68ae6fa0e7e",
+      "file_hashes": {
+        "SKILL.md": "sha256:16817a09c54f503c1d47b326706bdd228b80bf395b297c882c68df7eb4b21fa9",
+        "references/slack-tasks.md": "sha256:abbfd140ab77bcba467c4492fdbf05e83154bc9054ed4081503086dc80c3a378",
+        "templates/slack-report-template.md": "sha256:9304f1570566e9650b3da3d4a68ee81eaa0eac6df0a4acf7ba99dc48884b7ac2"
+      }
+    },
+    "agent-browser/vercel-sandbox": {
+      "source": "https://github.com/vercel-labs/agent-browser/skill-data/vercel-sandbox",
+      "type": "github-subdir",
+      "group": "agent-browser",
+      "installed_at": "2026-04-15T23:26:15.701391+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skill-data/vercel-sandbox",
+      "version": "db29d5f",
+      "tree_hash": "914c0dbdcc5f7408a840b29125625b11e6459390",
+      "file_hashes": {
+        "SKILL.md": "sha256:15da32dca80c4c84e061f6c567dbfbde1c582c373445554a2d4662f4df8a6fe3"
+      }
+    },
+    "devops/docker-expert": {
+      "source": "https://github.com/davila7/claude-code-templates.git/cli-tool/components/skills/development/docker-expert",
+      "type": "github-subdir",
+      "group": "devops",
+      "installed_at": "2026-04-15T23:21:22.654518+08:00",
+      "repo_url": "https://github.com/davila7/claude-code-templates.git",
+      "subdir": "cli-tool/components/skills/development/docker-expert",
+      "version": "65c3d42",
+      "tree_hash": "45853e487ac0d45f8cded5d33ac97fa34d2f3c0a",
+      "file_hashes": {
+        "SKILL.md": "sha256:e33b08feeaa8e110c08dddd030970547356514d42aa484e52f51e2fd2d4f451b"
+      }
+    },
+    "feature-radar/feature-radar": {
+      "source": "https://github.com/runkids/feature-radar.git/skills/feature-radar",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-04-15T23:21:24.167107+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar",
+      "version": "905f4aa",
+      "tree_hash": "8ce3efd8b8ef70f9d02d80185461302226b9f979",
+      "file_hashes": {
+        "SKILL.md": "sha256:5af3a3948e82fd07a82bcf20db98cd8fbcf68b7c68a78b3f6228869eedbce49a",
+        "references/DEEP-READ.md": "sha256:f22b4082d7b30e32a81220b18d85bb9703623df5e3837f44dd8bccb862e8eedb",
+        "references/DIRECTIVES.md": "sha256:4063550be6268c402fc35aeacd2531469024749f362bc94145dce4709755528b",
+        "references/SPEC.md": "sha256:e5e72729eddbcec6e22feb1fc3a5ac1282b2f932283d1763c1369f0d0ec6a6f4",
+        "references/WORKFLOW-PATTERNS.md": "sha256:06f1d7f9358b1080e4c0a4ee2babd483b5719ff23f0bd283584fec3a8b7a3ad7"
+      }
+    },
+    "feature-radar/feature-radar-archive": {
+      "source": "https://github.com/runkids/feature-radar.git/skills/feature-radar-archive",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-04-15T23:21:24.183813+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-archive",
+      "version": "905f4aa",
+      "tree_hash": "16e85976107e866525bf6692481335def1d26184",
+      "file_hashes": {
+        "SKILL.md": "sha256:5a21e255a083a9503a6871ca6aba94cb4422260c4b5ad6d89b41c1701966ff87"
+      }
+    },
+    "feature-radar/feature-radar-learn": {
+      "source": "https://github.com/runkids/feature-radar.git/skills/feature-radar-learn",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-04-15T23:21:24.200794+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-learn",
+      "version": "905f4aa",
+      "tree_hash": "a7015f2f174a2d9bb1ef33e6209cd3a867a51674",
+      "file_hashes": {
+        "SKILL.md": "sha256:f3c0631997f4afefb909c465e64f88b9ae688eb2103c481d8a625bf2e492a8fd"
+      }
+    },
+    "feature-radar/feature-radar-ref": {
+      "source": "https://github.com/runkids/feature-radar.git/skills/feature-radar-ref",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-04-15T23:21:24.110987+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-ref",
+      "version": "905f4aa",
+      "tree_hash": "eb43eec4bd8a375ba85432f2414fabaea2ff2189",
+      "file_hashes": {
+        "SKILL.md": "sha256:e3a15f868c084a93bf7c035d84cb44c8815fb6582432428d03550213416b4c02"
+      }
+    },
+    "feature-radar/feature-radar-scan": {
+      "source": "https://github.com/runkids/feature-radar.git/skills/feature-radar-scan",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-04-15T23:21:24.136978+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-scan",
+      "version": "905f4aa",
+      "tree_hash": "e286551591ce468cc3b6e2d935d02dc400dae517",
+      "file_hashes": {
+        "SKILL.md": "sha256:3163bedd33837c05a845191fd5415ba3c84daf8807a21834f6d183001b1c90bb"
+      }
+    },
+    "frontend/frontend-slides": {
+      "source": "https://github.com/zarazhangrui/frontend-slides.git",
+      "type": "github",
+      "group": "frontend",
+      "installed_at": "2026-04-15T23:21:25.223836+08:00",
+      "repo_url": "https://github.com/zarazhangrui/frontend-slides.git",
+      "version": "8dca834",
+      "file_hashes": {
+        "SKILL.md": "sha256:41fccbe44d4882f412e141028eb21395bb13327492a512abee6e55c672cb0c5a"
+      }
+    },
+    "skillshare": {
+      "source": "https://github.com/runkids/skillshare.git/skills/skillshare",
+      "type": "github-subdir",
+      "installed_at": "2026-04-15T23:21:29.601355+08:00",
+      "repo_url": "https://github.com/runkids/skillshare.git",
+      "subdir": "skills/skillshare",
+      "version": "cb69b78",
+      "tree_hash": "c522b7387e050ec4e8bffac827f842ef408f834c",
+      "file_hashes": {
+        "SKILL.md": "sha256:fbf7fa13878ba1b7077d2ce1cabcf332b425e9d185a5b1dd6f239e758f776893",
+        "references/TROUBLESHOOTING.md": "sha256:14855dbd2f20ad7042941959f257c79f768d103e89e55d74d8c3b3d38f9ff5ee",
+        "references/audit.md": "sha256:85a31c32f17f39ce2baa5189a8004c6adec506e5fcf7d20378caa103b015fd5d",
+        "references/backup.md": "sha256:96e2e8d5e2d7cfb8765c2eebb4e6d733b79258de8b3d974fca8972557f7326a6",
+        "references/extras.md": "sha256:27529c7fba6335efabb38a2a5dac1c0e4a0b79d16d0188d3f98dad2068ec4bdf",
+        "references/init.md": "sha256:41d99a2a49f576e1a2354312856ccf730f8d19d4c8d35c592585d40bc2d14d82",
+        "references/install.md": "sha256:2b444bfcd211fae59421631ecd49331b4de287c311354f8ed3ca19f204d223db",
+        "references/log.md": "sha256:406e85525f53f4deaa0f48bf8b3b53db3e032b99f5a0e926c84542d51b3a3625",
+        "references/status.md": "sha256:0143c8250ecbedfa14607b82cbfb23107294b6c1e053b5726629556b7a47412c",
+        "references/sync.md": "sha256:75577dce829fda6050b3b761915b70d9aef0d6bdb3c010d2fef7b7b22e226a8e",
+        "references/targets.md": "sha256:130b0b07b17a88d4bc09af0262a6b161421946f5442295dc5bc828f95226763e",
+        "references/trash.md": "sha256:fb94aa6b71d469fa8f6b5e728fcab531b6eb010a2092389b02eaaadf3ebc98cf",
+        "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
+      }
+    }
+  }
+}

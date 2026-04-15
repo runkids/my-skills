@@ -35,17 +35,22 @@ targets:
 
 ## Target Filters
 
-Control which skills sync to each target using include/exclude glob patterns.
+Control which skills and agents sync to each target using include/exclude glob patterns.
 
 ```bash
-# Add filters
+# Add skill filters
 skillshare target claude --add-include "team-*"       # Only sync matching skills
 skillshare target claude --add-exclude "_legacy*"     # Skip matching skills
 skillshare target claude --add-include "team-*" -p    # Project target filter
 
+# Add agent filters
+skillshare target claude --add-agent-include "team-*"
+skillshare target claude --add-agent-exclude "draft-*"
+
 # Remove filters
 skillshare target claude --remove-include "team-*"
 skillshare target claude --remove-exclude "_legacy*"
+skillshare target claude --remove-agent-include "team-*"
 ```
 
 **Config format** with filters:
@@ -60,16 +65,17 @@ targets:
 
 **Pattern syntax:** `filepath.Match` globs — `*` matches any non-separator chars, `?` matches single char.
 
-**Precedence:** Include filters apply first (whitelist), then exclude filters remove from that set. No filters = all skills.
+**Precedence:** Include filters apply first (whitelist), then exclude filters remove from that set. No filters = all matching resources. Agent filters require a target with an agents path, and they are ignored in `symlink` mode.
 
 ## Skill-Level Targets
 
-Skills can declare which targets they should sync to via a `targets` frontmatter field in SKILL.md:
+Skills can declare which targets they should sync to via `metadata.targets` in SKILL.md. Top-level `targets` is still supported for older skills, but `metadata.targets` wins when both are present:
 
 ```yaml
 ---
 name: enterprise-skill
-targets: [claude, cursor]
+metadata:
+  targets: [claude, cursor]
 ---
 ```
 
