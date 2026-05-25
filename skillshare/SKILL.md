@@ -3,7 +3,7 @@ name: skillshare
 description: |
   Manages and syncs AI CLI skills and agents across 50+ tools from a single source.
   Use this skill whenever the user mentions "skillshare", runs skillshare commands,
-  manages skills or agents (install, update, uninstall, sync, audit, analyze, check, diff, search),
+  manages skills or agents (install, update, uninstall, sync, commit, audit, analyze, check, diff, search),
   or troubleshoots skill/agent configuration (orphaned symlinks, broken targets, sync
   issues). Covers both global (~/.config/skillshare/) and project (.skillshare/)
   modes. Also use when: adding new AI tool targets (Claude, Cursor, Windsurf, etc.),
@@ -15,7 +15,7 @@ description: |
   `.agentignore` and `enable`/`disable` for per-agent toggles.
 argument-hint: "[command] [target] [--json] [--dry-run] [-p|-g]"
 metadata:
-  version: v0.19.2
+  version: v0.20.16
 ---
 
 # Skillshare CLI
@@ -42,7 +42,7 @@ skillshare install user/repo --track             # Enable `update` later
 skillshare install user/repo -b develop --all    # Install from branch
 skillshare install user/repo --track -b develop  # Track specific branch
 skillshare install user/repo -s pdf -p           # Install to project
-skillshare install                               # Reinstall all tracked remotes from config
+skillshare install                               # Rehydrate remote skills/tracked repos
 skillshare sync                                  # Always sync after install
 ```
 ### Extras (Rules, Commands, Prompts)
@@ -61,11 +61,13 @@ skillshare extras remove rules                       # Remove from config (sourc
 skillshare extras init agents --target ~/.claude/agents --flatten  # Flatten subdirs into root
 skillshare extras rules --mode copy                  # Change sync mode of a target
 skillshare extras agents --flatten                   # Enable flatten on existing target
+skillshare extras rules --add-target ~/.cursor/rules            # Add a target to an existing extra
+skillshare extras rules --remove-target ~/.cursor/rules --prune # Remove a target (--prune deletes synced files)
 skillshare sync extras                               # Sync all extras to targets
 skillshare sync extras --dry-run --force             # Preview / overwrite conflicts
 skillshare sync --all                                # Sync skills + extras together
 ```
-See [extras.md](references/extras.md) for details.
+A target can set an `extension:` field in config.yaml to transform each source file during sync (e.g. markdown → TOML for Gemini/Codex); implies `copy` mode. See [extras.md](references/extras.md) for details.
 ### Creating & Discovering Skills
 ```bash
 skillshare new my-skill                          # Create with interactive pattern selection
@@ -94,6 +96,7 @@ skillshare sync                                  # Always sync after toggle
 # Creator: init project (see Getting Started) → add skills → commit .skillshare/
 skillshare install -p && skillshare sync                  # Member: clone → install → sync
 skillshare install github.com/team/repo --track -p        # Track shared repo
+skillshare commit -m "Update skill"                       # Local checkpoint, no push
 skillshare push                                           # Cross-machine: push on A
 skillshare pull                                           # Cross-machine: pull on B
 ```
@@ -101,6 +104,7 @@ skillshare pull                                           # Cross-machine: pull 
 ```bash
 skillshare hub add https://example.com/hub.json          # Save a hub source
 skillshare hub add https://example.com/hub.json --label my-hub  # With custom label
+skillshare hub add git@ghe.corp.com:team/skills.git --label ghe  # SSH/private/GHE hub source
 skillshare hub list                                      # List saved hubs
 skillshare hub default my-hub                            # Set default hub
 skillshare hub remove my-hub                             # Remove a hub
@@ -160,9 +164,9 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 | `sync`, `collect` | ✓ (auto) | ✓ |
 | `install`, `uninstall`, `update`, `check`, `search`, `new` | ✓ (`-p`) | ✓ (except new) |
 | `target`, `audit`, `analyze`, `trash`, `log`, `hub` | ✓ (`-p`) | ✓ (target list, audit, analyze, log) |
-| `extras init/list/remove/collect/source/mode` | ✓ (`-p`, except source) | ✓ (list, mode) |
+| `extras init/list/remove/collect/source` (+ `--mode`/`--add-target`/`--remove-target` flags on `extras <name>`) | ✓ (`-p`, except source) | ✓ (list, mode, targets) |
 | `enable`, `disable` | ✓ (auto) | ✗ |
-| `push`, `pull`, `backup`, `restore` | ✗ | ✗ |
+| `commit`, `push`, `pull`, `backup`, `restore` | ✗ | ✗ |
 | `tui`, `upgrade` | ✗ | ✗ |
 | `ui` | ✓ (`-p`) | ✗ |
 
@@ -177,7 +181,7 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 | Topic | File |
 |-------|------|
 | Init flags | [init.md](references/init.md) |
-| Sync/collect/push/pull | [sync.md](references/sync.md) |
+| Sync/collect/commit/push/pull | [sync.md](references/sync.md) |
 | Install/update/uninstall/new | [install.md](references/install.md) |
 | Status/diff/list/search/check | [status.md](references/status.md) |
 | Security audit | [audit.md](references/audit.md) |
