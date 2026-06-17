@@ -15,7 +15,7 @@ description: |
   `.agentignore` and `enable`/`disable` for per-agent toggles.
 argument-hint: "[command] [target] [--json] [--dry-run] [-p|-g]"
 metadata:
-  version: v0.20.16
+  version: v0.20.21
 ---
 
 # Skillshare CLI
@@ -67,7 +67,38 @@ skillshare sync extras                               # Sync all extras to target
 skillshare sync extras --dry-run --force             # Preview / overwrite conflicts
 skillshare sync --all                                # Sync skills + extras together
 ```
+Project extras always read from `<sources.extras>/<name>` (default `.skillshare/extras/<name>`); per-extra `source` and `extras source` are global-only. For project agents, prefer target `agents:` unless you need extras-only flatten/extension.
+
 A target can set an `extension:` field in config.yaml to transform each source file during sync (e.g. markdown → TOML for Gemini/Codex); implies `copy` mode. See [extras.md](references/extras.md) for details.
+### Extensions (Content Transformation)
+```bash
+# Extension is a directory at .skillshare/extensions/<name>/
+# extension.yaml controls: run command, output_ext, description
+# Official extensions: https://github.com/runkids/skillshare/tree/main/extensions
+```
+
+extension.yaml format:
+```yaml
+run: ["node", "convert.js"]   # or ["python3", "convert.py"] etc.
+output_ext: toml              # renames output file extension
+description: "MD → Codex TOML"
+```
+
+Add extension to an extras target in config.yaml:
+```yaml
+extras:
+  - name: agents
+    targets:
+      - path: .claude/agents          # plain copy/merge
+      - path: .codex/agents
+        extension: codex-agents       # transform + rename to .toml
+```
+
+Caveats:
+- `extension:` is only supported on **extras** targets — native agents targets ignore it
+- Implies `copy` mode; merge/symlink won't apply
+- Claude Code sets NODE_OPTIONS that break node extensions — use `env -u NODE_OPTIONS node convert.js` in run
+- Files missing required frontmatter fields fail validation and are skipped
 ### Creating & Discovering Skills
 ```bash
 skillshare new my-skill                          # Create with interactive pattern selection
@@ -176,6 +207,7 @@ See [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) for more.
 3. **Audit** — `install` auto-scans; CRITICAL blocks. `--force` to override, `--skip-audit` to bypass. Detects hardcoded secrets (API keys, tokens, private keys).
 4. **Uninstall safely** — moves to trash (7 days). `trash restore <name>` to undo. **NEVER** `rm -rf` symlinks.
 5. **Output** — `--json` for structured data (12 commands support it, see Quick Lookup). `--no-tui` for plain text on TUI commands (`list`, `log`, `audit`, `analyze`, `diff`, `trash list`, `backup list`, `target list`). `tui off` disables TUI globally. `--dry-run` to preview.
+6. **Node extensions in Claude Code** — `NODE_OPTIONS` is preloaded by the Claude Code harness and causes node to crash when running extensions. Always use `run: ["env", "-u", "NODE_OPTIONS", "node", "convert.js"]` in `extension.yaml` when writing extensions that use Node.js.
 
 ## References
 | Topic | File |
