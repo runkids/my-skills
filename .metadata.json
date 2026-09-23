@@ -388,17 +388,30 @@
         "SKILL.md": "sha256:03855a7a1f9d0aa1ba6444fed2e4971adf796e91e73001d8f2472f5f9e5f659f"
       }
     },
+    "orchestration": {
+      "source": "https://github.com/stablyai/orca/skills/orchestration",
+      "type": "github-subdir",
+      "installed_at": "2026-09-23T03:26:06.820666+08:00",
+      "repo_url": "https://github.com/stablyai/orca.git",
+      "subdir": "skills/orchestration",
+      "version": "a8786c04",
+      "tree_hash": "23bc2ff6bb9f6e7d17f41734709ac951dbe3ee80",
+      "commit": "a8786c040dba80dabe4d19c4f04fd3f6a5236a6e",
+      "file_hashes": {
+        "SKILL.md": "sha256:36bc32f022447418b566db35f9ffcff75113eb023e37d06fd1bd609c5dd173ef"
+      }
+    },
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-09-21T16:08:42.250734+08:00",
+      "installed_at": "2026-09-23T03:26:41.006424+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "00d96e1",
-      "tree_hash": "99de941b9b16c65103fc421b58c87d614aadbf37",
-      "commit": "00d96e15f035f0469d5b57696d88d79e78a59a7d",
+      "version": "4541cb5",
+      "tree_hash": "845fbe6832b23d491a037b739c179f1cf2f95801",
+      "commit": "4541cb5a36f1e59b721ada75ae06dd690aed3ee0",
       "file_hashes": {
-        "SKILL.md": "sha256:3ef92e802f802f3467ed947fe89c0ef5395a35c8b522fdf326b8a63cbeee82ae",
+        "SKILL.md": "sha256:4cd18dacb5fb510fc85c3e192e0d0ed1b41653fab0bc732a09bf9a7578f8204f",
         "references/TROUBLESHOOTING.md": "sha256:6103f13f7a364ca2ce8d71e7b9771ba64ab225942d49c6a60323f2f61ca862ae",
         "references/audit.md": "sha256:890b84f79fb73cf704fe3cf9c2b0b87cdd3aa7ca1720cf6f08e19d5720a3506e",
         "references/backup.md": "sha256:5041f950e0f060f38333223e59c730ff5beb12b43ec9be130da2687818644290",
@@ -406,12 +419,12 @@
         "references/init.md": "sha256:ac99a757d7e9a077e4ff8d0fe3009a5b93167f0843e8a000fc89a03e24fa2d82",
         "references/install.md": "sha256:3f75bf0576273d63e7cb6c67c3c736c66d3fab006a8dcbbcf2f9123929f7dbf1",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
-        "references/mcp.md": "sha256:d235cc554baceb62423ee8a5209d753c336d1fab16d946bfb5cc01c164fdc859",
+        "references/mcp.md": "sha256:1f7c54a392383b52c2547c9f63f41afe04b7f576839ea423f35ec97d55bd0963",
         "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
-        "references/plugins.md": "sha256:95ae27a263b1068caa2c5c3754d8177dbe1420816b22c397ca457fffe0b4710c",
+        "references/plugins.md": "sha256:ee9eab630991e32a254e00d6fa91d58fbe8e4f8a43b8814d25ff761c9cd3fb29",
         "references/status.md": "sha256:8e86ab71130cec45327bfff9d896e0c043d4281107b6beca973bf23a519a66ec",
         "references/sync.md": "sha256:d4fc7ed6d4aeaf7c360faadc4644cc082cd7dfde6c5afa9dd85efdac0158e6f3",
-        "references/targets.md": "sha256:c8389a6c3cfa7b2b62b465bed775299f0169d0ed6a75661dc32fbd0bd3280cd7",
+        "references/targets.md": "sha256:f0baba2ffb8ea8c7ab79ef41d41ff97a78045466d38c5029846d9f987f79e845",
         "references/trash.md": "sha256:9ffc23f6440e20bd1405b17f6124efdb1ad457b998fd2adf8352192916a5c5db",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }

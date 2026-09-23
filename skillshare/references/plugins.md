@@ -22,6 +22,11 @@ from display names. External catalog sources are not auto-converted. Multiple lo
 Safe internal relative symlinks are preserved; escaping, absolute, broken, cyclic,
 and `.git` links are rejected. A malformed manifest does not hide other formats.
 
+`add` without `--target`, or an interactive picker confirmed with nothing selected,
+keeps the plugin in Skillshare and installs it nowhere; `list` shows it as `no targets`.
+Add targets later with the same source and `--name`, which installs the source as it is
+then. Such a package stays managed when its last target is removed.
+
 Use `--source-ref TAG_OR_COMMIT` with discover/add/update for a remote Git source.
 Bindings retain `source_ref` and the reviewed `commit`; `--revision` is a separate
 preview token. Use `--entry dist/plugin.js` with discover/add for an explicit
@@ -62,6 +67,9 @@ skillshare plugin update demo --target claude --no-tui -g
 skillshare plugin remove demo --dry-run --json -g
 ```
 
+`remove NAME --target` uninstalls that binding. `remove NAME` without `--target`, once
+no Agent holds it, drops the package from Skillshare entirely.
+
 Claude supports native updates; Codex does not. Cursor/Antigravity replace managed
 local copies; Pi/OpenCode refresh reviewed source snapshots. Imported Pi/OpenCode v1 packages must be updated natively. OpenCode v2 global
 imports may use native update; project imports may not. Copilot source updates
@@ -86,6 +94,11 @@ and OpenCode, never falling back to global scope.
   Preserve the whole tree and register its file URL in the native JSON/JSONC config.
   Version 1 uses `plugin`, version 2 uses `plugins`. Runtime dependencies must already
   be available. The CLI version selects the schema; do not guess from docs alone.
+- Another account of an Agent (a target with `agent:` and `config_dir:` in the global
+  config) is a plugin target under its own name: `--target claude-work`, `--from
+  claude-work`. Supported for `claude`, `codex` and `pi`. Skillshare runs that Agent's CLI
+  against the account's config directory, through `CLAUDE_CONFIG_DIR`, `CODEX_HOME` or
+  `PI_CODING_AGENT_DIR`, and the account keeps its own bindings. Global scope only.
 - Local directory plugins cannot import unowned folders or marketplace installs.
   Importing Pi/OpenCode entries with filters/options is blocked to avoid losing them.
   Supply `--name` when a native package source is not a valid logical name.
