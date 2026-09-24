@@ -77,17 +77,19 @@ After removal, run `sync extras` to clean up orphaned links.
 
 ## extras collect
 
-Collect local (non-symlinked) files from a target back into the extras source directory.
+Collect local (non-symlinked) files from a target back into the extras source directory. Merge-mode targets get symlinks in place of collected files; copy-mode targets keep their files. Files already in source are skipped unless `--force`.
 
 ```bash
 skillshare extras collect rules
 skillshare extras collect rules --from ~/.claude/rules --dry-run
+skillshare extras collect rules --force   # overwrite source with target edits
 skillshare extras collect prompts -p
 ```
 
 | Flag | Description |
 |------|-------------|
 | `--from <path>` | Target to collect from (required if multiple targets) |
+| `--force` / `-f` | Overwrite files that already exist in source |
 | `--dry-run` | Preview without changes |
 | `-p` / `-g` | Force project / global mode |
 
