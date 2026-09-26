@@ -5,7 +5,7 @@
       "source": "https://github.com/vercel-labs/agent-browser.git/skills/agent-browser",
       "type": "github-subdir",
       "group": "agent-browser",
-      "installed_at": "2026-09-24T11:15:52.920148+08:00",
+      "installed_at": "2026-09-27T02:09:46.380812+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
       "version": "d01253d",
@@ -15,10 +15,31 @@
         "SKILL.md": "sha256:3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac"
       }
     },
+    "agents-context-router": {
+      "source": "https://github.com/runkids/agents-context-router.git/skills/agents-context-router",
+      "type": "github-subdir",
+      "installed_at": "2026-09-27T02:09:48.51557+08:00",
+      "repo_url": "https://github.com/runkids/agents-context-router.git",
+      "subdir": "skills/agents-context-router",
+      "version": "f47f73f",
+      "tree_hash": "7452a324b90fc489b26649e58329406ece70ea53",
+      "commit": "f47f73fbb8f9259fb7ff0b3e68ce328f57cb3e48",
+      "file_hashes": {
+        "SKILL.md": "sha256:5a3e4a9799c173cbd39899a556b36b01cd8499d91158785a6f82419e11ba6178",
+        "assets/AGENTS.kernel.md": "sha256:32f0771dd7ca05048cbc15c1303ba1190a71fdd47cff67867a9eb268a34d1a56",
+        "assets/ai-context.json": "sha256:2c5d37e59e292a20ebe591ef37e7c82c1275e9c7f41da8b510453e69abdfd8c2",
+        "assets/wiki-README.md": "sha256:aa45ea5d1d1704e1bef9c4b35e0df458b69de68efeb52b98da622c485d7242f9",
+        "assets/wiki-ai-context.md": "sha256:93c070fcd61e08e2ac815e199c7edeed911bfa53493c6342f45ed8b3499a7d68",
+        "evals/evals.json": "sha256:61a60737094b8166c6b1f278bedaf4383f2cece081acd9db4168b1b23c4bdab8",
+        "evals/trigger-evals.json": "sha256:0d1f66e36e77f27aea4a0c2944ff7792de4c5751e1e4edbb73d717674547ae2a",
+        "references/gotchas.md": "sha256:ffd1b96c9f42ea0bb2d41c0ca6ae53342f3a17a19cb8b27ca498b11ba25a458c",
+        "scripts/ai-context.py": "sha256:3fac1430a258c2394f2038c9165338b3890bf828e26a48e5d3d4265a125b1fc1"
+      }
+    },
     "archify": {
       "source": "https://github.com/tt-a1i/archify.git/archify",
       "type": "github-subdir",
-      "installed_at": "2026-09-24T11:15:56.029797+08:00",
+      "installed_at": "2026-09-27T02:09:55.745665+08:00",
       "repo_url": "https://github.com/tt-a1i/archify.git",
       "subdir": "archify",
       "version": "9e35d2b",
@@ -250,12 +271,12 @@
       "source": "https://github.com/davila7/claude-code-templates.git/cli-tool/components/skills/development/docker-expert",
       "type": "github-subdir",
       "group": "devops",
-      "installed_at": "2026-09-24T11:16:10.375294+08:00",
+      "installed_at": "2026-09-27T02:10:26.758357+08:00",
       "repo_url": "https://github.com/davila7/claude-code-templates.git",
       "subdir": "cli-tool/components/skills/development/docker-expert",
-      "version": "e5e7fc1",
+      "version": "c9384be",
       "tree_hash": "45853e487ac0d45f8cded5d33ac97fa34d2f3c0a",
-      "commit": "e5e7fc12f8e1880074999c64912808352f2da985",
+      "commit": "c9384be03385195f4b6a4701978fc5a70fce8705",
       "file_hashes": {
         "SKILL.md": "sha256:e33b08feeaa8e110c08dddd030970547356514d42aa484e52f51e2fd2d4f451b"
       }
@@ -279,7 +300,7 @@
       "source": "https://github.com/vercel-labs/agent-skills.git/skills/react-best-practices",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-09-24T11:16:16.112303+08:00",
+      "installed_at": "2026-09-27T02:10:34.055466+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-skills.git",
       "subdir": "skills/react-best-practices",
       "version": "063bee9",
@@ -381,12 +402,12 @@
     "herdr": {
       "source": "https://github.com/herdrdev/herdr.git/skills/herdr",
       "type": "github-subdir",
-      "installed_at": "2026-09-24T11:15:30.753764+08:00",
+      "installed_at": "2026-09-27T02:10:40.218522+08:00",
       "repo_url": "https://github.com/herdrdev/herdr.git",
       "subdir": "skills/herdr",
-      "version": "9c96f7d",
+      "version": "bde4526",
       "tree_hash": "6985a5e8418d43171c45c2a9e04b02de7308e1d8",
-      "commit": "9c96f7ddb3be2cc575a159d4d1f1d49fb10d7006",
+      "commit": "bde45262be66fc8a95d36e6058b0afd4865ffed5",
       "file_hashes": {
         "SKILL.md": "sha256:03855a7a1f9d0aa1ba6444fed2e4971adf796e91e73001d8f2472f5f9e5f659f"
       }
@@ -394,12 +415,12 @@
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
-      "installed_at": "2026-09-24T11:15:44.145052+08:00",
+      "installed_at": "2026-09-27T02:09:38.006121+08:00",
       "repo_url": "https://github.com/stablyai/orca.git",
       "subdir": "skills/orchestration",
-      "version": "5802b545",
+      "version": "da6d483a",
       "tree_hash": "b0cd1d58b0c317cf7c3726fef7e6b1197c405246",
-      "commit": "5802b545794c1903ba38fe0ea3d58192f4dcf2fc",
+      "commit": "da6d483ab9aae8aa81eaf773bcf0fda9fc4e3495",
       "file_hashes": {
         "SKILL.md": "sha256:cd1b364bf35781bad06bf75ab1766afa8d6cec69cb2060529691d89871a2098a"
       }
@@ -407,14 +428,14 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-09-27T01:52:33.556107+08:00",
+      "installed_at": "2026-09-25T03:29:03.905403+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "55147d9",
-      "tree_hash": "86cb441275a4051a5a0baf4d57eab112caa02948",
-      "commit": "55147d9dada5aaa42de7b0ed01a7434c0c0da7f8",
+      "version": "64e67e8",
+      "tree_hash": "b5b9bedf6dffb31c258328466e7626c1aaac0a8f",
+      "commit": "64e67e8deca8df4f422800e72645e5f8c1ad1be5",
       "file_hashes": {
-        "SKILL.md": "sha256:20770c5f8d3424f1c4346fe117dcc4392568ebd7aa0f79cae87810d892e4969b",
+        "SKILL.md": "sha256:a30128ed4779ac05a604b28081c461c5d233722acff16a918217b0188e8c8efa",
         "references/TROUBLESHOOTING.md": "sha256:6103f13f7a364ca2ce8d71e7b9771ba64ab225942d49c6a60323f2f61ca862ae",
         "references/audit.md": "sha256:890b84f79fb73cf704fe3cf9c2b0b87cdd3aa7ca1720cf6f08e19d5720a3506e",
         "references/backup.md": "sha256:5041f950e0f060f38333223e59c730ff5beb12b43ec9be130da2687818644290",

@@ -1,0 +1,22 @@
+[
+  {"query": "our AGENTS.md in ~/code/payments-api is like 38KB now, half of it is old sprint notes and a giant table of every make target. codex keeps ignoring the rules at the top. can you restructure it so agents only load what they need per task?", "should_trigger": true},
+  {"query": "CLAUDE.md and AGENTS.md have drifted: one says ports 3000-3099 and the other says 3000-3050. I want Claude Code and Codex to share one set of rules, and I want to move the milestone acceptance logs out so they are not loaded every time.", "should_trigger": true},
+  {"query": "Every Claude Code session in this monorepo starts by reading a 60 KB README because AGENTS.md says 'read README first'. Tokens are burning before anyone types. Design me a better doc layout for agents with some kind of size limit we can enforce in CI.", "should_trigger": true},
+  {"query": "I keep appending post-mortems to AGENTS.md after every incident, it's getting unreadable. whats a sane way to keep the lessons but not make every agent read 12 incident writeups", "should_trigger": true},
+  {"query": "Our repo already uses docs/ai-context.json and scripts/ai-context.py to load topics on demand. I need to add a Kafka replay runbook and the M9 acceptance log; put them in the right places without bloating AGENTS.md.", "should_trigger": true},
+  {"query": "can you wiki-fy the agent instructions in ./infra? right now it's one flat CLAUDE.md with deploy steps, terraform gotchas, oncall runbook and a changelog all mixed together", "should_trigger": true},
+  {"query": "the context window fills up fast with gemini cli and cursor in this repo, I think it's the huge GEMINI.md + .cursorrules we copy-pasted from AGENTS.md. consolidate and slim these down", "should_trigger": true},
+  {"query": "python3 scripts/ai-context.py check is failing with 'deploy: 21003 B > 16384', what should I do? I was going to just bump the cap to 32k", "should_trigger": true},
+  {"query": "Our team skills in .claude/skills each restate half of AGENTS.md and they've drifted. Want a single source of truth where skills just point to the right doc section.", "should_trigger": true},
+  {"query": "set up progressive disclosure for our coding agent docs — tiny always-on rules file, then topic pages loaded on demand. repo is at ~/work/ledger", "should_trigger": true},
+  {"query": "run /init style thing: this new repo has no AGENTS.md at all, write me a starter one covering build, test, lint for a small Go CLI", "should_trigger": false},
+  {"query": "summarize what our README says about deployment, I just need the three commands to ship to staging", "should_trigger": false},
+  {"query": "my RAG chatbot stuffs 40 documents into the prompt and hits the context limit, how do I chunk and retrieve only the relevant ones?", "should_trigger": false},
+  {"query": "migrate our docs/ folder from plain markdown to a Docusaurus site with sidebar navigation and versioning", "should_trigger": false},
+  {"query": "this conversation is getting long, can you compact/summarize what we've done so far so I can paste it into a new session", "should_trigger": false},
+  {"query": "split src/utils.py (2400 lines) into separate modules by responsibility and fix the imports", "should_trigger": false},
+  {"query": "write a new Claude skill that generates release notes from git log between two tags", "should_trigger": false},
+  {"query": "add a rule to AGENTS.md: never run database migrations against prod without a ticket number in the commit message", "should_trigger": false},
+  {"query": "translate our Chinese README.md into English for the open-source release, keep the code blocks as-is", "should_trigger": false},
+  {"query": "our system prompt for the customer-support LLM is 9k tokens, can you tighten the wording without losing any policy?", "should_trigger": false}
+]

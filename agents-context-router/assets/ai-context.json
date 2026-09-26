@@ -1,0 +1,40 @@
+{
+  "rootInstructions": "AGENTS.md",
+  "budgets": {
+    "rootInstructionsMaxBytes": 8192,
+    "defaultTopicMaxBytes": 16384
+  },
+  "topics": {
+    "build-deploy": {
+      "description": "Repo layout, build and test commands, deploy procedure.",
+      "sources": [
+        {
+          "path": "wiki/build-and-deploy.md"
+        }
+      ]
+    },
+    "debugging": {
+      "description": "Something fails: triage order, logs, known failure codes.",
+      "sources": [
+        {
+          "path": "wiki/debugging.md"
+        },
+        {
+          "path": "wiki/tools.md",
+          "heading": "Failure codes"
+        }
+      ]
+    },
+    "ai-context": {
+      "description": "Maintain the doc router: add, move or split topics and pages, and fix check failures.",
+      "sources": [
+        {
+          "path": "wiki/ai-context.md"
+        }
+      ]
+    }
+  },
+  "unrouted": {
+    "wiki/example-human-only.md": "Replace with real exceptions, each with a reason; delete this line if none."
+  }
+}

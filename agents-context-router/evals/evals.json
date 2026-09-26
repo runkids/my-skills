@@ -1,0 +1,23 @@
+{
+  "skill_name": "agents-context-router",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Our AGENTS.md is already 14 KB. Every agent task loads a lot of context, including milestone logs. Split it into a compact kernel and on-demand wiki topics. The repo is at ./tidepool.",
+      "expected_output": "Kernel AGENTS.md under 8 KB with every hard limit kept (incl. the reset-db rule hidden in M3 and the ECONNREFUSED lesson); milestone logs moved verbatim to wiki/history in Chinese; docs/ai-context.json + scripts/ai-context.py with check passing; wiki/README.md router; volatile status removed; CLAUDE.md drift and deploy skill handled.",
+      "files": ["fixtures/tidepool"]
+    },
+    {
+      "id": 2,
+      "prompt": "CLAUDE.md and AGENTS.md in ./tidepool have drifted apart (different port range, different Friday rule). Consolidate them so Claude Code and Codex share one set of rules, and stop loading the whole milestone history every session. Keep the deploy skill working.",
+      "expected_output": "Single source of rules in AGENTS.md; CLAUDE.md removed or a one-line @AGENTS.md pointer; drift conflicts surfaced to the user rather than silently resolved; history split out; deploy skill slimmed to load a topic instead of copying rules.",
+      "files": ["fixtures/tidepool"]
+    },
+    {
+      "id": 3,
+      "prompt": "Using the existing documentation structure in this repo (./routed), put the acceptance log notes/m5-draft.md and the new operations manual notes/retry-policy.md in the right places without bloating AGENTS.md.",
+      "expected_output": "wiki/history/m5.md added (verbatim, zh) and indexed in wiki/README.md; retry policy added to an existing or new topic page mapped in docs/ai-context.json; any new topic listed in both tables; AGENTS.md not grown beyond a table row; check passes.",
+      "files": ["fixtures/routed"]
+    }
+  ]
+}
