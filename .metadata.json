@@ -267,20 +267,6 @@
         "test/workflow-semantic-contract.test.mjs": "sha256:ea3ee45fcc037045c2d8b0ff1776a6ea1afb01c73858af64e7c39bb1bd16ae1e"
       }
     },
-    "devops/docker-expert": {
-      "source": "https://github.com/davila7/claude-code-templates.git/cli-tool/components/skills/development/docker-expert",
-      "type": "github-subdir",
-      "group": "devops",
-      "installed_at": "2026-09-27T02:10:26.758357+08:00",
-      "repo_url": "https://github.com/davila7/claude-code-templates.git",
-      "subdir": "cli-tool/components/skills/development/docker-expert",
-      "version": "c9384be",
-      "tree_hash": "45853e487ac0d45f8cded5d33ac97fa34d2f3c0a",
-      "commit": "c9384be03385195f4b6a4701978fc5a70fce8705",
-      "file_hashes": {
-        "SKILL.md": "sha256:e33b08feeaa8e110c08dddd030970547356514d42aa484e52f51e2fd2d4f451b"
-      }
-    },
     "frontend/improve-react": {
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/improve-react",
       "type": "github-subdir",
