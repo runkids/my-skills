@@ -35,6 +35,16 @@ skillshare extras init rules --no-tui ... # Skip wizard
 | `--no-tui` | Skip interactive wizard |
 | `-p` / `-g` | Force project / global mode |
 
+## Existing extras
+
+```bash
+skillshare extras <name> --help
+skillshare extras personal --add-target ~/.claude --as CLAUDE.md --mode import
+```
+
+`--as` sets the target filename for a single-file extra; it defaults to `file`.
+Run `skillshare sync extras` after adding the target.
+
 ## extras list
 
 Show all configured extras with sync status per target.
@@ -73,7 +83,7 @@ skillshare extras remove prompts -p
 | `--force` / `-f` | Skip y/N confirmation prompt |
 | `-p` / `-g` | Force project / global mode |
 
-After removal, run `sync extras` to clean up orphaned links. A single-file extra (below) needs no cleanup: remove restores each target file.
+After removal, run `sync extras` to clean up orphaned links. A single-file extra (below) needs no cleanup: remove restores each target file before removing its config entry. If restoration fails, the entry is kept for retry.
 
 ## extras collect
 
@@ -109,6 +119,8 @@ Sync modes (per-target):
 - `merge` (default): per-file symlinks, preserves local files in target
 - `copy`: real-file copies
 - `symlink`: entire directory symlinked
+
+`--json` returns a non-zero exit status when extras sync has errors. For single-file extras, `--dry-run` also reports edits that would be backed up before replacement.
 
 ## diff (extras included)
 
@@ -161,7 +173,9 @@ The first sync records the target's attach-time state as its restore point
 mode they only drop the managed line when the file has other content. Later edits
 that sync, overwrite, or restore replace are kept as drift backups in
 `~/.local/state/skillshare/extras/backups/<id>/drift/` and are never restored.
-`--remove-target` without `--prune` leaves the file and forgets the restore point.
+When replacing a user junction for a single-file extra, the warning includes its original destination; restore recreates the junction.
+
+`--remove-target` without `--prune` leaves the single-file target in place and unmanaged, and forgets its restore point. Later syncs do not clean it up; attaching it again records a new restore point.
 `flatten` and `extension` are rejected on a single-file extra; `extras collect`
 does not apply. The web dashboard (Extras -> AGENTS.md) manages these as shared
 AGENTS.md files; its rename conversion (project mode) is blocked while the file

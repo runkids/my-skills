@@ -5,7 +5,7 @@
       "source": "https://github.com/vercel-labs/agent-browser.git/skills/agent-browser",
       "type": "github-subdir",
       "group": "agent-browser",
-      "installed_at": "2026-09-27T02:09:46.380812+08:00",
+      "installed_at": "2026-09-28T02:55:42.77082+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
       "version": "d01253d",
@@ -18,7 +18,7 @@
     "agents-context-router": {
       "source": "https://github.com/runkids/agents-context-router.git/skills/agents-context-router",
       "type": "github-subdir",
-      "installed_at": "2026-09-27T02:09:48.51557+08:00",
+      "installed_at": "2026-09-28T02:55:44.636551+08:00",
       "repo_url": "https://github.com/runkids/agents-context-router.git",
       "subdir": "skills/agents-context-router",
       "version": "f47f73f",
@@ -39,7 +39,7 @@
     "archify": {
       "source": "https://github.com/tt-a1i/archify.git/archify",
       "type": "github-subdir",
-      "installed_at": "2026-09-27T02:09:55.745665+08:00",
+      "installed_at": "2026-09-28T02:55:47.516176+08:00",
       "repo_url": "https://github.com/tt-a1i/archify.git",
       "subdir": "archify",
       "version": "9e35d2b",
@@ -286,7 +286,7 @@
       "source": "https://github.com/vercel-labs/agent-skills.git/skills/react-best-practices",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-09-27T02:10:34.055466+08:00",
+      "installed_at": "2026-09-28T02:55:57.60747+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-skills.git",
       "subdir": "skills/react-best-practices",
       "version": "063bee9",
@@ -388,12 +388,12 @@
     "herdr": {
       "source": "https://github.com/herdrdev/herdr.git/skills/herdr",
       "type": "github-subdir",
-      "installed_at": "2026-09-27T02:10:40.218522+08:00",
+      "installed_at": "2026-09-28T02:55:50.043394+08:00",
       "repo_url": "https://github.com/herdrdev/herdr.git",
       "subdir": "skills/herdr",
-      "version": "bde4526",
+      "version": "0b9c8ea",
       "tree_hash": "6985a5e8418d43171c45c2a9e04b02de7308e1d8",
-      "commit": "bde45262be66fc8a95d36e6058b0afd4865ffed5",
+      "commit": "0b9c8ead0073221aaf4f1b0a5e01f0c44a61ad0e",
       "file_hashes": {
         "SKILL.md": "sha256:03855a7a1f9d0aa1ba6444fed2e4971adf796e91e73001d8f2472f5f9e5f659f"
       }
@@ -401,12 +401,12 @@
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
-      "installed_at": "2026-09-27T02:09:38.006121+08:00",
+      "installed_at": "2026-09-28T02:55:55.383775+08:00",
       "repo_url": "https://github.com/stablyai/orca.git",
       "subdir": "skills/orchestration",
-      "version": "da6d483a",
+      "version": "484598b",
       "tree_hash": "b0cd1d58b0c317cf7c3726fef7e6b1197c405246",
-      "commit": "da6d483ab9aae8aa81eaf773bcf0fda9fc4e3495",
+      "commit": "484598b18e8bce2fd3e3e6672bde03d82679e82c",
       "file_hashes": {
         "SKILL.md": "sha256:cd1b364bf35781bad06bf75ab1766afa8d6cec69cb2060529691d89871a2098a"
       }
@@ -414,26 +414,26 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-09-28T02:39:52.012288+08:00",
+      "installed_at": "2026-09-28T21:04:09.783378+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "afa8c09",
-      "tree_hash": "fb5c81ffd6b6763ee44e2c8fdd9c38198b9c1d85",
-      "commit": "afa8c097587a7ed1c8ba81798eded79f4b946a26",
+      "version": "49a5249",
+      "tree_hash": "dda8f3f81e6632f9f58e3d9b53627e44203c50a7",
+      "commit": "49a52498e9d5c4a77843bb8ee43e3dc9e2669feb",
       "file_hashes": {
-        "SKILL.md": "sha256:cb9193f964afb668f47d8042b16b361ef5a3da404e238d3aa33763204c28345c",
+        "SKILL.md": "sha256:81609d325a477ae2abafd3e76ebbcd86825c16145e6376a2e9e73a47375ddcde",
         "references/TROUBLESHOOTING.md": "sha256:6103f13f7a364ca2ce8d71e7b9771ba64ab225942d49c6a60323f2f61ca862ae",
         "references/audit.md": "sha256:890b84f79fb73cf704fe3cf9c2b0b87cdd3aa7ca1720cf6f08e19d5720a3506e",
-        "references/backup.md": "sha256:5041f950e0f060f38333223e59c730ff5beb12b43ec9be130da2687818644290",
-        "references/extras.md": "sha256:c237b7ae6e55e0aafa71fe1a46e0678956653d38007b1b82b2aef3847d353596",
+        "references/backup.md": "sha256:670f56cc07d76ba5b3556bf303fdcfe5c019bc4131a6606fc22266cdf8b4604a",
+        "references/extras.md": "sha256:74d2d98913b49693ed0f70051c28eaab90cc8a1c3a1342381563e7725e767ce2",
         "references/init.md": "sha256:ac99a757d7e9a077e4ff8d0fe3009a5b93167f0843e8a000fc89a03e24fa2d82",
         "references/install.md": "sha256:3f75bf0576273d63e7cb6c67c3c736c66d3fab006a8dcbbcf2f9123929f7dbf1",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
         "references/mcp.md": "sha256:49b494808a6257641fa9eb83c35b8f115f1aa37299f08ef448a841f6a5a57189",
         "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
         "references/plugins.md": "sha256:ee9eab630991e32a254e00d6fa91d58fbe8e4f8a43b8814d25ff761c9cd3fb29",
-        "references/status.md": "sha256:8e86ab71130cec45327bfff9d896e0c043d4281107b6beca973bf23a519a66ec",
-        "references/sync.md": "sha256:015dcaad15c8e69cd872709aac44fcd642cd54945940723fb29b10b1a41738c1",
+        "references/status.md": "sha256:37b652ccf40cfdfd66cbe9795a57eb2ffc21dea2e9cf02cc95b819c97a61b858",
+        "references/sync.md": "sha256:eec3de549268710fe54f3ae436c5bb8cdd9d80a8abb2f6f34df0d3c20016dc0b",
         "references/targets.md": "sha256:af644ce92b407d175ac8a14dcaad9db187aa3ce8a439d85f4aa2f93f1a024b2b",
         "references/trash.md": "sha256:9ffc23f6440e20bd1405b17f6124efdb1ad457b998fd2adf8352192916a5c5db",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
