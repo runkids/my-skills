@@ -23,6 +23,7 @@ Create a new extra resource type. Without arguments, launches an interactive TUI
 skillshare extras init rules --target ~/.claude/rules --target ~/.cursor/rules
 skillshare extras init commands --target ~/.claude/commands --mode copy
 skillshare extras init prompts --target .claude/prompts -p
+skillshare extras init pi-prompt --file system.md --as APPEND_SYSTEM.md --source ~/dotfiles/prompts --target ~/.pi/agent
 skillshare extras init                    # TUI wizard
 skillshare extras init rules --no-tui ... # Skip wizard
 ```
@@ -30,10 +31,15 @@ skillshare extras init rules --no-tui ... # Skip wizard
 | Flag | Description |
 |------|-------------|
 | `--target <path>` | Target directory (repeatable, at least one required) |
-| `--source <path>` | Custom source directory for this extra (global mode only) |
-| `--mode <mode>` | Sync mode: `merge` (default), `copy`, `symlink` |
+| `--source <path>` | Custom source directory for this extra (relative to the project root in project mode) |
+| `--file <filename>` | Single-file extra: sync only this file from the source directory |
+| `--as <filename>` | File name at every target (default: `--file` name); requires `--file` |
+| `--mode <mode>` | Sync mode: `merge` (default), `copy`, `symlink`; `import` only with `--file` |
+| `--flatten` | Sync subdirectory files into the target root; not with `symlink` or `--file` |
 | `--no-tui` | Skip interactive wizard |
 | `-p` / `-g` | Force project / global mode |
+
+`extras init` writes config only: it does not create the source file or sync. The TUI wizard asks Folder or Single file after the name.
 
 ## Existing extras
 
@@ -177,8 +183,13 @@ When replacing a user junction for a single-file extra, the warning includes its
 
 `--remove-target` without `--prune` leaves the single-file target in place and unmanaged, and forgets its restore point. Later syncs do not clean it up; attaching it again records a new restore point.
 `flatten` and `extension` are rejected on a single-file extra; `extras collect`
-does not apply. The web dashboard (Extras -> AGENTS.md) manages these as shared
-AGENTS.md files; its rename conversion (project mode) is blocked while the file
+does not apply. `extras list` shows full file paths for its source and targets.
+To sync several files from one folder, create one single-file extra per file with
+the same `--source` (in project mode, relative to the project root, e.g.
+`.skillshare/extras/prompts`); files no extra names are not synced.
+The web dashboard lists single-file extras whose `file` is `AGENTS.md` under
+Extras -> AGENTS.md as shared AGENTS.md files, and all others under Extras ->
+Folders & files; its rename conversion (project mode) is blocked while the file
 uses a shared AGENTS.md.
 
 The `extension:` field names an extension directory under `.skillshare/extensions/` (project) or `~/.config/skillshare/extensions/` (global). It transforms each source file during sync and implies `copy` mode.

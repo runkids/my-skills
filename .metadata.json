@@ -267,6 +267,95 @@
         "test/workflow-semantic-contract.test.mjs": "sha256:ea3ee45fcc037045c2d8b0ff1776a6ea1afb01c73858af64e7c39bb1bd16ae1e"
       }
     },
+    "feature-radar/feature-radar": {
+      "source": "github.com/runkids/feature-radar/skills/feature-radar",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-09-29T02:32:08.996663+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar",
+      "version": "5093cff",
+      "tree_hash": "16a5e421e6090a6fc845693ed0e0cbdb9231e339",
+      "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
+      "file_hashes": {
+        "SKILL.md": "sha256:ff0188bbe697caa4de40986e4d749035f07d2dba5496bf6d43fb1c982c9999c2",
+        "references/DEEP-READ.md": "sha256:92b8914fbd501d553ea8ed8c8f384431cb53fd7f188a9cce413004de753d0820",
+        "references/DIRECTIVES.md": "sha256:20a65d31a9f14c7e634a643fde539307927f56835523d73b3ee61dded96ae8cb",
+        "references/SPEC.md": "sha256:e5e72729eddbcec6e22feb1fc3a5ac1282b2f932283d1763c1369f0d0ec6a6f4",
+        "references/WORKFLOW-PATTERNS.md": "sha256:06f1d7f9358b1080e4c0a4ee2babd483b5719ff23f0bd283584fec3a8b7a3ad7"
+      }
+    },
+    "feature-radar/feature-radar-archive": {
+      "source": "github.com/runkids/feature-radar/skills/feature-radar-archive",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-09-29T02:32:09.007778+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-archive",
+      "version": "5093cff",
+      "tree_hash": "4e341b5f2831950738b09639369a646a12aa0a80",
+      "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
+      "file_hashes": {
+        "SKILL.md": "sha256:dc449f41ee51e0fad6e5c57f36c0073b637b4e5d6ba03ad45df0074548aee51f"
+      }
+    },
+    "feature-radar/feature-radar-learn": {
+      "source": "github.com/runkids/feature-radar/skills/feature-radar-learn",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-09-29T02:32:09.018496+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-learn",
+      "version": "5093cff",
+      "tree_hash": "a73ae4e2af37a2238fd455202d7cccfb23338b8e",
+      "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
+      "file_hashes": {
+        "SKILL.md": "sha256:8ffd0cca3345bae5379f153175b3cb1b11ed4b6c66ca949ba09e3c60e738b4a0"
+      }
+    },
+    "feature-radar/feature-radar-ref": {
+      "source": "github.com/runkids/feature-radar/skills/feature-radar-ref",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-09-29T02:32:09.028517+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-ref",
+      "version": "5093cff",
+      "tree_hash": "ebda6a87023232f26f98c8eb63ccdd7f4d63c5d3",
+      "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
+      "file_hashes": {
+        "SKILL.md": "sha256:17def4f136023541538bf0c3081a3518c945231b146bdcacc34b772c0695212b"
+      }
+    },
+    "feature-radar/feature-radar-scan": {
+      "source": "github.com/runkids/feature-radar/skills/feature-radar-scan",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-09-29T02:32:09.03936+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-scan",
+      "version": "5093cff",
+      "tree_hash": "2595effe6038f55a01ef58f716317c417e01c4a7",
+      "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
+      "file_hashes": {
+        "SKILL.md": "sha256:071567935eee60d9bc2b97d963c6a309902093c4a92476819a40e691ada8204e"
+      }
+    },
+    "feature-radar/feature-radar-validate": {
+      "source": "github.com/runkids/feature-radar/skills/feature-radar-validate",
+      "type": "github-subdir",
+      "group": "feature-radar",
+      "installed_at": "2026-09-29T02:32:09.058619+08:00",
+      "repo_url": "https://github.com/runkids/feature-radar.git",
+      "subdir": "skills/feature-radar-validate",
+      "version": "5093cff",
+      "tree_hash": "08ef768a593dacb24870601be1de688bfadc71e0",
+      "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
+      "file_hashes": {
+        "SKILL.md": "sha256:537ea97e5be9612e79c8dbf43f66e266bd01a395df39e43b5b503ea13b546c98",
+        "scripts/validate.sh": "sha256:f579219221c81570195a7715e65bd3e9c739201d97b27ec959bade4ecf143d75"
+      }
+    },
     "frontend/improve-react": {
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/improve-react",
       "type": "github-subdir",
@@ -414,27 +503,27 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-09-28T21:04:09.783378+08:00",
+      "installed_at": "2026-09-29T12:31:12.949735+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "49a5249",
-      "tree_hash": "dda8f3f81e6632f9f58e3d9b53627e44203c50a7",
-      "commit": "49a52498e9d5c4a77843bb8ee43e3dc9e2669feb",
+      "version": "2543c47",
+      "tree_hash": "8e9599f2eb09d9eea189af5b7f7a45430d6fd05f",
+      "commit": "2543c47148bb3ebf422e47811523c8c0fc038d46",
       "file_hashes": {
-        "SKILL.md": "sha256:81609d325a477ae2abafd3e76ebbcd86825c16145e6376a2e9e73a47375ddcde",
+        "SKILL.md": "sha256:c42b6ba20c63eeea6af8975ab627dea4fab6faa1efdada3997ea8c24cf51e17b",
         "references/TROUBLESHOOTING.md": "sha256:6103f13f7a364ca2ce8d71e7b9771ba64ab225942d49c6a60323f2f61ca862ae",
         "references/audit.md": "sha256:890b84f79fb73cf704fe3cf9c2b0b87cdd3aa7ca1720cf6f08e19d5720a3506e",
         "references/backup.md": "sha256:670f56cc07d76ba5b3556bf303fdcfe5c019bc4131a6606fc22266cdf8b4604a",
-        "references/extras.md": "sha256:74d2d98913b49693ed0f70051c28eaab90cc8a1c3a1342381563e7725e767ce2",
+        "references/extras.md": "sha256:97fc74aa76718427b63b05ac8883d76f2411bfd593af1b2e8038fb6b4744cfc2",
         "references/init.md": "sha256:ac99a757d7e9a077e4ff8d0fe3009a5b93167f0843e8a000fc89a03e24fa2d82",
-        "references/install.md": "sha256:3f75bf0576273d63e7cb6c67c3c736c66d3fab006a8dcbbcf2f9123929f7dbf1",
+        "references/install.md": "sha256:23ab1133fc8d58b85d6883aadd3ecc710ed146dfac6f4e97d6fab2151dce9ab5",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
         "references/mcp.md": "sha256:49b494808a6257641fa9eb83c35b8f115f1aa37299f08ef448a841f6a5a57189",
         "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
         "references/plugins.md": "sha256:ee9eab630991e32a254e00d6fa91d58fbe8e4f8a43b8814d25ff761c9cd3fb29",
         "references/status.md": "sha256:37b652ccf40cfdfd66cbe9795a57eb2ffc21dea2e9cf02cc95b819c97a61b858",
         "references/sync.md": "sha256:eec3de549268710fe54f3ae436c5bb8cdd9d80a8abb2f6f34df0d3c20016dc0b",
-        "references/targets.md": "sha256:af644ce92b407d175ac8a14dcaad9db187aa3ce8a439d85f4aa2f93f1a024b2b",
+        "references/targets.md": "sha256:867f0c73459e6fd3c87e3c128daac0ee6a49676eadc863d0cefa221a5ec6ddf0",
         "references/trash.md": "sha256:9ffc23f6440e20bd1405b17f6124efdb1ad457b998fd2adf8352192916a5c5db",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }
