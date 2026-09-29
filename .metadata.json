@@ -487,6 +487,30 @@
         "SKILL.md": "sha256:03855a7a1f9d0aa1ba6444fed2e4971adf796e91e73001d8f2472f5f9e5f659f"
       }
     },
+    "humanizer": {
+      "source": "github.com/blader/humanizer",
+      "type": "github",
+      "installed_at": "2026-09-29T17:33:37.128996+08:00",
+      "repo_url": "https://github.com/blader/humanizer.git",
+      "version": "225a6f3",
+      "commit": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+      "file_hashes": {
+        ".claude-plugin/marketplace.json": "sha256:e539740285b660d2288a38b6d9b237396c6769828c671c46b9f91e760db6cc29",
+        ".claude-plugin/plugin.json": "sha256:054c0afeeb03c12f01a7f156da949edfdec3a2b756588f5ff4ee7357b0c07f6a",
+        ".cursor-plugin/plugin.json": "sha256:d1e0b50594cf4bbe57fd164b771b401713a91b76b5a213ebe8f4558bb2036546",
+        ".github/ISSUE_TEMPLATE/config.yml": "sha256:cb7e95de7606d07654024c8d47916796b307033e23ddb2b0a821a9bf89e999ef",
+        ".github/ISSUE_TEMPLATE/new-pattern.yml": "sha256:7436d578fa0056a09da5da6da950a03cb49f3ce27cf268ae295eb3d7ca19f604",
+        ".github/ISSUE_TEMPLATE/rewrite-problem.yml": "sha256:ecfe5e82c5b6d44683e0cb63cfad117dfdd16e30cc6f03510ef335414eea4947",
+        ".github/workflows/validate.yml": "sha256:f2d6a8780fb0b3cf6fa7d2ffccd72d0fc8bee29b4e63ea0fd65924712c9055fd",
+        "AGENTS.md": "sha256:de84a449da400454df1225ddb1ced728c35bf0be7811b239e3370c7dbe1f4e69",
+        "CHANGELOG.md": "sha256:b3591fe203429f1a6bd2f713c79272e9a8e58a487843d0908d2bbe0700722afa",
+        "LICENSE": "sha256:4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96",
+        "README.md": "sha256:a07a054f230dca1e3d25e32ba6c808905b743cc6fa56bf8b6868cee0b12a0432",
+        "SKILL.md": "sha256:0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+        "agents/openai.yaml": "sha256:9d87ff83149a04f86a372948b8ee35fa249de20923867bbc2a49304290aad736",
+        "scripts/validate-package.py": "sha256:941bd99e52b2ba21449719bb7969607ac8117e3dc173d0c9dfe64fd274c65938"
+      }
+    },
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
