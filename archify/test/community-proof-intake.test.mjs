@@ -36,7 +36,7 @@ test('showcase intake requires reproducible proof, redaction, and explicit publi
   assert.match(template, /required:\s*true/g);
 
   const submissionUrl = 'https://github.com/tt-a1i/archify/issues/new?template=showcase.yml';
-  for (const readme of ['README.md', 'README_EN.md', 'README_ZH.md']) {
+  for (const readme of ['README.md', 'README_EN.md', 'README_ZH.md', 'README_JA.md']) {
     assert.match(read(readme), new RegExp(submissionUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${readme}: direct showcase link`);
   }
 });
@@ -87,7 +87,7 @@ test('contributor and pull-request guides keep proof changes reproducible and st
     'Do not include secrets',
     'Agent-first',
     'diagnostics[]',
-    'Start from the latest `main`',
+    'Start from the latest `dev`',
     'tracked-only, symlink-safe',
     'is **skipped**, not passed',
   ]) {

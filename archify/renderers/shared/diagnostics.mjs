@@ -53,9 +53,10 @@ export function throwDiagnosticError(message, diagnostics) {
   throw error;
 }
 
-export function throwDiagnosticProblems(prefix, problems, { code = 'layout/constraint', subject = {} } = {}) {
+export function throwDiagnosticProblems(prefix, problems, { code = 'layout/constraint', subject = {}, diagnostics: details = [] } = {}) {
   const messages = (problems || []).map((problem) => String(problem));
-  const diagnostics = messages.map((message) => normalizedDiagnostic({
+  const byMessage = new Map(details.map((entry) => [entry.message, entry]));
+  const diagnostics = messages.map((message) => normalizedDiagnostic(byMessage.get(message) || {
       code,
       severity: 'error',
       message,
@@ -68,26 +69,6 @@ export function throwDiagnosticProblems(prefix, problems, { code = 'layout/const
 
 function fallbackDiagnostic(error) {
   const input = process.argv[2] ? path.resolve(process.argv[2]) : undefined;
-  if (error instanceof SyntaxError) {
-    return normalizedDiagnostic({
-      code: 'input/json-parse',
-      severity: 'error',
-      message: `Input JSON could not be parsed: ${error.message}`,
-      subject: { input },
-      evidence: { reason: error.message },
-      supportedFixes: ['repair the JSON syntax and run validation again'],
-    });
-  }
-  if (error?.code === 'ENOENT' || error?.code === 'EACCES' || error?.code === 'EISDIR') {
-    return normalizedDiagnostic({
-      code: 'input/read',
-      severity: 'error',
-      message: `Input could not be read: ${error.message}`,
-      subject: { input },
-      evidence: { systemCode: error.code, reason: error.message },
-      supportedFixes: ['provide one readable JSON input file'],
-    });
-  }
   return normalizedDiagnostic({
     code: 'internal/unclassified',
     severity: 'error',
@@ -97,11 +78,14 @@ function fallbackDiagnostic(error) {
     supportedFixes: [],
   });
 }
-function rendererFailure(error) {
+export function rendererFailure(error) {
   const attached = Array.isArray(error?.archifyDiagnostics)
     ? error.archifyDiagnostics.map(normalizedDiagnostic)
     : [];
-  const diagnostics = recorded.length ? recorded : (attached.length ? attached : [fallbackDiagnostic(error)]);
+  // Earlier diagnostics do not classify a later, unrelated implementation error.
+  const diagnostics = attached.length
+    ? (recorded.length ? recorded : attached)
+    : [fallbackDiagnostic(error)];
   return {
     schemaVersion: 1,
     ok: false,
@@ -109,6 +93,19 @@ function rendererFailure(error) {
     error: error?.message || 'Renderer failed without a diagnostic.',
     diagnostics,
   };
+}
+
+// Match the public CLI's text format without making its standalone doctor
+// bootstrap depend on this renderer runtime being present.
+function formatDiagnostics(error, diagnostics = []) {
+  if (!diagnostics.length) return error;
+  return [
+    error,
+    ...diagnostics.map((entry) => {
+      const fix = entry.supportedFixes?.length ? ` Fix: ${entry.supportedFixes.join('; ')}.` : '';
+      return `[${entry.code}] ${entry.message}${fix}`;
+    }),
+  ].join('\n');
 }
 
 const readerSignal = new Int32Array(new SharedArrayBuffer(4));
@@ -124,8 +121,24 @@ function waitForReader() {
 }
 
 export function installRendererDiagnosticBoundary() {
-  if (!DIAGNOSTIC_MODE || globalThis[boundaryKey]) return;
+  if (globalThis[boundaryKey]) return;
   globalThis[boundaryKey] = true;
+  if (!DIAGNOSTIC_MODE) {
+    process.once('uncaughtException', (error) => {
+      // Only errors classified at their operation boundary are author-facing.
+      // Preserve Node's debugging information for unexpected implementation errors.
+      if (!error?.archifyDiagnostics?.length) {
+        // The once-listener is already removed. Rethrow outside the exception
+        // handler so Node retains its normal stack and exit code (not code 7).
+        process.nextTick(() => { throw error; });
+        return;
+      }
+      const payload = `${formatDiagnostics(error.message, error.archifyDiagnostics)}\n`;
+      process.stderr.once('error', () => process.exit(1));
+      process.stderr.write(payload, () => process.exit(1));
+    });
+    return;
+  }
   process.on('uncaughtException', (error) => {
     const payload = `${JSON.stringify(rendererFailure(error))}\n`;
     try {
