@@ -32,6 +32,16 @@ targets:
       import: true               # the tool follows @path lines
 ```
 
+Other files a tool reads (`files` in config.yaml, dashboard only): each entry is relative
+to the tool's folder (`~/.pi/agent` for pi; `.pi` in a project) and gets its own tab.
+Pi and oh-my-pi already get `APPEND_SYSTEM.md`. Removing an entry never deletes the file.
+
+```yaml
+targets:
+  pi:
+    files: [SYSTEM.md, prompts/review.md]
+```
+
 ## Skills Off
 
 For a tool that already reads another target's folder (Pi also reads `~/.agents/skills`
