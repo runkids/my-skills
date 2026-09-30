@@ -15,12 +15,14 @@ Distribute skills from source to all targets using each target's sync mode (`mer
 
 ```bash
 skillshare sync                # Execute (auto-detects mode)
-skillshare sync --all          # Sync skills + agents + extras + MCP
+skillshare sync --all          # Sync skills + agents + extras + MCP + hooks
 skillshare sync --dry-run      # Preview
 skillshare sync --force        # Override conflicts
 skillshare sync --json         # JSON output
 skillshare sync -g             # Force global mode
 ```
+
+Sync runs every target. A target whose sync fails, or whose own settings are invalid (for example a skills path that is a file), is reported as failed and skipped; the rest still sync and the command exits non-zero. Config-wide problems (source, global `mode`/`target_naming`, `git_root`, extras) still stop sync before any target runs.
 
 ### Sync modes (quick reference)
 
@@ -72,7 +74,7 @@ extras:
 
 Source: `~/.config/skillshare/extras/<name>/` (global) or `.skillshare/extras/<name>/` (project). Modes: `merge` (default, per-file symlinks), `copy`, `symlink`.
 
-`--json` returns a non-zero exit status when extras sync has errors. For single-file extras, `--dry-run` also reports edits that would be backed up before replacement.
+`--json` returns a non-zero exit status when extras sync has errors. `sync --all` also exits non-zero when an extras target fails, with or without `--json`. An extra whose source directory does not exist is skipped with a hint, not created. For single-file extras, `--dry-run` also reports edits that would be backed up before replacement.
 
 Identical local files are preserved and reported as `local preserved`; `sync extras` does not suggest `--force` for them. They remain local files, not managed links.
 

@@ -153,7 +153,7 @@ skillshare update _repo --force -p  # Discard local changes
 | `--json` | JSON output |
 | `--diff` | Show file-level change summary after update |
 
-**Safety:** Tracked repos with uncommitted changes are skipped. Use `--force` to override.
+**Safety:** Tracked repos with uncommitted changes are skipped, and repos whose git status cannot be read fail. Use `--force` to override both.
 
 **Security:** Updates roll back when findings reach the configured block threshold.
 `--audit-threshold` / `--threshold` / `-T` overrides the threshold for the run.
@@ -189,6 +189,8 @@ skillshare uninstall --group frontend --dry-run
 # Global JSON output (skips confirmation; dirty tracked repos still require --force)
 skillshare uninstall my-skill --json
 ```
+
+**Safety:** Tracked repos with uncommitted changes are skipped, and repos whose git status cannot be read fail. Use `--force` to override both.
 
 **Group auto-detection:** When uninstalling a directory that contains sub-skills, the confirmation prompt shows `Uninstalling group (N skills)` with a list of contained skills.
 
