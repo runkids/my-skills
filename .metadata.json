@@ -5,7 +5,7 @@
       "source": "https://github.com/vercel-labs/agent-browser.git/skills/agent-browser",
       "type": "github-subdir",
       "group": "agent-browser",
-      "installed_at": "2026-09-28T02:55:42.77082+08:00",
+      "installed_at": "2026-10-01T14:22:23.392913+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
       "version": "d01253d",
@@ -18,7 +18,7 @@
     "agents-context-router": {
       "source": "https://github.com/runkids/agents-context-router.git/skills/agents-context-router",
       "type": "github-subdir",
-      "installed_at": "2026-09-28T02:55:44.636551+08:00",
+      "installed_at": "2026-10-01T14:22:25.195712+08:00",
       "repo_url": "https://github.com/runkids/agents-context-router.git",
       "subdir": "skills/agents-context-router",
       "version": "f47f73f",
@@ -39,12 +39,12 @@
     "archify": {
       "source": "https://github.com/tt-a1i/archify.git/archify",
       "type": "github-subdir",
-      "installed_at": "2026-09-29T17:36:40.937497+08:00",
+      "installed_at": "2026-10-01T14:22:29.007293+08:00",
       "repo_url": "https://github.com/tt-a1i/archify.git",
       "subdir": "archify",
-      "version": "69cf672",
-      "tree_hash": "7dcd73a73672d5da4f85d4c612017b478547303b",
-      "commit": "69cf672087289033af5138648d3875d3d73fc431",
+      "version": "d5a1333",
+      "tree_hash": "b92051e907e1aaa1698eb4acebc85dceff399f9b",
+      "commit": "d5a1333d7447c866a765adac7d4d062f2f02e4d2",
       "file_hashes": {
         "LICENSE": "sha256:b799ab081703e7821ae5096d2c1abdf14bbdc75e8ea1c4045998c36ed6db9706",
         "SKILL.md": "sha256:66dfe99b35d7ceff95bcbdb00f138b8b3ec8094629acf69efba1eeda1013aaf3",
@@ -292,7 +292,7 @@
         "test/reader-layout-browser.test.mjs": "sha256:b2add4777d89681af6f7a76a742c85ba6d59f8d8f4096d95bc7050220fecf228",
         "test/reader-layout-settle-browser.test.mjs": "sha256:4d1d15556f298a413f25f85b0241958381f444fad02e9c54aacc05151ccf837b",
         "test/reader-readability-maintained-browser.test.mjs": "sha256:28c5da9e2156773dd3dd0e29bb2a0137de6dbf5574cdfd31b1423ee6cf6c7d07",
-        "test/readme-showcase.test.mjs": "sha256:a795ca70c71f7b516ff6690df24739ca85e163e7eed4306096fee2d688436f80",
+        "test/readme-showcase.test.mjs": "sha256:4107084eebdc91d6e89269093f883adc67b06c383beaa1f3f8c9907f3295480f",
         "test/real-repository-proof.test.mjs": "sha256:cc30ebef25e08dc1a992c1f9d1faea487b7acfec6ddf24bcb6608063627e905a",
         "test/relationship-direct-explorer.test.mjs": "sha256:c6b33f6cc088a2cb86bec8006b1aad64f1f6f8f29c623abe781e6489e83fc68b",
         "test/relationship-lens.test.mjs": "sha256:1f23f67184220d883fc3b8abacc5695788c568e01c65101d48e8dcec4ce9dc1d",
@@ -306,6 +306,7 @@
         "test/renderer-diagnostic-boundary.test.mjs": "sha256:73afe2d494c73741993e4b72f4bc307360c715fba832568dd81b86686da31e1c",
         "test/renderer-import-isolation.test.mjs": "sha256:a08ca63717f04075ec4a9d8cae527c7d248d003a7b14cc7de2ec009edfa4e789",
         "test/repair-receipt.test.mjs": "sha256:7af5caeb664c9c9fc3e503dff07d275b710e04af60556ea5ab92ea74920f31cb",
+        "test/repair-rounds.test.mjs": "sha256:88fa563fa4fb82478facdf77cfc93f4246162e638ab71c55717f4084286d6524",
         "test/repository-evidence-replacement.test.mjs": "sha256:8ca2d0ceea443638b830c17215b83618c3faaabcfe9848dfff1bc73db91de57f",
         "test/repository-evidence-types-browser.test.mjs": "sha256:0878d2c77b7ecc3d275b5adf9bd0ce6e6202d5205bc47f29fdd4e4e35258ea57",
         "test/repository-evidence-types.test.mjs": "sha256:33204a28b7cc0ca82ebb7b9e0b3d00c5a13ccd7a2293e4bb1616db66b34c92ad",
@@ -364,7 +365,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-09-29T02:32:08.996663+08:00",
+      "installed_at": "2026-10-01T14:22:30.895935+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar",
       "version": "5093cff",
@@ -382,7 +383,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-archive",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-09-29T02:32:09.007778+08:00",
+      "installed_at": "2026-10-01T14:22:32.723276+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-archive",
       "version": "5093cff",
@@ -396,7 +397,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-learn",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-09-29T02:32:09.018496+08:00",
+      "installed_at": "2026-10-01T14:22:34.550953+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-learn",
       "version": "5093cff",
@@ -410,7 +411,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-ref",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-09-29T02:32:09.028517+08:00",
+      "installed_at": "2026-10-01T14:22:36.449506+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-ref",
       "version": "5093cff",
@@ -424,7 +425,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-scan",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-09-29T02:32:09.03936+08:00",
+      "installed_at": "2026-10-01T14:22:38.091866+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-scan",
       "version": "5093cff",
@@ -438,7 +439,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-validate",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-09-29T02:32:09.058619+08:00",
+      "installed_at": "2026-10-01T14:22:39.790188+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-validate",
       "version": "5093cff",
@@ -453,11 +454,12 @@
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/improve-react",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-08-27T17:33:57.051708+08:00",
+      "installed_at": "2026-10-01T14:22:50.247845+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/improve-react",
-      "version": "79d8007",
+      "version": "6313667",
       "tree_hash": "0ee95f8644a7a263db14d2a7530134578f7ccf11",
+      "commit": "631366777e01637f3c36b8a8c2ae8f19ba1060e8",
       "file_hashes": {
         "AUDIT.md": "sha256:86ad71563719082952561461453ebeb93dbe41560650d69df6bc65da6f3e1859",
         "PLAN-TEMPLATE.md": "sha256:2ddbf58a4ece9c1b4da5f65dfb92354f20ff79d2663e3e458dc5e124414a4cc5",
@@ -468,7 +470,7 @@
       "source": "https://github.com/vercel-labs/agent-skills.git/skills/react-best-practices",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-09-28T02:55:57.60747+08:00",
+      "installed_at": "2026-10-01T14:22:55.869538+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-skills.git",
       "subdir": "skills/react-best-practices",
       "version": "063bee9",
@@ -557,11 +559,12 @@
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/react-doctor",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-08-27T17:34:00.636434+08:00",
+      "installed_at": "2026-10-01T14:22:58.431025+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/react-doctor",
-      "version": "79d8007",
+      "version": "6313667",
       "tree_hash": "549e7d8728550f1f3fc72572b8601c3b11e801ac",
+      "commit": "631366777e01637f3c36b8a8c2ae8f19ba1060e8",
       "file_hashes": {
         "SKILL.md": "sha256:75dee12205065567c3598a980cf4f76fe9bcb7594ba4fa77479a2c04a03527d3",
         "references/explain.md": "sha256:21fa0414874d117a63e5360d527884ccd42bf0906e6dcab371409cebac8b3d12"
@@ -570,20 +573,20 @@
     "herdr": {
       "source": "https://github.com/herdrdev/herdr.git/skills/herdr",
       "type": "github-subdir",
-      "installed_at": "2026-09-28T02:55:50.043394+08:00",
+      "installed_at": "2026-10-01T14:22:42.983366+08:00",
       "repo_url": "https://github.com/herdrdev/herdr.git",
       "subdir": "skills/herdr",
-      "version": "0b9c8ea",
-      "tree_hash": "6985a5e8418d43171c45c2a9e04b02de7308e1d8",
-      "commit": "0b9c8ead0073221aaf4f1b0a5e01f0c44a61ad0e",
+      "version": "d6b40d4",
+      "tree_hash": "67042ed7910d4177a9000e0679e78b0346060927",
+      "commit": "d6b40d4edd550ccea081f089605a64314f8c8b27",
       "file_hashes": {
-        "SKILL.md": "sha256:03855a7a1f9d0aa1ba6444fed2e4971adf796e91e73001d8f2472f5f9e5f659f"
+        "SKILL.md": "sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b"
       }
     },
     "humanizer": {
       "source": "github.com/blader/humanizer",
       "type": "github",
-      "installed_at": "2026-09-29T17:33:37.128996+08:00",
+      "installed_at": "2026-10-01T14:22:45.024881+08:00",
       "repo_url": "https://github.com/blader/humanizer.git",
       "version": "225a6f3",
       "commit": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
@@ -607,12 +610,12 @@
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
-      "installed_at": "2026-09-28T02:55:55.383775+08:00",
+      "installed_at": "2026-10-01T14:22:53.480962+08:00",
       "repo_url": "https://github.com/stablyai/orca.git",
       "subdir": "skills/orchestration",
-      "version": "484598b",
+      "version": "a8a434d",
       "tree_hash": "b0cd1d58b0c317cf7c3726fef7e6b1197c405246",
-      "commit": "484598b18e8bce2fd3e3e6672bde03d82679e82c",
+      "commit": "a8a434db988a33c89e9cb4fb2b9e011c1d4861c3",
       "file_hashes": {
         "SKILL.md": "sha256:cd1b364bf35781bad06bf75ab1766afa8d6cec69cb2060529691d89871a2098a"
       }
@@ -620,12 +623,12 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-10-01T02:50:06.354706+08:00",
+      "installed_at": "2026-10-01T14:23:04.548412+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "de7525c",
+      "version": "791f518",
       "tree_hash": "a918e846654b086ce6b41dfd8c7fb3dd744c34c7",
-      "commit": "de7525c34dcf34490a43a67efa8e863d5ae4133c",
+      "commit": "791f518b434f8ec8779b9d78f420329defd85145",
       "file_hashes": {
         "SKILL.md": "sha256:61d3b0b266354a79c2245caa01e4f48ec0af6dc48914ec16e9fc3caa62033038",
         "references/TROUBLESHOOTING.md": "sha256:6103f13f7a364ca2ce8d71e7b9771ba64ab225942d49c6a60323f2f61ca862ae",
@@ -646,5 +649,13 @@
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }
     }
+  },
+  "audit_accepted": {
+    "frontend/improve-react": [
+      "8ed50e328728156391274dc109d97c109bb56da0ddbd2eb5b60784e4bee98576"
+    ],
+    "frontend/react-doctor": [
+      "08fe6550b7391a0663dd7b17041170c6e3828f2668d570189329957c2ff07c36"
+    ]
   }
 }
