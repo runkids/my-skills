@@ -125,6 +125,13 @@ setups usually go wrong.
   (`PI_CODING_AGENT_DIR`) writes `<dir>/mcp.json`. Global scope only; a project
   uses the Agent's own name, and a project's off switch goes to every account that has the
   server.
+- Account shell overrides: when `CLAUDE_CONFIG_DIR`, `CODEX_HOME` or
+  `PI_CODING_AGENT_DIR` matches a declared account's `config_dir`, the plain Agent
+  uses its default home and sync warns. Unrelated overrides are still honored.
+  Existing directory aliases, including symlinks and filesystem case aliases, match.
+  Files outside resolved destinations are parked with ownership intact; sync
+  where that home resolves again to resume managing them.
+  For an older removed project, re-add it, sync, then remove it and sync again.
 - Reserved names: a server called `workspace`, `claude-in-chrome` or `computer-use` is
   skipped by Claude Code. Skillshare refuses them for `claude`.
 - Claude Code never sends its own credentials to a remote server.
@@ -233,8 +240,10 @@ skillshare mcp edit docs --pi-options '{}' --no-tui
   values are refused; command values in `piOptions` are rejected even under
   non-secret keys such as `oauth.clientId`.
 - Pi server names allow only letters, digits, `_` and `-`.
-- Pi cannot take a switch-only `disabled` entry. Use `piOptions: {enabled: false}` on
-  a complete server instead.
+- A `disabled` entry under `mcp.projects` turns a global server off for Pi too: Skillshare
+  writes the global server's `command` (or `url` without the query) with `enabled: false`
+  to `.pi/mcp.json`. A project's own config cannot see the global server, so `pi` there
+  is an error.
 
 ## Tool policy
 
@@ -290,7 +299,7 @@ printing `Updated config.yaml for 0.23.0 (backup: <path>)`. `--dry-run` writes n
   apply to servers that reach Pi without their own value.
 - `piOptions.includeTools`/`excludeTools` → `tools.allow`/`tools.deny` (a
   `directTools` next to them still becomes `piOptions.exposure`).
-- Other adapter-only `piOptions` are dropped; `pi` is removed from `disabled` entries.
+- Other adapter-only `piOptions` are dropped.
 - `--pi-extension` and `--pi-options-prune`: drop them. `--direct-tools`: use
   `--pi-options '{"exposure":"direct"}'`, or `--pi-options '{"toolExposure":{"TOOL":"direct"}}'`.
 - `mcp import --from pi` still reads `mcp-adapter.json` (read-only; `mcp.json` wins on
