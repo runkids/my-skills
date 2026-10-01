@@ -217,10 +217,12 @@ or a new session, and `/mcp` to inspect connections. `pi mcp list` launches ever
 enabled server to check connections. `pi mcp login NAME` needs user approval.
 
 `piOptions` holds the other per-server fields of Pi's built-in MCP: `exposure`
-(`codemode`, `codemode-deferred`, `deferred`, `direct`, `hidden`), `toolExposure`
+(`codemode`, `codemode-deferred` as its older name, `deferred`, `direct`, `hidden`), `toolExposure`
 (tool names or wildcards; an exact name wins, then the first matching pattern, and
-order is preserved), positive seconds `timeout`, `cwd`, `enabled` and `oauth`. Known
-values are checked; unknown fields pass through.
+order is preserved), positive seconds `timeout`, `cwd`, `enabled`, `oauth` and `auth` (`{provider: NAME}`,
+https or localhost url, global mode only). Known values are checked; unknown fields such
+as `description` pass through. Pi reads names that differ only in `-` and `_` as one
+server, so sync refuses the second.
 
 ```bash
 skillshare mcp add docs --url https://example.com/mcp --target pi --pi-options '{"exposure":"deferred","timeout":120}' --no-tui
