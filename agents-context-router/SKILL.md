@@ -9,7 +9,7 @@ Coding agents load the root instruction file (AGENTS.md, CLAUDE.md) on every tas
 
 ```
 AGENTS.md                 kernel: rules every task needs + how to load more (≤ 8 KB)
-docs/ai-context.json      topic → sources (whole file or one exact heading); the single truth
+wiki/ai-context.json      topic → sources (whole file or one exact heading); the single truth
 scripts/ai-context.py     list | <topic> | check  (bundled with this skill)
 wiki/README.md            human router table (mirrors the JSON)
 wiki/ai-context.md        in-repo maintenance manual (works without this skill)
@@ -28,7 +28,7 @@ The layout also **maintains itself** once this skill is gone, because every piec
 
 Leaving out any one of these four is how routed docs decay back into a pile.
 
-Before you start, read `references/gotchas.md`. It lists the traps that make this refactor quietly lose content or route agents to the wrong text. It is short, and every item came from a real split.
+Before you start, read `references/gotchas.md`. It lists the traps that make this refactor quietly lose content or route agents to the wrong text. It is short.
 
 ## Workflow
 
@@ -69,9 +69,9 @@ Some text changes buckets. A behaviour rule learned the hard way (for example "i
 ### 4. Wire the router
 
 1. Copy `scripts/ai-context.py` from this skill to `<repo>/scripts/ai-context.py`. It resolves the repo root as the script's parent's parent.
-2. Write `docs/ai-context.json` from `assets/ai-context.json`. Use `{"path": ...}` for a whole page. Use `{"path": ..., "heading": "Exact Heading Text"}` to pull one section out of a bigger page, such as a single tool group from a catalog.
+2. Write `wiki/ai-context.json` from `assets/ai-context.json`. Use `{"path": ...}` for a whole page. Use `{"path": ..., "heading": "Exact Heading Text"}` to pull one section out of a bigger page, such as a single tool group from a catalog.
 3. Write `wiki/README.md` from `assets/wiki-README.md`: the topic table for humans, plus a history index.
-4. Copy `assets/wiki-ai-context.md` to `wiki/ai-context.md` and keep the `ai-context` topic that points at it. This is the manual any future agent loads to maintain the router, with or without this skill. Adapt the paths if the repo uses other directories.
+4. Copy `assets/wiki-ai-context.md` to `wiki/ai-context.md` and keep the `ai-context` topic that points at it. This is the manual any future agent loads to maintain the router, with or without this skill. The config location `wiki/ai-context.json` is fixed in the script. If the repo uses other directories, set `wikiDir`, `historyDir`, `routerFile` or `rootInstructions` in the JSON, and update the paths in `wiki/ai-context.md` to match.
 5. Run `python3 scripts/ai-context.py check`. It fails when:
    - a path or heading is missing, or a heading is ambiguous;
    - `AGENTS.md` is over its budget;

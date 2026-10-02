@@ -1,6 +1,6 @@
 # Gotchas
 
-Each item below is a trap from a real split of an 85 KB README plus AGENTS.md into a 5 KB kernel and 9 topics. Each one says why it matters.
+Each item below is a trap that makes a split lose content or route agents to the wrong text. Each one says why it matters.
 
 ## Content
 
@@ -22,7 +22,7 @@ Each item below is a trap from a real split of an 85 KB README plus AGENTS.md in
 
 8. **One topic per task by default.** Say so in the kernel: "pick the single closest topic; load a second only when the task crosses two seams." Otherwise agents load everything "to be safe" and the split buys nothing.
 
-9. **The JSON is the only truth. The tables are mirrors.** `docs/ai-context.json` decides what loads. The tables in `AGENTS.md` and `wiki/README.md` are for discovery. `check` fails when a topic is missing from the kernel table, because an agent cannot choose a topic it has never heard of.
+9. **The JSON is the only truth. The tables are mirrors.** `wiki/ai-context.json` decides what loads. The tables in `AGENTS.md` and `wiki/README.md` are for discovery. `check` fails when a topic is missing from the kernel table, because an agent cannot choose a topic it has never heard of.
 
 10. **Prefer exact headings to line ranges.** Line numbers break on every edit. A heading reference survives edits, and the script **fails closed** when the heading is missing or appears twice. Duplicate headings such as "Usage" in two sections of one page would otherwise load the wrong text without any warning.
 

@@ -1,0 +1,22 @@
+{
+  "rootInstructions": "AGENTS.md",
+  "budgets": {
+    "rootInstructionsMaxBytes": 8192,
+    "defaultTopicMaxBytes": 16384
+  },
+  "topics": {
+    "build-deploy": {
+      "description": "Build and test commands, deploy procedure.",
+      "sources": [{ "path": "wiki/build-and-deploy.md" }]
+    },
+    "debugging": {
+      "description": "A crawl or worker fails: triage order and failure codes.",
+      "sources": [{ "path": "wiki/debugging.md" }]
+    },
+    "ai-context": {
+      "description": "Maintain the doc router: add, move or split topics and pages, and fix check failures.",
+      "sources": [{ "path": "wiki/ai-context.md" }]
+    }
+  },
+  "unrouted": {}
+}

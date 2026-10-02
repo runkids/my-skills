@@ -36,7 +36,7 @@ Pick the single closest topic. Load a second one only for a task that really cro
 
 When no topic fits, read `wiki/README.md`. To add a topic:
 1. Put the content in `wiki/`.
-2. Map it in `docs/ai-context.json`.
+2. Map it in `wiki/ai-context.json`.
 3. List it in both tables.
 4. Run `check`.
 
