@@ -377,6 +377,22 @@
         "test/workflow-vertical-label.test.mjs": "sha256:aca8a9cc02844e9e28fab7c5b3b70ee3cb56a41025bb35fb8eed3f10177422d2"
       }
     },
+    "codebase-design": {
+      "source": "github.com/mattpocock/skills/skills/engineering/codebase-design",
+      "type": "github-subdir",
+      "installed_at": "2026-10-04T03:31:12.85834+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/codebase-design",
+      "version": "d81f3a1",
+      "tree_hash": "07ba1cd60efc12d0d3a083005c1d9651cf15e39a",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "file_hashes": {
+        "DEEPENING.md": "sha256:f3dd099ce99289bd213914d8ee3e2429b78309c3957ca4583f7659551b1d53c1",
+        "DESIGN-IT-TWICE.md": "sha256:52b52e75655a27aea59c6966b410bac82448968ad46ef1ebb9f07c274e3ae010",
+        "SKILL.md": "sha256:2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+        "agents/openai.yaml": "sha256:edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f"
+      }
+    },
     "feature-radar/feature-radar": {
       "source": "github.com/runkids/feature-radar/skills/feature-radar",
       "type": "github-subdir",
@@ -602,6 +618,8 @@
     "humanizer": {
       "source": "github.com/blader/humanizer",
       "type": "github",
+      "tracked": true,
+      "branch": "main",
       "installed_at": "2026-10-01T14:22:45.024881+08:00",
       "repo_url": "https://github.com/blader/humanizer.git",
       "version": "225a6f3",
