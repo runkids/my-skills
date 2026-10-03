@@ -126,6 +126,7 @@ def check(cfg):
 
 def main(argv):
     sys.stdout.reconfigure(encoding='utf-8')  # section markers and CJK pages break cp1252/cp950 consoles on Windows
+    sys.stderr.reconfigure(encoding='utf-8')  # error messages can carry non-ASCII paths
     cfg = load_cfg()
     args = argv[1:] or ['list']
     if args == ['list']:

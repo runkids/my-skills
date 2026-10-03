@@ -72,7 +72,8 @@ Some text changes buckets. A behaviour rule learned the hard way (for example "i
 2. Write `wiki/ai-context.json` from `assets/ai-context.json`. Use `{"path": ...}` for a whole page. Use `{"path": ..., "heading": "Exact Heading Text"}` to pull one section out of a bigger page, such as a single tool group from a catalog.
 3. Write `wiki/README.md` from `assets/wiki-README.md`: the topic table for humans, plus a history index.
 4. Copy `assets/wiki-ai-context.md` to `wiki/ai-context.md` and keep the `ai-context` topic that points at it. This is the manual any future agent loads to maintain the router, with or without this skill. The config location `wiki/ai-context.json` is fixed in the script. If the repo uses other directories, set `wikiDir`, `historyDir`, `routerFile` or `rootInstructions` in the JSON, and update the paths in `wiki/ai-context.md` to match.
-5. Run `python3 scripts/ai-context.py check`. It fails when:
+5. **Pick the Python command for this machine and repo.** The assets and examples in this skill write `python3`, which does not exist on a typical Windows install (it is often a Microsoft Store stub that fails). Probe `python3 --version`, then `python --version`, then `py -3 --version`; the first that prints Python 3.8+ is the command. On Windows expect `python` or `py -3`. Write that same command everywhere you copy text from the assets: `AGENTS.md`, `wiki/README.md`, `wiki/ai-context.md`, and the CI/hook entries in 4b. If the repo is used from both Windows and Unix, say so in the kernel's load-context block (for example "Windows: `python` or `py -3`"). Do not add a wrapper script.
+6. Run `check` with that command (`python3 scripts/ai-context.py check` below). It fails when:
    - a path or heading is missing, or a heading is ambiguous;
    - `AGENTS.md` is over its budget;
    - a topic is over its budget;

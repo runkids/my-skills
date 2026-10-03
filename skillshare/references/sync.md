@@ -115,6 +115,7 @@ Git commit and push source to remote. **Global mode only.**
 ```bash
 skillshare push                # Default message
 skillshare push -m "message"   # Custom message
+skillshare push --pull         # Merge remote changes, push, then sync targets
 skillshare push --dry-run      # Preview
 ```
 
@@ -140,6 +141,10 @@ the source; editing a copy target does not. Inspect `diff` before collecting cop
 
 **Import local changes:** `collect <target>` → `sync`
 
-**Cross-machine sync (global):** Machine A: `push` → Machine B: `pull`
+**Cross-machine sync (global):** Machine A: `push` → Machine B: `pull`. `pull` syncs
+only what `git_root` holds. Plugins, hooks and MCP live in `config.yaml`, which no
+scope tracks: run `sync --all` and `sync plugins` after `pull`, re-add plugins from an
+HTTPS source on each machine (imports are not portable), and keep MCP in a
+`sources.mcp` file inside a `root`-scope repository to version it.
 
 **Team sharing (project):** Edit `.skillshare/skills/` → `git commit && git push` → Team: `git pull && skillshare install -p && skillshare sync`
