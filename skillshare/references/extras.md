@@ -18,15 +18,15 @@ Manage non-skill resources (rules, commands, prompts) that sync to arbitrary dir
 
 ## extras init
 
-Create a new extra resource type. Without arguments, launches an interactive TUI wizard.
+Create a new extra resource type. Without arguments, asks for each setting interactively.
 
 ```bash
 skillshare extras init rules --target ~/.claude/rules --target ~/.cursor/rules
 skillshare extras init commands --target ~/.claude/commands --mode copy
 skillshare extras init prompts --target .claude/prompts -p
 skillshare extras init pi-prompt --file system.md --as APPEND_SYSTEM.md --source ~/dotfiles/prompts --target ~/.pi/agent
-skillshare extras init                    # TUI wizard
-skillshare extras init rules --no-tui ... # Skip wizard
+skillshare extras init                    # Interactive prompts
+skillshare extras init rules --no-tui ... # Skip prompts
 ```
 
 | Flag | Description |
@@ -37,10 +37,10 @@ skillshare extras init rules --no-tui ... # Skip wizard
 | `--as <filename>` | File name at every target (default: `--file` name); requires `--file` |
 | `--mode <mode>` | Sync mode: `merge` (default), `copy`, `symlink`; `import` only with `--file` |
 | `--flatten` | Sync subdirectory files into the target root; not with `symlink` or `--file` |
-| `--no-tui` | Skip interactive wizard |
+| `--no-tui` | Skip interactive prompts |
 | `-p` / `-g` | Force project / global mode |
 
-`extras init` writes config only: it does not create the source file or sync. The TUI wizard asks Folder or Single file after the name.
+`extras init` writes config only: it does not create the source file or sync. The interactive prompts ask Folder or Single file after the name.
 
 ## Existing extras
 
@@ -277,6 +277,7 @@ skillshare extras memory list --search decisions --json -g
 skillshare extras memory show decisions.md --json -g
 skillshare extras memory write decisions.md --from ./note.md -g
 skillshare extras memory instructions -g
+skillshare extras memory instructions --update-mode active -g
 ```
 
 A new write omits `--version`; updates require the hash from `show --json`.
@@ -289,18 +290,21 @@ Writes accept relative `.md` paths only, UTF-8 up to 1 MiB; hidden files and nes
 links are excluded. Paths such as `wiki/architecture.md` create missing folders;
 listing and search include notes in subfolders. CLI users maintain `INDEX.md` links themselves.
 `LEARNED.md` provides date,
-context, conclusion, and evidence fields for durable lessons; updates require the
-user's request. Templates do not enable automatic learning.
+context, conclusion, and evidence fields for durable lessons. `passive` guidance
+(the default) asks agents to update notes only on request; `active` guidance lets
+them save lasting facts, propose notes they are unsure of, and report what they
+saved. Templates do not enable automatic learning.
 
 The dashboard's Extras → Memory tab edits the same source. Use **Connect to
-agents**, select tools, **Review changes**, then **Apply changes**. It appends or
+agents**, select tools and a `passive` or `active` mode for each, **Review
+changes**, then **Apply changes**. Tools reading one file switch modes together. It appends or
 updates a scope/hash-marked block in the existing instruction file or shared
 source without changing other content, assignments, or connection modes.
 Existing files are backed up and a stale review must be repeated. Intact outdated
 blocks can be updated after review; modified or malformed blocks are preserved
 for manual repair. Unsynced or unreadable instructions are skipped.
 **Copy guidance** is the manual fallback; **Open AGENTS.md** edits instructions.
-CLI `instructions` only prints the same block. Project sources inside the repo
+CLI `instructions [--update-mode passive|active]` only prints the same block. Project sources inside the repo
 are relative to the project root, regardless of the instruction file's location;
 external overrides and global sources use absolute paths.
 

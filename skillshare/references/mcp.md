@@ -245,10 +245,14 @@ skillshare mcp edit docs --pi-options '{}' --no-tui
   values are refused; command values in `piOptions` are rejected even under
   non-secret keys such as `oauth.clientId`.
 - Pi server names allow only letters, digits, `_` and `-`.
-- A `disabled` entry under `mcp.projects` turns a global server off for Pi too: Skillshare
-  writes the global server's `command` (or `url` without the query) with `enabled: false`
-  to `.pi/mcp.json`. A project's own config cannot see the global server, so `pi` there
-  is an error.
+- A `.pi/mcp.json` entry with only `enabled`/`exposure`/`toolExposure` is Pi's project
+  override (Pi 1.0.1+ `/mcp`), not a server: import skips it, and a same-name project
+  server conflicts until the entry is replaced or the override is removed in Pi.
+- A `disabled` entry turns a global server off for Pi 1.0.1+ too, in project mode or under
+  `mcp.projects`: Skillshare writes that override, `"NAME": {"enabled": false}`, to
+  `.pi/mcp.json`, and the global server keeps its args, env and credentials. An override
+  Pi already wrote as exactly `{"enabled": false}` is no conflict; Pi settings added in Pi
+  to a switch sync wrote are kept, and turning it back on in Pi is a conflict.
 
 ## Tool policy
 
@@ -321,8 +325,9 @@ Skillshare does not check that it exists there.
 |---|---|---|
 | `claude` | Yes | name added to this project's `disabledMcpServers` in `~/.claude.json` (per machine) |
 | `opencode`, `kilocode` | Yes | `{"enabled": false}` |
+| `pi` | Pi 1.0.1+ | `{"enabled": false}`, Pi's project override |
 | `codex` | No | see [Codex](#codex) |
-| `pi`, all other targets | No | Error, nothing written |
+| All other targets | No | Error, nothing written |
 
 ```bash
 skillshare mcp add NAME --disabled --target opencode -p --no-tui
@@ -383,8 +388,8 @@ mcp:
 
 ## Interactive use
 
-For a person at a terminal: `skillshare mcp` opens the manager (`/` search, Enter
-details, `a` add, `i` import, `e` edit, `x` remove, `s` sync, `b` backups). `mcp add`
+For a person at a terminal: `skillshare mcp` opens the manager (`/` filter,
+`n` add, `i` import, `e` edit, `d` remove, `s` sync, `r` restore, `?` all keys). `mcp add`
 guides URL or JSON setup, `mcp edit` opens a server picker and editor, `mcp import
 --from claude` offers batch selection with one preview, and `mcp restore` browses
 backups. Review screens scroll before confirmation, and Esc cancels without saving. The

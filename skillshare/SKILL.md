@@ -8,7 +8,7 @@ description: |
   noninteractive automation, and guidance for the terminal UI.
 argument-hint: "[command] [target] [--json] [--dry-run] [-p|-g]"
 metadata:
-  version: v0.23.5
+  version: v0.24.4
 ---
 
 # Skillshare CLI
@@ -37,7 +37,7 @@ Check `skillshare <command> --help` if the installed version differs from these 
   one config.
 - Plugins keep their native components together. Read [plugins.md](references/plugins.md)
   for installation, import, sync selection, updates, and native compatibility limits
-  across Claude, Codex, Cursor, Antigravity, Pi, and OpenCode.
+  across Claude, Codex, Cursor, Antigravity, Pi, and OpenCode, including Pi packages from pi.dev.
 - Hooks preserve each Agent's native event map or extension/plugin code. Read
   [hooks.md](references/hooks.md) before import, synchronization or recovery.
 
