@@ -641,6 +641,21 @@
         "scripts/validate-package.py": "sha256:941bd99e52b2ba21449719bb7969607ac8117e3dc173d0c9dfe64fd274c65938"
       }
     },
+    "improve-codebase-architecture": {
+      "source": "https://github.com/mattpocock/skills/skills/engineering/improve-codebase-architecture",
+      "type": "github-subdir",
+      "installed_at": "2026-10-06T23:17:58.710578+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/engineering/improve-codebase-architecture",
+      "version": "6fd9479",
+      "tree_hash": "39bd9cc130f7dfcc4e3ea0b3613f6ebed0d0ad2b",
+      "commit": "6fd947921b935b7e1e69293a200400f0fdd5c15f",
+      "file_hashes": {
+        "HTML-REPORT.md": "sha256:581e8bb5a521e46bbda8ca7e19b15948bed882187108092ebb90c62513b77528",
+        "SKILL.md": "sha256:552240a5ab5cec6b67c15dd1ad6e9f6962b1bca6ce870059a8c2713760c20392",
+        "agents/openai.yaml": "sha256:c8cb20f68ebf0edb4e497bc11ae5fcaa196004e661cd189015b04f4109ced7f1"
+      }
+    },
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
