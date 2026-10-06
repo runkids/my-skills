@@ -1,9 +1,10 @@
 # MCP Connections
 
 Skillshare keeps MCP server definitions in one source and writes each Agent's native
-config file from it. It writes settings only: it never starts a server, checks
-connectivity, resolves a secret or copies OAuth credentials. The one exception is
-`mcp check --live`, which starts or calls servers only when asked.
+config file from it. It writes settings only: it never starts a configured server, checks
+connectivity, resolves a secret or copies OAuth credentials. The exceptions are
+`mcp check --live`, which starts or calls servers only when asked, and `mcp serve`,
+which runs Skillshare's own read-only skills server.
 
 ## Commands
 
@@ -22,6 +23,8 @@ skillshare mcp restore BACKUP_ID --dry-run --json     # Preview entry-level rest
 skillshare mcp restore BACKUP_ID --no-tui            # Apply restoration; source stays unchanged
 skillshare mcp check --json                          # Static check: variables, commands, DNS, sync state
 skillshare mcp check --live --timeout 30s --json     # Also start/call each server: serverInfo, protocol, tools
+skillshare mcp serve [--target NAME] [--http ADDR [--tls-cert F --tls-key F]]  # Serve skills read-only over MCP (SEP-2640)
+skillshare mcp serve --check [--target NAME]         # List skills serve would skip, then exit
 ```
 
 ## Automation rules
@@ -50,6 +53,18 @@ skillshare mcp check --live --timeout 30s --json     # Also start/call each serv
   its `env`) and POSTs to each remote one, skipping servers with a static error. A 401 is a
   warning with the resource metadata URL; it never signs in. Use it only for trusted
   servers. `--json` adds `live: {protocolVersion, serverInfo, tools, toolNames}`.
+- `mcp serve` serves skills to Agents that cannot reach the synced folders (VMs, MCP
+  gateways): stdio by default, global unless `-p`. `--target NAME` applies that target's
+  filters. Skipped skills (`SKILL.md` a link or not starting with frontmatter, name not matching
+  its directory, description missing or over 1,024 characters, compatibility empty or over 500, over 512 files/16 MiB) are
+  listed on stderr; `--check` lists them without serving. `--http` on a non-loopback address requires `SKILLSHARE_MCP_TOKEN` and `--tls-cert`/`--tls-key` (or bind loopback behind a TLS proxy). Cross-origin browser requests are refused.
+  Do not connect local Agents that already sync skills; they would see each skill twice.
+  Connect one with `mcp add skillshare --target CLIENT --sync -- skillshare mcp serve`, or a
+  remote `url` with `bearerToken: {fromEnv: SKILLSHARE_MCP_TOKEN}`. Agents with the Skills
+  extension load skills natively; as of October 2026 Codex, Cursor, VS Code, Goose and Pi
+  lack it and Claude Code's is off by default, so the server also offers `list_skills`
+  (`query` filters) and `read_skill` tools, hidden from clients that declare the extension. Verify the server with
+  `npx @modelcontextprotocol/inspector --cli skillshare mcp serve --method skills/list --verify`.
 - Noninteractive `import` without a name only lists candidates. Use `--replace` only
   when replacing is intended.
 - An `update` with the message `same settings, laid out one field per line` is a
@@ -256,6 +271,7 @@ skillshare mcp add docs --url https://example.com/mcp --target pi --pi-options '
 skillshare mcp edit docs --pi-options '{}' --no-tui
 ```
 
+- `oauth.clientRegistration` accepts `dcr` (Pi default) or `cimd` (Pi 1.0.1+). With `cimd`, omit `clientId` and `clientName`; a `callbackUrl` must use HTTP on `localhost` or `127.0.0.1` with path `/callback`. The authorization server must support CIMD for public clients.
 - `exposure` sits next to `tools` and also sets how allowed tools are offered. Prefer
   `tools` over `toolExposure`; a server cannot set both.
 - JSON replaces the source options. A cleared field is removed from Pi's file when
