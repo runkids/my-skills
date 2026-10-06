@@ -117,6 +117,9 @@ skillshare check -p          # Check project skills
 - **Local skills:** Shown as "local source"
 - **Targets validation:** Warns about unknown target names in skill-level `targets` field
 
+With `follow_source_links: true`, check a followed Git checkout by its link name:
+`skillshare check _dev-skills`.
+
 ## update
 
 Update installed skills or tracked repositories.
@@ -152,6 +155,9 @@ skillshare update _repo --force -p  # Discard local changes
 | `--skip-audit` | Skip post-update security audit gate |
 | `--json` | JSON output |
 | `--diff` | Show file-level change summary after update |
+
+With `follow_source_links: true`, `update --all` skips followed Git checkouts,
+even with `--force`; update them by name instead.
 
 **Safety:** Tracked repos with uncommitted changes are skipped, and repos whose git status cannot be read fail. Use `--force` to override both.
 
