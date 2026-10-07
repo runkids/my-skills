@@ -83,6 +83,8 @@ skillshare install user/repo --skip-audit             # Skip security scan
 
 **Fuzzy subdirectory resolution:** When a monorepo has nested skill directories, you can specify just the skill name — e.g., `user/repo/vue-best-practices` finds `skills/vue-best-practices/` automatically. Fails with an error if multiple matches exist.
 
+**Git submodules:** skillshare does not fetch submodules. A path that is, or lies inside, a submodule fails with an error naming its upstream URL; install from that upstream instead. Whole-repo browsing, `--track` and `update` warn about each submodule they skip.
+
 **Tracked repos:** Prefixed with `_`, nested with `__` (e.g., `_team__frontend__ui`).
 Tracked custom names must not contain path separators (`/`, `\`) or `..`.
 
@@ -195,6 +197,8 @@ skillshare uninstall --group frontend --dry-run
 # Global JSON output (skips confirmation; dirty tracked repos still require --force)
 skillshare uninstall my-skill --json
 ```
+
+**Tracked repo names:** `uninstall org/team` accepts the shorthand for `org/_team` installed with `--into org`. An existing skill or folder at the typed path wins; use `org/_team` to explicitly remove the repo. Ambiguous short names require the full path.
 
 **Safety:** Tracked repos with uncommitted changes are skipped, and repos whose git status cannot be read fail. Use `--force` to override both.
 

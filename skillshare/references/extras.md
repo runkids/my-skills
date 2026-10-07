@@ -35,7 +35,7 @@ skillshare extras init rules --no-tui ... # Skip prompts
 | `--source <path>` | Custom source directory for this extra (relative to the project root in project mode) |
 | `--file <filename>` | Single-file extra: sync only this file from the source directory |
 | `--as <filename>` | File name at every target (default: `--file` name); requires `--file` |
-| `--mode <mode>` | Sync mode: `merge` (default), `copy`, `symlink`; `import` only with `--file` |
+| `--mode <mode>` | Sync mode: `merge` (default), `copy`, `symlink`; `import`, `prepend` or `append` only with `--file` |
 | `--flatten` | Sync subdirectory files into the target root; not with `symlink` or `--file` |
 | `--no-tui` | Skip interactive prompts |
 | `-p` / `-g` | Force project / global mode |
@@ -161,7 +161,9 @@ extras:
 
 A single-file extra syncs one file instead of the directory. `as` renames it per
 target; `import` mode (single-file only) keeps an `@<source file>` line in a
-managed block of the target file instead of replacing it:
+managed block of the target file instead of replacing it. For tools that do not
+follow `@` imports, `prepend` and `append` (single-file only) write the source's
+content into a managed block at the top or end of the target file instead:
 
 ```yaml
 extras:
@@ -172,12 +174,25 @@ extras:
       - path: ~/.claude
         as: CLAUDE.md
         mode: import         # CLAUDE.md keeps its content, imports the file
+      - path: ~/.gemini
+        as: GEMINI.md
+        mode: prepend        # GEMINI.md keeps its content, the file goes in a block on top
 ```
+
+A block sits between `<!-- skillshare:extra src="<source>" sha256=… -->` and
+`<!-- /skillshare:extra -->`; sync rewrites it in place when the source changes and
+never touches lines outside it. Several sources can share one target file this way.
+A block edited by hand shows as `modified` and sync stops for that target until the
+edit is copied back to the source or the block is removed; damaged markers stop
+sync, mode changes and restore until repaired. Switching modes removes what the
+previous mode wrote (block, `@` line, or copy), so the file never holds the source twice.
 
 The first sync records the target's attach-time state as its restore point
 (a file, a symlink, or no file), then replaces it. `extras remove` and
 `extras <name> --remove-target <path> --prune` put that state back; in `import`
-mode they only drop the managed line when the file has other content. Later edits
+mode they only drop the managed line when the file has other content, and in
+`prepend`/`append` mode only that source's block (an edited block is kept as a
+drift backup first). Later edits
 that sync, overwrite, or restore replace are kept as drift backups in
 `~/.local/state/skillshare/extras/backups/<id>/drift/` and are never restored.
 When replacing a user junction for a single-file extra, the warning includes its original destination; restore recreates the junction.
