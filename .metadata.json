@@ -619,6 +619,7 @@
     "humanizer": {
       "source": "https://github.com/blader/humanizer.git",
       "type": "github",
+      "tracked": true,
       "branch": "main",
       "installed_at": "2026-10-06T21:05:45.724627+08:00",
       "repo_url": "https://github.com/blader/humanizer.git",
@@ -727,6 +728,22 @@
         "references/targets.md": "sha256:9f01cdea03fdc86e1289d9a30a0c1a50dccb7827b543d4c38d9739959f9ba840",
         "references/trash.md": "sha256:97f69a115db2880f936c5202c54f5fd97be33078058eae4068fd244520a4ea22",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
+      }
+    },
+    "writing-for-agents": {
+      "source": "https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-for-agents/SKILL.md",
+      "type": "github-subdir",
+      "branch": "main",
+      "installed_at": "2026-10-08T01:46:49.629896+08:00",
+      "repo_url": "https://github.com/mattpocock/skills.git",
+      "subdir": "skills/productivity/writing-for-agents",
+      "version": "f3fc563",
+      "tree_hash": "ad2925850efb8973a72d2e666f7a975f9a2d4a9b",
+      "commit": "f3fc5632f401156837ee3872f14fe33ccf1024ea",
+      "file_hashes": {
+        "SKILL-MECHANICS.md": "sha256:c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059",
+        "SKILL.md": "sha256:551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+        "agents/openai.yaml": "sha256:eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b"
       }
     }
   },
