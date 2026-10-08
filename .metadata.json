@@ -1,6 +1,11 @@
 {
   "version": 1,
   "entries": {
+    "_mattpocock-skills": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "tracked": true,
+      "branch": "main"
+    },
     "agent-browser/agent-browser": {
       "source": "https://github.com/vercel-labs/agent-browser.git/skills/agent-browser",
       "type": "github-subdir",
@@ -522,12 +527,6 @@
         "agents/openai.yaml": "sha256:9d87ff83149a04f86a372948b8ee35fa249de20923867bbc2a49304290aad736",
         "scripts/validate-package.py": "sha256:941bd99e52b2ba21449719bb7969607ac8117e3dc173d0c9dfe64fd274c65938"
       }
-    },
-    "mattpocock/_skills": {
-      "source": "https://github.com/mattpocock/skills.git",
-      "tracked": true,
-      "group": "mattpocock",
-      "branch": "main"
     },
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
