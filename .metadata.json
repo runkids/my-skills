@@ -545,14 +545,14 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-10-13T04:35:42.089352+08:00",
+      "installed_at": "2026-10-13T13:27:04.780004+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "b01138c",
-      "tree_hash": "a0ed7ea2f136cba585b0aec721becd20a694e821",
-      "commit": "b01138c629a37995636c95089e3a92e596de45c2",
+      "version": "3c1d57c",
+      "tree_hash": "a9cbe1e807df365f419890cf0ba535e70c22b009",
+      "commit": "3c1d57cbdd44857990e180b9cca10c329cc35da7",
       "file_hashes": {
-        "SKILL.md": "sha256:4e98e0c072b8a93b40cb784daed452c75b540c2b234527fb274bf7654ce875d3",
+        "SKILL.md": "sha256:a20c221cc0e4de834b5de40c593444c52d8d51af11c218a379c01c92b51da74c",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
         "references/audit.md": "sha256:62370c47cd12258f6b60b8e06788dda937c4bd7a4d3763414ed88e3e2c39e12a",
         "references/backup.md": "sha256:011470676a90a9b197d0bb7fd9a154e7595cf891e4267821b682f0aa5757ec48",
@@ -566,7 +566,7 @@
         "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
         "references/plugins.md": "sha256:b6a631dae7144894bbe2328943f553c98ae321ca07751484cee11b13db5ad426",
         "references/status.md": "sha256:fce04dff6e5f613aa47f1c1da8b688ac673c0af46c346ba79bc2b7e45a1cdf3e",
-        "references/sync.md": "sha256:c06efc558189648d3b22b2d23b24359ae7567b60c265035b750366ac3ad6196c",
+        "references/sync.md": "sha256:ba3211ee47ac86fc07c42868de42fdb08e1415e7c5e7ea65fee6be8d58c0751d",
         "references/targets.md": "sha256:14738fb5fbb3d67471c1c9c28d0162b3437c5216f24776b946c684992ef8eeb0",
         "references/trash.md": "sha256:97f69a115db2880f936c5202c54f5fd97be33078058eae4068fd244520a4ea22",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
