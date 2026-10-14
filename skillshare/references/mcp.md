@@ -11,7 +11,7 @@ which runs Skillshare's own read-only skills server.
 ```bash
 skillshare mcp --no-tui                             # Plain status (bare mcp opens the TUI)
 skillshare mcp add docs --url https://example.com/mcp --target claude --sync --no-tui
-skillshare mcp add local --target claude --no-tui -- npx -y @modelcontextprotocol/server-filesystem /path/to/docs
+skillshare mcp add local --target claude --no-tui -- npx -y @modelcontextprotocol/server-filesystem@1.0.0 /path/to/docs
 skillshare mcp edit docs --url https://updated.example/mcp --no-tui
 skillshare mcp import --from claude --json           # Inspect candidates without saving
 skillshare mcp import docs --from claude --target claude --sync --no-tui
@@ -21,8 +21,9 @@ skillshare mcp remove docs --sync --no-tui           # Remove unchanged managed 
 skillshare mcp remove docs --keep-files --no-tui     # Stop managing; Agent entries stay as they are
 skillshare mcp restore BACKUP_ID --dry-run --json     # Preview entry-level restoration
 skillshare mcp restore BACKUP_ID --no-tui            # Apply restoration; source stays unchanged
-skillshare mcp check --json                          # Static check: variables, commands, DNS, sync state
+skillshare mcp check --json                          # Static check: variables, commands, version pins, DNS, sync state
 skillshare mcp check --live --timeout 30s --json     # Also start/call each server: serverInfo, protocol, tools
+skillshare mcp check docs --live --accept-tools      # Accept the tool definitions docs lists now as the baseline
 skillshare mcp serve [--target NAME] [--http ADDR [--tls-cert F --tls-key F]]  # Serve skills read-only over MCP (SEP-2640)
 skillshare mcp serve --check [--target NAME]         # List skills serve would skip, then exit
 ```
@@ -45,14 +46,21 @@ skillshare mcp serve --check [--target NAME]         # List skills serve would s
   fail with a message. See [Upgrading Pi from 0.22](#upgrading-pi-from-022).
 - Preview with `skillshare sync mcp --dry-run --json`, then apply with
   `skillshare sync mcp --revision <revision>` to reject a stale plan.
-- `mcp check [name...] [--json] [--no-dns]` is read-only; without `--live` it starts nothing. It exits 1
+- `mcp check [name...] [--json] [--no-dns]` writes no config file; without `--live` it starts nothing
+  and writes nothing. It exits 1
   on an error (unset `fromEnv` variable, command not on PATH, client rule, conflict);
-  an unresolved host or an unsynced entry is only a warning. In global mode it also checks
+  an unresolved host, an unpinned package or image (`pin`) or an unsynced entry is only a warning. In global mode it also checks
   servers under `mcp.projects`; `--json` marks each with its `project` root.
 - `mcp check --live [--timeout 10s]` also starts each local server (your environment plus
   its `env`) and POSTs to each remote one, skipping servers with a static error. A 401 is a
   warning with the resource metadata URL; it never signs in. Use it only for trusted
   servers. `--json` adds `live: {protocolVersion, serverInfo, tools, toolNames}`.
+- `mcp check --live` also pins each tool's definition (hash of name, description and input
+  schema) on a server's first probe, in `mcp/tool-pins.json` of the state directory. Later
+  probes warn (`tool-change`) about a changed or new tool and note a removed one; the pin is
+  kept until `--accept-tools` (only with `--live`) re-baselines every probed server, so
+  review the changes first; each acceptance is recorded in the operations log. An unreadable pin file is never rewritten; move it away to pin
+  again. Without `--live` the pins are untouched.
 - `mcp serve` serves skills to Agents that cannot reach the synced folders (VMs, MCP
   gateways): stdio by default, global unless `-p`. `--target NAME` applies that target's
   filters. Skipped skills (`SKILL.md` a link or not starting with frontmatter, name not matching
@@ -88,7 +96,7 @@ mcp:
         X-Api-Key: {fromEnv: DOCS_KEY}     # a reference, never the secret itself
     files:
       command: npx
-      args: ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/docs"]
+      args: ["-y", "@modelcontextprotocol/server-filesystem@1.0.0", "/path/to/docs"]
       targets: [claude, opencode]
 ```
 
@@ -357,14 +365,15 @@ printing `Updated config.yaml for 0.23.0 (backup: <path>)`. `--dry-run` writes n
 ## Turn off a global server in one project
 
 Needs a project in scope: `-p`, a folder with `.skillshare/config.yaml`, or a root under
-`mcp.projects` in the global config. It writes just the switch; OpenCode, Kilo Code
+`mcp.projects` in the global config. It writes just the switch; Kilo Code
 and Pi keep the global connection, while OMP suppresses the same-named entry. NAME must be the name in the Agent's own global config;
 Skillshare does not check that it exists there.
 
 | Target | Supported | Written |
 |---|---|---|
 | `claude` | Yes | name added to this project's `disabledMcpServers` in `~/.claude.json` (per machine) |
-| `opencode`, `kilocode` | Yes | `{"enabled": false}` |
+| `opencode` | Yes | Under `mcp.projects`: the global server's `type` and executable name, or URL scheme and host, with `"enabled": false` (OpenCode 2 drops a bare switch). Otherwise `{"enabled": false}`, which OpenCode 2 ignores |
+| `kilocode` | Yes | `{"enabled": false}` |
 | `pi` | Pi 1.0.1+ | `{"enabled": false}`, Pi's project override |
 | `omp` | Yes | `{"enabled": false}`, suppresses the same-named user entry |
 | `codex` | No | see [Codex](#codex) |
@@ -398,7 +407,7 @@ mcp:
   servers:
     context7:
       command: npx
-      args: ["-y", "@upstash/context7-mcp"]
+      args: ["-y", "@upstash/context7-mcp@4.4.1"]
   projects:
     ~/work/project01:
       servers:
@@ -416,8 +425,9 @@ mcp:
   because the Agent reads its global and project files together; do not repeat them. A
   `disabled` entry only switches one off in that folder.
 - No command edits `mcp.projects`; `mcp add` leaves it as written. Edit `config.yaml`, or
-  use the dashboard: the MCP page's **Projects** tab adds and removes projects, turns
-  global servers off per project and edits project servers.
+  use the dashboard: the **Projects** page adds and removes projects, and each project's
+  **MCP** tab turns global servers off there, edits project servers and lists the
+  project's Agent files with **Open folder**, **Open in editor** and **Copy path**.
 - `disabled` under `mcp.projects` cannot target `claude`. Use project mode in that
   folder instead.
 - It is refused inside a project config. A folder whose own `.skillshare/config.yaml`
