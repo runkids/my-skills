@@ -127,7 +127,7 @@ With `follow_source_links: true`, check a followed Git checkout by its link name
 Update installed skills or tracked repositories.
 
 - **Tracked repos (`_repo-name`):** Runs `git pull`
-- **Regular skills:** Reinstalls from stored source metadata
+- **Regular skills:** Reinstalls from stored source metadata. `--all`, `--group`, and several skills named with `-p` skip the ones already at the upstream commit and report them as up to date; `--force` reinstalls them anyway
 
 ```bash
 # Global
