@@ -25,7 +25,7 @@ skillshare mcp check --json                          # Static check: variables, 
 skillshare mcp check --live --timeout 30s --json     # Also start/call each server: serverInfo, protocol, tools
 skillshare mcp check docs --live --accept-tools      # Accept the tool definitions docs lists now as the baseline
 skillshare mcp serve [--target NAME] [--http ADDR [--tls-cert F --tls-key F]]  # Serve skills over MCP (SEP-2640)
-skillshare mcp serve --check [--target NAME]         # List skipped and editable skills, then exit
+skillshare mcp serve --check [--target NAME]         # List skipped, editable and Executor-index skills, then exit
 ```
 
 ## Automation rules
@@ -65,7 +65,7 @@ skillshare mcp serve --check [--target NAME]         # List skipped and editable
   gateways): stdio by default, global unless `-p`. `--target NAME` applies that target's
   filters. Skipped skills (`SKILL.md` a link or not starting with frontmatter, name not matching
   its directory, description missing or over 1,024 characters, compatibility empty or over 500, over 512 files/16 MiB) are
-  listed on stderr; `--check` lists them without serving. `--http` on a non-loopback address requires `SKILLSHARE_MCP_TOKEN` and `--tls-cert`/`--tls-key` (or bind loopback behind a TLS proxy). Cross-origin browser requests are refused.
+  listed on stderr; `--check` lists them without serving. `--http` on a non-loopback address requires `SKILLSHARE_MCP_TOKEN` and `--tls-cert`/`--tls-key` (or bind loopback behind a TLS proxy). Cross-origin browser requests to the MCP endpoint are refused.
   Do not connect local Agents that already sync skills; they would see each skill twice.
   Connect one with `mcp add skillshare --target CLIENT --sync -- skillshare mcp serve`, or a
   remote `url` with `bearerToken: {fromEnv: SKILLSHARE_MCP_TOKEN}`. Agents with the Skills
@@ -84,6 +84,11 @@ skillshare mcp serve --check [--target NAME]         # List skipped and editable
   `install --force`; findings are marked new or existing), `expired`. No create, delete
   or rename. Apply re-checks the whole skill. Saves are logged as `mcp serve`, audits in
   `audit.log`. A legacy `registry.yaml` keeps every skill read-only until migrated.
+- With `--http`, the same server and token also publish an index for Executor's
+  `wellKnownSkills` loader at `/.well-known/agent-skills/index.json` (Executor's format,
+  not discovery draft v0.2). It leaves out skills Executor would reject (non-text
+  `metadata`/`license`/`allowed-tools`, a file over 2 MB or not UTF-8, a file name with `%` or `\`, a name used twice)
+  and errors past 1,000 files, 20 MB, or a 2 MB `index.json`; narrow with `--target`. `--check` lists them.
 - Noninteractive `import` without a name only lists candidates. Use `--replace` only
   when replacing is intended.
 - An `update` with the message `same settings, laid out one field per line` is a
@@ -118,6 +123,7 @@ mcp:
 | `transport` | Optional `stdio` or `streamable-http`; inferred when omitted. Legacy SSE is not supported |
 | `targets` | Receiving clients for this server. `[]` keeps it in Skillshare only |
 | `tools` | `{allow, deny}`: which tools reach the model, translated per Agent. See [Tool policy](#tool-policy) |
+| `options` | `{<client>: {field: value}}`: other Agents' native per-server fields written as given, e.g. `codex: {default_tools_approval_mode: approve}`, `claude: {timeout: 600000}`. Values: scalars, lists of scalars, or mappings; no `null`. Managed fields (`url`, `command`, `env`, `headers`, `type`, `enabled`, Codex `enabled_tools`…) and `options.pi` (use `piOptions`) are refused; credentials (by field name or a URL password) must be a whole-value environment reference in the Agent's own syntax (`${VAR}`, `{env:VAR}`), never plain text, and options of an Agent that reads no references there (Codex, Antigravity, Claude Desktop, Goose, Junie, LM Studio, Warp) cannot hold one; not allowed with `disabled`. Sync removes an option it wrote once the source drops it |
 | `piOptions` | Other Pi built-in per-server fields. See [Pi](#pi) |
 | `disabled` | `true` only, no connection fields, and a project must be in scope: project mode, or a root under `mcp.projects`. See [Turn off a global server in one project](#turn-off-a-global-server-in-one-project) |
 
@@ -135,7 +141,8 @@ Names such as `company-docs` (letters, digits, hyphens) work across all clients.
 - A differing unmanaged entry is a conflict. Resolve it with `mcp import --replace` or
   an explicit per-entry replacement. Inspect conflicts with `skillshare mcp --json`.
 - Only the fields Skillshare writes are compared. Agent-only fields in an entry, such
-  as timeouts, are kept across syncs. Tool filters come from `tools`.
+  as timeouts, are kept across syncs; fields set through `options` are written and
+  removed by sync. Tool filters come from `tools`.
 - Turning a managed server off by hand in the Agent's file (`enabled: false`,
   `disabled: true`) is reported as a conflict. Pi and OMP connection entries preserve
   `enabled` as an Agent setting; changing it alone is not a conflict.
@@ -223,7 +230,7 @@ setups usually go wrong.
   definitions are rejected without touching the file; convert them to tables first.
 - `cwd`, `http_headers_helper`, approval modes, timeouts (`startup_timeout_sec`) and
   the `oauth` table have no portable form. Import leaves them out with a warning, and
-  sync keeps them in the existing entry. `enabled_tools`/`disabled_tools` come from
+  sync keeps them in the existing entry; set them from the source with `options.codex`. `enabled_tools`/`disabled_tools` come from
   `tools` (exact names only) and import back into it.
 - Servers bundled by a Codex plugin live under `plugins.<plugin>.mcp_servers` and are
   not managed here.
