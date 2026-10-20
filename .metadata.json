@@ -346,6 +346,19 @@
         "references/explain.md": "sha256:237dd81672c858c8c52325bafeefdde2d5b842c9a98c2ea6a820534a0df8e927"
       }
     },
+    "herdr": {
+      "source": "github.com/herdrdev/herdr/skills/herdr",
+      "type": "github-subdir",
+      "installed_at": "2026-10-19T13:44:47.327973+08:00",
+      "repo_url": "https://github.com/herdrdev/herdr.git",
+      "subdir": "skills/herdr",
+      "version": "143bf5f",
+      "tree_hash": "2be0d86d481d1bb29c62e11ef37b78d27d01b478",
+      "commit": "143bf5fd4781d164260c63fe28e7dc08054ad32f",
+      "file_hashes": {
+        "SKILL.md": "sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984"
+      }
+    },
     "humanizer": {
       "source": "https://github.com/blader/humanizer.git",
       "type": "github",
