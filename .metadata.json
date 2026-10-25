@@ -10,12 +10,12 @@
       "source": "https://github.com/vercel-labs/agent-browser.git/skills/agent-browser",
       "type": "github-subdir",
       "group": "agent-browser",
-      "installed_at": "2026-10-20T13:56:17.301806+08:00",
+      "installed_at": "2026-10-23T03:45:34.985112+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
-      "version": "5ee8691",
+      "version": "50c34e7",
       "tree_hash": "82def67855a0d2aad7794207951820fa5422fdb0",
-      "commit": "5ee8691339a5a002e4d7454eec95250253bc7419",
+      "commit": "50c34e78c98dbe8add0b3ff36b4bcd7a47f1022b",
       "file_hashes": {
         "SKILL.md": "sha256:3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac"
       }
@@ -23,7 +23,7 @@
     "agents-context-router": {
       "source": "https://github.com/runkids/agents-context-router.git/skills/agents-context-router",
       "type": "github-subdir",
-      "installed_at": "2026-10-20T13:56:19.053548+08:00",
+      "installed_at": "2026-10-23T03:45:36.618536+08:00",
       "repo_url": "https://github.com/runkids/agents-context-router.git",
       "subdir": "skills/agents-context-router",
       "version": "e7d6d37",
@@ -60,7 +60,7 @@
     "archify": {
       "source": "https://github.com/tt-a1i/archify.git/archify",
       "type": "github-subdir",
-      "installed_at": "2026-10-20T13:56:24.536408+08:00",
+      "installed_at": "2026-10-23T03:45:39.659597+08:00",
       "repo_url": "https://github.com/tt-a1i/archify.git",
       "subdir": "archify",
       "version": "25cf370",
@@ -276,7 +276,7 @@
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/improve-react",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-10-20T13:56:29.946406+08:00",
+      "installed_at": "2026-10-23T03:45:41.96778+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/improve-react",
       "version": "84ad0c8",
@@ -292,7 +292,7 @@
       "source": "https://github.com/vercel-labs/agent-skills.git/skills/react-best-practices",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-10-20T13:56:37.01437+08:00",
+      "installed_at": "2026-10-23T03:45:47.252403+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-skills.git",
       "subdir": "skills/react-best-practices",
       "version": "063bee9",
@@ -381,7 +381,7 @@
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/react-doctor",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-10-20T13:56:40.147041+08:00",
+      "installed_at": "2026-10-23T03:45:49.207552+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/react-doctor",
       "version": "84ad0c8",
@@ -409,7 +409,7 @@
       "source": "https://github.com/blader/humanizer.git",
       "type": "github",
       "branch": "main",
-      "installed_at": "2026-10-20T13:56:27.769235+08:00",
+      "installed_at": "2026-10-23T03:45:40.273491+08:00",
       "repo_url": "https://github.com/blader/humanizer.git",
       "version": "8c307f3",
       "commit": "8c307f367c91bd974002f10f2be2965d642c13df",
@@ -433,12 +433,12 @@
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
-      "installed_at": "2026-10-20T13:56:35.005535+08:00",
+      "installed_at": "2026-10-23T03:45:45.61875+08:00",
       "repo_url": "https://github.com/stablyai/orca.git",
       "subdir": "skills/orchestration",
-      "version": "ba6599e",
+      "version": "2e6963d",
       "tree_hash": "b0cd1d58b0c317cf7c3726fef7e6b1197c405246",
-      "commit": "ba6599eabbdfed02eb7954c174bea704f853ecdc",
+      "commit": "2e6963d707b89d5ba35a5c3106120694e13b59f5",
       "file_hashes": {
         "SKILL.md": "sha256:cd1b364bf35781bad06bf75ab1766afa8d6cec69cb2060529691d89871a2098a"
       }
