@@ -64,6 +64,8 @@ Optional `"indexed"` patterns (a list of strings, default `[]`) check discovery 
 
 An indexed page must be a topic source, including a heading-selected source, or have its full repo-relative path named in root instructions, the configured router file, or a topic's successfully rendered text. Only selected sections count, and a basename or relative link without the full string does not. Fix a failure by naming the path in a topic page, routing the page as a source, or listing an exact path or matching case-sensitive glob under `"unrouted"` with a nonblank string reason. If multiple exceptions match, any nonblank string reason exempts the page from the indexed check. Blank or non-string reasons still exempt legacy orphans, but do not satisfy an indexed check. These references do not exempt pages from the existing wiki, history, or nested-instructions rules.
 
+Optional `"skipDirs"` (a list of strings, default `[]`) keeps `check` out of bulky trees that hold no instructions, such as generated output or evidence dumps: exact repo-relative directory paths or case-sensitive fnmatch globs, matched like `"unrouted"` keys. Pages inside a skipped directory are checked only when a topic routes them. The wiki directory is always walked.
+
 `check` runs in CI, so drift fails the build instead of rotting quietly.
 
 ## Skills

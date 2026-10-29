@@ -172,6 +172,103 @@ class CheckTests(unittest.TestCase):
                 self.write('AGENTS.md', f'`guide`\n{page}\n')
                 self.check(0)
 
+    def test_indexed_walk_skips_directories_no_pattern_can_reach(self):
+        hidden = 'projects/.drafts/api/deploy-runbook.md'
+        for path in [hidden, '.cache/projects/old-runbook.md', 'node_modules/pkg/notes-runbook.md']:
+            self.write(path, '# Runbook\n')
+        self.cfg['indexed'] = ['projects/*-runbook.md']
+        self.write('wiki/ai-context.json', json.dumps(self.cfg))
+        visited, real_walk = [], os.walk
+
+        def walk(top, *args, **kwargs):
+            for entry in real_walk(top, *args, **kwargs):
+                visited.append(os.path.relpath(entry[0], os.path.realpath(self.root)).replace(os.sep, '/'))
+                yield entry
+
+        with patch.dict(os.environ, {'AI_CONTEXT_ROOT': str(self.root)}):
+            router = runpy.run_path(str(self.script))
+            with patch('os.walk', walk), redirect_stdout(io.StringIO()) as output:
+                status = router['check'](router['load_cfg']())
+        self.assertEqual(status, 1, output.getvalue())
+        for page in [PAGE, hidden]:
+            self.assertIn('FAIL ' + page + ': indexed page not named', output.getvalue())
+        self.assertIn('2 problem(s)', output.getvalue())
+        self.assertIn('projects/.drafts/api', visited)
+        self.assertEqual([d for d in visited if d.split('/')[0] in ('.cache', 'node_modules')], [])
+
+    def test_skip_dirs(self):
+        self.write('AGENTS.md', f'`guide`\n{PAGE}\n')
+        dump = 'projects/api/artifacts/run'
+        for path in [f'{dump}/AGENTS.md', f'{dump}/old-runbook.md']:
+            self.write(path, '# Copy\n[gone](missing.md)\n')
+        output = self.check(1)
+        for path in [f'{dump}/AGENTS.md: scoped', f'{dump}/old-runbook.md: indexed', f'{dump}/old-runbook.md:2']:
+            self.assertIn('FAIL ' + path, output)
+        for value in [['projects/*/artifacts'], ['projects/api/artifacts/'], ['projects\\api\\artifacts']]:
+            with self.subTest(skipDirs=value):
+                self.cfg['skipDirs'] = value
+                self.check(0)
+        visited, real_walk = [], os.walk
+
+        def walk(top, *args, **kwargs):
+            for entry in real_walk(top, *args, **kwargs):
+                visited.append(os.path.relpath(entry[0], os.path.realpath(self.root)).replace(os.sep, '/'))
+                yield entry
+
+        self.write('wiki/ai-context.json', json.dumps(self.cfg))
+        with patch.dict(os.environ, {'AI_CONTEXT_ROOT': str(self.root)}):
+            router = runpy.run_path(str(self.script))
+            with patch('os.walk', walk), redirect_stdout(io.StringIO()):
+                router['check'](router['load_cfg']())
+        self.assertIn('projects/api', visited)
+        self.assertEqual([d for d in visited if 'artifacts' in d], [])
+
+    def test_skip_dirs_never_skip_the_wiki(self):
+        self.write('AGENTS.md', f'`guide`\n{PAGE}\n')
+        self.write('wiki/notes/unmapped.md', '# Unmapped\n')
+        for value in [['wiki'], ['wiki/notes'], ['*']]:
+            with self.subTest(skipDirs=value):
+                self.cfg['skipDirs'] = value
+                self.assertIn('FAIL wiki/notes/unmapped.md: wiki page no topic loads', self.check(1))
+
+    def test_skip_dirs_keep_the_path_to_a_nested_wiki(self):
+        self.cfg.update(wikiDir='docs/wiki', routerFile='docs/wiki/README.md')
+        self.cfg['topics']['guide']['sources'] = [{'path': 'docs/wiki/guide.md'}]
+        self.write('docs/wiki/README.md', 'docs/wiki/README.md\n')
+        self.write('docs/wiki/guide.md', '# Guide\nUse this guide.\n')
+        self.write('docs/wiki/unmapped.md', '# Unmapped\n')
+        self.write('docs/other/AGENTS.md', '# Other\n')
+        self.write('AGENTS.md', f'`guide`\n{PAGE}\n')
+        for value in [['docs'], ['*'], ['docs/*']]:
+            with self.subTest(skipDirs=value):
+                self.cfg['skipDirs'] = value
+                output = self.check(1)
+                self.assertIn('FAIL docs/wiki/unmapped.md: wiki page no topic loads', output)
+                self.assertNotIn('docs/other/AGENTS.md', output)
+
+    def test_invalid_skip_dirs(self):
+        for value in ['projects/*/artifacts', [1], {'projects': 'x'}]:
+            with self.subTest(value=value):
+                self.cfg['skipDirs'] = value
+                self.assertIn('FAIL skipDirs: expected a list of strings', self.check(1))
+
+    def test_skip_dirs_only_traverse_wiki_ancestors(self):
+        self.cfg.update(wikiDir='docs/wiki', routerFile='docs/wiki/README.md')
+        sources = [{'path': 'docs/wiki/guide.md'}]
+        self.cfg['topics']['guide']['sources'] = sources
+        self.write('docs/wiki/README.md', 'docs/wiki/README.md\n')
+        self.write('docs/wiki/guide.md', '# Guide\nUse this guide.\n')
+        self.write('docs/AGENTS.md', '# Generated instructions\n')
+        self.write('docs/dump.md', '# Evidence\n[gone](missing.md)\n')
+        for skip in ['docs', '*']:
+            for indexed in [[], ['docs/*.md']]:
+                with self.subTest(skipDirs=skip, indexed=indexed):
+                    self.cfg.update(skipDirs=[skip], indexed=indexed)
+                    self.check(0)
+                    sources.append({'path': 'docs/dump.md'})
+                    self.assertIn('FAIL docs/dump.md:2:', self.check(1))
+                    sources.pop()
+
     def test_invalid_indexed(self):
         for value in ['projects/*.md', None, [123], {'projects/*.md': True}]:
             with self.subTest(value=value):
