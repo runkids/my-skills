@@ -1,7 +1,7 @@
 ---
 name: agents-context-router
 metadata:
-  version: "0.2.0" # x-release-please-version
+  version: "0.2.1" # x-release-please-version
 description: Split a bloated AGENTS.md / CLAUDE.md / README into a small always-loaded kernel plus task-routed wiki topics, loaded on demand by a zero-dependency script (`scripts/ai-context.py list|topic|check`) with byte budgets, so agents stop burning their context window on docs unrelated to the task. Use this skill whenever the user says AGENTS.md or CLAUDE.md is too long, too big or loads too much context; asks to split, slim, reorganize, route or "wiki-fy" repo docs or agent instructions; wants a docs router, progressive disclosure or context budget for coding agents; mentions milestone logs piling up in the README; or wants multiple agents (Claude Code, Codex, Cursor, Gemini) to share one instruction file, even if they never say "router".
 ---
 

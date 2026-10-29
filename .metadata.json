@@ -23,14 +23,14 @@
     "agents-context-router": {
       "source": "https://github.com/runkids/agents-context-router.git/skills/agents-context-router",
       "type": "github-subdir",
-      "installed_at": "2026-10-29T21:02:26.484907+08:00",
+      "installed_at": "2026-10-29T22:26:41.208715+08:00",
       "repo_url": "https://github.com/runkids/agents-context-router.git",
       "subdir": "skills/agents-context-router",
-      "version": "3c9f47b",
-      "tree_hash": "4bbc636a9e95050efb19f476e666d075ccb5cea3",
-      "commit": "3c9f47be632a52c023d0183c6b271a4607c437e7",
+      "version": "4454e7c",
+      "tree_hash": "1ced79f320304db4e10e0891c4ab0c76292cf366",
+      "commit": "4454e7cb7eb2f399b7d61411fd0e6697548e4b48",
       "file_hashes": {
-        "SKILL.md": "sha256:3895b3401c6b82aa65f842c3665af3eabf5236d803c3a7e88c14333a81c0b1e3",
+        "SKILL.md": "sha256:aa450b4b82580b57315d9da0d39ade82daae5ae2b6579871da57ea6b69ef9fd0",
         "assets/AGENTS.kernel.md": "sha256:70ad3517331689cd82517f610182f3e7d5a83e5fc0034af5efcf5356344b21be",
         "assets/ai-context.json": "sha256:d1fbe3c6ecbbd36ec309ef5bebbbcb7c1487540b3dcefd2dc8f73cc516d01f9c",
         "assets/wiki-README.md": "sha256:19f9adba970aa8c7ca4304ac28052e885978167b8f50db0d62e1879f8b0dd78b",
@@ -39,7 +39,7 @@
         "evals/fixtures/routed/AGENTS.md": "sha256:8687e4af173eff29285db88a40e802a3d72c17ddc36f2bdbf47e02849b3eed64",
         "evals/fixtures/routed/notes/m5-draft.md": "sha256:1059d713ab9ddcdb531efc97a0cda17988a5d55c376c30d355bc0984bf4e0639",
         "evals/fixtures/routed/notes/retry-policy.md": "sha256:001a0147da150cfc1bf23fbf990402c1895d93ec8325c4493931b141c45f6244",
-        "evals/fixtures/routed/scripts/ai-context.py": "sha256:ce3b9dba8eecf13f833345e7072cb6713fa5e1942b54b792db76fa778a938982",
+        "evals/fixtures/routed/scripts/ai-context.py": "sha256:5effe11575d955f1862b8923657ab962ae4992b740509e373bd75a34ba6eef6f",
         "evals/fixtures/routed/wiki/README.md": "sha256:04dd7f8b0589c0ece9bbc135b99bf4a228b0dcbbf254652c7d1b2d77fc4e2522",
         "evals/fixtures/routed/wiki/ai-context.json": "sha256:1adc1452a199676d2e91ec2ca5f3866ee1b747d5cd1eb50073f9d34cefb27b82",
         "evals/fixtures/routed/wiki/ai-context.md": "sha256:04bb813b18bbed281e96a43c86d9aa1010a0aa704951df986c361913dc526e78",
@@ -52,10 +52,10 @@
         "evals/fixtures/tidepool/.claude/skills/deploy/SKILL.md": "sha256:4a688574cee0e7b499d44a1e4d9a2808e18a96afcf642ee1e47f45f64d2fe6f7",
         "evals/fixtures/tidepool/AGENTS.md": "sha256:5be1524d4f3caf7faa11a597fad54e8a574d62981456ddad84cda10483ace178",
         "evals/fixtures/tidepool/CLAUDE.md": "sha256:86a924fb9a88867bcaec72ae2ded842fb3daf79ce8abf7cb6d8fcf568dde08b2",
-        "evals/test_ai_context.py": "sha256:bf09e7634c8b24aab3f42092e22678f19c10e8182f7bd79170a1754feacff4ab",
+        "evals/test_ai_context.py": "sha256:190fe18a4e9e693f89dc8cd10423f96d7209e2027fe00c5c546ba13ce9a7352a",
         "evals/trigger-evals.json": "sha256:fd6fe81dbfd9ea0e158617b1155c07786cf580d3e72cb15024c66a81bbdc926d",
         "references/gotchas.md": "sha256:814e96103870c35075cf9570ea77bb3460b1a9e305afd8c4feb815bf0f04cd03",
-        "scripts/ai-context.py": "sha256:ce3b9dba8eecf13f833345e7072cb6713fa5e1942b54b792db76fa778a938982"
+        "scripts/ai-context.py": "sha256:5effe11575d955f1862b8923657ab962ae4992b740509e373bd75a34ba6eef6f"
       }
     },
     "archify": {
