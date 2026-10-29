@@ -18,6 +18,12 @@
       "prompt": "Using the existing documentation structure in this repo (./routed), put the acceptance log notes/m5-draft.md and the new operations manual notes/retry-policy.md in the right places without bloating AGENTS.md.",
       "expected_output": "wiki/history/m5.md added (verbatim, zh) and indexed in wiki/README.md; retry policy added to an existing or new topic page mapped in wiki/ai-context.json; any new topic listed in both tables; AGENTS.md not grown beyond a table row; check passes.",
       "files": ["fixtures/routed"]
+    },
+    {
+      "id": 4,
+      "prompt": "In ./routed, set up a shared ai-context.py script and its config outside the repo, with no local scripts directory. Adapt the kernel, maintenance manual and wiki index for that installation. Then file the existing notes/retry-policy.md into a topic by editing the external config and verify the router.",
+      "expected_output": "External script and config selected with AI_CONTEXT_ROOT and AI_CONTEXT_CONFIG; no repo-local scripts directory. Kernel, manual and index commands use the shared script and environment; config references, including source-of-truth and topic-edit instructions, name the selected external config. Retry policy is routed through that config and discoverable in both tables. list, the retry-policy topic and check all pass using the external installation.",
+      "files": ["fixtures/routed"]
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "rootInstructions": "AGENTS.md",
+  "indexed": [],
   "budgets": {
     "rootInstructionsMaxBytes": 8192,
     "defaultTopicMaxBytes": 16384
