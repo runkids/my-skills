@@ -498,31 +498,6 @@
         "SKILL.md": "sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984"
       }
     },
-    "humanizer": {
-      "source": "https://github.com/blader/humanizer.git",
-      "type": "github",
-      "branch": "main",
-      "installed_at": "2026-10-30T22:36:19.337871+08:00",
-      "repo_url": "https://github.com/blader/humanizer.git",
-      "version": "0ef9fe5",
-      "commit": "0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0",
-      "file_hashes": {
-        ".claude-plugin/marketplace.json": "sha256:e539740285b660d2288a38b6d9b237396c6769828c671c46b9f91e760db6cc29",
-        ".claude-plugin/plugin.json": "sha256:7c7e020ce1f0eb9dcf888710cf7129ede8c3c862ae690ce6714763398f12c783",
-        ".cursor-plugin/plugin.json": "sha256:d1e0b50594cf4bbe57fd164b771b401713a91b76b5a213ebe8f4558bb2036546",
-        ".github/ISSUE_TEMPLATE/config.yml": "sha256:cb7e95de7606d07654024c8d47916796b307033e23ddb2b0a821a9bf89e999ef",
-        ".github/ISSUE_TEMPLATE/new-pattern.yml": "sha256:7436d578fa0056a09da5da6da950a03cb49f3ce27cf268ae295eb3d7ca19f604",
-        ".github/ISSUE_TEMPLATE/rewrite-problem.yml": "sha256:ecfe5e82c5b6d44683e0cb63cfad117dfdd16e30cc6f03510ef335414eea4947",
-        ".github/workflows/validate.yml": "sha256:f2d6a8780fb0b3cf6fa7d2ffccd72d0fc8bee29b4e63ea0fd65924712c9055fd",
-        "AGENTS.md": "sha256:de84a449da400454df1225ddb1ced728c35bf0be7811b239e3370c7dbe1f4e69",
-        "CHANGELOG.md": "sha256:b3591fe203429f1a6bd2f713c79272e9a8e58a487843d0908d2bbe0700722afa",
-        "LICENSE": "sha256:4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96",
-        "README.md": "sha256:500b53c0d29cd3219d160b5f9a109c0969f706aec74b49a4a081d2026ba48ec7",
-        "SKILL.md": "sha256:0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
-        "agents/openai.yaml": "sha256:9d87ff83149a04f86a372948b8ee35fa249de20923867bbc2a49304290aad736",
-        "scripts/validate-package.py": "sha256:941bd99e52b2ba21449719bb7969607ac8117e3dc173d0c9dfe64fd274c65938"
-      }
-    },
     "orchestration": {
       "source": "https://github.com/stablyai/orca.git/skills/orchestration",
       "type": "github-subdir",
@@ -564,6 +539,32 @@
         "references/targets.md": "sha256:c58ccaf726e8a5448a3da952fc3101923e05e48d93d0ba9f9e39fe160a3f0680",
         "references/trash.md": "sha256:e53ddc74ccf633d1c67481e616df584542dd882bac3a10e0857459628322f219",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
+      }
+    },
+    "unslop": {
+      "source": "https://github.com/heydamir/unslop/skills/unslop",
+      "type": "github-subdir",
+      "installed_at": "2026-11-02T09:56:38.433186+08:00",
+      "repo_url": "https://github.com/heydamir/unslop.git",
+      "subdir": "skills/unslop",
+      "version": "a6f121e",
+      "tree_hash": "31dd9b825ac7782d9706cb15f0166db2a54c7ccf",
+      "commit": "a6f121eee5f29c2f74976b75456feae8b66afb3a",
+      "file_hashes": {
+        "SKILL.md": "sha256:9e49b2ff7643fa09729e8665890a18f6bfa58a82e6fcbba330da38136ccdc393",
+        "agents/openai.yaml": "sha256:170d0b33a418d9d82beb7d15f8a91e314adef2edf53a81c37155b6f40dd52f06",
+        "references/effects.md": "sha256:ded4f679e22843a8f68860e6cda0396fa8b8fa27202400e08337143b485c86a4",
+        "references/refs.md": "sha256:12a70ce17d574914ea69eb0809e5a9605de044df1b66619159c6d0b38d6b8353",
+        "references/refs/beacon-engraving.webp": "sha256:44e7680e9c944f03c8fe45df999bdf74077a106925a8189eebf89e751e306e5b",
+        "references/refs/meadow-3d.webp": "sha256:84f526b68021a06fc6d32f162406fab6cc8074da1ef76d2ae4530e1b58219b14",
+        "references/refs/story-dashboard-frames.webp": "sha256:cfbf837e40b7626d5a5789dbce54f5c197aab303aa350d13a042048310717137",
+        "references/refs/unslop-dashboard-after.webp": "sha256:48067794f86b43dab20515b3810f245d67bff05d10bfa83c0f5885bee93cea52",
+        "references/refs/unslop-hero-after.webp": "sha256:92b2d796c5b6116a2039f5ca2b0f3edf700c92b41846b11b9501a4e32f72af6e",
+        "references/signs.md": "sha256:6250d3c222c2aaa4ef4f31557d99d249e5be86d8720cd1157df14798caf1c8c4",
+        "references/tokens.md": "sha256:988b754612b3e2d42d87b1bbaca0b4a61f3e07a2b2eef782d3614e8fdb6db5b0",
+        "references/visuals.md": "sha256:7247da579d2d95ace1e051b867c757bd1e05aa02f3ab8dea0ead4cd4bf14d7d7",
+        "scripts/snapshot.mjs": "sha256:0a5f2511d922bd5bd0df56e70e72d9e349695f2464f9b93d0bda3ef8a58c6e48",
+        "scripts/story.mjs": "sha256:17d3a6ab6564efc5aa7632a36f340c130aa512fde73d229d79474f1b4c09d0e1"
       }
     }
   },
