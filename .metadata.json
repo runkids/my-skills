@@ -485,19 +485,6 @@
         "references/explain.md": "sha256:237dd81672c858c8c52325bafeefdde2d5b842c9a98c2ea6a820534a0df8e927"
       }
     },
-    "herdr": {
-      "source": "github.com/herdrdev/herdr/skills/herdr",
-      "type": "github-subdir",
-      "installed_at": "2026-11-01T03:30:36.4498+08:00",
-      "repo_url": "https://github.com/herdrdev/herdr.git",
-      "subdir": "skills/herdr",
-      "version": "ee5bfb5",
-      "tree_hash": "2be0d86d481d1bb29c62e11ef37b78d27d01b478",
-      "commit": "ee5bfb5041bb3e4a49d591c72308aae3c81ecdde",
-      "file_hashes": {
-        "SKILL.md": "sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984"
-      }
-    },
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
