@@ -498,19 +498,6 @@
         "SKILL.md": "sha256:fbd9d502767f7dff29c211505a0bd9ba34e980ed4cc456247e2adc1642883984"
       }
     },
-    "orchestration": {
-      "source": "https://github.com/stablyai/orca.git/skills/orchestration",
-      "type": "github-subdir",
-      "installed_at": "2026-11-01T03:30:44.90312+08:00",
-      "repo_url": "https://github.com/stablyai/orca.git",
-      "subdir": "skills/orchestration",
-      "version": "474e48a",
-      "tree_hash": "a7bef59094d3384510bbfbd56990615c0d8c1327",
-      "commit": "474e48a306d06db2ad304f23819f8210f04eb693",
-      "file_hashes": {
-        "SKILL.md": "sha256:66d4c60a3ead54eb063a57341278cccaf28e016c2847a6f1808a0d4d2d163606"
-      }
-    },
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
