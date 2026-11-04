@@ -499,14 +499,14 @@
       }
     },
     "skillshare": {
-      "source": "github.com/runkids/skillshare/skills/skillshare",
+      "source": "https://github.com/runkids/skillshare.git/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-04T15:29:36.349193+08:00",
+      "installed_at": "2026-11-04T17:52:35.8129+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "83d4d0a",
-      "tree_hash": "53b8f8466b7d3a6c47ccb909dd4b03ffd6b2262a",
-      "commit": "83d4d0ac1983de6b0b65267e989a00162195f138",
+      "version": "e5aaf14",
+      "tree_hash": "e66628239594a7f401118c3b5e90affefb75816c",
+      "commit": "e5aaf1469f027c203e58857b132cfc7a5e19041b",
       "file_hashes": {
         "SKILL.md": "sha256:1371844324b89e7005cb801fe1821c07f8114c3f93fe7593899d62e4c451a225",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
@@ -522,7 +522,7 @@
         "references/memory-review.md": "sha256:e9fabed005f282c6702788bfe1a01aeca986184d48eadccf3ef0e9f4e465f5e3",
         "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
         "references/plugins.md": "sha256:6029edc99ec75b34a8c669d5af86c80ad90a08683a90d4271620438c8bb00bb7",
-        "references/status.md": "sha256:fce04dff6e5f613aa47f1c1da8b688ac673c0af46c346ba79bc2b7e45a1cdf3e",
+        "references/status.md": "sha256:f4eb90d8034cff3394d27dd46d5df976e98ec47e08b8e83efd1bdc10e24b19b1",
         "references/sync.md": "sha256:aa2740ae9f92181e318f077ae85250cc8041914dfea67123975de30730276511",
         "references/targets.md": "sha256:c58ccaf726e8a5448a3da952fc3101923e05e48d93d0ba9f9e39fe160a3f0680",
         "references/trash.md": "sha256:e53ddc74ccf633d1c67481e616df584542dd882bac3a10e0857459628322f219",
