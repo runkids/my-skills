@@ -488,14 +488,14 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-06T17:05:57.766447+08:00",
+      "installed_at": "2026-11-07T02:43:07.473009+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "2dbb962",
-      "tree_hash": "2d05b2462c3b20dc3887644060a68051054e2d3d",
-      "commit": "2dbb962bac76dff0a9aebcc0dc7c4cda286b8800",
+      "version": "3318c99",
+      "tree_hash": "530eab441d054e6a9f343bc0301a27dbd3ec7604",
+      "commit": "3318c9944dbf93a5ce9f854ace8e0f12d062c9ac",
       "file_hashes": {
-        "SKILL.md": "sha256:0e72bda23f2fb106c48dd7955002aa6e739db8007e1275959c86a083b9e9ef95",
+        "SKILL.md": "sha256:ec608ffdcc8edd267a05845aa74df29349e4909d584b95282903f6e2d7191f5a",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
         "references/audit-review.md": "sha256:8ce54d8440a56078da8d7a1849000ae985346c950de3c49164eab21049ff2924",
         "references/audit.md": "sha256:60916b8b6e5d5eb7ff98e1e81a090ccb3530f389c2cb854b041b2aecb7141093",
@@ -511,7 +511,7 @@
         "references/plugins.md": "sha256:6029edc99ec75b34a8c669d5af86c80ad90a08683a90d4271620438c8bb00bb7",
         "references/status.md": "sha256:f4eb90d8034cff3394d27dd46d5df976e98ec47e08b8e83efd1bdc10e24b19b1",
         "references/sync.md": "sha256:aa2740ae9f92181e318f077ae85250cc8041914dfea67123975de30730276511",
-        "references/targets.md": "sha256:ec816d1be60380b0e630336513a5dfca7930de11eeaeac1a5c82228e2fd797b8",
+        "references/targets.md": "sha256:336a1e874696111c27102f07d9c0f5299d0856fc47707f49c4d355383c12f822",
         "references/trash.md": "sha256:e53ddc74ccf633d1c67481e616df584542dd882bac3a10e0857459628322f219",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }
