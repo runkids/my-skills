@@ -365,6 +365,181 @@
         "scripts/validate.sh": "sha256:f579219221c81570195a7715e65bd3e9c739201d97b27ec959bade4ecf143d75"
       }
     },
+    "frontend/animate": {
+      "source": "github.com/emilkowalski/skill/skills/animate",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.468066+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/animate",
+      "version": "715c180",
+      "tree_hash": "fe46ac61092a8cf086dce6a907fc98295a600d3d",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "RECIPES.md": "sha256:21ff63d84391db8d96ecdf9170095f55a42c836ccc36fd3269c4772bab031ba2",
+        "SKILL.md": "sha256:39138996033e0dbe53e73217514116eaeca774bae84a0687c80d445a4e0cc3a6"
+      }
+    },
+    "frontend/animate-expo": {
+      "source": "github.com/emilkowalski/skill/skills/animate-expo",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.515342+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/animate-expo",
+      "version": "715c180",
+      "tree_hash": "6874701c790c7e74926ccd0a8716647a81424c85",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "RECIPES.md": "sha256:1193cb71334da2e2341778dd92bec9ac79d989cb07fd55d661f324ed5871e718",
+        "SKILL.md": "sha256:9a01a91701e6563c67677dde6b66ab30f066a5341d42c21a90ba51d99679274a"
+      }
+    },
+    "frontend/animation-performance": {
+      "source": "github.com/emilkowalski/skill/skills/animation-performance",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.545881+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/animation-performance",
+      "version": "715c180",
+      "tree_hash": "a0261dde73fb2206d71b014450ce1c0c297d2c6a",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:6c60f45ab416ff3f7d7765a5427beead77fab0d82487fe610d2a298397558d0a"
+      }
+    },
+    "frontend/animation-vocabulary": {
+      "source": "github.com/emilkowalski/skill/skills/animation-vocabulary",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.575167+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/animation-vocabulary",
+      "version": "715c180",
+      "tree_hash": "d49565744427887a1f719de1ceee04d941d4e681",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94"
+      }
+    },
+    "frontend/apple-design": {
+      "source": "github.com/emilkowalski/skill/skills/apple-design",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.611523+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/apple-design",
+      "version": "715c180",
+      "tree_hash": "cd509ae729c86487d352e17a26651217a4c25711",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7"
+      }
+    },
+    "frontend/ask-sonner": {
+      "source": "github.com/emilkowalski/skill/skills/ask-sonner",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.639793+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/ask-sonner",
+      "version": "715c180",
+      "tree_hash": "aeca3dba0eb0415fa5a310cd6823b824fe60323d",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "API.md": "sha256:4bb06f482c5757529e3d7a672a30fbeed42d24919a63e2571384a9ce1549aa7f",
+        "SKILL.md": "sha256:39f3ee185b3aa2cf70a689052ff078953ce7ba5915ed7a9391d232e9d4dcf57f"
+      }
+    },
+    "frontend/break-ui": {
+      "source": "github.com/emilkowalski/skill/skills/break-ui",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:33.991675+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/break-ui",
+      "version": "715c180",
+      "tree_hash": "f2a3441d4cf14df060ee363e155502a4818b5f8d",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "CATALOG.md": "sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15",
+        "SKILL.md": "sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e"
+      }
+    },
+    "frontend/choreograph": {
+      "source": "github.com/emilkowalski/skill/skills/choreograph",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:34.042905+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/choreograph",
+      "version": "715c180",
+      "tree_hash": "a3766de3feddecbb5565d6eb41d32349c916ca4e",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "RECIPES.md": "sha256:b61f03b5c47398cf71ce9db4157cc919617228981b1d74a72d6a5fa27e4aaad2",
+        "SKILL.md": "sha256:815c7d889230bafc72c03bb0769087aeede310130e8795c7949b3e3a1684e464"
+      }
+    },
+    "frontend/emil-design-eng": {
+      "source": "github.com/emilkowalski/skill/skills/emil-design-eng",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.715047+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/emil-design-eng",
+      "version": "715c180",
+      "tree_hash": "e79b9cc03e06efe8d40349bc39df0ed4a9d5deff",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:965cc3108047a1f68e504977ae7816c66115b202a32e7509c0b8305314839c54"
+      }
+    },
+    "frontend/find-animation-opportunities": {
+      "source": "github.com/emilkowalski/skill/skills/find-animation-opportunities",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:34.083943+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/find-animation-opportunities",
+      "version": "715c180",
+      "tree_hash": "e6443880f38e33cf78e5d678471eed35e8566763",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:d52a377819b84a71930f0c822cfe2849f40301605a2d5c7eccbfa3b257700df2"
+      }
+    },
+    "frontend/gestures": {
+      "source": "github.com/emilkowalski/skill/skills/gestures",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.75151+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/gestures",
+      "version": "715c180",
+      "tree_hash": "d30dfa5756b880d26c07adfb364d8506f963e6e6",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:0835dddc0ce4f4257fdc707ec137d75810f0bdbd8d4eaf69d1de55bfbbf260c2"
+      }
+    },
+    "frontend/improve-animations": {
+      "source": "github.com/emilkowalski/skill/skills/improve-animations",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:34.131107+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/improve-animations",
+      "version": "715c180",
+      "tree_hash": "d3ce6f348009d830b89e7a830cc958245aea2ad6",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "AUDIT.md": "sha256:63fa8fcf7e7b3a3e252938e55c60e1f399f607e73553163e8dacf9df40f3ebed",
+        "PLAN-TEMPLATE.md": "sha256:0a08ac8e23fd2082d7ffb86aeed7b789de77328c3cf874b16f1a755f2ef0a6ad",
+        "SKILL.md": "sha256:73962447464433476343e2c12cd08ab39cc99a9e5f3c118c5fb54ed897574ef6"
+      }
+    },
     "frontend/improve-react": {
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/improve-react",
       "type": "github-subdir",
@@ -379,6 +554,49 @@
         "AUDIT.md": "sha256:86ad71563719082952561461453ebeb93dbe41560650d69df6bc65da6f3e1859",
         "PLAN-TEMPLATE.md": "sha256:2ddbf58a4ece9c1b4da5f65dfb92354f20ff79d2663e3e458dc5e124414a4cc5",
         "SKILL.md": "sha256:c50776c79e15f53dd7769b4a4d33c3d9f1723d7f23064201e37086d15910d9ac"
+      }
+    },
+    "frontend/mobile-native": {
+      "source": "github.com/emilkowalski/skill/skills/mobile-native",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.800532+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/mobile-native",
+      "version": "715c180",
+      "tree_hash": "fdad6e6e91d8bbfda7164c7027269a8389dbadcd",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55"
+      }
+    },
+    "frontend/pick-ui-library": {
+      "source": "github.com/emilkowalski/skill/skills/pick-ui-library",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.827799+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/pick-ui-library",
+      "version": "715c180",
+      "tree_hash": "370e19776f0aa2403a2edeed78266bd6a5d78036",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:675fdce308683256ed617351a9b74d23457a5fbd0a562d9831b9c764b8c5e682"
+      }
+    },
+    "frontend/prototype": {
+      "source": "github.com/emilkowalski/skill/skills/prototype",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.859653+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/prototype",
+      "version": "715c180",
+      "tree_hash": "34cd3a303aef0a975fcce3ac906d6b293e600399",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "PICKER.md": "sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6",
+        "SKILL.md": "sha256:bba39c955eb1871c5a02733976ceec5d0324198e0812e667604756489c89f7b9"
       }
     },
     "frontend/react-best-practices": {
@@ -485,6 +703,49 @@
         "references/explain.md": "sha256:237dd81672c858c8c52325bafeefdde2d5b842c9a98c2ea6a820534a0df8e927"
       }
     },
+    "frontend/remove-animations": {
+      "source": "github.com/emilkowalski/skill/skills/remove-animations",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:34.172693+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/remove-animations",
+      "version": "715c180",
+      "tree_hash": "e1d06083891b6445c7fb5dae31f06b1e8b81f0dc",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:dea95b7a7ef81cba312c7f70a3c5c67d7e06a287cb16b16d2f90f2b1fb0afff9"
+      }
+    },
+    "frontend/review-animations": {
+      "source": "github.com/emilkowalski/skill/skills/review-animations",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.901904+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/review-animations",
+      "version": "715c180",
+      "tree_hash": "bede4e1924423cea207f67ffe7a742b8d6ad753e",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:5f9fb98b69cace7107af8b393a4196fd42fa42d98bce0e5afc1f866ff3b8a41c",
+        "STANDARDS.md": "sha256:8f5fe3f5a04537556dd4e6a37f7a8d6f616d840eb80f2f68b5b594febb170657"
+      }
+    },
+    "frontend/write-swift": {
+      "source": "github.com/emilkowalski/skill/skills/write-swift",
+      "type": "github-subdir",
+      "group": "frontend",
+      "installed_at": "2026-11-09T23:36:24.951775+08:00",
+      "repo_url": "https://github.com/emilkowalski/skill.git",
+      "subdir": "skills/write-swift",
+      "version": "715c180",
+      "tree_hash": "bdefda3891d347b8a183bdc727e4a1de2be3c82b",
+      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "file_hashes": {
+        "SKILL.md": "sha256:16a4b6adb74e338e55e704ce5753ad54d825438b8a63930eeaede9f3c04c9447"
+      }
+    },
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
@@ -544,11 +805,26 @@
     }
   },
   "audit_accepted": {
+    "frontend/break-ui": [
+      "a600c2aa3747f515d7a0d1dfb284b6b98fe674ce6f3f6b7c310b399e49386bbf"
+    ],
+    "frontend/choreograph": [
+      "a600c2aa3747f515d7a0d1dfb284b6b98fe674ce6f3f6b7c310b399e49386bbf"
+    ],
+    "frontend/find-animation-opportunities": [
+      "c0f1636a9604eacec758fee8c54f834731bb3a72151a26134a9adb162ba3c685"
+    ],
+    "frontend/improve-animations": [
+      "8ed50e328728156391274dc109d97c109bb56da0ddbd2eb5b60784e4bee98576"
+    ],
     "frontend/improve-react": [
       "8ed50e328728156391274dc109d97c109bb56da0ddbd2eb5b60784e4bee98576"
     ],
     "frontend/react-doctor": [
       "08fe6550b7391a0663dd7b17041170c6e3828f2668d570189329957c2ff07c36"
+    ],
+    "frontend/remove-animations": [
+      "380b64702330302c8574c7c4b799ab5b41ef4d858bf1532aac7798cbe621094d"
     ]
   }
 }
