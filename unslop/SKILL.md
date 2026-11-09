@@ -33,7 +33,7 @@ Which visual styles tend to work, and which fail, is in [references/visuals.md](
 ## Run it
 
 1. **Look at the screen.** Find the files that render it. If you can run the app or open the file in a browser and take a screenshot, do it, so you judge what people see and not only the code.
-   - Only a link to a live site, no code? Save the page with `node <skill folder>/scripts/snapshot.mjs <url> unslop/original.html` and work on a copy of that file. Add `--dark` or `--light` to match the theme the user sees. It also saves `original.live.png`, a screenshot of the live page, so render the saved copy and compare the two before you start. Animated backgrounds drawn by scripts do not survive, so describe them in the audit from the live page.
+   - Only a link to a live site, no code? Save the page with `node <skill folder>/scripts/snapshot.mjs <url> unslop/original.html` and work on a copy of that file. A local HTML file works in place of the URL. Add `--dark` or `--light` to match the theme the user sees. It also saves `original.live.png`, a screenshot of the live page, so render the saved copy and compare the two before you start. The script scrolls through the page first, so lazy-loaded sections and images are captured. Animated backgrounds drawn by scripts do not survive, so describe them in the audit from the live page.
    - Only a screenshot? Rebuild the screen as one static HTML file first, matching it closely, and treat that as the original.
    - In both cases the result is a redesigned page in code that the user can hand to whoever owns the real site, so say that in the report.
 2. **Audit.** Go through [references/signs.md](references/signs.md) and list every sign you find, one line each with where it lives.
@@ -227,6 +227,8 @@ It adds a few minutes, so make it only when the user wants it.
 - [ ] No exclamation marks, no trailing periods on short strings, no greeting headline, no unverified claims
 - [ ] Numbers in one format with tabular figures
 - [ ] Nested radii add up
+- [ ] Table row states read apart: header, value in use, selection and keyboard focus are each recognizable
+- [ ] Buttons share the control radius, no square corners against the component style
 - [ ] A hero has a real visual or a product preview with at least one moment, never filler and never a labeled placeholder
 - [ ] The first screen is composed as a whole with no dead empty band
 - [ ] No looping or bouncy motion, one easing curve, no animated layout properties
