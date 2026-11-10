@@ -19,7 +19,8 @@ from urllib.parse import quote
 SKILL = Path(__file__).resolve().parents[1]
 SCRIPT = SKILL / 'scripts/ai-context.py'
 PAGE = 'projects/api/deploy-runbook.md'
-spec = importlib.util.spec_from_file_location('ai_context', SCRIPT)
+sys.dont_write_bytecode = True  # keep __pycache__ out of the shipped scripts/ folder
+spec =importlib.util.spec_from_file_location('ai_context', SCRIPT)
 router = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(router)
 
