@@ -13,7 +13,7 @@
       "installed_at": "2026-11-10T16:30:56.192635+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
-      "version": "e751995",
+      "version": "f423bb0",
       "tree_hash": "29ba9c12789b1c54ab76ad40e2472e646d141b85",
       "commit": "e7519957b9067c541825afa21a792fbe1f483047",
       "file_hashes": {
@@ -547,7 +547,7 @@
       "installed_at": "2026-11-10T16:31:32.139102+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/improve-react",
-      "version": "8177197",
+      "version": "ec45ff9",
       "tree_hash": "0ee95f8644a7a263db14d2a7530134578f7ccf11",
       "commit": "8177197ade847406a800ddf5a103ac342a3618f9",
       "file_hashes": {
@@ -689,18 +689,18 @@
       }
     },
     "frontend/react-doctor": {
-      "source": "https://github.com/millionco/react-doctor/tree/main/skills/react-doctor",
+      "source": "https://github.com/millionco/react-doctor.git/skills/react-doctor",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:41.273897+08:00",
+      "installed_at": "2026-11-11T01:43:52.64941+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/react-doctor",
-      "version": "8177197",
-      "tree_hash": "d3deec46812d0387d3ff41e6139ec7a44802037f",
-      "commit": "8177197ade847406a800ddf5a103ac342a3618f9",
+      "version": "ec45ff9",
+      "tree_hash": "373a8c37b83fd28c08029006f8b1e914152c4ba2",
+      "commit": "ec45ff9928ef97bf66c23ac2458ab91545b91de6",
       "file_hashes": {
         "SKILL.md": "sha256:ded3d7d7b77626e5308e028733fddab0b586ea513e2e73eafc94ba56afb4160b",
-        "references/explain.md": "sha256:237dd81672c858c8c52325bafeefdde2d5b842c9a98c2ea6a820534a0df8e927"
+        "references/explain.md": "sha256:e8165d0e35404711afe5a264582027c6f676276afc189302b32c3c38067cca8f"
       }
     },
     "frontend/remove-animations": {
@@ -779,29 +779,29 @@
       }
     },
     "skillshare": {
-      "source": "github.com/runkids/skillshare/skills/skillshare",
+      "source": "https://github.com/runkids/skillshare.git/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-10T16:57:37.256845+08:00",
+      "installed_at": "2026-11-11T01:44:06.632525+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "3cba007",
-      "tree_hash": "56cc4dd4fe93c410f05c4855951d6e354967f9a0",
-      "commit": "3cba0074c129a2d10dcb5ce38d7a29613589cb66",
+      "version": "9f8935a",
+      "tree_hash": "62c1c7e10142eccd8decf5ede287a24a2a64ceea",
+      "commit": "9f8935a3cabc006f669a0b7bcde139e7771b01ab",
       "file_hashes": {
-        "SKILL.md": "sha256:0e55c01631fe12306a1ca8e17b593e0acafb8b577352ad48e201aebe4753b03c",
+        "SKILL.md": "sha256:a850496e8c449147ca6043a33bb8114e3ce8a1a622107eae8de1ac23e32b2d85",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
         "references/audit-review.md": "sha256:8ce54d8440a56078da8d7a1849000ae985346c950de3c49164eab21049ff2924",
-        "references/audit.md": "sha256:02d318b65bc7ab073a6e585a4375c627db69f1bcabfc687d7dab34b3ba071fb2",
+        "references/audit.md": "sha256:acc1bb78086fad168492158a953324fa1d9720e7b6c551bd160b58174c08a982",
         "references/backup.md": "sha256:d794b66b18120cfaae0dcb3773031a08426895fd618d02393337a1eb57f98f6f",
         "references/extras.md": "sha256:0845bb01f48b1ee6c91eee756319e301b224cec0f944b90dbee370934d0dbb57",
         "references/hooks.md": "sha256:de0f7c4261adfc9cd1aaa409ff484676c694e45011458d5885afb9108619e07d",
         "references/init.md": "sha256:bd5206d3f614c6c32b1c930cc07dd93fe893bb041838af12b612f17f55af78e3",
-        "references/install.md": "sha256:ec91aaefc0fe1cf4ed78c7a8db042a46a0c455ac8d8e8e0831a7ae54010a7f48",
+        "references/install.md": "sha256:fdbe20ab82ef345b908265c8375c15dfbf17c827ecf74e4f139fa35ded683949",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
         "references/mcp.md": "sha256:a46bc834c4ec4ffd815bd68090883e8d669097441296d0e5cfcd36dde51ecb5e",
         "references/memory-review.md": "sha256:e9fabed005f282c6702788bfe1a01aeca986184d48eadccf3ef0e9f4e465f5e3",
         "references/native-agents.md": "sha256:352d78cb64722717b5660655978afcef3d18638669ab96e0f2325f28d563576e",
-        "references/plugins.md": "sha256:6029edc99ec75b34a8c669d5af86c80ad90a08683a90d4271620438c8bb00bb7",
+        "references/plugins.md": "sha256:c3e10c04858e9b68024708ab47ffa89b3784bcec124f915011c6934f2b361296",
         "references/status.md": "sha256:f4eb90d8034cff3394d27dd46d5df976e98ec47e08b8e83efd1bdc10e24b19b1",
         "references/sync.md": "sha256:aa2740ae9f92181e318f077ae85250cc8041914dfea67123975de30730276511",
         "references/targets.md": "sha256:336a1e874696111c27102f07d9c0f5299d0856fc47707f49c4d355383c12f822",
