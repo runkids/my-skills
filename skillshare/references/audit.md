@@ -35,6 +35,7 @@ skillshare audit --analyzer static # Run only the static analyzer
 | `--json` | Same as `--format json` (deprecated) |
 | `--quiet, -q` | Only show skills with findings + summary |
 | `--no-tui` | Disable interactive TUI, print plain text |
+| `--respect-accepted` | Do not fail on findings accepted earlier with `--force`; JSON marks them `acknowledged`, SARIF adds `suppressions` |
 | `--yes, -y` | Skip large-scan confirmation prompt |
 | `--init-rules` | Create a starter `audit-rules.yaml` |
 | `-h, --help` | Show help |
@@ -125,8 +126,8 @@ skillshare install user/repo --force      # Override block
 skillshare install user/repo --skip-audit # Skip audit entirely
 ```
 
-`install --json` retains the audit gate even though it enables overwrite/noninteractive
-selection. Explicit `--force` and `--skip-audit` have different security effects.
+`install --json` retains the audit gate and enables noninteractive selection;
+it does not permit overwriting existing items without `--force`. Explicit `--force` and `--skip-audit` have different security effects.
 
 ## Managing Rules
 
@@ -141,7 +142,7 @@ skillshare audit rules reset                    # Restore built-in defaults
 skillshare audit rules init                     # Create starter audit-rules.yaml
 ```
 
-Audit exits `0` when findings are below the threshold, `1` for threshold findings, and `2` for execution, usage, configuration, or scan errors. Scan errors take precedence over findings. Declining the large-scan confirmation exits `0` without scanning. Audits launched from `list` use the same exit codes.
+Audit exits `0` when findings are below the threshold, `1` for threshold findings, and `2` for execution, usage, configuration, or scan errors. Scan errors take precedence over findings. With `--respect-accepted`, findings accepted earlier with `--force` do not count toward `1`. Declining the large-scan confirmation exits `0` without scanning. Audits launched from `list` use the same exit codes.
 
 ## Custom Audit Rules
 
@@ -150,7 +151,7 @@ skillshare audit --init-rules       # Global: ~/.config/skillshare/audit-rules.y
 skillshare audit --init-rules -p    # Project: .skillshare/audit-rules.yaml
 ```
 
-Three-layer merge (later overrides earlier): built-in → global → project. Set `confidence` from 0 to 1 by rule ID or pattern; rules without a value default to 0.95. The HIGH prose patterns `anti-refusal`, `prompt-leakage`, `memory-poisoning`, `agent-snooping`, and `persistence` detect narrowly phrased risky directives.
+Three-layer merge (later overrides earlier): built-in → global → project. A rules file that cannot be read, parsed, or compiled makes every scan using it a scan error that names the file. Set `confidence` from 0 to 1 by rule ID or pattern; rules without a value default to 0.95. The HIGH prose patterns `anti-refusal`, `prompt-leakage`, `memory-poisoning`, `agent-snooping`, and `persistence` detect narrowly phrased risky directives.
 
 ```yaml
 rules:
