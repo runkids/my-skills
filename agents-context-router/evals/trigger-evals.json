@@ -1,4 +1,5 @@
 [
+  {"query": "Our project already has scripts/ai-context.py and an independent router tree at modules/kb-core. Attach that existing tree so list shows kb/guide and check uses its own config, kernel and budgets without copying its topics into our AGENTS.md.", "should_trigger": true},
   {"query": "our AGENTS.md in ~/code/payments-api is like 38KB now, half of it is old sprint notes and a giant table of every make target. codex keeps ignoring the rules at the top. can you restructure it so agents only load what they need per task?", "should_trigger": true},
   {"query": "CLAUDE.md and AGENTS.md have drifted: one says ports 3000-3099 and the other says 3000-3050. I want Claude Code and Codex to share one set of rules, and I want to move the milestone acceptance logs out so they are not loaded every time.", "should_trigger": true},
   {"query": "Every Claude Code session in this monorepo starts by reading a 60 KB README because AGENTS.md says 'read README first'. Tokens are burning before anyone types. Design me a better doc layout for agents with some kind of size limit we can enforce in CI.", "should_trigger": true},

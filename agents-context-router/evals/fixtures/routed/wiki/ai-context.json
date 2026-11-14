@@ -1,5 +1,8 @@
 {
   "rootInstructions": "AGENTS.md",
+  "mounts": {
+    "kb": { "root": "modules/kb-core" }
+  },
   "budgets": {
     "rootInstructionsMaxBytes": 8192,
     "defaultTopicMaxBytes": 16384

@@ -10,39 +10,44 @@
       "source": "https://github.com/vercel-labs/agent-browser.git/skills/agent-browser",
       "type": "github-subdir",
       "group": "agent-browser",
-      "installed_at": "2026-11-10T16:30:56.192635+08:00",
+      "installed_at": "2026-11-15T01:03:03.615234+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
-      "version": "f423bb0",
-      "tree_hash": "29ba9c12789b1c54ab76ad40e2472e646d141b85",
-      "commit": "e7519957b9067c541825afa21a792fbe1f483047",
+      "version": "f18b8bb",
+      "tree_hash": "d75a393c9a371295c6d6be46c34938e76ef21184",
+      "commit": "f18b8bb5275ea2be22fca5e6856886827468f41e",
       "file_hashes": {
-        "SKILL.md": "sha256:ef7c2da16e25e86b78396bd9a2fd112e23c42cdd2de435197a920b9fc646d1c2"
+        "SKILL.md": "sha256:7d46deeb0101e84f8d70fd2e5cd18e3b6017edfb973607ff23e95e22c92ce73e"
       }
     },
     "agents-context-router": {
       "source": "https://github.com/runkids/agents-context-router.git/skills/agents-context-router",
       "type": "github-subdir",
-      "installed_at": "2026-11-10T16:30:58.145219+08:00",
+      "installed_at": "2026-11-15T01:03:05.923806+08:00",
       "repo_url": "https://github.com/runkids/agents-context-router.git",
       "subdir": "skills/agents-context-router",
-      "version": "5d94bf6",
-      "tree_hash": "1aab6f4120455b78dab17ec15c825f5c86333252",
-      "commit": "5d94bf637a5c19d75aa8f195eef67b813fb47c0b",
+      "version": "39ef0db",
+      "tree_hash": "cd9608af7606e945173ce72ea5bb9295b4dfbcf9",
+      "commit": "39ef0dbea82c71aee89149b003b7803049f7f09c",
       "file_hashes": {
-        "SKILL.md": "sha256:aa450b4b82580b57315d9da0d39ade82daae5ae2b6579871da57ea6b69ef9fd0",
-        "assets/AGENTS.kernel.md": "sha256:70ad3517331689cd82517f610182f3e7d5a83e5fc0034af5efcf5356344b21be",
-        "assets/ai-context.json": "sha256:d1fbe3c6ecbbd36ec309ef5bebbbcb7c1487540b3dcefd2dc8f73cc516d01f9c",
-        "assets/wiki-README.md": "sha256:19f9adba970aa8c7ca4304ac28052e885978167b8f50db0d62e1879f8b0dd78b",
-        "assets/wiki-ai-context.md": "sha256:04bb813b18bbed281e96a43c86d9aa1010a0aa704951df986c361913dc526e78",
-        "evals/evals.json": "sha256:ad0b2471379048b865e418c8a69423f89338f0dfe0752b8ffc8f6cd21d78f883",
-        "evals/fixtures/routed/AGENTS.md": "sha256:8687e4af173eff29285db88a40e802a3d72c17ddc36f2bdbf47e02849b3eed64",
+        "SKILL.md": "sha256:753ff97294ff72a72aab92236911c89212f6d2b099342cc38a23159ac727cf03",
+        "assets/AGENTS.kernel.md": "sha256:ec3ab0ffab6305554dc232b72b3c23e110071aefd515c97a930252f76657a616",
+        "assets/ai-context.json": "sha256:e538e4602df31b88d49427813970c1f7aab4cb30b3dd7ff886fe479ad69959e6",
+        "assets/wiki-README.md": "sha256:744832750484c8738940d0a3a2c117a3e2b32cd6a2ce420da0f6f450a40b305d",
+        "assets/wiki-ai-context.md": "sha256:0f776ad1c874414d52a5c81d954271138b947b82729f616a715604e234cbe5b9",
+        "evals/evals.json": "sha256:10f81039b1d24b6e1124a221aff19b494ce17b29fabd512cdc6f8f508601597d",
+        "evals/fixture_helpers.py": "sha256:490fecd1faadbc1742f9faa6673bd7d9b9d20ee8be889ff483d4b3317d6aa0de",
+        "evals/fixtures/routed/AGENTS.md": "sha256:b985ee0ec53a99de4fe3aa90a79523da2fe575d45226b09bba37de4a299a042e",
+        "evals/fixtures/routed/modules/kb-core/AGENTS.md": "sha256:f3104df7b468b1702b63ede72bc268f9428ead13a5858e0cfd78536f0ed0956e",
+        "evals/fixtures/routed/modules/kb-core/wiki/README.md": "sha256:103c2b4246204f454dc892aa7d5197837f344a92b83cbaa299753797ca7613af",
+        "evals/fixtures/routed/modules/kb-core/wiki/ai-context.json": "sha256:0f200662d0348ab7ece21ac871ee8b74b6d13f8455b2acba1e21c3e708093455",
+        "evals/fixtures/routed/modules/kb-core/wiki/guide.md": "sha256:1b78f28e193e73f0000c1a4bba4f60098be986d41f53bd3118cb506d6ed6c3c0",
         "evals/fixtures/routed/notes/m5-draft.md": "sha256:1059d713ab9ddcdb531efc97a0cda17988a5d55c376c30d355bc0984bf4e0639",
         "evals/fixtures/routed/notes/retry-policy.md": "sha256:001a0147da150cfc1bf23fbf990402c1895d93ec8325c4493931b141c45f6244",
-        "evals/fixtures/routed/scripts/ai-context.py": "sha256:5effe11575d955f1862b8923657ab962ae4992b740509e373bd75a34ba6eef6f",
-        "evals/fixtures/routed/wiki/README.md": "sha256:04dd7f8b0589c0ece9bbc135b99bf4a228b0dcbbf254652c7d1b2d77fc4e2522",
-        "evals/fixtures/routed/wiki/ai-context.json": "sha256:1adc1452a199676d2e91ec2ca5f3866ee1b747d5cd1eb50073f9d34cefb27b82",
-        "evals/fixtures/routed/wiki/ai-context.md": "sha256:04bb813b18bbed281e96a43c86d9aa1010a0aa704951df986c361913dc526e78",
+        "evals/fixtures/routed/scripts/ai-context.py": "sha256:dc958fddf1a1a950505d6133c9cd762291b2e27674fdfb2d853485ce88b2acf1",
+        "evals/fixtures/routed/wiki/README.md": "sha256:5f214df1a8b954181969eedfdb2abe9fde3268a80676209fe2498feb429b2cba",
+        "evals/fixtures/routed/wiki/ai-context.json": "sha256:036bd69099bf2d32cabd8efc17d1b1252e40b64e0b0d49da09b7583aefb2c157",
+        "evals/fixtures/routed/wiki/ai-context.md": "sha256:0f776ad1c874414d52a5c81d954271138b947b82729f616a715604e234cbe5b9",
         "evals/fixtures/routed/wiki/build-and-deploy.md": "sha256:1d0c6c1c19d9d06d07f2510d8af388dfc86fa55de2cae44d66b1d9a2e50e264d",
         "evals/fixtures/routed/wiki/debugging.md": "sha256:550e1fa6520ed622a131527bb51b7a91ddaffad2c8c3a875ac8c595c8efff3cc",
         "evals/fixtures/routed/wiki/history/m1.md": "sha256:80dc55ea65173055ee3d067c97cfef2f74d785b25dff1f8b4f911a443840a8d9",
@@ -52,17 +57,20 @@
         "evals/fixtures/tidepool/.claude/skills/deploy/SKILL.md": "sha256:4a688574cee0e7b499d44a1e4d9a2808e18a96afcf642ee1e47f45f64d2fe6f7",
         "evals/fixtures/tidepool/AGENTS.md": "sha256:5be1524d4f3caf7faa11a597fad54e8a574d62981456ddad84cda10483ace178",
         "evals/fixtures/tidepool/CLAUDE.md": "sha256:86a924fb9a88867bcaec72ae2ded842fb3daf79ce8abf7cb6d8fcf568dde08b2",
-        "evals/test_ai_context.py": "sha256:ecce018e22d7ae8a4968994b63d57332dcae21b6407e9fc2c423ad76a0836ba4",
-        "evals/trigger-evals.json": "sha256:fd6fe81dbfd9ea0e158617b1155c07786cf580d3e72cb15024c66a81bbdc926d",
-        "references/gotchas.md": "sha256:814e96103870c35075cf9570ea77bb3460b1a9e305afd8c4feb815bf0f04cd03",
-        "scripts/ai-context.py": "sha256:5effe11575d955f1862b8923657ab962ae4992b740509e373bd75a34ba6eef6f"
+        "evals/test_ai_context.py": "sha256:8990ea63c966af87c66cb9280de8529fc4fb025d8f1b995e686496d86cf0c372",
+        "evals/test_ai_context_dedupe.py": "sha256:ac6012fa8c7fcc12bda60b2f8f6085e22084e289f7f766834dc6b996d6f5446a",
+        "evals/test_ai_context_frontmatter.py": "sha256:ca1e565543b0c1b426e152bab59c8aec1ef18c348df13a387e81502d99614113",
+        "evals/test_ai_context_mounts.py": "sha256:78c728de7ad94ab7585f214dfa4a443d336c78efa1d2520b35e3380114e3823d",
+        "evals/trigger-evals.json": "sha256:6b0bbfb87ee2da710d3b14d5b434f20579ac6f705065c8caa4f62890fe68619b",
+        "references/gotchas.md": "sha256:61c793d803f4476d4f4abc480d42a20ee42678e5cc493a4628969b67982afeaf",
+        "scripts/ai-context.py": "sha256:dc958fddf1a1a950505d6133c9cd762291b2e27674fdfb2d853485ce88b2acf1"
       }
     },
     "feature-radar/feature-radar": {
       "source": "github.com/runkids/feature-radar/skills/feature-radar",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-11-10T16:31:17.986025+08:00",
+      "installed_at": "2026-11-15T01:03:21.632004+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar",
       "version": "5093cff",
@@ -80,7 +88,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-archive",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-11-10T16:31:19.434672+08:00",
+      "installed_at": "2026-11-15T01:03:23.12565+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-archive",
       "version": "5093cff",
@@ -94,7 +102,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-learn",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-11-10T16:31:20.950364+08:00",
+      "installed_at": "2026-11-15T01:03:24.573157+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-learn",
       "version": "5093cff",
@@ -108,7 +116,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-ref",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-11-10T16:31:22.413906+08:00",
+      "installed_at": "2026-11-15T01:03:25.992829+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-ref",
       "version": "5093cff",
@@ -122,7 +130,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-scan",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-11-10T16:31:23.875747+08:00",
+      "installed_at": "2026-11-15T01:03:27.398118+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-scan",
       "version": "5093cff",
@@ -136,7 +144,7 @@
       "source": "github.com/runkids/feature-radar/skills/feature-radar-validate",
       "type": "github-subdir",
       "group": "feature-radar",
-      "installed_at": "2026-11-10T16:31:25.594539+08:00",
+      "installed_at": "2026-11-15T01:03:28.848299+08:00",
       "repo_url": "https://github.com/runkids/feature-radar.git",
       "subdir": "skills/feature-radar-validate",
       "version": "5093cff",
@@ -151,187 +159,187 @@
       "source": "github.com/emilkowalski/skill/skills/animate",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:30:59.679953+08:00",
+      "installed_at": "2026-11-15T01:03:07.416412+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/animate",
-      "version": "715c180",
-      "tree_hash": "fe46ac61092a8cf086dce6a907fc98295a600d3d",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "6a0393c04fe65ec31746b67956c5d7775a8b9dec",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "RECIPES.md": "sha256:21ff63d84391db8d96ecdf9170095f55a42c836ccc36fd3269c4772bab031ba2",
-        "SKILL.md": "sha256:39138996033e0dbe53e73217514116eaeca774bae84a0687c80d445a4e0cc3a6"
+        "RECIPES.md": "sha256:129cddcba35dedacd307ef2de7f2c71e6d23efd9c1756dde44168241207581f9",
+        "SKILL.md": "sha256:4ce49ea635ec175b45552bae070ea07b2d6aa5367047994250c1c095b71c8585"
       }
     },
     "frontend/animate-expo": {
       "source": "github.com/emilkowalski/skill/skills/animate-expo",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:01.802819+08:00",
+      "installed_at": "2026-11-15T01:03:08.904147+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/animate-expo",
-      "version": "715c180",
-      "tree_hash": "6874701c790c7e74926ccd0a8716647a81424c85",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "d8aad567cb34790db6f32b47f0862797c58574b6",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "RECIPES.md": "sha256:1193cb71334da2e2341778dd92bec9ac79d989cb07fd55d661f324ed5871e718",
-        "SKILL.md": "sha256:9a01a91701e6563c67677dde6b66ab30f066a5341d42c21a90ba51d99679274a"
+        "RECIPES.md": "sha256:31373774c7eef1d3d9f366b638fa2b722f9c730a98e292cda1aa7df2c2b39a56",
+        "SKILL.md": "sha256:67e5d2ebe23b3edf52ce9d399532f2ead2bd7eff127919dd1c3bbe489b04dd4d"
       }
     },
     "frontend/animation-performance": {
       "source": "github.com/emilkowalski/skill/skills/animation-performance",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:03.303051+08:00",
+      "installed_at": "2026-11-15T01:03:10.316361+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/animation-performance",
-      "version": "715c180",
-      "tree_hash": "a0261dde73fb2206d71b014450ce1c0c297d2c6a",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "70a3674a7db0ef9a27fc5e4eb2f9afc70ad2f0d8",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:6c60f45ab416ff3f7d7765a5427beead77fab0d82487fe610d2a298397558d0a"
+        "SKILL.md": "sha256:6481e7a611b54c0d1d229ac3ac516c05648e63aa79de88c0a1bdc5ae2666ab80"
       }
     },
     "frontend/animation-vocabulary": {
       "source": "github.com/emilkowalski/skill/skills/animation-vocabulary",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:04.758463+08:00",
+      "installed_at": "2026-11-15T01:03:11.724093+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/animation-vocabulary",
-      "version": "715c180",
-      "tree_hash": "d49565744427887a1f719de1ceee04d941d4e681",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "5b8f08921a61e64893d5d4572752b3362cb8a24d",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94"
+        "SKILL.md": "sha256:42df33f1583483cc441fcd76693b3399148602705d2e9b8a26665d6b1951cd0b"
       }
     },
     "frontend/apple-design": {
       "source": "github.com/emilkowalski/skill/skills/apple-design",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:06.217426+08:00",
+      "installed_at": "2026-11-15T01:03:13.151393+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/apple-design",
-      "version": "715c180",
-      "tree_hash": "cd509ae729c86487d352e17a26651217a4c25711",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "9bfcd2e17dbac4b390ab231bbf9bd3f3734b21ff",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7"
+        "SKILL.md": "sha256:7fbacf928637e136da6d475358d0639667a3637ba772f03f8e815bb4c0b86946"
       }
     },
     "frontend/ask-sonner": {
       "source": "github.com/emilkowalski/skill/skills/ask-sonner",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:11.910453+08:00",
+      "installed_at": "2026-11-15T01:03:14.531004+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/ask-sonner",
-      "version": "715c180",
-      "tree_hash": "aeca3dba0eb0415fa5a310cd6823b824fe60323d",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "4c2100bb05d30b4e3a889edf25bfbeb27c3f1447",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "API.md": "sha256:4bb06f482c5757529e3d7a672a30fbeed42d24919a63e2571384a9ce1549aa7f",
-        "SKILL.md": "sha256:39f3ee185b3aa2cf70a689052ff078953ce7ba5915ed7a9391d232e9d4dcf57f"
+        "API.md": "sha256:0e0c44a4a28c5f2ceaefc5fb215bf75febe29166066dd502fc7a47ef390c0593",
+        "SKILL.md": "sha256:4350ebfef0437875de80cc989059900b21ad621ea09f4709cc2917e7dee82d46"
       }
     },
     "frontend/break-ui": {
       "source": "github.com/emilkowalski/skill/skills/break-ui",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:13.396697+08:00",
+      "installed_at": "2026-11-15T01:03:16.091436+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/break-ui",
-      "version": "715c180",
-      "tree_hash": "f2a3441d4cf14df060ee363e155502a4818b5f8d",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "3366af548a363c2012e53503cbcf718dc07f047f",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "CATALOG.md": "sha256:7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15",
-        "SKILL.md": "sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e"
+        "CATALOG.md": "sha256:80522dcc81039bf317bce5adcb7b499e9d9da3c98952abb4dfb34ba6c1c32360",
+        "SKILL.md": "sha256:fb126d176f3b6bf7dfe71f2ae6620ab3dd81e6282c672a1801720055addfce18"
       }
     },
     "frontend/choreograph": {
       "source": "github.com/emilkowalski/skill/skills/choreograph",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:14.884565+08:00",
+      "installed_at": "2026-11-15T01:03:18.06442+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/choreograph",
-      "version": "715c180",
-      "tree_hash": "a3766de3feddecbb5565d6eb41d32349c916ca4e",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "d95a9d2f4f47c56c05c04522eab52c6d997215c3",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "RECIPES.md": "sha256:b61f03b5c47398cf71ce9db4157cc919617228981b1d74a72d6a5fa27e4aaad2",
-        "SKILL.md": "sha256:815c7d889230bafc72c03bb0769087aeede310130e8795c7949b3e3a1684e464"
+        "RECIPES.md": "sha256:c256ff760f42d905b19f97becd2c0caaf40a95b41b49770c973281374c9600cf",
+        "SKILL.md": "sha256:0a6802bb2fd5a3993842d48332b8ab56ae5bab369ffa8700f85f6fcff56b8478"
       }
     },
     "frontend/emil-design-eng": {
       "source": "github.com/emilkowalski/skill/skills/emil-design-eng",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:16.441062+08:00",
+      "installed_at": "2026-11-15T01:03:19.652491+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/emil-design-eng",
-      "version": "715c180",
-      "tree_hash": "e79b9cc03e06efe8d40349bc39df0ed4a9d5deff",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "8086a08e5ebde316c4b9226764f1f2196e1869fa",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:965cc3108047a1f68e504977ae7816c66115b202a32e7509c0b8305314839c54"
+        "SKILL.md": "sha256:cdbfe467e6c9a4940c3a19e795cecf1ba659378d7412e06c245c6ae49da47da6"
       }
     },
     "frontend/find-animation-opportunities": {
       "source": "github.com/emilkowalski/skill/skills/find-animation-opportunities",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:27.374037+08:00",
+      "installed_at": "2026-11-15T01:03:30.531901+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/find-animation-opportunities",
-      "version": "715c180",
-      "tree_hash": "e6443880f38e33cf78e5d678471eed35e8566763",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "4a44e78f996f1e1877ab6d2c82596c64c36e8bb9",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:d52a377819b84a71930f0c822cfe2849f40301605a2d5c7eccbfa3b257700df2"
+        "SKILL.md": "sha256:331479e0d867f90d637ef3ef1bdbbd38498d144ab493442afdfbc138abc751b4"
       }
     },
     "frontend/gestures": {
       "source": "github.com/emilkowalski/skill/skills/gestures",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:28.850697+08:00",
+      "installed_at": "2026-11-15T01:03:32.080954+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/gestures",
-      "version": "715c180",
-      "tree_hash": "d30dfa5756b880d26c07adfb364d8506f963e6e6",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "759639ab6e4ad2a8578dbf3a4d8cae7a43ecc64f",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:0835dddc0ce4f4257fdc707ec137d75810f0bdbd8d4eaf69d1de55bfbbf260c2"
+        "SKILL.md": "sha256:1928c86cce924a2a178ddd156ba5ed0f184665a1f95b549724ffb5ae703e994f"
       }
     },
     "frontend/improve-animations": {
       "source": "github.com/emilkowalski/skill/skills/improve-animations",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:30.313633+08:00",
+      "installed_at": "2026-11-15T01:03:33.599407+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/improve-animations",
-      "version": "715c180",
-      "tree_hash": "d3ce6f348009d830b89e7a830cc958245aea2ad6",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "f5891a5e4a2b535d59daf89f763abe7ed29135e5",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "AUDIT.md": "sha256:63fa8fcf7e7b3a3e252938e55c60e1f399f607e73553163e8dacf9df40f3ebed",
-        "PLAN-TEMPLATE.md": "sha256:0a08ac8e23fd2082d7ffb86aeed7b789de77328c3cf874b16f1a755f2ef0a6ad",
-        "SKILL.md": "sha256:73962447464433476343e2c12cd08ab39cc99a9e5f3c118c5fb54ed897574ef6"
+        "AUDIT.md": "sha256:90312d201cd8ce7dc8add4147570cd47cdb6c901e9980951d9f7b4851b738524",
+        "PLAN-TEMPLATE.md": "sha256:e25250c49937e183cca5bc42a057d9f5407a0cacd30d0aad1a4b6d59d7b2a844",
+        "SKILL.md": "sha256:632be90e04261192112571b05abd5708fbb846808a4a7780717ee206daa6c6f6"
       }
     },
     "frontend/improve-react": {
       "source": "https://github.com/millionco/react-doctor/tree/main/skills/improve-react",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:32.139102+08:00",
+      "installed_at": "2026-11-15T01:03:37.109574+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/improve-react",
-      "version": "ec45ff9",
+      "version": "661cb18",
       "tree_hash": "0ee95f8644a7a263db14d2a7530134578f7ccf11",
-      "commit": "8177197ade847406a800ddf5a103ac342a3618f9",
+      "commit": "661cb187fbfe4e992acc89f76933e4f51244639f",
       "file_hashes": {
         "AUDIT.md": "sha256:86ad71563719082952561461453ebeb93dbe41560650d69df6bc65da6f3e1859",
         "PLAN-TEMPLATE.md": "sha256:2ddbf58a4ece9c1b4da5f65dfb92354f20ff79d2663e3e458dc5e124414a4cc5",
@@ -342,50 +350,50 @@
       "source": "github.com/emilkowalski/skill/skills/mobile-native",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:34.505868+08:00",
+      "installed_at": "2026-11-15T01:03:42.07917+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/mobile-native",
-      "version": "715c180",
-      "tree_hash": "fdad6e6e91d8bbfda7164c7027269a8389dbadcd",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "a728bbf1f4a20873d3c041a9151da4b710a86ae2",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55"
+        "SKILL.md": "sha256:705e267bc47ea61e4c6f94d121efeebdb994055f482673b8a72f4a0dd62f1968"
       }
     },
     "frontend/pick-ui-library": {
       "source": "github.com/emilkowalski/skill/skills/pick-ui-library",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:36.011246+08:00",
+      "installed_at": "2026-11-15T01:03:43.479103+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/pick-ui-library",
-      "version": "715c180",
-      "tree_hash": "370e19776f0aa2403a2edeed78266bd6a5d78036",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "0fec768a94dee684dcbd0b8da8a438ca214443d0",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:675fdce308683256ed617351a9b74d23457a5fbd0a562d9831b9c764b8c5e682"
+        "SKILL.md": "sha256:db10dc6b2a0c340d873f69e35140ceb3c929e15664b33fcacd1ecb25c5574df3"
       }
     },
     "frontend/prototype": {
       "source": "github.com/emilkowalski/skill/skills/prototype",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:37.460849+08:00",
+      "installed_at": "2026-11-15T01:03:44.856874+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/prototype",
-      "version": "715c180",
-      "tree_hash": "34cd3a303aef0a975fcce3ac906d6b293e600399",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "4ea5b3b58efecc83751b275fb58b516bbf42010b",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "PICKER.md": "sha256:31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6",
-        "SKILL.md": "sha256:bba39c955eb1871c5a02733976ceec5d0324198e0812e667604756489c89f7b9"
+        "PICKER.md": "sha256:6c1d7a8d1f34dbc83a2e2068cd49f42107f1d02fb4e80369bb4e978d1e026b8d",
+        "SKILL.md": "sha256:30def86c5a5a0794a954b2a046d24c847c7129f316d79892abff73d54d79adc0"
       }
     },
     "frontend/react-best-practices": {
       "source": "https://github.com/vercel-labs/agent-skills.git/skills/react-best-practices",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:39.393381+08:00",
+      "installed_at": "2026-11-15T01:03:46.724698+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-skills.git",
       "subdir": "skills/react-best-practices",
       "version": "1a2c79d",
@@ -474,12 +482,12 @@
       "source": "https://github.com/millionco/react-doctor.git/skills/react-doctor",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-11T01:43:52.64941+08:00",
+      "installed_at": "2026-11-15T01:03:48.667488+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/react-doctor",
-      "version": "ec45ff9",
+      "version": "661cb18",
       "tree_hash": "373a8c37b83fd28c08029006f8b1e914152c4ba2",
-      "commit": "ec45ff9928ef97bf66c23ac2458ab91545b91de6",
+      "commit": "661cb187fbfe4e992acc89f76933e4f51244639f",
       "file_hashes": {
         "SKILL.md": "sha256:ded3d7d7b77626e5308e028733fddab0b586ea513e2e73eafc94ba56afb4160b",
         "references/explain.md": "sha256:e8165d0e35404711afe5a264582027c6f676276afc189302b32c3c38067cca8f"
@@ -489,49 +497,49 @@
       "source": "github.com/emilkowalski/skill/skills/remove-animations",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:43.281123+08:00",
+      "installed_at": "2026-11-15T01:03:50.074253+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/remove-animations",
-      "version": "715c180",
-      "tree_hash": "e1d06083891b6445c7fb5dae31f06b1e8b81f0dc",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "8d9dbf29d9e3153420d80e518a85abc3a9a4a68b",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:dea95b7a7ef81cba312c7f70a3c5c67d7e06a287cb16b16d2f90f2b1fb0afff9"
+        "SKILL.md": "sha256:228d98a3d05637f2ff8fc2d1c2bd88c14783c8c901105cac39a7ae24a4d3e408"
       }
     },
     "frontend/review-animations": {
       "source": "github.com/emilkowalski/skill/skills/review-animations",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:44.870843+08:00",
+      "installed_at": "2026-11-15T01:03:51.566553+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/review-animations",
-      "version": "715c180",
-      "tree_hash": "bede4e1924423cea207f67ffe7a742b8d6ad753e",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "5b83aaadbcae77e09b07b5057c342b8074f7225b",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:5f9fb98b69cace7107af8b393a4196fd42fa42d98bce0e5afc1f866ff3b8a41c",
-        "STANDARDS.md": "sha256:8f5fe3f5a04537556dd4e6a37f7a8d6f616d840eb80f2f68b5b594febb170657"
+        "SKILL.md": "sha256:9ceb5072ce5d5e51b07efa60817c66d06fc6492b7900b44dff5ff0f8f7bcf188",
+        "STANDARDS.md": "sha256:2d2c28e9fe98dd55a879bafa1684827c812eb31f6b63fe578141d3978ddc664e"
       }
     },
     "frontend/write-swift": {
       "source": "github.com/emilkowalski/skill/skills/write-swift",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-10T16:31:51.880773+08:00",
+      "installed_at": "2026-11-15T01:03:56.953548+08:00",
       "repo_url": "https://github.com/emilkowalski/skill.git",
       "subdir": "skills/write-swift",
-      "version": "715c180",
-      "tree_hash": "bdefda3891d347b8a183bdc727e4a1de2be3c82b",
-      "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9",
+      "version": "0f2e23b",
+      "tree_hash": "631930d487cf9871128f582d309531481d26cabe",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "file_hashes": {
-        "SKILL.md": "sha256:16a4b6adb74e338e55e704ce5753ad54d825438b8a63930eeaede9f3c04c9447"
+        "SKILL.md": "sha256:ad8f3af70b627c165ecd73ecdba49449e35301dd845c397cf813f06582bbdac2"
       }
     },
     "security-audit": {
       "source": "https://github.com/cloudflare/security-audit-skill/skills/security-audit",
       "type": "github-subdir",
-      "installed_at": "2026-11-10T16:31:46.683128+08:00",
+      "installed_at": "2026-11-15T01:03:53.321262+08:00",
       "repo_url": "https://github.com/cloudflare/security-audit-skill.git",
       "subdir": "skills/security-audit",
       "version": "c1c8a8c",
@@ -563,14 +571,14 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-14T01:16:27.658727+08:00",
+      "installed_at": "2026-11-15T01:03:55.427581+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "d04d04f",
-      "tree_hash": "16ebf72c5d345fa0b456a431f19b5a01489cecfd",
-      "commit": "d04d04fd93253725166b6ca86c8567dbca532a94",
+      "version": "afe5eaa",
+      "tree_hash": "bebd781545c32e06fd5a994d9e33ec81cca9dadf",
+      "commit": "afe5eaa95931ff5270cad8605d755b613a7026cf",
       "file_hashes": {
-        "SKILL.md": "sha256:2bf47965d70b89306f98eecc25938ca8e4ad886092162eaa40f26d7a62fd2d3c",
+        "SKILL.md": "sha256:b43d5d3bb41e595303acf255ff847d2a2dfbe9529b59b81223af7a4c50c1281f",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
         "references/audit-review.md": "sha256:8ce54d8440a56078da8d7a1849000ae985346c950de3c49164eab21049ff2924",
         "references/audit.md": "sha256:d2050d8d33c0829836bd9b37e68660a9b57163dec6cfefac13f5d1cb14025814",
@@ -578,9 +586,9 @@
         "references/extras.md": "sha256:0845bb01f48b1ee6c91eee756319e301b224cec0f944b90dbee370934d0dbb57",
         "references/hooks.md": "sha256:de0f7c4261adfc9cd1aaa409ff484676c694e45011458d5885afb9108619e07d",
         "references/init.md": "sha256:bd5206d3f614c6c32b1c930cc07dd93fe893bb041838af12b612f17f55af78e3",
-        "references/install.md": "sha256:0e9123411afcfc67441d3494729d4ce3a77e77cac118a16a9585d01226f606f5",
+        "references/install.md": "sha256:fdd11af011c9a6327495dfbdc49e18a99758edeed578d2c00a28d00ff45c0974",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",
-        "references/mcp.md": "sha256:a46bc834c4ec4ffd815bd68090883e8d669097441296d0e5cfcd36dde51ecb5e",
+        "references/mcp.md": "sha256:5c1fab1311aba64e133b23ff5fd321015a49a3a23dd30946c18135e471ef4818",
         "references/memory-review.md": "sha256:e9fabed005f282c6702788bfe1a01aeca986184d48eadccf3ef0e9f4e465f5e3",
         "references/native-agents.md": "sha256:ad4696441bf8bb2b8bac327e9a409c637fa994b6e6ba92f3d7112ee0d71006e0",
         "references/plugins.md": "sha256:2d890dd1b796d4be706944e905706376555f689c3620f8258e64815c3d40d8c3",

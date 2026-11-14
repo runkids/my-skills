@@ -1,0 +1,13 @@
+{
+  "rootInstructions": "AGENTS.md",
+  "budgets": {
+    "rootInstructionsMaxBytes": 8192,
+    "defaultTopicMaxBytes": 16384
+  },
+  "topics": {
+    "guide": {
+      "description": "Module guide",
+      "sources": [{ "path": "wiki/guide.md" }]
+    }
+  }
+}

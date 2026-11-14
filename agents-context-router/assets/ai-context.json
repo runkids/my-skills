@@ -2,6 +2,7 @@
   "rootInstructions": "AGENTS.md",
   "indexed": [],
   "skipDirs": [],
+  "mounts": {},
   "budgets": {
     "rootInstructionsMaxBytes": 8192,
     "defaultTopicMaxBytes": 16384

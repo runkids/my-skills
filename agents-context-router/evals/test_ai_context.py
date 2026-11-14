@@ -20,6 +20,9 @@ SKILL = Path(__file__).resolve().parents[1]
 SCRIPT = SKILL / 'scripts/ai-context.py'
 PAGE = 'projects/api/deploy-runbook.md'
 sys.dont_write_bytecode = True  # keep __pycache__ out of the shipped scripts/ folder
+from fixture_helpers import run_router, write_fixture
+
+
 spec =importlib.util.spec_from_file_location('ai_context', SCRIPT)
 router = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(router)
@@ -42,16 +45,11 @@ class CheckTests(unittest.TestCase):
             'indexed': ['projects/*/*-runbook.md']}
 
     def write(self, path, text):
-        dest = self.root / path
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(text, encoding='utf-8')
+        write_fixture(self.root, path, text)
 
     def run_cli(self, *args):
         self.write('wiki/ai-context.json', json.dumps(self.cfg))
-        env = {k: v for k, v in os.environ.items()
-               if k not in ('AI_CONTEXT_ROOT', 'AI_CONTEXT_CONFIG')}
-        return subprocess.run([sys.executable, str(self.script), *args],
-                              env=env, capture_output=True, encoding='utf-8')
+        return run_router(self.script, *args)
 
     def check(self, code):
         result = self.run_cli('check')
@@ -293,7 +291,7 @@ class CheckTests(unittest.TestCase):
                 (self.root / path).unlink()
 
     def test_render_errors_survive(self):
-        for text, heading, detail in [(None, None, 'No such file'),
+        for text, heading, detail in [(None, None, '[WinError 2]' if os.name == 'nt' else 'No such file'),
                                       ('# Guide\n', 'Absent', "heading 'Absent' found 0x"),
                                       ('# Guide\n# Guide\n', 'Guide', "heading 'Guide' found 2x")]:
             with self.subTest(detail=detail):
@@ -307,7 +305,36 @@ class CheckTests(unittest.TestCase):
                 output = self.check(1)
                 self.assertIn('FAIL guide:', output)
                 self.assertIn(detail, output)
+                if text is None:
+                    self.assertIn('guide.md', output)
+                    self.assertFalse((self.root / source['path']).exists())
                 self.assertIn('FAIL ' + PAGE, output)
+
+    def test_check_does_not_validate_policy_or_evidence_claims(self):
+        self.cfg['indexed'] = []
+        self.write('AGENTS.md', '`guide`\nNever deploy on Fridays.\n')
+        self.write('wiki/guide.md', '# Guide\nFriday deployments are always safe.\n'
+                   'Verified: all deployment tests passed.\n')
+        # Structurally valid prose passes without any implementation or test evidence.
+        self.assertTrue(self.check(0).endswith('ok\n'))
+        self.write('wiki/guide.md', '# Guide\n[Evidence](missing-result.txt)\n')
+        self.assertIn('missing-result.txt', self.check(1))
+
+    def test_selected_evidence_keeps_source_marker_and_raw_context(self):
+        self.cfg['indexed'] = []
+        self.cfg['topics']['guide']['sources'][0]['heading'] = 'Observed'
+        content = ('# Guide\n## Observed\nStatus: observed in a local test.\n'
+                   'Source: tests/retry.py at revision abc123.\n'
+                   '## Unresolved\nProduction behavior is unverified.\n')
+        self.write('wiki/guide.md', content)
+        self.check(0)
+        result = self.run_cli('guide')
+        self.assertEqual((result.returncode, result.stderr), (0, ''))
+        self.assertEqual(result.stdout, '<!-- wiki/guide.md § Observed -->\n'
+                         '## Observed\nStatus: observed in a local test.\n'
+                         'Source: tests/retry.py at revision abc123.\n')
+        # Routing preserves the source, but unselected context needs a raw-source read.
+        self.assertEqual((self.root / 'wiki/guide.md').read_text(encoding='utf-8'), content)
 
     def test_existing_commands_and_fixture(self):
         for args, expected in [(('list',), 'guide              Guide\n'),
@@ -342,18 +369,13 @@ class LinkCheckTests(unittest.TestCase):
         self.save_cfg()
 
     def write(self, name, text):
-        path = self.root / name
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding='utf-8')
+        write_fixture(self.root, name, text)
 
     def save_cfg(self):
         self.write('wiki/ai-context.json', json.dumps(self.cfg))
 
     def cli(self, *args):
-        env = {k: v for k, v in os.environ.items()
-               if k not in ('AI_CONTEXT_ROOT', 'AI_CONTEXT_CONFIG')}
-        return subprocess.run([sys.executable, str(self.root / 'scripts/ai-context.py'),
-                               *args], env=env, capture_output=True, text=True, encoding='utf-8')
+        return run_router(self.root / 'scripts/ai-context.py', *args)
 
     def problems(self, text):
         self.write('wiki/guide.md', '# Selected\n' + text)
@@ -1279,9 +1301,7 @@ class RouterTests(unittest.TestCase):
         self.local_script = self.root / 'scripts' / 'ai-context.py'
 
     def write(self, path, text):
-        dest = self.root / path
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(text, encoding='utf-8')
+        write_fixture(self.root, path, text)
 
     def save_config(self, path=None):
         path = path or self.root / 'wiki' / 'ai-context.json'
@@ -1289,11 +1309,7 @@ class RouterTests(unittest.TestCase):
         return path
 
     def run_cli(self, command, overrides=None, script=SCRIPT):
-        env = {k: v for k, v in os.environ.items()
-               if k not in ('AI_CONTEXT_ROOT', 'AI_CONTEXT_CONFIG')}
-        env.update(overrides or {})
-        return subprocess.run([sys.executable, str(script), command], cwd=self.cwd,
-                              env=env, capture_output=True, text=True, encoding='utf-8')
+        return run_router(script, command, overrides=overrides, cwd=self.cwd)
 
     def assert_commands(self, overrides=None, script=SCRIPT, description='Read the guide.'):
         for command, expected in [('list', description),

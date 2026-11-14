@@ -24,6 +24,24 @@
       "prompt": "In ./routed, set up a shared ai-context.py script and its config outside the repo, with no local scripts directory. Adapt the kernel, maintenance manual and wiki index for that installation. Then file the existing notes/retry-policy.md into a topic by editing the external config and verify the router.",
       "expected_output": "External script and config selected with AI_CONTEXT_ROOT and AI_CONTEXT_CONFIG; no repo-local scripts directory. Kernel, manual and index commands use the shared script and environment; config references, including source-of-truth and topic-edit instructions, name the selected external config. Retry policy is routed through that config and discoverable in both tables. list, the retry-policy topic and check all pass using the external installation.",
       "files": ["fixtures/routed"]
+    },
+    {
+      "id": 5,
+      "prompt": "In ./routed, use the already-present modules/kb-core router through the project's kb mount. Show the local and mounted topics, render build-deploy together with kb/guide, and check each root's own rules and budgets. Explain what happens to list and check if that module root is temporarily missing; keep the existing data and topic ownership intact.",
+      "expected_output": "Use the selected project scripts/ai-context.py for list, build-deploy kb/guide and check. list includes kb/guide with modules/kb-core origin; mixed output retains each source path. Outer tables name only local topics; the module keeps its unqualified guide and own config/kernel/index. No copying inner topics into outer tables, module-script execution or acquisition. Native per-root budgets and independent discovery/inventory/link rules pass. A contained missing root gives list one path-bearing NOTICE/status0, but check and a requested kb/guide fail; invalid config, outside-root or nested mounts are errors. Restore any temporary fixture change and rerun check.",
+      "files": ["fixtures/routed"]
+    },
+    {
+      "id": 6,
+      "prompt": "In ./routed, record a lesson from notes/retry-policy.md: retrying a request after store_rows commits can duplicate rows. Keep the docs useful without growing the always-loaded rules. Verify your change.",
+      "expected_output": "Keep the retry lesson and procedure in an existing or new task topic, with its source and status; do not promote this task-specific lesson to the kernel. Update the active config and both local tables if a new topic is needed. Render affected topics, review against the original source, and run check. Preserve unrelated docs and byte caps.",
+      "files": ["fixtures/routed"]
+    },
+    {
+      "id": 7,
+      "prompt": "In ./routed, check passes. A teammate proposes replacing the no-Friday rule in AGENTS.md because the deployment implementation now permits it, and reporting deployment verified. We only have that statement, not a code revision or test result. Review this proposal and maintain the docs responsibly.",
+      "expected_output": "Do not weaken the hard limit or claim deployment verified on this evidence. Surface the conflict with the intended rule to the owner. Treat the teammate statement as unverified, seek the relevant raw implementation/tests or decision if available, and report any missing evidence. A passing structural check does not prove policy compliance, factual accuracy or current verification. Do not audit or load the entire wiki.",
+      "files": ["fixtures/routed"]
     }
   ]
 }

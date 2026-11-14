@@ -10,7 +10,7 @@ The wiki holds background, procedures, reference tables and history, and no task
 | `debugging` | A crawl or worker fails | `debugging.md` |
 | `ai-context` | Maintaining this router: add, move or split docs, fix `check` | `ai-context.md` |
 
-`wiki/ai-context.json` is the only source of truth. This table is the human entry point. After changing topics, run `python3 scripts/ai-context.py check`.
+`wiki/ai-context.json` owns this root's local topics; this table mirrors them for humans. Use `python3 scripts/ai-context.py list` for mounted topics such as `kb/guide`, which keep their own config, instructions and index. After changing topics, run `python3 scripts/ai-context.py check`.
 
 ## History (milestone logs; read on demand)
 
