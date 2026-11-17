@@ -13,7 +13,7 @@
       "installed_at": "2026-11-17T01:15:52.068992+08:00",
       "repo_url": "https://github.com/vercel-labs/agent-browser.git",
       "subdir": "skills/agent-browser",
-      "version": "5338477",
+      "version": "b06e253",
       "tree_hash": "d75a393c9a371295c6d6be46c34938e76ef21184",
       "commit": "53384771fbafc261ba67608ac806dd5aa70b84f0",
       "file_hashes": {
@@ -337,7 +337,7 @@
       "installed_at": "2026-11-17T01:16:21.455377+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/improve-react",
-      "version": "661cb18",
+      "version": "b6ba66e",
       "tree_hash": "0ee95f8644a7a263db14d2a7530134578f7ccf11",
       "commit": "661cb187fbfe4e992acc89f76933e4f51244639f",
       "file_hashes": {
@@ -482,15 +482,15 @@
       "source": "https://github.com/millionco/react-doctor.git/skills/react-doctor",
       "type": "github-subdir",
       "group": "frontend",
-      "installed_at": "2026-11-17T01:16:29.399856+08:00",
+      "installed_at": "2026-11-17T16:41:13.236632+08:00",
       "repo_url": "https://github.com/millionco/react-doctor.git",
       "subdir": "skills/react-doctor",
-      "version": "661cb18",
-      "tree_hash": "373a8c37b83fd28c08029006f8b1e914152c4ba2",
-      "commit": "661cb187fbfe4e992acc89f76933e4f51244639f",
+      "version": "b6ba66e",
+      "tree_hash": "d2ed1b4c78cc32c17b161b9a29281ed0c658a1f9",
+      "commit": "05dfafe5c1872c7f65bdf06c307eaeafb3e58549",
       "file_hashes": {
         "SKILL.md": "sha256:ded3d7d7b77626e5308e028733fddab0b586ea513e2e73eafc94ba56afb4160b",
-        "references/explain.md": "sha256:e8165d0e35404711afe5a264582027c6f676276afc189302b32c3c38067cca8f"
+        "references/explain.md": "sha256:8edfedc88af937c2650c90e431bb50f3e95693ef6a08055700e652d7b52b8d48"
       }
     },
     "frontend/remove-animations": {
@@ -557,7 +557,7 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-17T16:27:42.897437+08:00",
+      "installed_at": "2026-11-17T16:39:51.056754+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
       "version": "dc3ea55",
