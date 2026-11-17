@@ -1,6 +1,5 @@
 ---
-name: feature-radar-learn
-description: |
+description: |-
   Extract reusable patterns, architectural decisions, and pitfalls from completed work
   into .feature-radar/specs/. Captures the "why" behind choices so future sessions build
   on past experience. MUST use this skill when the user reflects on what worked or didn't,
@@ -8,6 +7,10 @@ description: |
   Use when the user asks to remember, document, or extract lessons from recent work.
   Do NOT use for recording external observations — that's feature-radar-ref's job.
   Do NOT use for archiving completed features — that's feature-radar-archive's job.
+metadata:
+  targets:
+    - claude
+name: feature-radar-learn
 ---
 
 # Extract Learnings

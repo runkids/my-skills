@@ -77,7 +77,7 @@
       "tree_hash": "16a5e421e6090a6fc845693ed0e0cbdb9231e339",
       "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
       "file_hashes": {
-        "SKILL.md": "sha256:ff0188bbe697caa4de40986e4d749035f07d2dba5496bf6d43fb1c982c9999c2",
+        "SKILL.md": "sha256:dc046aea7e20616c9e748fe9b463659a94284304d1bf61039d4f3e095e0b405d",
         "references/DEEP-READ.md": "sha256:92b8914fbd501d553ea8ed8c8f384431cb53fd7f188a9cce413004de753d0820",
         "references/DIRECTIVES.md": "sha256:20a65d31a9f14c7e634a643fde539307927f56835523d73b3ee61dded96ae8cb",
         "references/SPEC.md": "sha256:e5e72729eddbcec6e22feb1fc3a5ac1282b2f932283d1763c1369f0d0ec6a6f4",
@@ -95,7 +95,7 @@
       "tree_hash": "4e341b5f2831950738b09639369a646a12aa0a80",
       "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
       "file_hashes": {
-        "SKILL.md": "sha256:dc449f41ee51e0fad6e5c57f36c0073b637b4e5d6ba03ad45df0074548aee51f"
+        "SKILL.md": "sha256:312e21019d9e41bff53cb866d415cc4425a7ff5933eca8fa433959bd77d74c8c"
       }
     },
     "feature-radar/feature-radar-learn": {
@@ -109,7 +109,7 @@
       "tree_hash": "a73ae4e2af37a2238fd455202d7cccfb23338b8e",
       "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
       "file_hashes": {
-        "SKILL.md": "sha256:8ffd0cca3345bae5379f153175b3cb1b11ed4b6c66ca949ba09e3c60e738b4a0"
+        "SKILL.md": "sha256:8002721cffbb112265a64f89a7f67d0878292c907e4f8003ad1f718bd5bf5b1c"
       }
     },
     "feature-radar/feature-radar-ref": {
@@ -123,7 +123,7 @@
       "tree_hash": "ebda6a87023232f26f98c8eb63ccdd7f4d63c5d3",
       "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
       "file_hashes": {
-        "SKILL.md": "sha256:17def4f136023541538bf0c3081a3518c945231b146bdcacc34b772c0695212b"
+        "SKILL.md": "sha256:4a9a08cfc8227ef7a7cec717104da05b8f189c7ee00f89303219a6abb31c40d4"
       }
     },
     "feature-radar/feature-radar-scan": {
@@ -137,7 +137,7 @@
       "tree_hash": "2595effe6038f55a01ef58f716317c417e01c4a7",
       "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
       "file_hashes": {
-        "SKILL.md": "sha256:071567935eee60d9bc2b97d963c6a309902093c4a92476819a40e691ada8204e"
+        "SKILL.md": "sha256:a804fc1e203a1108c751f9b55efa56eddae43def4a3e992dbbdd1d38b2113350"
       }
     },
     "feature-radar/feature-radar-validate": {
@@ -151,7 +151,7 @@
       "tree_hash": "08ef768a593dacb24870601be1de688bfadc71e0",
       "commit": "5093cff0ddb72fb20536c863a0c2c45fa643f027",
       "file_hashes": {
-        "SKILL.md": "sha256:537ea97e5be9612e79c8dbf43f66e266bd01a395df39e43b5b503ea13b546c98",
+        "SKILL.md": "sha256:90d3a5fe936313f0cd51f518df9d9bff3f9e83e339aac08c4df294e498e56d6b",
         "scripts/validate.sh": "sha256:f579219221c81570195a7715e65bd3e9c739201d97b27ec959bade4ecf143d75"
       }
     },
@@ -522,20 +522,6 @@
         "STANDARDS.md": "sha256:2d2c28e9fe98dd55a879bafa1684827c812eb31f6b63fe578141d3978ddc664e"
       }
     },
-    "frontend/write-swift": {
-      "source": "github.com/emilkowalski/skill/skills/write-swift",
-      "type": "github-subdir",
-      "group": "frontend",
-      "installed_at": "2026-11-17T01:16:37.925001+08:00",
-      "repo_url": "https://github.com/emilkowalski/skill.git",
-      "subdir": "skills/write-swift",
-      "version": "64eb3de",
-      "tree_hash": "631930d487cf9871128f582d309531481d26cabe",
-      "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
-      "file_hashes": {
-        "SKILL.md": "sha256:ad8f3af70b627c165ecd73ecdba49449e35301dd845c397cf813f06582bbdac2"
-      }
-    },
     "security-audit": {
       "source": "https://github.com/cloudflare/security-audit-skill/skills/security-audit",
       "type": "github-subdir",
@@ -571,20 +557,20 @@
     "skillshare": {
       "source": "github.com/runkids/skillshare/skills/skillshare",
       "type": "github-subdir",
-      "installed_at": "2026-11-17T14:29:42.236577+08:00",
+      "installed_at": "2026-11-17T16:27:42.897437+08:00",
       "repo_url": "https://github.com/runkids/skillshare.git",
       "subdir": "skills/skillshare",
-      "version": "c626c4b",
-      "tree_hash": "5cba3a28a4238b6b0caa1f2ae7e0b4fc96866389",
-      "commit": "c626c4bf1f869d27f3f5ab39334d4d2b1f4eddba",
+      "version": "dc3ea55",
+      "tree_hash": "ed3afc9b07d38b82c9d8417bfa9f5a4ada8d5414",
+      "commit": "dc3ea55a708c3a1ec2d5977a41fb7136f00a72f4",
       "file_hashes": {
-        "SKILL.md": "sha256:55150e1c2be3ad8b344b2f82db96aeb3d2fff72cc0b5d9cfefb9384fc83346be",
+        "SKILL.md": "sha256:401d72a16513608cae588b559d31980366e38c734f31b19548ddd8f4f8facdde",
         "references/TROUBLESHOOTING.md": "sha256:6964001f3f1fcbaadf0daae7478724ffd12196c20c7b3762876385670660cd99",
         "references/audit-review.md": "sha256:8ce54d8440a56078da8d7a1849000ae985346c950de3c49164eab21049ff2924",
         "references/audit.md": "sha256:d02da887bdc52a5656527400060fca9ccd3c9a409b8e92c79eb7eb3232398937",
         "references/backup.md": "sha256:d794b66b18120cfaae0dcb3773031a08426895fd618d02393337a1eb57f98f6f",
         "references/extras.md": "sha256:0845bb01f48b1ee6c91eee756319e301b224cec0f944b90dbee370934d0dbb57",
-        "references/hooks.md": "sha256:8b86c9eb41e5f4b9d7036d2ddec4b364f59f496b211098bbbd11cd937370fe92",
+        "references/hooks.md": "sha256:7280eb6d93dbc69d0af5f3b5d93bc02fc36918cbfe3f2230b6ff8f45935ad784",
         "references/init.md": "sha256:bd5206d3f614c6c32b1c930cc07dd93fe893bb041838af12b612f17f55af78e3",
         "references/install.md": "sha256:fdd11af011c9a6327495dfbdc49e18a99758edeed578d2c00a28d00ff45c0974",
         "references/log.md": "sha256:f726e59328ac1cb367cd7d5eaa257149d7f56ef5c650d9e0f9c7a091c0f9c442",

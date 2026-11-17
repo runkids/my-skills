@@ -1,6 +1,5 @@
 ---
-name: feature-radar-scan
-description: |
+description: |-
   Discover new feature opportunities from creative brainstorming, user feedback, ecosystem
   trends, and cross-project research. Writes results to .feature-radar/opportunities/.
   MUST use this skill when the user wants to GENERATE new ideas — not evaluate existing ones —
@@ -9,6 +8,10 @@ description: |
   wants to mine issues, community feedback, or adjacent tools for inspiration, or wants to
   refresh the opportunity backlog.
   Do NOT use for evaluating/prioritizing existing features — that's feature-radar's job.
+metadata:
+  targets:
+    - claude
+name: feature-radar-scan
 ---
 
 # Scan Opportunities

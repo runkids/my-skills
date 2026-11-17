@@ -1,12 +1,15 @@
 ---
-name: feature-radar-validate
-description: |
+description: |-
   Validate SKILL.md frontmatter and .feature-radar/ files against format rules. Runs
   validate.sh, reports errors/warnings, and auto-fixes issues. MUST use this skill after
   editing any SKILL.md or .feature-radar/ file, even if the user doesn't ask — catches format
   bugs like the Agent Skills spec's 1024-char description limit before they break the skill.
   Use when the user asks to validate, lint, or verify skills or .feature-radar/ files, after
   editing either, or before committing changes that touch skills/ or .feature-radar/.
+metadata:
+  targets:
+    - claude
+name: feature-radar-validate
 ---
 
 # Validate Feature Radar

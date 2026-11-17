@@ -1,6 +1,5 @@
 ---
-name: feature-radar-archive
-description: |
+description: |-
   Archive a completed, rejected, or covered feature into .feature-radar/archive/ with mandatory
   learning extraction. MUST use this skill whenever a feature reaches a terminal state — done,
   rejected, covered, deferred, or N/A — including casual mentions like "we shipped X".
@@ -8,6 +7,10 @@ description: |
   Use when the user reports a feature shipped or finished, decides against building one,
   defers or postpones one, or asks to close or archive an opportunity.
   Do NOT use for discovering new features — that's feature-radar-scan's job.
+metadata:
+  targets:
+    - claude
+name: feature-radar-archive
 ---
 
 # Archive Feature

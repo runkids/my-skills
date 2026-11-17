@@ -1,6 +1,5 @@
 ---
-name: feature-radar-ref
-description: |
+description: |-
   Record external observations, ecosystem trends, and creative inspiration into
   .feature-radar/references/. MUST use this skill when the user mentions something
   interesting from outside their project — other tools, articles, approaches, or trends —
@@ -10,6 +9,10 @@ description: |
   inspiration.
   Do NOT use for internal learnings/patterns — that's feature-radar-learn's job.
   Do NOT use for prioritizing features — that's feature-radar's job.
+metadata:
+  targets:
+    - claude
+name: feature-radar-ref
 ---
 
 # Add Reference

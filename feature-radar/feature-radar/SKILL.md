@@ -1,6 +1,5 @@
 ---
-name: feature-radar
-description: |
+description: |-
   Full-cycle feature discovery, evaluation, and prioritization. Builds a persistent knowledge
   base at .feature-radar/ and runs a 6-phase workflow to recommend what to build next.
   Modes: full (all phases), quick (scan only), evaluate (prioritize), #N (deep-dive one).
@@ -9,6 +8,10 @@ description: |
   Use when the user wants to decide what to build next, rank or compare features and backlog
   items, plan a roadmap or project direction, reassess deferred or open opportunities, or
   mentions the .feature-radar/ directory.
+metadata:
+  targets:
+    - claude
+name: feature-radar
 ---
 
 # Feature Discovery & Prioritization
