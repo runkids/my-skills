@@ -339,6 +339,10 @@ def validate_mounted_cfg(cfg, root):
                 raise ValueError(f'{field}.sources.heading: expected a string')
             if 'frontmatter' in source and not isinstance(source['frontmatter'], bool):
                 raise ValueError(f'{field}.sources.frontmatter: expected a boolean')
+            if 'stripFrontmatter' in source and not isinstance(source['stripFrontmatter'], bool):
+                raise ValueError(f'{field}.sources.stripFrontmatter: expected a boolean')
+    if 'stripFrontmatter' in cfg and not isinstance(cfg['stripFrontmatter'], bool):
+        raise ValueError('stripFrontmatter: expected a boolean')
 
 
 def load_mount(entry):
@@ -397,12 +401,19 @@ def headings(lines, frontmatter=False):
             yield i, len(h.group(1)), h.group(2)
 
 
-def section(src, root=None, scope=None):
+def section(src, root=None, scope=None, strip_default=False):
+    """Return one source. A source's stripFrontmatter (else the config default) drops
+    a closed leading frontmatter envelope from the output and from heading discovery."""
     root = ROOT if root is None else root
     scope = scope or PhysicalPath(root)
     frontmatter = src.get('frontmatter', False)
     if not isinstance(frontmatter, bool):
         raise ValueError(f'{src["path"]}: frontmatter: expected a boolean')
+    strip = src.get('stripFrontmatter', strip_default)
+    if not isinstance(strip, bool):
+        where = f'{src["path"]}: ' if 'stripFrontmatter' in src else ''
+        raise ValueError(f'{where}stripFrontmatter: expected a boolean')
+    frontmatter = frontmatter or strip
     path = os.path.realpath(os.path.join(root, src['path'].replace('\\', '/')))
     if not inside_root(path, scope):
         raise ValueError(f'{src["path"]}: outside repo')
@@ -410,7 +421,7 @@ def section(src, root=None, scope=None):
         raise ValueError(f'{src["path"]}: expected a regular file')
     lines = read_text(path, root, f'{src["path"]}: outside repo', scope=scope).split('\n')
     if 'heading' not in src:
-        return '\n'.join(lines).strip()
+        return '\n'.join(lines[frontmatter_end(lines) if strip else 0:]).strip()
     hs = list(headings(lines, frontmatter=frontmatter))
     hits = [(i, lv) for i, lv, t in hs if t == src['heading']]
     if len(hits) != 1:  # fail closed: a renamed or duplicated heading must not load the wrong text
@@ -429,7 +440,8 @@ def render(cfg, name, root=None, display_root=None, scope=None, seen=None):
             where = os.path.relpath(os.path.join(ROOT if root is None else root,
                                                where.replace('\\', '/')), display_root).replace(os.sep, '/')
         where += f' § {s["heading"]}' if 'heading' in s else ''
-        body = section(s, root=root, scope=scope)  # validate even when omitted
+        body = section(s, root=root, scope=scope,
+                       strip_default=cfg.get('stripFrontmatter', False))  # validate even when omitted
         # Same owner root and identical source entry only: overlapping sections,
         # other path spellings and repeats inside one topic are kept.
         key = (ROOT if root is None else root, json.dumps(s, sort_keys=True))
@@ -1259,6 +1271,10 @@ def main(argv):
         return 0
     cfg = load_cfg()
     try:
+        # Validate the config-wide default up front, as mounted configs are, so a bad
+        # value fails even when every source sets its own.
+        if not isinstance(cfg.get('stripFrontmatter', False), bool):
+            raise ValueError('stripFrontmatter: expected a boolean')
         entries = mount_entries(cfg)
     except ValueError as error:
         print(f'FAIL {diagnostic(error)}', file=sys.stdout if args == ['check'] else sys.stderr)

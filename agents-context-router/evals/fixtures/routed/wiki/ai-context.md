@@ -11,7 +11,7 @@ Run `python3 scripts/ai-context.py --version` to identify the copied router's so
 3. **Topics:** the active config (`wiki/ai-context.json` by default, or the file selected by `AI_CONTEXT_CONFIG`) maps each topic to whole files or exact headings. `scripts/ai-context.py <topic>` prints only those sections.
 4. **History:** `wiki/history/`, holding milestone logs in their original language. They are never loaded by default and are indexed in `wiki/README.md`.
 
-The active config owns this root's local topics: `<root>/wiki/ai-context.json` by default, or the file selected by `AI_CONTEXT_CONFIG`. The tables in `AGENTS.md` and `wiki/README.md` mirror those local topics. Mounted roots keep their own config, instructions and index; use `list` for the combined catalog.
+The active config owns this root's local topics. The tables in `AGENTS.md` and `wiki/README.md` mirror those local topics. Mounted roots keep their own config, instructions and index; use `list` for the combined catalog.
 
 ## Shared installation (optional)
 
@@ -36,7 +36,7 @@ To consume an independent router tree already inside the project, add this optio
 
 The tree must already have its own config with a `topics` object, string descriptions and source lists, plus its own instructions and router index.
 
-Each topic's `sources` is a list of objects with a nonempty `path` and optional string `heading` and boolean `frontmatter` (default `false`). Optional path settings are nonempty strings, `indexed`/`skipDirs` are string lists, and `unrouted` is an object. Root/default/per-topic byte caps are nonnegative integers, excluding booleans. Ordinary unknown config fields remain accepted; unknown declaration fields do not.
+Each topic's `sources` is a list of objects with a nonempty `path` and optional string `heading` and booleans `frontmatter`, `stripFrontmatter` (default `false`). Optional path settings are nonempty strings, `indexed`/`skipDirs` are string lists, and `unrouted` is an object. Root/default/per-topic byte caps are nonnegative integers, excluding booleans. Ordinary unknown config fields remain accepted; unknown declaration fields do not.
 
 Select it through the project router:
 
@@ -47,7 +47,7 @@ python3 scripts/ai-context.py build-deploy kb/guide
 python3 scripts/ai-context.py check
 ```
 
-Use the same selected script/environment as the shared-installation commands above. The router reads data only: it neither acquires a module nor runs a script from it.
+The router reads data only: it neither acquires a module nor runs a script from it.
 
 ### Names and paths
 
@@ -63,7 +63,7 @@ Use the same selected script/environment as the shared-installation commands abo
 
 `check` visits the outer root and every available mount using each root's own `rootInstructions`, budgets, `wikiDir`, `historyDir`, `routerFile`, `indexed`, `skipDirs` and `unrouted`. Outer discovery tables never need to copy inner topics: the inner kernel names unqualified `guide`, and the caller selects `kb/guide`. Parent or sibling references, exceptions and budgets cannot satisfy an inner requirement. Change a mounted topic in its own config and local tables.
 
-Topic byte caps measure the root's native render, including its native source comments, rather than the longer mounted display paths or combined invocation. Kernel counts retain unstripped UTF-8 text, including trailing whitespace. Mounting the same tree under a longer project path cannot inflate its native topic size. Split over-budget topics rather than raising caps.
+Topic byte caps measure the root's native render, including its native source comments, rather than the longer mounted display paths or combined invocation. Kernel counts retain unstripped UTF-8 text, including trailing whitespace.
 
 Outer automatic orphan/indexed/wiki-link inventories exclude contained mounted physical trees and file/directory aliases, including modules under the outer wiki. A safely resolved root retains that ownership even when its config is invalid. Explicit outer sources and the explicit outer router file still get full ordinary checks. An outer relative link may enter a mount, but an inner relative link cannot escape to the outer project. External, absolute and fragment-only Markdown destinations retain their existing exclusions. Referenced indexed candidates still fail if outside the owner or not regular files.
 
@@ -72,7 +72,7 @@ Outer automatic orphan/indexed/wiki-link inventories exclude contained mounted p
 - A contained missing root produces one path-bearing `NOTICE mount kb: missing root ...` on `list` stdout; status is 0 if nothing else failed. `check` and a requested `kb/guide` fail for that missing root.
 - Invalid declarations, collisions, outside roots, roots containing outer routing files or the outer wiki/history directories, ancestor/descendant mount roots, unreadable/missing/invalid configs, and nested mounts are errors. `list` reports them on stderr and continues healthy rows with status 1. `check` reports owner-qualified errors on stdout, continues other topics/roots and ends with one `ok` or `<N> root(s) failed`; each failing root counts once. Missing config is an error, not a missing-root notice.
 - Topic calls load only selected mounted configs; an unavailable unrelated mount does not block a healthy request. Every requested name and body must succeed before any content prints. A late missing source, unknown topic, encoding/read failure or missing/duplicate heading leaves stdout empty, with status 1 and a requested-topic diagnostic on stderr. Topic rendering does not implicitly run `check`.
-- Absent `mounts` and `"mounts": {}` preserve single-root behavior. `--version` stays config-free. Updating a skill does not update copied scripts: compare local customizations and deliberately replace the selected router before using new fields, retaining project config/docs.
+- Absent `mounts` and `"mounts": {}` preserve single-root behavior. `--version` stays config-free.
 
 ## When docs must change
 
@@ -101,11 +101,11 @@ After a change, render the affected topics and review their claims against those
 ## Adding or changing a topic
 
 1. Put the content in `wiki/<page>.md`. A topic should be a recognizable kind of work, not a single ticket or file.
-2. Map it in the active config: `<root>/wiki/ai-context.json` by default, or the file selected by `AI_CONTEXT_CONFIG`. Reference exact headings for large pages.
+2. Map it in the active config. Reference exact headings for large pages.
 3. Add a row to this root's local topic tables in `AGENTS.md` and `wiki/README.md`; mounted topics belong to their owner's tables.
 4. Run `python3 scripts/ai-context.py check`, then render the topic and read it as an agent would.
 
-For a heading source, `"frontmatter": true` skips a closed leading envelope; default/false keeps legacy behavior. First line must be `---` (optional BOM); closure is column-zero `---` or `...`. Trailing spaces/tabs are allowed. No YAML validation occurs. No closer means legacy headings. Whole-file output stays unchanged; sections add no metadata.
+For a heading source, `"frontmatter": true` skips a closed leading envelope; default/false keeps legacy behavior. First line must be `---` (optional BOM); closure is column-zero `---` or `...`. Trailing spaces/tabs are allowed. No YAML validation occurs. No closer means legacy headings. Whole-file output is unchanged unless `stripFrontmatter` (source, or top-level default; source wins) is true: it drops a closed leading envelope from output and budgets and makes headings frontmatter-aware. Sections add no metadata. Detection reads delimiters only: a page starting `---`, `Intro`, `---` (a rule, then a setext heading) loses `Intro`. Under a top-level default, give such a page `"stripFrontmatter": false`.
 
 ## What check enforces
 
