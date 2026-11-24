@@ -107,6 +107,10 @@ After a change, render the affected topics and review their claims against those
 
 For a heading source, `"frontmatter": true` skips a closed leading envelope; default/false keeps legacy behavior. First line must be `---` (optional BOM); closure is column-zero `---` or `...`. Trailing spaces/tabs are allowed. No YAML validation occurs. No closer means legacy headings. Whole-file output is unchanged unless `stripFrontmatter` (source, or top-level default; source wins) is true: it drops a closed leading envelope from output and budgets and makes headings frontmatter-aware. Sections add no metadata. Detection reads delimiters only: a page starting `---`, `Intro`, `---` (a rule, then a setext heading) loses `Intro`. Under a top-level default, give such a page `"stripFrontmatter": false`.
 
+Top-level `"compactPathLinks": true` prints a plain link whose text is its target's root-relative path, like `[docs/run.md](../docs/run.md)`, as `` `docs/run.md` `` in output and budgets; `check` still validates it. Mounted output paths are relative to the outer root; mounted budgets stay native.
+
+Top-level `"okfReservedPages": true` exempts OKF `index.md`/`log.md` at any depth from orphan checks, not link checks.
+
 ## What check enforces
 
 - Every configured content path stays inside its owning root and exists, and every heading matches exactly once.
