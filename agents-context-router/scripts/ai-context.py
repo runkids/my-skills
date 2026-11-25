@@ -5,6 +5,7 @@ usage: ai-context.py list | [--dedupe] <topic> [<topic>...] | check | --version
 
 Topics live in wiki/ai-context.json. A source is a whole file or one exact
 heading (the section runs to the next heading of the same or higher level).
+List uses the first source's frontmatter description when the topic omits one.
 A source may set "frontmatter": true to exclude a closed opening YAML-style
 envelope from heading discovery; whole-file output and default behavior stay unchanged.
 check also fails on orphans, so docs cannot silently drift out of the router:
@@ -331,7 +332,7 @@ def validate_mounted_cfg(cfg, root):
         if not isinstance(topic, dict):
             raise ValueError(f'{field}: expected an object')
         description = topic.get('description')
-        if (not isinstance(description, str)
+        if 'description' in topic and (not isinstance(description, str)
                 or any(unicodedata.category(c) == 'Cs' for c in description)):
             raise ValueError(f'{field}.description: expected a string without surrogates')
         if 'maxBytes' in topic:
@@ -389,6 +390,55 @@ def frontmatter_end(lines):
     return 0
 
 
+def page_description(lines):
+    """Read a supported single-line YAML string from a closed envelope."""
+    end = frontmatter_end(lines)
+    for index in range(1, end - 1):
+        match = re.match(r'^description:[ \t]+(.*)$', lines[index])
+        if not match:
+            continue
+        for following in lines[index + 1:end - 1]:
+            if not following.strip() or following.lstrip().startswith('#'):
+                continue
+            if following.startswith((' ', '\t')):
+                return ''
+            break
+        value = match.group(1).strip(' \t\r')
+        if value.startswith(('"', "'")):
+            if value[0] == '"':
+                try:
+                    result, end_value = json.JSONDecoder().raw_decode(value)
+                except ValueError:
+                    return ''
+            else:
+                quoted = re.match(r"'((?:[^']|'')*)'", value)
+                if not quoted:
+                    return ''
+                result, end_value = quoted.group(1).replace("''", "'"), quoted.end()
+            if not re.fullmatch(r'(?:[ \t]+(?:#.*)?)?', value[end_value:]):
+                return ''
+        else:
+            result = re.split(r'[ \t]+#', value, maxsplit=1)[0].strip(' \t')
+            if (not result or result[0] in '[]{},#&*!|>%@`'
+                    or re.match(r'^[-?:](?:[ \t]|$)', result)
+                    or re.search(r':(?:[ \t]|$)', result)
+                    or result.lower() in ('~', 'null')):
+                return ''
+        if any(unicodedata.category(c) in ('Cc', 'Cs', 'Zl', 'Zp') and c != '\t' for c in result):
+            return ''
+        return result
+    return ''
+
+
+def topic_description(topic, root):
+    if 'description' in topic:
+        return topic['description']
+    try:
+        return page_description(source_lines(topic['sources'][0], root, PhysicalPath(root)))
+    except (OSError, ValueError, TypeError, LookupError, AttributeError):
+        return ''
+
+
 def headings(lines, frontmatter=False):
     """Yield original line indexes, ignoring opted-in frontmatter and fenced code."""
     fence = None
@@ -408,6 +458,16 @@ def headings(lines, frontmatter=False):
             yield i, len(h.group(1)), h.group(2)
 
 
+def source_lines(src, root, scope):
+    """Read a source within its owning root without transforming its contents."""
+    path = os.path.realpath(os.path.join(root, src['path'].replace('\\', '/')))
+    if not inside_root(path, scope):
+        raise ValueError(f'{src["path"]}: outside repo')
+    if not stat.S_ISREG(os.stat(path).st_mode):
+        raise ValueError(f'{src["path"]}: expected a regular file')
+    return read_text(path, root, f'{src["path"]}: outside repo', scope=scope).split('\n')
+
+
 def section(src, root=None, scope=None, strip_default=False):
     """Return one source. A source's stripFrontmatter (else the config default) drops
     a closed leading frontmatter envelope from the output and from heading discovery."""
@@ -421,12 +481,7 @@ def section(src, root=None, scope=None, strip_default=False):
         where = f'{src["path"]}: ' if 'stripFrontmatter' in src else ''
         raise ValueError(f'{where}stripFrontmatter: expected a boolean')
     frontmatter = frontmatter or strip
-    path = os.path.realpath(os.path.join(root, src['path'].replace('\\', '/')))
-    if not inside_root(path, scope):
-        raise ValueError(f'{src["path"]}: outside repo')
-    if not stat.S_ISREG(os.stat(path).st_mode):
-        raise ValueError(f'{src["path"]}: expected a regular file')
-    lines = read_text(path, root, f'{src["path"]}: outside repo', scope=scope).split('\n')
+    lines = source_lines(src, root, scope)
     if 'heading' not in src:
         return '\n'.join(lines[frontmatter_end(lines) if strip else 0:]).strip()
     hs = list(headings(lines, frontmatter=frontmatter))
@@ -1342,7 +1397,7 @@ def main(argv):
     if args == ['list']:
         for n, t in cfg['topics'].items():
             if n.split('/', 1)[0] not in namespaces or '/' not in n:
-                print(f'{n:18} {t["description"]}')
+                print(f'{n:18} {topic_description(t, ROOT)}')
         failed = False
         for entry in entries:
             try:
@@ -1356,7 +1411,7 @@ def main(argv):
                 continue
             origin = os.path.relpath(entry.root, ROOT).replace(os.sep, '/')
             for name, topic in mounted['topics'].items():
-                print(f'{entry.name + "/" + name:18} {topic["description"]} [{origin}]')
+                print(f'{entry.name + "/" + name:18} {topic_description(topic, entry.root)} [{origin}]')
         return int(failed)
     if args == ['check']:
         if not entries:

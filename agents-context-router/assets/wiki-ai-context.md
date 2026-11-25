@@ -34,7 +34,7 @@ To consume an independent router tree already inside the project, add this optio
 }
 ```
 
-The tree must already have its own config with a `topics` object, string descriptions and source lists, plus its own instructions and router index.
+The tree must already have its own config with a `topics` object and source lists, plus its own instructions and router index.
 
 Each topic's `sources` is a list of objects with a nonempty `path` and optional string `heading` and booleans `frontmatter`, `stripFrontmatter` (default `false`). Optional path settings are nonempty strings, `indexed`/`skipDirs` are string lists, and `unrouted` is an object. Root/default/per-topic byte caps are nonnegative integers, excluding booleans. Ordinary unknown config fields are accepted; unknown declaration fields are not.
 
