@@ -79,9 +79,13 @@ skillshare mcp serve --check [--target NAME]         # List skipped, editable an
   Do not connect local Agents that already sync skills; they would see each skill twice.
   Connect one with `mcp add skillshare --target CLIENT --sync -- skillshare mcp serve`, or a
   remote `url` with `bearerToken: {fromEnv: SKILLSHARE_MCP_TOKEN}`. Agents with the Skills
-  extension load skills natively; as of October 2026 Codex, Cursor, VS Code, Goose and Pi
-  lack it and Claude Code's is off by default, so the server also offers `list_skills`
-  (`query` filters) and `read_skill` tools, marked `readOnlyHint` and hidden from clients that declare the extension. Verify the server with
+  extension load skills natively. Claude Code has it in public beta from v2.1.331 (interactive
+  sessions, not `claude -p`); verified with v2.1.332: skills show in `/skills` as `<server>:<skill>`,
+  run from that command, and other files are read through `resources/read`. As of October 2026
+  Codex, Cursor, VS Code, Goose and Pi lack it, so the server also offers `list_skills`
+  (`query` filters) and `read_skill` tools, marked `readOnlyHint` and hidden from requests that
+  declare the extension. Claude Code v2.1.332 declares it only on `skills/list`, so it still
+  gets both tools. Verify the server with
   `npx @modelcontextprotocol/inspector --cli skillshare mcp serve --method skills/list --verify`.
 - `mcp.serve.edit.skills` (flat-name patterns, like `include`) lets clients change
   existing files of those skills; `preview_ttl` defaults to `30m`. `preview_skill_edit`
@@ -133,7 +137,7 @@ mcp:
 | `transport` | Optional `stdio` or `streamable-http`; inferred when omitted. Legacy SSE is not supported |
 | `targets` | Receiving clients for this server. `[]` keeps it in Skillshare only |
 | `tools` | `{allow, deny}`: which tools reach the model, translated per Agent. See [Tool policy](#tool-policy) |
-| `options` | `{<client>: {field: value}}`: other Agents' native per-server fields written as given, e.g. `codex: {default_tools_approval_mode: approve}`, `claude: {timeout: 600000}`. Values: scalars, lists of scalars, or mappings; no `null`. Managed fields (`url`, `command`, `env`, `headers`, `type`, `enabled`, Codex `enabled_tools`…) and `options.pi` (use `piOptions`) are refused; credentials (by field name or a URL password) must be a whole-value environment reference in the Agent's own syntax (`${VAR}`, `{env:VAR}`), never plain text, and options of an Agent that reads no references there (Codex, Antigravity, Claude Desktop, Goose, Junie, LM Studio, Warp) cannot hold one; not allowed with `disabled`. Sync removes an option it wrote once the source drops it. Import puts an Agent's other native fields (e.g. Claude Code `alwaysLoad`) here; a field these rules refuse, one whose name or nested name suggests a credential (`auth`, `key`, `token`, `bearer`, `cookie`…), or any field of a file imported without `--from` (guessed format), is left out with a warning |
+| `options` | `{<client>: {field: value}}`: other Agents' native per-server fields written as given, e.g. `codex: {default_tools_approval_mode: approve}`, `claude: {timeout: 600000}`. Values: scalars, lists of scalars, or mappings; no `null`. Managed fields (`url`, `command`, `env`, `headers`, `type`, `enabled`, Codex `enabled_tools`…) and `options.pi` (use `piOptions`) are refused; credentials (by field name or a URL password) must be a whole-value environment reference in the Agent's own syntax (`${VAR}`, `{env:VAR}`), never plain text, and options of an Agent that reads no references there (Codex, Antigravity, Claude Desktop, Goose, Junie, LM Studio, Warp) cannot hold one; not allowed with `disabled`. Sync removes an option it wrote once the source drops it. Import puts an Agent's other native fields (e.g. Claude Code `alwaysLoad`) here; a field these rules refuse, one whose name or nested name suggests a credential (`auth`, `key`, `token`, `bearer`, `cookie`…), or any field of a file imported without `--from` or of JSON pasted in the dashboard with **From** at Any Agent (guessed format), is left out with a warning |
 | `piOptions` | Other Pi built-in per-server fields. See [Pi](#pi) |
 | `disabled` | `true` only, no connection fields, and a project must be in scope: project mode, or a root under `mcp.projects`. See [Turn off a global server in one project](#turn-off-a-global-server-in-one-project) |
 | `global` | Global config `mcp.servers` only. `false` loads the server only in roots that list it under `use`. Default `true`. See [Several projects from the global config](#several-projects-from-the-global-config) |
@@ -478,7 +482,7 @@ mcp:
 - No command edits `mcp.projects` (including `use`); `mcp add` leaves it as written. Edit `config.yaml`, or
   use the dashboard: the **Projects** page adds and removes projects, and each project's
   **MCP** tab turns global servers off there, edits project servers and lists the
-  project's Agent files with **Open folder**, **Open in editor** and **Copy path**.
+  project's Agent files with **View file**, **Open folder**, **Open in editor** and **Copy path**.
 - `disabled` under `mcp.projects` cannot target `claude`. Use project mode in that
   folder instead.
 - It is refused inside a project config. A folder whose own `.skillshare/config.yaml`
